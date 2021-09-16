@@ -1,0 +1,365 @@
+* This file contains 1.2V, 1.8V and 2.5V corner model parameters.
+* Five corners are supported: TT, FF, SS, FNSP and SNFP.
+* This file should be used with the model parameter files 'ms0065ll_io25_rf_v1p0.ckt', 'ms0065ll_io25_rf_res_v1p0.kct',
+* 'ms0065ll_io25_rf_mom_v1p0.ckt', 'ms0065ll_io25_rf_var_v1p0.ckt', 'ms0065ll_io25_rf_TM2_res_v1p0.ckt'.
+* No part of this file can be released without the consent of SMIC.
+
+********************
+* MOS Corner model *      
+********************
+
+.LIB TT
+.option gmindc=1e-14
+.PARAM
+
+*1.2V core NMOS 
++DTOXE_N12LL_RF        = 0               DTOXP_N12LL_RF        = 0               DXL_N12LL_RF          = 0            
++DXW_N12LL_RF          = 0               DVTH_N12LL_RF         = 0               DCJS_N12LL_RF         = 0 
++DCJSWS_N12LL_RF       = 0               DCJSWGS_N12LL_RF      = 0               DLVTH0_N12LL_RF       = 0               
++DPVTH0_N12LL_RF       = 0		 DLU0_N12LL_RF         = 0               DPU0_N12LL_RF         = 0                                                            
+
+*1.2V core PMOS
++DTOXE_P12LL_RF        = 0               DTOXP_P12LL_RF        = 0               DXL_P12LL_RF          = 0            
++DXW_P12LL_RF          = 0               DVTH_P12LL_RF         = 0               DCJS_P12LL_RF         = 0 
++DCJSWS_P12LL_RF       = 0               DCJSWGS_P12LL_RF      = 0               DLVTH0_P12LL_RF       = 0               
++DPVTH0_P12LL_RF       = 0               DLU0_P12LL_RF         = 0               DPU0_P12LL_RF         = 0 
+
+*1.8V IO NMOS 
++DTOXE_N18LL_RF        = 0               DTOXP_N18LL_RF        = 0               DXL_N18LL_RF          = 0            
++DXW_N18LL_RF          = 0               DVTH_N18LL_RF         = 0               DCJS_N18LL_RF         = 0            
++DCJSWS_N18LL_RF       = 0               DCJSWGS_N18LL_RF      = 0               DLVTH0_N18LL_RF       = 0               
++DPVTH0_N18LL_RF       = 0               DLU0_N18LL_RF         = 0               DPU0_N18LL_RF         = 0
+
+*1.8V IO PMOS
++DTOXE_P18LL_RF        = 0               DTOXP_P18LL_RF        = 0               DXL_P18LL_RF         = 0             
++DXW_P18LL_RF          = 0               DVTH_P18LL_RF         = 0               DCJS_P18LL_RF        = 0             
++DCJSWS_P18LL_RF       = 0               DCJSWGS_P18LL_RF      = 0               DLVTH0_P18LL_RF       = 0               
++DPVTH0_P18LL_RF       = 0               DLU0_P18LL_RF         = 0               DPU0_P18LL_RF         = 0
+
+*2.5V IO NMOS 
++DTOXE_N25LL_RF        = 0               DTOXP_N25LL_RF        = 0               DXL_N25LL_RF          = 0            
++DXW_N25LL_RF          = 0               DVTH_N25LL_RF         = 0               DCJS_N25LL_RF         = 0            
++DCJSWS_N25LL_RF       = 0               DCJSWGS_N25LL_RF      = 0               DPVTH0_N25LL_RF       = 0               
++DLU0_N25LL_RF         = 0               DLVTH0_N25LL_RF       = 0 		 DPU0_N25LL_RF         = 0
+
+
+*2.5V IO PMOS
++DTOXE_P25LL_RF        = 0               DTOXP_P25LL_RF        = 0               DXL_P25LL_RF         = 0             
++DXW_P25LL_RF          = 0               DVTH_P25LL_RF         = 0               DCJS_P25LL_RF        = 0             
++DCJSWS_P25LL_RF       = 0               DCJSWGS_P25LL_RF      = 0               DLVTH0_P25LL_RF       = 0               
++DPVTH0_P25LL_RF       = 0		 DLU0_P25LL_RF         = 0               DPU0_P25LL_RF         = 0
+                                                                                                    
+.INC 'ms0065ll_io25_rf_v1p0.ckt' 
+.ENDL  TT
+
+.LIB FF
+.option gmindc=1e-14
+.PARAM
+
+*1.2V core NMOS 
++DTOXE_N12LL_RF        = -4.8E-11        DTOXP_N12LL_RF        = -4.8E-11        DXL_N12LL_RF          = -1E-9   
++DXW_N12LL_RF          = 2E-9            DVTH_N12LL_RF         = -0.02           DCJS_N12LL_RF         = -7.7E-5 
++DCJSWS_N12LL_RF       = -1.45E-12       DCJSWGS_N12LL_RF      = -1.33E-11       DLVTH0_N12LL_RF       = -8.5E-10        
++DPVTH0_N12LL_RF       = -5.3E-16	 DLU0_N12LL_RF         = 1.3E-10         DPU0_N12LL_RF         = 6.5E-17
+
+*1.2V core PMOS
++DTOXE_P12LL_RF        = -4.8E-11        DTOXP_P12LL_RF        = -4.8E-11        DXL_P12LL_RF          = -1E-9    
++DXW_P12LL_RF          = 2E-9            DVTH_P12LL_RF         = 0.018           DCJS_P12LL_RF         = -5.46E-5 
++DCJSWS_P12LL_RF       = -1.2E-12        DCJSWGS_P12LL_RF      = -1.42E-11       DLVTH0_P12LL_RF       = 1.13E-9         
++DPVTH0_P12LL_RF       = 6.2E-16         DLU0_P12LL_RF         = 7E-11           DPU0_P12LL_RF         = 1.5E-17
+   
+*1.8V IO NMOS                                                    
++DTOXE_N18LL_RF        = -7.5E-11        DTOXP_N18LL_RF        = -7.5E-11        DXL_N18LL_RF          = -3.0E-9         
++DXW_N18LL_RF          = 4.5E-9          DVTH_N18LL_RF         = -0.038          DCJS_N18LL_RF         = -5.91e-5        
++DCJSWS_N18LL_RF       = -1.625E-12      DCJSWGS_N18LL_RF      = -8.635E-12      DLVTH0_N18LL_RF       = -1.0E-09        
++DPVTH0_N18LL_RF       = -1.05E-15       DLU0_N18LL_RF         = 3.6E-10         DPU0_N18LL_RF         = 7E-17
+
+*1.8V IO PMOS
++DTOXE_P18LL_RF        = -7.5E-11        DTOXP_P18LL_RF        = -7.5E-11        DXL_P18LL_RF          = -3.0E-9       
++DXW_P18LL_RF          = 4.5E-9          DVTH_P18LL_RF         = 0.035           DCJS_P18LL_RF         = -9.29E-05      
++DCJSWS_P18LL_RF       = -7.88E-14       DCJSWGS_P18LL_RF      = -1.321E-11      DLVTH0_P18LL_RF       = 1.4E-09         
++DPVTH0_P18LL_RF       = 1E-15           DLU0_P18LL_RF         = 9E-11           DPU0_P18LL_RF         = 5E-17
+
+*2.5V IO NMOS                                                    
++DTOXE_N25LL_RF        = -1.0E-10        DTOXP_N25LL_RF        = -1.0E-10        DXL_N25LL_RF          = -4.5E-9        
++DXW_N25LL_RF          = 4.5E-9          DVTH_N25LL_RF         = -0.034          DCJS_N25LL_RF         = -5.69e-5        
++DCJSWS_N25LL_RF       = -2.48E-12       DCJSWGS_N25LL_RF      = -1.05E-11       DLVTH0_N25LL_RF       = -2.3E-09        
++DPVTH0_N25LL_RF       = -3.5E-15	 DLU0_N25LL_RF         = 2.05E-9         DPU0_N25LL_RF         = 7.5E-16
+
+*2.5V IO PMOS
++DTOXE_P25LL_RF        = -1.0E-10        DTOXP_P25LL_RF        = -1.0E-10        DXL_P25LL_RF          = -4.5E-9       
++DXW_P25LL_RF          = 4.5E-9          DVTH_P25LL_RF         = 0.024           DCJS_P25LL_RF         = -6.03E-5      
++DCJSWS_P25LL_RF       = -1.40E-12       DCJSWGS_P25LL_RF      = -1.10E-11       DLVTH0_P25LL_RF       = 3.1E-09         
++DPVTH0_P25LL_RF       = 1.70E-15	 DLU0_P25LL_RF         = 2.9E-10         DPU0_P25LL_RF         = 5.5E-17     
+     
+.INC 'ms0065ll_io25_rf_v1p0.ckt' 
+.ENDL  FF
+
+.LIB SS
+.option gmindc=1e-14
+.PARAM
+
+*1.2V core NMOS 
++DTOXE_N12LL_RF        = 4.8E-11         DTOXP_N12LL_RF        = 4.8E-11         DXL_N12LL_RF          = 1E-9   
++DXW_N12LL_RF          = -2E-9           DVTH_N12LL_RF         = 0.02            DCJS_N12LL_RF         = 7.7E-5  
++DCJSWS_N12LL_RF       = 1.45E-12        DCJSWGS_N12LL_RF      = 1.33E-11        DLVTH0_N12LL_RF       = 8.5E-10         
++DPVTH0_N12LL_RF       = 5.3E-16         DLU0_N12LL_RF         = -1.3E-10        DPU0_N12LL_RF         = -6.5E-17
+
+*1.2V core PMOS 
++DTOXE_P12LL_RF        = 4.8E-11         DTOXP_P12LL_RF        = 4.8E-11         DXL_P12LL_RF          = 1E-9            
++DXW_P12LL_RF          = -2E-9           DVTH_P12LL_RF         = -0.018          DCJS_P12LL_RF         = 5.46E-5 
++DCJSWS_P12LL_RF       = 1.2E-12         DCJSWGS_P12LL_RF      = 1.42E-11        DLVTH0_P12LL_RF       = -1.13E-9        
++DPVTH0_P12LL_RF       = -6.2E-16	 DLU0_P12LL_RF         = -7E-11          DPU0_P12LL_RF         = -1.5E-17
+
+*1.8V IO NMOS                                                    
++DTOXE_N18LL_RF        = 7.5E-11         DTOXP_N18LL_RF        = 7.5E-11         DXL_N18LL_RF          = 3.0E-9          
++DXW_N18LL_RF          = -4.5E-9         DVTH_N18LL_RF         = 0.038           DCJS_N18LL_RF         = 5.91e-5         
++DCJSWS_N18LL_RF       = 1.625E-12       DCJSWGS_N18LL_RF      = 8.635E-12       DLVTH0_N18LL_RF       = 6E-10           
++DPVTH0_N18LL_RF       = 1.05E-15        DLU0_N18LL_RF         = -3.5E-10        DPU0_N18LL_RF         = -5E-17
+  
+*1.8V IO PMOS
++DTOXE_P18LL_RF        = 7.5E-11         DTOXP_P18LL_RF        = 7.5E-11         DXL_P18LL_RF          = 3.0E-9       
++DXW_P18LL_RF          = -4.5E-9         DVTH_P18LL_RF         = -0.035          DCJS_P18LL_RF         = 9.29E-05       
++DCJSWS_P18LL_RF       = 7.88E-14        DCJSWGS_P18LL_RF      = 1.321E-11       DLVTH0_P18LL_RF       = -1.1E-09        
++DPVTH0_P18LL_RF       = -1.00E-15       DLU0_P18LL_RF         = -8E-11          DPU0_P18LL_RF         = -4.2E-17
+
+*2.5V IO NMOS                                                    
++DTOXE_N25LL_RF        = 1.0E-10         DTOXP_N25LL_RF        = 1.0E-10         DXL_N25LL_RF          = 4.5E-9          
++DXW_N25LL_RF          = -4.5E-9         DVTH_N25LL_RF         = 0.034           DCJS_N25LL_RF         = 5.69e-5         
++DCJSWS_N25LL_RF       = 2.48E-12        DCJSWGS_N25LL_RF      = 1.05E-11        DLVTH0_N25LL_RF       = 2.0E-09         
++DPVTH0_N25LL_RF       = 3.4E-15	 DLU0_N25LL_RF         = -1.85E-9        DPU0_N25LL_RF         = -5.0E-16
+
+*2.5V IO PMOS
++DTOXE_P25LL_RF        = 1.0E-10         DTOXP_P25LL_RF        = 1.0E-10         DXL_P25LL_RF          = 4.5E-9        
++DXW_P25LL_RF          = -4.5E-9         DVTH_P25LL_RF         = -0.024          DCJS_P25LL_RF         = 6.03E-5       
++DCJSWS_P25LL_RF       = 1.40E-12        DCJSWGS_P25LL_RF      = 1.10E-11        DLVTH0_P25LL_RF       = -2.55E-9        
++DPVTH0_P25LL_RF       = -1.55E-15	 DLU0_P25LL_RF         = -2.5E-10        DPU0_P25LL_RF         = -4.0E-17
+
+.INC 'ms0065ll_io25_rf_v1p0.ckt' 
+.ENDL  SS
+
+.LIB FNSP
+.option gmindc=1e-14
+.PARAM
+
+*1.2V core NMOS   
++DTOXE_N12LL_RF        = 0               DTOXP_N12LL_RF        = 0               DXL_N12LL_RF          = 0   
++DXW_N12LL_RF          = 0               DVTH_N12LL_RF         = -0.02           DCJS_N12LL_RF         = -7.7E-5 
++DCJSWS_N12LL_RF       = -1.45E-12       DCJSWGS_N12LL_RF      = -1.33E-11       DLVTH0_N12LL_RF       = -8.5E-10        
++DPVTH0_N12LL_RF       = -5.3E-16        DLU0_N12LL_RF         = 1.3E-10         DPU0_N12LL_RF         = 6.5E-17
+
+*1.2V core PMOS
++DTOXE_P12LL_RF        = 0               DTOXP_P12LL_RF        = 0               DXL_P12LL_RF          = 0            
++DXW_P12LL_RF          = 0           DVTH_P12LL_RF         = -0.018          DCJS_P12LL_RF         = 5.46E-5 
++DCJSWS_P12LL_RF       = 1.2E-12         DCJSWGS_P12LL_RF      = 1.42E-11        DLVTH0_P12LL_RF       = -1.13E-9        
++DPVTH0_P12LL_RF       = -6.2E-16        DLU0_P12LL_RF         = -7E-11          DPU0_P12LL_RF         = -1.5E-17
+
+*1.8V IO NMOS                                                    
++DTOXE_N18LL_RF        = 0               DTOXP_N18LL_RF        = 0               DXL_N18LL_RF          = 0       
++DXW_N18LL_RF          = 0               DVTH_N18LL_RF         = -0.038          DCJS_N18LL_RF         = -5.91e-5        
++DCJSWS_N18LL_RF       = -1.625E-12      DCJSWGS_N18LL_RF      = -8.635E-12      DLVTH0_N18LL_RF       = -1.0E-09        
++DPVTH0_N18LL_RF       = -1.05E-15       DLU0_N18LL_RF         = 3.6E-10         DPU0_N18LL_RF         = 7E-17
+  
+*1.8V IO PMOS
++DTOXE_P18LL_RF        = 0               DTOXP_P18LL_RF        = 0               DXL_P18LL_RF          = 0      
++DXW_P18LL_RF          = 0               DVTH_P18LL_RF         = -0.035          DCJS_P18LL_RF         = 9.29E-05       
++DCJSWS_P18LL_RF       = 7.88E-14        DCJSWGS_P18LL_RF      = 1.321E-11       DLVTH0_P18LL_RF       = -1.1E-09        
++DPVTH0_P18LL_RF       = -1.00E-15       DLU0_P18LL_RF         = -8E-11          DPU0_P18LL_RF         = -4.2E-17
+
+*2.5V IO NMOS
++DTOXE_N25LL_RF        = 0               DTOXP_N25LL_RF        = 0               DXL_N25LL_RF          = 0        
++DXW_N25LL_RF          = 0               DVTH_N25LL_RF         = -0.034          DCJS_N25LL_RF         = -5.69e-5        
++DCJSWS_N25LL_RF       = -2.48E-12       DCJSWGS_N25LL_RF      = -1.05E-11       DLVTH0_N25LL_RF       = -2.3E-09        
++DPVTH0_N25LL_RF       = -3.5E-15	 DLU0_N25LL_RF         = 2.05E-9         DPU0_N25LL_RF         = 7.5E-16        
+
+*2.5V IO PMOS
++DTOXE_P25LL_RF        = 0               DTOXP_P25LL_RF        = 0               DXL_P25LL_RF         = 0       
++DXW_P25LL_RF          = 0               DVTH_P25LL_RF         = -0.024          DCJS_P25LL_RF        = 6.03E-5       
++DCJSWS_P25LL_RF       = 1.40E-12        DCJSWGS_P25LL_RF      = 1.10E-11        DLVTH0_P25LL_RF       = -2.55E-9        
++DPVTH0_P25LL_RF       = -1.55E-15 	 DLU0_P25LL_RF          = -2.5E-10       DPU0_P25LL_RF         = -4.0E-17     
+  
+.INC 'ms0065ll_io25_rf_v1p0.ckt' 
+.ENDL  FNSP
+
+.LIB SNFP
+.option gmindc=1e-14
+.PARAM
+
+*1.2V core NMOS 
++DTOXE_N12LL_RF        = 0               DTOXP_N12LL_RF        = 0               DXL_N12LL_RF          = 0   
++DXW_N12LL_RF          = 0               DVTH_N12LL_RF         = 0.02            DCJS_N12LL_RF         = 7.7E-5 
++DCJSWS_N12LL_RF       = 1.45E-12        DCJSWGS_N12LL_RF      = 1.33E-11        DLVTH0_N12LL_RF       = 8.5E-10         
++DPVTH0_N12LL_RF       = 5.3E-16	 DLU0_N12LL_RF         = -1.3E-10        DPU0_N12LL_RF         = -6.5E-17
+
+*1.2V core PMOS
++DTOXE_P12LL_RF        = 0               DTOXP_P12LL_RF        = 0               DXL_P12LL_RF          = 0            
++DXW_P12LL_RF          = 0            DVTH_P12LL_RF         = 0.018           DCJS_P12LL_RF         = -5.46E-5 
++DCJSWS_P12LL_RF       = -1.2E-12        DCJSWGS_P12LL_RF      = -1.42E-11       DLVTH0_P12LL_RF       = 1.13E-9         
++DPVTH0_P12LL_RF       = 6.2E-16	 DLU0_P12LL_RF         = 7E-11           DPU0_P12LL_RF         = 1.5E-17
+  
+*1.8V IO NMOS                                                    
++DTOXE_N18LL_RF        = 0               DTOXP_N18LL_RF        = 0               DXL_N18LL_RF          = 0          
++DXW_N18LL_RF          = 0               DVTH_N18LL_RF         = 0.038           DCJS_N18LL_RF         = 5.91e-5         
++DCJSWS_N18LL_RF       = 1.625E-12       DCJSWGS_N18LL_RF      = 8.635E-12       DLVTH0_N18LL_RF       = 6E-10           
++DPVTH0_N18LL_RF       = 1.05E-15        DLU0_N18LL_RF         = -3.5E-10        DPU0_N18LL_RF         = -5E-17
+
+*1.8V IO PMOS
++DTOXE_P18LL_RF        = 0               DTOXP_P18LL_RF        = 0               DXL_P18LL_RF          = 0     
++DXW_P18LL_RF          = 0               DVTH_P18LL_RF         = 0.035           DCJS_P18LL_RF         = -9.29E-05    
++DCJSWS_P18LL_RF       = -7.88E-14       DCJSWGS_P18LL_RF      = -1.321E-11      DLVTH0_P18LL_RF       = 1.4E-09         
++DPVTH0_P18LL_RF       = 1E-15           DLU0_P18LL_RF         = 9E-11           DPU0_P18LL_RF         = 5E-17
+
+*2.5V IO NMOS                                                    
++DTOXE_N25LL_RF        = 0               DTOXP_N25LL_RF        = 0               DXL_N25LL_RF          = 0         
++DXW_N25LL_RF          = 0               DVTH_N25LL_RF         = 0.034           DCJS_N25LL_RF         = 5.69e-5         
++DCJSWS_N25LL_RF       = 2.48E-12        DCJSWGS_N25LL_RF      = 1.05E-11        DLVTH0_N25LL_RF       = 2.0E-09         
++DPVTH0_N25LL_RF       = 3.4E-15	 DLU0_N25LL_RF         = -1.85E-9        DPU0_N25LL_RF         = -5.0E-16        
+
+*2.5V IO PMOS
++DTOXE_P25LL_RF        = 0               DTOXP_P25LL_RF        = 0               DXL_P25LL_RF          = 0       
++DXW_P25LL_RF          = 0               DVTH_P25LL_RF         = 0.024           DCJS_P25LL_RF         = -6.03E-5    
++DCJSWS_P25LL_RF       = -1.40E-12       DCJSWGS_P25LL_RF      = -1.10E-11       DLVTH0_P25LL_RF       = 3.1E-09         
++DPVTH0_P25LL_RF       = 1.70E-15 	 DLU0_P25LL_RF         = 2.9E-10         DPU0_P25LL_RF         = 5.5E-17         
+
+.INC 'ms0065ll_io25_rf_v1p0.ckt' 
+.ENDL  SNFP
+
+*************************
+* Resistor Corner model *
+*************************
+.LIB RES_TT
+.PARAM
+*Resistor
++DRSH_RNDIFSAB_RF = 0                  DRSH_RPDIFSAB_RF = 0                   DRSH_RNPOSAB_RF  = 0
++DRSH_RPPOSAB_RF  = 0                  DRSH_RHRPO_RF    = 0                   
++DDW_RNDIFSAB_RF  = 0                  DDW_RPDIFSAB_RF  = 0                   DDW_RNPOSAB_RF   = 0 
++DDW_RPPOSAB_RF   = 0                  DDW_RHRPO_RF     = 0   
+.INC 'ms0065ll_io25_rf_res_v1p0.ckt'  
+.ENDL  RES_TT
+
+.LIB RES_FF
+.PARAM
+*Resistor
++DRSH_RNDIFSAB_RF = -28.448             DRSH_RPDIFSAB_RF = -59.219              DRSH_RNPOSAB_RF  = -47.860
++DRSH_RPPOSAB_RF  = -96.030                   
++DDW_RNDIFSAB_RF  = -5E-09              DDW_RPDIFSAB_RF  = -3E-09               DDW_RNPOSAB_RF   = -4E-09 
++DDW_RPPOSAB_RF   = -4E-09    
+.INC 'ms0065ll_io25_rf_res_v1p0.ckt'  
+.ENDL  RES_FF
+
+.LIB RES_SS
+.PARAM
+*Resistor
++DRSH_RNDIFSAB_RF = 28.448             DRSH_RPDIFSAB_RF = 59.219              DRSH_RNPOSAB_RF  = 47.860
++DRSH_RPPOSAB_RF  = 96.030                   
++DDW_RNDIFSAB_RF  = 5E-09              DDW_RPDIFSAB_RF  = 3E-09               DDW_RNPOSAB_RF   = 4E-09 
++DDW_RPPOSAB_RF   = 4E-09
+.INC 'ms0065ll_io25_rf_res_v1p0.ckt'  
+.ENDL  RES_SS
+
+*****************************
+* TM2 Resistor Corner model *
+*****************************
+
+.LIB TM2_RES_TT
+.PARAM
+*Resistor
++DRSH_RTM2_RF          = 0
+
+ 
+.INC 'ms0065ll_io25_rf_TM2_res_v1p0.ckt' 
+.ENDL  TM2_RES_TT
+
+.LIB TM2_RES_FF
+.PARAM
+*Resistor
++DRSH_RTM2_RF       = -0.00107
+
+
+.INC 'ms0065ll_io25_rf_TM2_res_v1p0.ckt' 
+.ENDL  TM2_RES_FF
+
+.LIB TM2_RES_SS
+.PARAM
+*Resistor
++DRSH_RTM2_RF      = 0.00107
+
+
+.INC 'ms0065ll_io25_rf_TM2_res_v1p0.ckt' 
+.ENDL  TM2_RES_SS
+        
+***************************************************
+* Mos varactor and Junction varactor Corner model *
+***************************************************
+.LIB VAR_TT
+.PARAM
+*MOS Varactor
++DTOXE_PVAR12LL_RF         = 0              DTOXP_PVAR12LL_RF         = 0          DVTH_PVAR12LL_RF         = 0
++DTOXE_PVAR18LL_RF	   = 0              DTOXP_PVAR18LL_RF         = 0          DVTH_PVAR18LL_RF         = 0
++DTOXE_PVAR25LL_RF         = 0              DTOXP_PVAR25LL_RF         = 0          DVTH_PVAR25LL_RF         = 0
+    
+*Junction Diode Varactor
++DCJ_PDIO12LL_RF        = 0.00           
++DCJ_PDIO18LL_RF        = 0.00           
++DCJ_PDIO25LL_RF        = 0.00
+.INC 'ms0065ll_io25_rf_var_v1p0.ckt'
+.ENDL  VAR_TT
+
+.LIB VAR_FF
+.PARAM
+*MOS Varactor
++DTOXE_PVAR12LL_RF         = 4.8E-11        DTOXP_PVAR12LL_RF         = 4.8E-11    DVTH_PVAR12LL_RF         = 0.018
++DTOXE_PVAR18LL_RF         = 7.5E-11        DTOXP_PVAR18LL_RF         = 7.5E-11    DVTH_PVAR18LL_RF         = 0.035
++DTOXE_PVAR25LL_RF         = 1E-10          DTOXP_PVAR25LL_RF         = 1E-10      DVTH_PVAR25LL_RF         = 0.024   
+
+*Junction Diode Varactor
++DCJ_PDIO12LL_RF        = -5.46E-05      
++DCJ_PDIO18LL_RF        = -7.33E-05           
++DCJ_PDIO25LL_RF        = -6.03E-05
+.INC 'ms0065ll_io25_rf_var_v1p0.ckt'
+.ENDL  VAR_FF
+
+.LIB VAR_SS
+.PARAM
+*MOS Varactor
++DTOXE_PVAR12LL_RF         = -4.8E-11       DTOXP_PVAR12LL_RF         = -4.8E-11   DVTH_PVAR12LL_RF         = -0.018
++DTOXE_PVAR18LL_RF         = -7.5E-11       DTOXP_PVAR18LL_RF         = -7.5E-11   DVTH_PVAR18LL_RF         = -0.035
++DTOXE_PVAR25LL_RF         = -1E-10         DTOXP_PVAR25LL_RF         = -1E-10     DVTH_PVAR25LL_RF         = -0.024
+
+*Junction Diode Varactor
++DCJ_PDIO12LL_RF        = 5.46E-05        
++DCJ_PDIO18LL_RF        = 7.33E-05     
++DCJ_PDIO25LL_RF        = 6.03E-05
+.INC 'ms0065ll_io25_rf_var_v1p0.ckt'
+.ENDL  VAR_SS  
+
+********************
+* MOM Corner model *
+********************
+
+.LIB MOM_TT
+.PARAM
++DMOM_RF_m1x         = 0
++DMOM_RF_mnx         = 0
++DMOM_RF_m1x_3t      = 0
++DMOM_RF_mnx_3t      = 0
+.INC 'ms0065ll_io25_rf_mom_v1p0.ckt'
+.ENDL MOM_TT
+
+.LIB MOM_FF
+.PARAM
++DMOM_RF_m1x         = -9.52e-6
++DMOM_RF_mnx         = -1.015e-5
++DMOM_RF_m1x_3t      = -9.52e-6
++DMOM_RF_mnx_3t      = -1.015e-5
+.INC 'ms0065ll_io25_rf_mom_v1p0.ckt'
+.ENDL MOM_FF
+
+.LIB MOM_SS
+.PARAM
++DMOM_RF_m1x         = 9.52e-6
++DMOM_RF_mnx         = 1.015e-5
++DMOM_RF_m1x_3t      = 9.52e-6
++DMOM_RF_mnx_3t      = 1.015e-5
+.INC 'ms0065ll_io25_rf_mom_v1p0.ckt'
+.ENDL MOM_SS

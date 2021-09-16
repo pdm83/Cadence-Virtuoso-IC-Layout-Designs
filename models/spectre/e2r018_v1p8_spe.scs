@@ -1,0 +1,998 @@
+//*Spectre Lib Format
+simulator lang=spectre  insensitive=yes
+
+library e2r018_v1p8
+// * This file contains 1.8V,3.3V,5V and 15.5V corner model parameters.
+// * Five corners are supported: TT, FF, SS, SNFP, and FNSP.
+// * This file should be used with the model parameter file 'e2r018_v1p8.mdl', 'e2r018_v1p8_bjt.mdl', 'e2r018_v1p8_pip.mdl', 'e2r018_v1p8_res.mdl' and 'e2r018_v1p8_mim.mdl'.
+// * No part of this file can be released without the consent of SMIC.
+
+section tt
+// *1.8V core NMOS
+parameters dtox_n18e2r = 0
+parameters dxl_n18e2r = 0
+parameters dxw_n18e2r = 0
+parameters dvth_n18e2r = 0
+parameters dcj_n18e2r = 0
+parameters dcjsw_n18e2r = 0
+parameters dcjswg_n18e2r = 0
+parameters dcgdo_n18e2r = 0
+parameters dcgso_n18e2r = 0
+parameters dpvth0_n18e2r = 0
+// *1.8V core PMOS
+parameters dtox_p18e2r = 0
+parameters dxl_p18e2r = 0
+parameters dxw_p18e2r = 0
+parameters dvth_p18e2r = 0	
+parameters dcj_p18e2r = 0
+parameters dcjsw_p18e2r = 0
+parameters dcjswg_p18e2r = 0	
+parameters dcgdo_p18e2r = 0
+parameters dcgso_p18e2r = 0
+parameters dpvth0_p18e2r = 0
+// *1.8V native NMOS
+parameters dxl_nz18e2r = 0
+parameters dxw_nz18e2r = 0
+parameters dcgso_nz18e2r = 0
+parameters dcgdo_nz18e2r = 0
+parameters dcj_nz18e2r = 0
+parameters dcjsw_nz18e2r = 0
+parameters dcjswg_nz18e2r = 0
+parameters dvth0_nz18e2r = 0
+parameters dtox_nz18e2r = 0
+parameters dvsat_nz18e2r = 0
+// *3.3V MV NMOS
+parameters dxw_n33e2r = 0
+parameters dvth_n33e2r = 0
+parameters dcj_n33e2r = 0
+parameters dcjsw_n33e2r = 0
+parameters dcjswg_n33e2r = 0
+parameters dcgdo_n33e2r = 0
+parameters dcgso_n33e2r = 0
+parameters dtox_n33e2r = 0
+parameters dxl_n33e2r = 0
+parameters dvsat_n33e2r = 0
+// *3.3V MV PMOS
+parameters dxw_p33e2r = 0
+parameters dvth_p33e2r = 0
+parameters dcj_p33e2r = 0
+parameters dcjsw_p33e2r = 0
+parameters dcjswg_p33e2r = 0
+parameters dcgdo_p33e2r = 0
+parameters dcgso_p33e2r = 0
+parameters dtox_p33e2r = 0
+parameters dxl_p33e2r = 0
+parameters dvsat_p33e2r = 0
+// *15.5V HV NMOS
+parameters dxw_n155e2r = 0
+parameters dvth_n155e2r = 0
+parameters dcj_n155e2r = 0
+parameters dcjsw_n155e2r = 0
+parameters dcjswg_n155e2r = 0
+parameters dcgdo_n155e2r = 0
+parameters dcgso_n155e2r = 0
+parameters dtox_n155e2r = 0
+parameters dxl_n155e2r = 0
+parameters dvsat_n155e2r = 0
+// *15.5V HV ZMOS
+parameters dxw_nz155e2r = 0
+parameters dvth_nz155e2r = 0
+parameters dcj_nz155e2r = 0
+parameters dcjsw_nz155e2r = 0
+parameters dcjswg_nz155e2r = 0
+parameters dcgdo_nz155e2r = 0
+parameters dcgso_nz155e2r = 0
+parameters dtox_nz155e2r = 0
+parameters dxl_nz155e2r = 0
+parameters dvsat_nz155e2r = 0
+// *15.5V REAL HV PMOS
+parameters dxw_p155e2r = 0
+parameters dvth_p155e2r = 0
+parameters dcj_p155e2r = 0
+parameters dcjsw_p155e2r = 0
+parameters dcjswg_p155e2r = 0
+parameters dcgdo_p155e2r = 0
+parameters dcgso_p155e2r = 0
+parameters dtox_p155e2r = 0
+parameters dxl_p155e2r = 0
+parameters dvsat_p155e2r = 0
+// *5V HV PMOS
+parameters dxw_p50e2r = 0
+parameters dvth_p50e2r = 0
+parameters dcj_p50e2r = 0
+parameters dcjsw_p50e2r = 0
+parameters dcjswg_p50e2r = 0
+parameters dcgdo_p50e2r = 0
+parameters dcgso_p50e2r = 0
+parameters dtox_p50e2r = 0
+parameters dxl_p50e2r = 0
+parameters dvsat_p50e2r = 0
+// *5V HV NMOS
+parameters dxw_n50e2r = 0
+parameters dvth_n50e2r = 0
+parameters dcj_n50e2r = 0
+parameters dcjsw_n50e2r = 0
+parameters dcjswg_n50e2r = 0
+parameters dcgdo_n50e2r = 0
+parameters dcgso_n50e2r = 0
+parameters dtox_n50e2r = 0
+parameters dxl_n50e2r = 0
+parameters dvsat_n50e2r = 0
+// *5V HV ZMOS
+parameters dxw_nz50e2r = 0
+parameters dvth_nz50e2r = 0
+parameters dcj_nz50e2r = 0
+parameters dcjsw_nz50e2r = 0
+parameters dcjswg_nz50e2r = 0
+parameters dcgdo_nz50e2r = 0
+parameters dcgso_nz50e2r = 0
+parameters dtox_nz50e2r = 0
+parameters dxl_nz50e2r = 0
+parameters dvsat_nz50e2r = 0
+include "e2r018_v1p8_spe.mdl"
+endsection tt
+
+
+section ff
+// *1.8V core NMOS
+parameters dtox_n18e2r = -1.0e-10
+parameters dxl_n18e2r = -1.0e-8
+parameters dxw_n18e2r = 2.2e-8
+parameters dvth_n18e2r = -0.04
+parameters dcj_n18e2r = -4.84e-5
+parameters dcjsw_n18e2r = -3.975e-12
+parameters dcjswg_n18e2r = -2.09e-11
+parameters dcgdo_n18e2r = 1.85e-11
+parameters dcgso_n18e2r = 1.85e-11
+parameters dpvth0_n18e2r = -3e-15
+// *1.8V core PMOS
+parameters dtox_p18e2r = -1.0e-10
+parameters dxl_p18e2r = -1.0e-8
+parameters dxw_p18e2r = 2.2e-8
+parameters dvth_p18e2r = 0.02
+parameters dcj_p18e2r = -5.35e-5
+parameters dcjsw_p18e2r = -4.945e-12
+parameters dcjswg_p18e2r = -2.535e-11
+parameters dcgdo_p18e2r = 2.1e-11
+parameters dcgso_p18e2r = 2.1e-11
+parameters dpvth0_p18e2r = 1e-15
+// *1.8V native NMOS
+parameters dxl_nz18e2r = -1.e-08
+parameters dxw_nz18e2r = 1.e-08
+parameters dcgso_nz18e2r = 2.128e-11
+parameters dcgdo_nz18e2r = 2.128e-11
+parameters dcj_nz18e2r = -7.25e-06
+parameters dcjsw_nz18e2r = -8.15e-12
+parameters dcjswg_nz18e2r = -3.3e-12
+parameters dvth0_nz18e2r = -0.09291
+parameters dtox_nz18e2r = -1.e-10
+parameters dvsat_nz18e2r = 5475
+// *3.3V MV NMOS
+parameters dxw_n33e2r = 1.e-08
+parameters dvth_n33e2r = -0.105
+parameters dcj_n33e2r = -4.97e-05
+parameters dcjsw_n33e2r = -2.625e-12
+parameters dcjswg_n33e2r = -1.615e-11
+parameters dcgdo_n33e2r = 2.04e-11
+parameters dcgso_n33e2r = 2.04e-11
+parameters dtox_n33e2r = -5.e-10
+parameters dxl_n33e2r = -1.e-08
+parameters dvsat_n33e2r = 600
+// *3.3V MV PMOS
+parameters dxw_p33e2r = 1.e-08
+parameters dvth_p33e2r = 0.1411
+parameters dcj_p33e2r = -2.69e-05
+parameters dcjsw_p33e2r = -3.625e-12
+parameters dcjswg_p33e2r = -7.6e-12
+parameters dcgdo_p33e2r = 1.08e-11
+parameters dcgso_p33e2r = 1.08e-11
+parameters dtox_p33e2r = -5.e-10
+parameters dxl_p33e2r = -1.e-08
+parameters dvsat_p33e2r = 3.1800e+04
+// *15.5V HV NMOS
+parameters dxw_n155e2r = 1.e-08
+parameters dvth_n155e2r = -0.1
+parameters dcj_n155e2r = -1.045e-05
+parameters dcjsw_n155e2r = -5.9e-12
+parameters dcjswg_n155e2r = -9.7e-12
+parameters dcgdo_n155e2r = 3.368e-11
+parameters dcgso_n155e2r = 3.368e-11
+parameters dtox_n155e2r = -1.e-09
+parameters dxl_n155e2r = -1.e-08
+parameters dvsat_n155e2r = 1.5040e+04
+// *15.5V HV ZMOS
+parameters dxw_nz155e2r = 1.e-08
+parameters dvth_nz155e2r = -0.15663
+parameters dcj_nz155e2r = -6.45e-06
+parameters dcjsw_nz155e2r = -6.55e-12
+parameters dcjswg_nz155e2r = -5.75e-12
+parameters dcgdo_nz155e2r = 4.424e-11
+parameters dcgso_nz155e2r = 4.424e-11
+parameters dtox_nz155e2r = -1.e-09
+parameters dxl_nz155e2r = -1.e-08
+parameters dvsat_nz155e2r = 2.00952e+04
+// *5V HV PMOS
+parameters dxw_p50e2r = 1.e-08
+parameters dvth_p50e2r = 0.134845
+parameters dcj_p50e2r = -2.53e-05
+parameters dcjsw_p50e2r = -3.045e-12
+parameters dcjswg_p50e2r = -6.75e-12
+parameters dcgdo_p50e2r = 2.096e-11
+parameters dcgso_p50e2r = 2.096e-11
+parameters dtox_p50e2r = -1.e-09
+parameters dxl_p50e2r = -1.e-08
+parameters dvsat_p50e2r = 4.5600e+04
+// *15.5V REAL HV PMOS
+parameters dxw_p155e2r = 2.5e-08
+parameters dvth_p155e2r = 0.117
+parameters dcj_p155e2r = -2.53e-05
+parameters dcjsw_p155e2r = -2.91e-12
+parameters dcjswg_p155e2r = -5.05e-12
+parameters dcgdo_p155e2r = 1.584e-11
+parameters dcgso_p155e2r = 1.584e-11
+parameters dtox_p155e2r = -1.e-09
+parameters dxl_p155e2r = -1.6e-07
+parameters dvsat_p155e2r = 3.4300e+04
+// *5V HV NMOS
+parameters dxw_n50e2r = 1.e-08
+parameters dvth_n50e2r = -0.102
+parameters dcj_n50e2r = -1.045e-05
+parameters dcjsw_n50e2r = -5.9e-12
+parameters dcjswg_n50e2r = -9.7e-12
+parameters dcgdo_n50e2r = 3.368e-11
+parameters dcgso_n50e2r = 3.368e-11
+parameters dtox_n50e2r = -1.e-09
+parameters dxl_n50e2r = -1.e-08
+parameters dvsat_n50e2r = 1.5000e+04
+// *5V HV ZMOS
+parameters dxw_nz50e2r = 1.e-08
+parameters dvth_nz50e2r = -0.13915
+parameters dcj_nz50e2r = -6.45e-06
+parameters dcjsw_nz50e2r = -6.55e-12
+parameters dcjswg_nz50e2r = -5.75e-12
+parameters dcgdo_nz50e2r = 4.424e-11
+parameters dcgso_nz50e2r = 4.424e-11
+parameters dtox_nz50e2r = -1.e-09
+parameters dxl_nz50e2r = -1.e-08
+parameters dvsat_nz50e2r = 1.0548e+04
+include "e2r018_v1p8_spe.mdl"
+endsection ff
+
+
+section ss
+// *1.8V core NMOS
+parameters dtox_n18e2r = 1.0e-10
+parameters dxl_n18e2r = 1.0e-8
+parameters dxw_n18e2r = -2.2e-8
+parameters dvth_n18e2r = 0.045
+parameters dcj_n18e2r = 4.84e-5
+parameters dcjsw_n18e2r = 3.975e-12
+parameters dcjswg_n18e2r = 2.09e-11
+parameters dcgdo_n18e2r = -1.85e-11
+parameters dcgso_n18e2r = -1.85e-11
+parameters dpvth0_n18e2r = 3e-15
+// *1.8V core PMOS
+parameters dtox_p18e2r = 1.0e-10
+parameters dxl_p18e2r = 1.0e-8
+parameters dxw_p18e2r = -2.2e-8
+parameters dvth_p18e2r = -0.02
+parameters dcj_p18e2r = 5.35e-5
+parameters dcjsw_p18e2r = 4.945e-12
+parameters dcjswg_p18e2r = 2.535e-11
+parameters dcgdo_p18e2r = -2.1e-11
+parameters dcgso_p18e2r = -2.1e-11
+parameters dpvth0_p18e2r = -1e-15
+// *1.8V native NMOS
+parameters dxl_nz18e2r = 1.e-08
+parameters dxw_nz18e2r = -1.e-08
+parameters dcgso_nz18e2r = -2.128e-11
+parameters dcgdo_nz18e2r = -2.128e-11
+parameters dcj_nz18e2r = 7.25e-06
+parameters dcjsw_nz18e2r = 8.15e-12
+parameters dcjswg_nz18e2r = 3.3e-12
+parameters dvth0_nz18e2r = 0.094463
+parameters dtox_nz18e2r = 1.e-10
+parameters dvsat_nz18e2r = -1.7650e+04
+// *3.3V MV NMOS
+parameters dxw_n33e2r = -1.e-08
+parameters dvth_n33e2r = 0.1058
+parameters dcj_n33e2r = 4.97e-05
+parameters dcjsw_n33e2r = 2.625e-12
+parameters dcjswg_n33e2r = 1.615e-11
+parameters dcgdo_n33e2r = -2.04e-11
+parameters dcgso_n33e2r = -2.04e-11
+parameters dtox_n33e2r = 5.e-10
+parameters dxl_n33e2r = 1.e-08
+parameters dvsat_n33e2r = -4394
+// *3.3V MV PMOS
+parameters dxw_p33e2r = -1.e-08
+parameters dvth_p33e2r = -0.1276
+parameters dcj_p33e2r = 2.69e-05
+parameters dcjsw_p33e2r = 3.625e-12
+parameters dcjswg_p33e2r = 7.6e-12
+parameters dcgdo_p33e2r = -1.08e-11
+parameters dcgso_p33e2r = -1.08e-11
+parameters dtox_p33e2r = 5.e-10
+parameters dxl_p33e2r = 1.e-08
+parameters dvsat_p33e2r = -6.0520e+04
+// *15.5V HV NMOS
+parameters dxw_n155e2r = -1.e-08
+parameters dvth_n155e2r = 0.135
+parameters dcj_n155e2r = 1.045e-05
+parameters dcjsw_n155e2r = 5.9e-12
+parameters dcjswg_n155e2r = 9.7e-12
+parameters dcgdo_n155e2r = -3.368e-11
+parameters dcgso_n155e2r = -3.368e-11
+parameters dtox_n155e2r = 1.e-09
+parameters dxl_n155e2r = 1.e-08
+parameters dvsat_n155e2r = -2.5230e+04
+// *15.5V HV ZMOS
+parameters dxw_nz155e2r = -1.e-08
+parameters dvth_nz155e2r = 0.12078
+parameters dcj_nz155e2r = 6.45e-06
+parameters dcjsw_nz155e2r = 6.55e-12
+parameters dcjswg_nz155e2r = 5.75e-12
+parameters dcgdo_nz155e2r = -4.424e-11
+parameters dcgso_nz155e2r = -4.424e-11
+parameters dtox_nz155e2r = 1.e-09
+parameters dxl_nz155e2r = 1.e-08
+parameters dvsat_nz155e2r = -1.6295e+04
+// *5V HV PMOS
+parameters dxw_p50e2r = -1.e-08
+parameters dvth_p50e2r = -0.128375
+parameters dcj_p50e2r = 2.53e-05
+parameters dcjsw_p50e2r = 3.045e-12
+parameters dcjswg_p50e2r = 6.75e-12
+parameters dcgdo_p50e2r = -2.096e-11
+parameters dcgso_p50e2r = -2.096e-11
+parameters dtox_p50e2r = 1.e-09
+parameters dxl_p50e2r = 1.e-08
+parameters dvsat_p50e2r = -3.5300e+04
+// *15.5V REAL HV PMOS
+parameters dxw_p155e2r = -2.5e-08
+parameters dvth_p155e2r = -0.12454
+parameters dcj_p155e2r = 2.53e-05
+parameters dcjsw_p155e2r = 2.91e-12
+parameters dcjswg_p155e2r = 5.05e-12
+parameters dcgdo_p155e2r = -1.584e-11
+parameters dcgso_p155e2r = -1.584e-11
+parameters dtox_p155e2r = 1.e-09
+parameters dxl_p155e2r = 1.6e-07
+parameters dvsat_p155e2r = -5.8900e+04
+// *5V HV NMOS
+parameters dxw_n50e2r = -1.e-08
+parameters dvth_n50e2r = 0.1328
+parameters dcj_n50e2r = 1.045e-05
+parameters dcjsw_n50e2r = 5.9e-12
+parameters dcjswg_n50e2r = 9.7e-12
+parameters dcgdo_n50e2r = -3.368e-11
+parameters dcgso_n50e2r = -3.368e-11
+parameters dtox_n50e2r = 1.e-09
+parameters dxl_n50e2r = 1.e-08
+parameters dvsat_n50e2r = -1.8820e+04
+// *5V HV ZMOS
+parameters dxw_nz50e2r = -1.e-08
+parameters dvth_nz50e2r = 0.13853
+parameters dcj_nz50e2r = 6.45e-06
+parameters dcjsw_nz50e2r = 6.55e-12
+parameters dcjswg_nz50e2r = 5.75e-12
+parameters dcgdo_nz50e2r = -4.424e-11
+parameters dcgso_nz50e2r = -4.424e-11
+parameters dtox_nz50e2r = 1.e-09
+parameters dxl_nz50e2r = 1.e-08
+parameters dvsat_nz50e2r = -1.8868e+04
+include "e2r018_v1p8_spe.mdl"
+endsection ss
+
+
+section fnsp
+// *1.8V core NMOS
+parameters dtox_n18e2r = 0
+parameters dxl_n18e2r = -1.00e-8
+parameters dxw_n18e2r = 1.8e-8
+parameters dvth_n18e2r = -0.04
+parameters dcj_n18e2r = -4.84e-5
+parameters dcjsw_n18e2r = -3.975e-12
+parameters dcjswg_n18e2r = -2.09e-11
+parameters dcgdo_n18e2r = 0
+parameters dcgso_n18e2r = 0
+parameters dpvth0_n18e2r = -3e-15
+// *1.8V core PMOS
+parameters dtox_p18e2r = 0
+parameters dxl_p18e2r = 1.00e-8
+parameters dxw_p18e2r = -1.8e-8
+parameters dvth_p18e2r = -0.02
+parameters dcj_p18e2r = 5.35e-5
+parameters dcjsw_p18e2r = 4.945e-12
+parameters dcjswg_p18e2r = 2.535e-11
+parameters dcgdo_p18e2r = 0
+parameters dcgso_p18e2r = 0
+parameters dpvth0_p18e2r = -1e-15
+// *1.8V native NMOS
+parameters dxl_nz18e2r = -1.e-08
+parameters dxw_nz18e2r = 1.e-08
+parameters dcgso_nz18e2r = 0
+parameters dcgdo_nz18e2r = 0
+parameters dcj_nz18e2r = -7.25e-06
+parameters dcjsw_nz18e2r = -8.15e-12
+parameters dcjswg_nz18e2r = -3.3e-12
+parameters dvth0_nz18e2r = -0.09291
+parameters dtox_nz18e2r = 0
+parameters dvsat_nz18e2r = 5475
+// *3.3V MV NMOS
+parameters dxw_n33e2r = 1.e-08
+parameters dvth_n33e2r = -0.105
+parameters dcj_n33e2r = -4.97e-05
+parameters dcjsw_n33e2r = -2.625e-12
+parameters dcjswg_n33e2r = -1.615e-11
+parameters dcgdo_n33e2r = 0
+parameters dcgso_n33e2r = 0
+parameters dtox_n33e2r = 0
+parameters dxl_n33e2r = -1.e-08
+parameters dvsat_n33e2r = 600
+// *3.3V MV PMOS
+parameters dxw_p33e2r = -1.e-08
+parameters dvth_p33e2r = -0.1276
+parameters dcj_p33e2r = 2.69e-05
+parameters dcjsw_p33e2r = 3.625e-12
+parameters dcjswg_p33e2r = 7.6e-12
+parameters dcgdo_p33e2r = 0
+parameters dcgso_p33e2r = 0
+parameters dtox_p33e2r = 0
+parameters dxl_p33e2r = 1.e-08
+parameters dvsat_p33e2r = -6.0520e+04
+// *15.5V HV NMOS
+parameters dxw_n155e2r = 1.e-08
+parameters dvth_n155e2r = -0.1
+parameters dcj_n155e2r = -1.045e-05
+parameters dcjsw_n155e2r = -5.9e-12
+parameters dcjswg_n155e2r = -9.7e-12
+parameters dcgdo_n155e2r = 0
+parameters dcgso_n155e2r = 0
+parameters dtox_n155e2r = 0
+parameters dxl_n155e2r = -1.e-08
+parameters dvsat_n155e2r = 1.5040e+04
+// *15.5V HV ZMOS
+parameters dxw_nz155e2r = 1.e-08
+parameters dvth_nz155e2r = -0.15663
+parameters dcj_nz155e2r = -6.45e-06
+parameters dcjsw_nz155e2r = -6.55e-12
+parameters dcjswg_nz155e2r = -5.75e-12
+parameters dcgdo_nz155e2r = 0
+parameters dcgso_nz155e2r = 0
+parameters dtox_nz155e2r = 0
+parameters dxl_nz155e2r = -1.e-08
+parameters dvsat_nz155e2r = 2.00952e+04
+// *5V HV PMOS
+parameters dxw_p50e2r = -1.e-08
+parameters dvth_p50e2r = -0.128375
+parameters dcj_p50e2r = 2.53e-05
+parameters dcjsw_p50e2r = 3.045e-12
+parameters dcjswg_p50e2r = 6.75e-12
+parameters dcgdo_p50e2r = 0
+parameters dcgso_p50e2r = 0
+parameters dtox_p50e2r = 0
+parameters dxl_p50e2r = 1.e-08
+parameters dvsat_p50e2r = -3.5300e+04
+// *15.5V REAL HV PMOS
+parameters dxw_p155e2r = -2.5e-08
+parameters dvth_p155e2r = -0.12454
+parameters dcj_p155e2r = 2.53e-05
+parameters dcjsw_p155e2r = 2.91e-12
+parameters dcjswg_p155e2r = 5.05e-12
+parameters dcgdo_p155e2r = 0
+parameters dcgso_p155e2r = 0
+parameters dtox_p155e2r = 0
+parameters dxl_p155e2r = 1.6e-07
+parameters dvsat_p155e2r = -5.8900e+04
+// *5V HV NMOS
+parameters dxw_n50e2r = 1.e-08
+parameters dvth_n50e2r = -0.102
+parameters dcj_n50e2r = -1.045e-05
+parameters dcjsw_n50e2r = -5.9e-12
+parameters dcjswg_n50e2r = -9.7e-12
+parameters dcgdo_n50e2r = 0
+parameters dcgso_n50e2r = 0
+parameters dtox_n50e2r = 0
+parameters dxl_n50e2r = -1.e-08
+parameters dvsat_n50e2r = 1.5000e+04
+// *5V HV ZMOS
+parameters dxw_nz50e2r = 1.e-08
+parameters dvth_nz50e2r = -0.13915
+parameters dcj_nz50e2r = -6.45e-06
+parameters dcjsw_nz50e2r = -6.55e-12
+parameters dcjswg_nz50e2r = -5.75e-12
+parameters dcgdo_nz50e2r = 0
+parameters dcgso_nz50e2r = 0
+parameters dtox_nz50e2r = 0
+parameters dxl_nz50e2r = -1.e-08
+parameters dvsat_nz50e2r = 1.0548e+04
+include "e2r018_v1p8_spe.mdl"
+endsection fnsp
+
+
+section snfp
+// *1.8V core NMOS
+parameters dtox_n18e2r = 0
+parameters dxl_n18e2r = 1.00e-8
+parameters dxw_n18e2r = -1.8e-8
+parameters dvth_n18e2r = 0.045
+parameters dcj_n18e2r = 4.84e-5
+parameters dcjsw_n18e2r = 3.975e-12
+parameters dcjswg_n18e2r = 2.09e-11
+parameters dcgdo_n18e2r = 0
+parameters dcgso_n18e2r = 0
+parameters dpvth0_n18e2r = 3e-15
+// *1.8V core PMOS
+parameters dtox_p18e2r = 0
+parameters dxl_p18e2r = -1.00e-8
+parameters dxw_p18e2r = 1.8e-8
+parameters dvth_p18e2r = 0.02
+parameters dcj_p18e2r = -5.35e-5
+parameters dcjsw_p18e2r = -4.945e-12
+parameters dcjswg_p18e2r = -2.535e-11
+parameters dcgdo_p18e2r = 0
+parameters dcgso_p18e2r = 0
+parameters dpvth0_p18e2r = 1e-15
+// *1.8V native NMOS
+parameters dxl_nz18e2r = 1.e-08
+parameters dxw_nz18e2r = -1.e-08
+parameters dcgso_nz18e2r = 0
+parameters dcgdo_nz18e2r = 0
+parameters dcj_nz18e2r = 7.25e-06
+parameters dcjsw_nz18e2r = 8.15e-12
+parameters dcjswg_nz18e2r = 3.3e-12
+parameters dvth0_nz18e2r = 0.094463
+parameters dtox_nz18e2r = 0
+parameters dvsat_nz18e2r = -1.7650e+04
+// *3.3V MV NMOS
+parameters dxw_n33e2r = -1.e-08
+parameters dvth_n33e2r = 0.1058
+parameters dcj_n33e2r = 4.97e-05
+parameters dcjsw_n33e2r = 2.625e-12
+parameters dcjswg_n33e2r = 1.615e-11
+parameters dcgdo_n33e2r = 0
+parameters dcgso_n33e2r = 0
+parameters dtox_n33e2r = 0
+parameters dxl_n33e2r = 1.e-08
+parameters dvsat_n33e2r = -4394
+// *3.3V MV PMOS
+parameters dxw_p33e2r = 1.e-08
+parameters dvth_p33e2r = 0.1411
+parameters dcj_p33e2r = -2.69e-05
+parameters dcjsw_p33e2r = -3.625e-12
+parameters dcjswg_p33e2r = -7.6e-12
+parameters dcgdo_p33e2r = 0
+parameters dcgso_p33e2r = 0
+parameters dtox_p33e2r = 0
+parameters dxl_p33e2r = -1.e-08
+parameters dvsat_p33e2r = 3.1800e+04
+// *15.5V HV NMOS
+parameters dxw_n155e2r = -1.e-08
+parameters dvth_n155e2r = 0.135
+parameters dcj_n155e2r = 1.045e-05
+parameters dcjsw_n155e2r = 5.9e-12
+parameters dcjswg_n155e2r = 9.7e-12
+parameters dcgdo_n155e2r = 0
+parameters dcgso_n155e2r = 0
+parameters dtox_n155e2r = 0
+parameters dxl_n155e2r = 1.e-08
+parameters dvsat_n155e2r = -2.5230e+04
+// *15.5V HV ZMOS
+parameters dxw_nz155e2r = -1.e-08
+parameters dvth_nz155e2r = 0.12078
+parameters dcj_nz155e2r = 6.45e-06
+parameters dcjsw_nz155e2r = 6.55e-12
+parameters dcjswg_nz155e2r = 5.75e-12
+parameters dcgdo_nz155e2r = 0
+parameters dcgso_nz155e2r = 0
+parameters dtox_nz155e2r = 0
+parameters dxl_nz155e2r = 1.e-08
+parameters dvsat_nz155e2r = -1.6295e+04
+// *5V HV PMOS
+parameters dxw_p50e2r = 1.e-08
+parameters dvth_p50e2r = 0.134845
+parameters dcj_p50e2r = -2.53e-05
+parameters dcjsw_p50e2r = -3.045e-12
+parameters dcjswg_p50e2r = -6.75e-12
+parameters dcgdo_p50e2r = 0
+parameters dcgso_p50e2r = 0
+parameters dtox_p50e2r = 0
+parameters dxl_p50e2r = -1.e-08
+parameters dvsat_p50e2r = 4.5600e+04
+// *15.5V REAL HV PMOS
+parameters dxw_p155e2r = 2.5e-08
+parameters dvth_p155e2r = 0.117
+parameters dcj_p155e2r = -2.53e-05
+parameters dcjsw_p155e2r = -2.91e-12
+parameters dcjswg_p155e2r = -5.05e-12
+parameters dcgdo_p155e2r = 0
+parameters dcgso_p155e2r = 0
+parameters dtox_p155e2r = 0
+parameters dxl_p155e2r = -1.6e-07
+parameters dvsat_p155e2r = 3.4300e+04
+// *5V HV NMOS
+parameters dxw_n50e2r = -1.e-08
+parameters dvth_n50e2r = 0.1328
+parameters dcj_n50e2r = 1.045e-05
+parameters dcjsw_n50e2r = 5.9e-12
+parameters dcjswg_n50e2r = 9.7e-12
+parameters dcgdo_n50e2r = 0
+parameters dcgso_n50e2r = 0
+parameters dtox_n50e2r = 0
+parameters dxl_n50e2r = 1.e-08
+parameters dvsat_n50e2r = -1.8820e+04
+// *5V HV ZMOS
+parameters dxw_nz50e2r = -1.e-08
+parameters dvth_nz50e2r = 0.13853
+parameters dcj_nz50e2r = 6.45e-06
+parameters dcjsw_nz50e2r = 6.55e-12
+parameters dcjswg_nz50e2r = 5.75e-12
+parameters dcgdo_nz50e2r = 0
+parameters dcgso_nz50e2r = 0
+parameters dtox_nz50e2r = 0
+parameters dxl_nz50e2r = 1.e-08
+parameters dvsat_nz50e2r = -1.8868e+04
+include "e2r018_v1p8_spe.mdl"
+endsection snfp
+
+// *******************
+// * BJT Corner model
+// *******************
+
+section bjt_tt
+// *1.8V CORE PNP
+parameters dbf_pnp18a100e2r = 0.00
+parameters dis_pnp18a100e2r = 0.00
+parameters dnf_pnp18a100e2r = 0.00
+parameters dbf_pnp18a25e2r = 0.00
+parameters dis_pnp18a25e2r = 0.00
+parameters dnf_pnp18a25e2r = 0.00
+parameters dbf_pnp18a4e2r = 0.00
+parameters dis_pnp18a4e2r = 0.00
+parameters dnf_pnp18a4e2r = 0.00
+parameters dcje_pnp18a100e2r = 0.00
+parameters dcje_pnp18a25e2r = 0.00
+parameters dcje_pnp18a4e2r = 0.00
+parameters dcjc_pnp18a100e2r = 0.00
+parameters dcjc_pnp18a25e2r = 0.00
+parameters dcjc_pnp18a4e2r = 0.00
+// *3.3V IO PNP
+parameters dbf_pnp33a100e2r = 0.00
+parameters dis_pnp33a100e2r = 0.00
+parameters dnf_pnp33a100e2r = 0.00
+parameters dbf_pnp33a25e2r = 0.00
+parameters dis_pnp33a25e2r = 0.00
+parameters dnf_pnp33a25e2r = 0.00
+parameters dbf_pnp33a4e2r = 0.00
+parameters dis_pnp33a4e2r = 0.00
+parameters dnf_pnp33a4e2r = 0.00
+parameters dcje_pnp33a100e2r = 0.00
+parameters dcje_pnp33a25e2r = 0.00
+parameters dcje_pnp33a4e2r = 0.00
+parameters dcjc_pnp33a100e2r = 0.00
+parameters dcjc_pnp33a25e2r = 0.00
+parameters dcjc_pnp33a4e2r = 0.00
+include "e2r018_v1p8_bjt_spe.mdl"
+endsection bjt_tt
+
+
+section bjt_ff
+// *1.8V CORE PNP
+parameters dbf_pnp18a100e2r = 4.20e-1
+parameters dis_pnp18a100e2r = 1.756e-18
+parameters dnf_pnp18a100e2r = -0.008
+parameters dbf_pnp18a25e2r = 5.20e-1
+parameters dis_pnp18a25e2r = 7.751e-19
+parameters dnf_pnp18a25e2r = -0.008
+parameters dbf_pnp18a4e2r = 6.90e-1
+parameters dis_pnp18a4e2r = 1.950e-19
+parameters dnf_pnp18a4e2r = -0.008
+parameters dcjc_pnp18a100e2r = -3.46e-15
+parameters dcjc_pnp18a25e2r = -1.98e-15
+parameters dcjc_pnp18a4e2r = -1.26e-15
+parameters dcje_pnp18a100e2r = -5.55e-15
+parameters dcje_pnp18a25e2r = -1.44e-15
+parameters dcje_pnp18a4e2r = -2.54e-16
+// *3.3V IO PNP
+parameters dbf_pnp33a100e2r = 0.989
+parameters dis_pnp33a100e2r = 7.65e-18
+parameters dnf_pnp33a100e2r = -0.0081
+parameters dbf_pnp33a25e2r = 1.032
+parameters dis_pnp33a25e2r = 2.493e-18
+parameters dnf_pnp33a25e2r = -0.008104
+parameters dbf_pnp33a4e2r = 1.02
+parameters dis_pnp33a4e2r = 5.94e-19
+parameters dnf_pnp33a4e2r = -0.008112
+parameters dcje_pnp33a100e2r = -2.84e-15
+parameters dcje_pnp33a25e2r = -7.45e-16
+parameters dcje_pnp33a4e2r = -1.37e-16
+parameters dcjc_pnp33a100e2r = -3.974e-15
+parameters dcjc_pnp33a25e2r = -2.328e-15
+parameters dcjc_pnp33a4e2r = -1.5168e-15
+include "e2r018_v1p8_bjt_spe.mdl"
+endsection bjt_ff
+
+
+section bjt_ss
+// *1.8V CORE PNP
+parameters dbf_pnp18a100e2r = -4.20e-1
+parameters dis_pnp18a100e2r = -1.756e-18
+parameters dnf_pnp18a100e2r = 0.008
+parameters dbf_pnp18a25e2r = -5.20e-1
+parameters dis_pnp18a25e2r = -7.751e-19
+parameters dnf_pnp18a25e2r = 0.008
+parameters dbf_pnp18a4e2r = -6.90e-1
+parameters dis_pnp18a4e2r = -1.950e-19
+parameters dnf_pnp18a4e2r = 0.008
+parameters dcjc_pnp18a100e2r = 3.46e-15
+parameters dcjc_pnp18a25e2r = 1.98e-15
+parameters dcjc_pnp18a4e2r = 1.26e-15
+parameters dcje_pnp18a100e2r = 5.55e-15
+parameters dcje_pnp18a25e2r = 1.44e-15
+parameters dcje_pnp18a4e2r = 2.54e-16
+// *3.3V IO PNP
+parameters dbf_pnp33a100e2r = -0.989
+parameters dis_pnp33a100e2r = -7.65e-18
+parameters dnf_pnp33a100e2r = 0.0081
+parameters dbf_pnp33a25e2r = -1.032
+parameters dis_pnp33a25e2r = -2.493e-18
+parameters dnf_pnp33a25e2r = 0.008104
+parameters dbf_pnp33a4e2r = -1.02
+parameters dis_pnp33a4e2r = -5.94e-19
+parameters dnf_pnp33a4e2r = 0.008112
+parameters dcje_pnp33a100e2r = 2.84e-15
+parameters dcje_pnp33a25e2r = 7.45e-16
+parameters dcje_pnp33a4e2r = 1.37e-16
+parameters dcjc_pnp33a100e2r = 3.974e-15
+parameters dcjc_pnp33a25e2r = 2.328e-15
+parameters dcjc_pnp33a4e2r = 1.5168e-15
+include "e2r018_v1p8_bjt_spe.mdl"
+endsection bjt_ss
+
+// *******************
+// * RES Corner model
+// *******************
+
+section res_tt
+// *Resistor
+parameters drsh_rndif = 0
+parameters drsh_rpdif = 0
+parameters drsh_rnpo = 0
+parameters drsh_rnpo_3t = 0
+parameters drsh_rppo = 0
+parameters drsh_rppo_3t = 0
+parameters drsh_rnwsti = 0
+parameters drsh_rnwaa = 0
+parameters drsh_rndifsab = 0
+parameters drsh_rpdifsab = 0
+parameters drsh_rnposab = 0
+parameters drsh_rnposab_3t = 0
+parameters drsh_rpposab = 0
+parameters drsh_rpposab_3t = 0
+parameters drsh_rm1 = 0
+parameters drsh_rm2 = 0
+parameters drsh_rm3 = 0
+parameters drsh_rm4 = 0
+parameters drsh_rm5 = 0
+parameters drsh_rm6 = 0
+parameters drsh_rpdifsab_nstd = 0
+parameters drsh_rnposab_nstd = 0
+parameters drsh_rnposab_nstd_3t = 0
+parameters drsh_rndifsab_nstd = 0
+parameters drsh_rpposab_nstd = 0
+parameters drsh_rpposab_nstd_3t = 0
+parameters drsh_rtimsabe2r = 0
+parameters drsh_rhrpo = 0
+parameters drsh_rhrpo_3t = 0
+parameters ddw_rndif = 0
+parameters ddw_rpdif = 0
+parameters ddw_rnpo = 0
+parameters ddw_rnpo_3t = 0
+parameters ddw_rppo = 0
+parameters ddw_rppo_3t = 0
+parameters ddw_rnwsti = 0
+parameters ddw_rnwaa = 0
+parameters ddw_rndifsab = 0
+parameters ddw_rpdifsab = 0
+parameters ddw_rnposab = 0
+parameters ddw_rnposab_3t = 0
+parameters ddw_rpposab = 0
+parameters ddw_rpposab_3t = 0
+parameters ddw_rm1 = 0
+parameters ddw_rm2 = 0
+parameters ddw_rm3 = 0
+parameters ddw_rm4 = 0
+parameters ddw_rm5 = 0
+parameters ddw_rm6 = 0
+parameters ddw_rpdifsab_nstd = 0
+parameters ddw_rnposab_nstd = 0
+parameters ddw_rnposab_nstd_3t = 0
+parameters ddw_rndifsab_nstd = 0
+parameters ddw_rpposab_nstd = 0
+parameters ddw_rpposab_nstd_3t = 0
+parameters ddw_rtimsabe2r = 0
+parameters ddw_rhrpo = 0
+parameters ddw_rhrpo_3t = 0
+include "e2r018_v1p8_res_spe.mdl"
+endsection res_tt
+
+
+section res_ff
+// *Resistor
+// *Resistor
+parameters drsh_rndif = -2.78
+parameters drsh_rpdif = -3.63
+parameters drsh_rnpo = -2.34
+parameters drsh_rnpo_3t = -2.34
+parameters drsh_rppo = -2.88
+parameters drsh_rppo_3t = -2.88
+parameters drsh_rnwsti = -95
+parameters drsh_rnwaa = -101
+parameters drsh_rndifsab = -20.6
+parameters drsh_rpdifsab = -40.1
+parameters drsh_rnposab = -38.1
+parameters drsh_rnposab_3t = -38.1
+parameters drsh_rpposab = -48.7
+parameters drsh_rpposab_3t = -48.7
+parameters drsh_rm1 = -0.023
+parameters drsh_rm2 = -0.023
+parameters drsh_rm3 = -0.023
+parameters drsh_rm4 = -0.023
+parameters drsh_rm5 = -0.023
+parameters drsh_rm6 = -0.009
+parameters drsh_rpdifsab_nstd = -40.1
+parameters drsh_rnposab_nstd = -38.1
+parameters drsh_rnposab_nstd_3t = -38.1
+parameters drsh_rndifsab_nstd = -20.6
+parameters drsh_rpposab_nstd = -48.7
+parameters drsh_rpposab_nstd_3t = -48.7
+parameters drsh_rtimsabe2r = -100.5
+parameters drsh_rhrpo = -201.2
+parameters drsh_rhrpo_3t = -201.2
+parameters ddw_rndif = 0
+parameters ddw_rpdif = 0
+parameters ddw_rnpo = 0
+parameters ddw_rnpo_3t = 0
+parameters ddw_rppo = 0
+parameters ddw_rppo_3t = 0
+parameters ddw_rnwsti = 0
+parameters ddw_rnwaa = 0
+parameters ddw_rndifsab = 0
+parameters ddw_rpdifsab = 0
+parameters ddw_rnposab = 0
+parameters ddw_rnposab_3t = 0
+parameters ddw_rpposab = 0
+parameters ddw_rpposab_3t = 0
+parameters ddw_rm1 = 0
+parameters ddw_rm2 = 0
+parameters ddw_rm3 = 0
+parameters ddw_rm4 = 0
+parameters ddw_rm5 = 0
+parameters ddw_rm6 = 0
+parameters ddw_rpdifsab_nstd = 0
+parameters ddw_rnposab_nstd = 0
+parameters ddw_rnposab_nstd_3t = 0
+parameters ddw_rndifsab_nstd = 0
+parameters ddw_rpposab_nstd = 0
+parameters ddw_rpposab_nstd_3t = 0
+parameters ddw_rtimsabe2r = 0
+parameters ddw_rhrpo = 0
+parameters ddw_rhrpo_3t = 0
+include "e2r018_v1p8_res_spe.mdl"
+endsection res_ff
+
+
+section res_ss
+// *Resistor
+parameters drsh_rndif = 2.22
+parameters drsh_rpdif = 2.37
+parameters drsh_rnpo = 1.66
+parameters drsh_rnpo_3t = 1.66
+parameters drsh_rppo = 2.12
+parameters drsh_rppo_3t = 2.12
+parameters drsh_rnwsti = 169
+parameters drsh_rnwaa = 99
+parameters drsh_rndifsab = 20.5
+parameters drsh_rpdifsab = 40
+parameters drsh_rnposab = 38.1
+parameters drsh_rnposab_3t = 38.1
+parameters drsh_rpposab = 48.6
+parameters drsh_rpposab_3t = 48.6
+parameters drsh_rm1 = 0.023
+parameters drsh_rm2 = 0.023
+parameters drsh_rm3 = 0.023
+parameters drsh_rm4 = 0.023
+parameters drsh_rm5 = 0.023
+parameters drsh_rm6 = 0.009
+parameters drsh_rpdifsab_nstd = 40
+parameters drsh_rnposab_nstd = 38.1
+parameters drsh_rnposab_nstd_3t = 38.1
+parameters drsh_rndifsab_nstd = 20.5
+parameters drsh_rpposab_nstd = 48.6
+parameters drsh_rpposab_nstd_3t = 48.6
+parameters drsh_rtimsabe2r = 100.5
+parameters drsh_rhrpo = 201.2
+parameters drsh_rhrpo_3t = 201.2
+parameters ddw_rndif = 0
+parameters ddw_rpdif = 0
+parameters ddw_rnpo = 0
+parameters ddw_rnpo_3t = 0
+parameters ddw_rppo = 0
+parameters ddw_rppo_3t = 0
+parameters ddw_rnwsti = 0
+parameters ddw_rnwaa = 0
+parameters ddw_rndifsab = 0
+parameters ddw_rpdifsab = 0
+parameters ddw_rnposab = 0
+parameters ddw_rnposab_3t = 0
+parameters ddw_rpposab = 0
+parameters ddw_rpposab_3t = 0
+parameters ddw_rm1 = 0
+parameters ddw_rm2 = 0
+parameters ddw_rm3 = 0
+parameters ddw_rm4 = 0
+parameters ddw_rm5 = 0
+parameters ddw_rm6 = 0
+parameters ddw_rpdifsab_nstd = 0
+parameters ddw_rnposab_nstd = 0
+parameters ddw_rnposab_nstd_3t = 0
+parameters ddw_rndifsab_nstd = 0
+parameters ddw_rpposab_nstd = 0
+parameters ddw_rpposab_nstd_3t = 0
+parameters ddw_rtimsabe2r = 0
+parameters ddw_rhrpo = 0
+parameters ddw_rhrpo_3t = 0
+include "e2r018_v1p8_res_spe.mdl"
+endsection res_ss
+
+// ******************************
+// * PIP capacitance Corner model
+// ******************************
+
+section pip_tt
+// *PIP
+parameters dpipe2r = 0
+include "e2r018_v1p8_pip_spe.mdl"
+endsection pip_tt
+
+
+section pip_ff
+// *PIP
+parameters dpipe2r = -6.165e-4
+include "e2r018_v1p8_pip_spe.mdl"
+endsection pip_ff
+
+
+section pip_ss
+// *PIP
+parameters dpipe2r = 6.165e-4
+include "e2r018_v1p8_pip_spe.mdl"
+endsection pip_ss
+
+// ******************************
+// * MIM capacitance Corner model
+// ******************************
+
+section mim_tt
+// *MIM
+parameters dmime2r = 0
+include "e2r018_v1p8_mim_spe.mdl"
+endsection mim_tt
+
+
+section mim_ff
+// *MIM
+parameters dmime2r = -2e-4
+include "e2r018_v1p8_mim_spe.mdl"
+endsection mim_ff
+
+
+section mim_ss
+// *MIM
+parameters dmime2r = 2e-4
+include "e2r018_v1p8_mim_spe.mdl"
+endsection mim_ss
+
+
+endlibrary e2r018_v1p8

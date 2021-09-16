@@ -1,0 +1,29 @@
+//*Spectre Model Format
+simulator lang=spectre  insensitive=yes
+
+// *
+// * no part of this file can be released without the consent of smic.
+// *
+// ******************************************************************************************
+// *            SMIC 0.18um EEPROM 2P6M 1.8V/3.3V/5V/15.5V SPICE model(for SPECTRE only)    *
+// ******************************************************************************************
+// *
+// * release version    : 1.7
+// *
+// * release date       : 1/13/2010
+// *
+// * simulation tool    : Cadence spectre V6.0
+// *
+// *   mim capacitor    : mim
+// *
+// *   valid temperature range is from -55c to 125c
+// *
+// *
+// ******************************************************************
+// *                      mim capacitor                             *
+// ******************************************************************
+model mime2r capacitor
++coeffs = [-3.41e-5 -1.49e-5]
++tc1 = -3.48e-5  tnom = 25
++cj = 9.71e-4+dmime2r
+// *

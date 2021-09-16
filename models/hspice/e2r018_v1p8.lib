@@ -1,0 +1,472 @@
+* This file contains 1.8V,3.3V,5V and 15.5V corner model parameters.
+* Five corners are supported: TT, FF, SS, SNFP, and FNSP.
+* This file should be used with the model parameter file 'e2r018_v1p8.mdl', 'e2r018_v1p8_bjt.mdl', 'e2r018_v1p8_pip.mdl', 'e2r018_v1p8_res.mdl' and 'e2r018_v1p8_mim.mdl'.
+* No part of this file can be released without the consent of SMIC.
+
+.LIB TT
+.PARAM
+*1.8V core NMOS 
++DTOX_N18E2R      = 0            DXL_N18E2R       = 0            DXW_N18E2R       = 0 
++DVTH_N18E2R      = 0            DCJ_N18E2R       = 0            DCJSW_N18E2R     = 0
++DCJSWG_N18E2R    = 0            DCGDO_N18E2R     = 0            DCGSO_N18E2R     = 0
++DPVTH0_N18E2R    = 0
+*1.8V core PMOS
++DTOX_P18E2R      = 0            DXL_P18E2R       = 0            DXW_P18E2R       = 0 
++DVTH_P18E2R      = 0	         DCJ_P18E2R       = 0            DCJSW_P18E2R     = 0
++DCJSWG_P18E2R    = 0	         DCGDO_P18E2R     = 0            DCGSO_P18E2R     = 0
++DPVTH0_P18E2R    = 0
+*1.8V native NMOS     
++ DXL_NZ18E2R     = 0              DXW_NZ18E2R     = 0              DCGSO_NZ18E2R   = 0              
++ DCGDO_NZ18E2R   = 0              DCJ_NZ18E2R     = 0              DCJSW_NZ18E2R   = 0              
++ DCJSWG_NZ18E2R  = 0              DVTH0_NZ18E2R   = 0              DTOX_NZ18E2R    = 0         
++ DVSAT_NZ18E2R   = 0 
+*3.3V MV NMOS 
++ DXW_N33E2R      = 0              DVTH_N33E2R     = 0              DCJ_N33E2R      = 0              
++ DCJSW_N33E2R    = 0              DCJSWG_N33E2R   = 0              DCGDO_N33E2R    = 0              
++ DCGSO_N33E2R    = 0              DTOX_N33E2R     = 0              DXL_N33E2R      = 0  
++ DVSAT_N33E2R    = 0
+*3.3V MV PMOS 
++ DXW_P33E2R      = 0              DVTH_P33E2R     = 0              DCJ_P33E2R      = 0              
++ DCJSW_P33E2R    = 0              DCJSWG_P33E2R   = 0              DCGDO_P33E2R    = 0              
++ DCGSO_P33E2R    = 0              DTOX_P33E2R     = 0              DXL_P33E2R      = 0         
++ DVSAT_P33E2R    = 0
+*15.5V HV NMOS 
++ DXW_N155E2R     = 0              DVTH_N155E2R    = 0              DCJ_N155E2R     = 0              
++ DCJSW_N155E2R   = 0              DCJSWG_N155E2R  = 0              DCGDO_N155E2R   = 0              
++ DCGSO_N155E2R   = 0              DTOX_N155E2R    = 0              DXL_N155E2R     = 0         
++ DVSAT_N155E2R   = 0              
+*15.5V HV ZMOS 
++ DXW_NZ155E2R    = 0              DVTH_NZ155E2R   = 0              DCJ_NZ155E2R    = 0              
++ DCJSW_NZ155E2R  = 0              DCJSWG_NZ155E2R = 0              DCGDO_NZ155E2R  = 0              
++ DCGSO_NZ155E2R  = 0              DTOX_NZ155E2R   = 0              DXL_NZ155E2R    = 0           
++ DVSAT_NZ155E2R  = 0   
+*15.5V REAL HV PMOS 
++ DXW_P155E2R     = 0              DVTH_P155E2R    = 0              DCJ_P155E2R     = 0              
++ DCJSW_P155E2R   = 0              DCJSWG_P155E2R  = 0              DCGDO_P155E2R   = 0              
++ DCGSO_P155E2R   = 0              DTOX_P155E2R    = 0              DXL_P155E2R     = 0      
++ DVSAT_P155E2R   = 0        
+*5V HV PMOS 
++ DXW_P50E2R      = 0              DVTH_P50E2R     = 0              DCJ_P50E2R      = 0              
++ DCJSW_P50E2R    = 0              DCJSWG_P50E2R   = 0              DCGDO_P50E2R    = 0              
++ DCGSO_P50E2R    = 0              DTOX_P50E2R     = 0              DXL_P50E2R      = 0            
++ DVSAT_P50E2R    = 0
+*5V HV NMOS 
++ DXW_N50E2R      = 0              DVTH_N50E2R     = 0              DCJ_N50E2R      = 0              
++ DCJSW_N50E2R    = 0              DCJSWG_N50E2R   = 0              DCGDO_N50E2R    = 0              
++ DCGSO_N50E2R    = 0              DTOX_N50E2R     = 0              DXL_N50E2R      = 0           
++ DVSAT_N50E2R    = 0         
+*5V HV ZMOS 
++ DXW_NZ50E2R     = 0              DVTH_NZ50E2R    = 0              DCJ_NZ50E2R     = 0              
++ DCJSW_NZ50E2R   = 0              DCJSWG_NZ50E2R  = 0              DCGDO_NZ50E2R   = 0              
++ DCGSO_NZ50E2R   = 0              DTOX_NZ50E2R    = 0              DXL_NZ50E2R     = 0              
++ DVSAT_NZ50E2R   = 0   
+.INC 'e2r018_v1p8.mdl' 
+.ENDL  TT
+.LIB FF
+.PARAM
+*1.8V core NMOS 
++DTOX_N18E2R      = -1.0E-10     DXL_N18E2R       = -1.0E-8      DXW_N18E2R       = 2.2E-8 
++DVTH_N18E2R      = -0.04        DCJ_N18E2R       = -4.84E-5     DCJSW_N18E2R     = -3.975E-12
++DCJSWG_N18E2R    = -2.09E-11    DCGDO_N18E2R     = 1.85E-11     DCGSO_N18E2R     = 1.85E-11
++DPVTH0_N18E2R    = -3e-15
+*1.8V core PMOS
++DTOX_P18E2R      = -1.0E-10     DXL_P18E2R       = -1.0E-8      DXW_P18E2R       = 2.2E-8 
++DVTH_P18E2R      = 0.02         DCJ_P18E2R       = -5.35E-5     DCJSW_P18E2R     = -4.945E-12
++DCJSWG_P18E2R    = -2.535E-11   DCGDO_P18E2R     = 2.1E-11      DCGSO_P18E2R     = 2.1E-11
++DPVTH0_P18E2R    = 1e-15
+*1.8V native NMOS
++ DXL_NZ18E2R     = -1.E-08        DXW_NZ18E2R     = 1.E-08         DCGSO_NZ18E2R   = 2.128E-11      
++ DCGDO_NZ18E2R   = 2.128E-11      DCJ_NZ18E2R     = -7.25E-06      DCJSW_NZ18E2R   = -8.15E-12      
++ DCJSWG_NZ18E2R  = -3.3E-12       DVTH0_NZ18E2R   = -0.09291       DTOX_NZ18E2R    = -1.E-10  
++ DVSAT_NZ18E2R   = 5475
+*3.3V MV NMOS 
++ DXW_N33E2R      = 1.E-08         DVTH_N33E2R     = -0.105         DCJ_N33E2R      = -4.97E-05      
++ DCJSW_N33E2R    = -2.625E-12     DCJSWG_N33E2R   = -1.615E-11     DCGDO_N33E2R    = 2.04E-11       
++ DCGSO_N33E2R    = 2.04E-11       DTOX_N33E2R     = -5.E-10        DXL_N33E2R      = -1.E-08 
++ DVSAT_N33E2R    = 600    
+*3.3V MV PMOS 
++ DXW_P33E2R      = 1.E-08         DVTH_P33E2R     = 0.1411         DCJ_P33E2R      = -2.69E-05      
++ DCJSW_P33E2R    = -3.625E-12     DCJSWG_P33E2R   = -7.6E-12       DCGDO_P33E2R    = 1.08E-11       
++ DCGSO_P33E2R    = 1.08E-11       DTOX_P33E2R     = -5.E-10        DXL_P33E2R      = -1.E-08     
++ DVSAT_P33E2R    = 3.1800E+04   
+*15.5V HV NMOS 
++ DXW_N155E2R     = 1.E-08         DVTH_N155E2R    = -0.1           DCJ_N155E2R     = -1.045E-05     
++ DCJSW_N155E2R   = -5.9E-12       DCJSWG_N155E2R  = -9.7E-12       DCGDO_N155E2R   = 3.368E-11      
++ DCGSO_N155E2R   = 3.368E-11      DTOX_N155E2R    = -1.E-09        DXL_N155E2R     = -1.E-08       
++ DVSAT_N155E2R   = 1.5040E+04     
+*15.5V HV ZMOS 
++ DXW_NZ155E2R    = 1.E-08         DVTH_NZ155E2R   = -0.15663       DCJ_NZ155E2R    = -6.45E-06      
++ DCJSW_NZ155E2R  = -6.55E-12      DCJSWG_NZ155E2R = -5.75E-12      DCGDO_NZ155E2R  = 4.424E-11      
++ DCGSO_NZ155E2R  = 4.424E-11      DTOX_NZ155E2R   = -1.E-09        DXL_NZ155E2R    = -1.E-08        
++ DVSAT_NZ155E2R  = 2.00952E+04    
+*5V HV PMOS 
++ DXW_P50E2R      = 1.E-08         DVTH_P50E2R     = 0.134845       DCJ_P50E2R      = -2.53E-05      
++ DCJSW_P50E2R    = -3.045E-12     DCJSWG_P50E2R   = -6.75E-12      DCGDO_P50E2R    = 2.096E-11      
++ DCGSO_P50E2R    = 2.096E-11      DTOX_P50E2R     = -1.E-09        DXL_P50E2R      = -1.E-08        
++ DVSAT_P50E2R    = 4.5600E+04
+*15.5V REAL HV PMOS 
++ DXW_P155E2R     = 2.5E-08        DVTH_P155E2R    = 0.117          DCJ_P155E2R     = -2.53E-05      
++ DCJSW_P155E2R   = -2.91E-12      DCJSWG_P155E2R  = -5.05E-12      DCGDO_P155E2R   = 1.584E-11      
++ DCGSO_P155E2R   = 1.584E-11      DTOX_P155E2R    = -1.E-09        DXL_P155E2R     = -1.6E-07       
++ DVSAT_P155E2R   = 3.4300E+04  
+*5V HV NMOS 
++ DXW_N50E2R      = 1.E-08         DVTH_N50E2R     = -0.102         DCJ_N50E2R      = -1.045E-05     
++ DCJSW_N50E2R    = -5.9E-12       DCJSWG_N50E2R   = -9.7E-12       DCGDO_N50E2R    = 3.368E-11      
++ DCGSO_N50E2R    = 3.368E-11      DTOX_N50E2R     = -1.E-09        DXL_N50E2R      = -1.E-08        
++ DVSAT_N50E2R    = 1.5000E+04    
+*5V HV ZMOS 
++ DXW_NZ50E2R     = 1.E-08         DVTH_NZ50E2R    = -0.13915       DCJ_NZ50E2R     = -6.45E-06      
++ DCJSW_NZ50E2R   = -6.55E-12      DCJSWG_NZ50E2R  = -5.75E-12      DCGDO_NZ50E2R   = 4.424E-11      
++ DCGSO_NZ50E2R   = 4.424E-11      DTOX_NZ50E2R    = -1.E-09        DXL_NZ50E2R     = -1.E-08 
++ DVSAT_NZ50E2R   = 1.0548E+04
+.INC 'e2r018_v1p8.mdl' 
+.ENDL  FF
+.LIB SS
+.PARAM
+*1.8V core NMOS 
++DTOX_N18E2R      = 1.0E-10      DXL_N18E2R       = 1.0E-8       DXW_N18E2R       = -2.2E-8 
++DVTH_N18E2R      = 0.045        DCJ_N18E2R       = 4.84E-5      DCJSW_N18E2R     = 3.975E-12
++DCJSWG_N18E2R    = 2.09E-11     DCGDO_N18E2R     = -1.85E-11    DCGSO_N18E2R     = -1.85E-11
++DPVTH0_N18E2R    = 3e-15
+*1.8V core PMOS
++DTOX_P18E2R      = 1.0E-10      DXL_P18E2R       = 1.0E-8       DXW_P18E2R       = -2.2E-8 
++DVTH_P18E2R      = -0.02        DCJ_P18E2R       = 5.35E-5      DCJSW_P18E2R     = 4.945E-12
++DCJSWG_P18E2R    = 2.535E-11    DCGDO_P18E2R     = -2.1E-11     DCGSO_P18E2R     = -2.1E-11
++DPVTH0_P18E2R    = -1e-15
+*1.8V native NMOS
++ DXL_NZ18E2R     = 1.E-08         DXW_NZ18E2R     = -1.E-08        DCGSO_NZ18E2R   = -2.128E-11     
++ DCGDO_NZ18E2R   = -2.128E-11     DCJ_NZ18E2R     = 7.25E-06       DCJSW_NZ18E2R   = 8.15E-12       
++ DCJSWG_NZ18E2R  = 3.3E-12        DVTH0_NZ18E2R   = 0.094463       DTOX_NZ18E2R    = 1.E-10 
++ DVSAT_NZ18E2R   = -1.7650E+04 
+*3.3V MV NMOS 
++ DXW_N33E2R      = -1.E-08        DVTH_N33E2R     = 0.1058         DCJ_N33E2R      = 4.97E-05       
++ DCJSW_N33E2R    = 2.625E-12      DCJSWG_N33E2R   = 1.615E-11      DCGDO_N33E2R    = -2.04E-11      
++ DCGSO_N33E2R    = -2.04E-11      DTOX_N33E2R     = 5.E-10         DXL_N33E2R      = 1.E-08  
++ DVSAT_N33E2R    = -4394    
+*3.3V MV PMOS 
++ DXW_P33E2R      = -1.E-08        DVTH_P33E2R     = -0.1276        DCJ_P33E2R      = 2.69E-05       
++ DCJSW_P33E2R    = 3.625E-12      DCJSWG_P33E2R   = 7.6E-12        DCGDO_P33E2R    = -1.08E-11      
++ DCGSO_P33E2R    = -1.08E-11      DTOX_P33E2R     = 5.E-10         DXL_P33E2R      = 1.E-08         
++ DVSAT_P33E2R    = -6.0520E+04    
+*15.5V HV NMOS 
++ DXW_N155E2R     = -1.E-08        DVTH_N155E2R    = 0.135          DCJ_N155E2R     = 1.045E-05      
++ DCJSW_N155E2R   = 5.9E-12        DCJSWG_N155E2R  = 9.7E-12        DCGDO_N155E2R   = -3.368E-11     
++ DCGSO_N155E2R   = -3.368E-11     DTOX_N155E2R    = 1.E-09         DXL_N155E2R     = 1.E-08      
++ DVSAT_N155E2R   = -2.5230E+04    
+*15.5V HV ZMOS 
++ DXW_NZ155E2R    = -1.E-08        DVTH_NZ155E2R   = 0.12078        DCJ_NZ155E2R    = 6.45E-06       
++ DCJSW_NZ155E2R  = 6.55E-12       DCJSWG_NZ155E2R = 5.75E-12       DCGDO_NZ155E2R  = -4.424E-11     
++ DCGSO_NZ155E2R  = -4.424E-11     DTOX_NZ155E2R   = 1.E-09         DXL_NZ155E2R    = 1.E-08      
++ DVSAT_NZ155E2R  = -1.6295E+04    
+*5V HV PMOS 
++ DXW_P50E2R      = -1.E-08        DVTH_P50E2R     = -0.128375      DCJ_P50E2R      = 2.53E-05       
++ DCJSW_P50E2R    = 3.045E-12      DCJSWG_P50E2R   = 6.75E-12       DCGDO_P50E2R    = -2.096E-11     
++ DCGSO_P50E2R    = -2.096E-11     DTOX_P50E2R     = 1.E-09         DXL_P50E2R      = 1.E-08      
++ DVSAT_P50E2R    = -3.5300E+04
+*15.5V REAL HV PMOS 
++ DXW_P155E2R     = -2.5E-08       DVTH_P155E2R    = -0.12454       DCJ_P155E2R     = 2.53E-05       
++ DCJSW_P155E2R   = 2.91E-12       DCJSWG_P155E2R  = 5.05E-12       DCGDO_P155E2R   = -1.584E-11     
++ DCGSO_P155E2R   = -1.584E-11     DTOX_P155E2R    = 1.E-09         DXL_P155E2R     = 1.6E-07        
++ DVSAT_P155E2R   = -5.8900E+04    
+*5V HV NMOS 
++ DXW_N50E2R      = -1.E-08        DVTH_N50E2R     = 0.1328         DCJ_N50E2R      = 1.045E-05      
++ DCJSW_N50E2R    = 5.9E-12        DCJSWG_N50E2R   = 9.7E-12        DCGDO_N50E2R    = -3.368E-11     
++ DCGSO_N50E2R    = -3.368E-11     DTOX_N50E2R     = 1.E-09         DXL_N50E2R      = 1.E-08      
++ DVSAT_N50E2R    = -1.8820E+04    
+*5V HV ZMOS 
++ DXW_NZ50E2R     = -1.E-08        DVTH_NZ50E2R    = 0.13853        DCJ_NZ50E2R     = 6.45E-06       
++ DCJSW_NZ50E2R   = 6.55E-12       DCJSWG_NZ50E2R  = 5.75E-12       DCGDO_NZ50E2R   = -4.424E-11     
++ DCGSO_NZ50E2R   = -4.424E-11     DTOX_NZ50E2R    = 1.E-09         DXL_NZ50E2R     = 1.E-08     
++ DVSAT_NZ50E2R   = -1.8868E+04  
+.INC 'e2r018_v1p8.mdl' 
+.ENDL  SS
+.LIB FNSP
+.PARAM
+*1.8V core NMOS 
++DTOX_N18E2R      = 0            DXL_N18E2R       = -1.00E-8     DXW_N18E2R       = 1.8E-8 
++DVTH_N18E2R      = -0.04        DCJ_N18E2R       = -4.84E-5     DCJSW_N18E2R     = -3.975E-12
++DCJSWG_N18E2R    = -2.09E-11    DCGDO_N18E2R     = 0            DCGSO_N18E2R     = 0
++DPVTH0_N18E2R    = -3e-15
+*1.8V core PMOS
++DTOX_P18E2R      = 0            DXL_P18E2R       = 1.00E-8      DXW_P18E2R       = -1.8E-8 
++DVTH_P18E2R      = -0.02        DCJ_P18E2R       = 5.35E-5      DCJSW_P18E2R     = 4.945E-12
++DCJSWG_P18E2R    = 2.535E-11    DCGDO_P18E2R     = 0            DCGSO_P18E2R     = 0
++DPVTH0_P18E2R    = -1e-15
+*1.8V native NMOS
++ DXL_NZ18E2R     = -1.E-08        DXW_NZ18E2R     = 1.E-08         DCGSO_NZ18E2R   = 0              
++ DCGDO_NZ18E2R   = 0              DCJ_NZ18E2R     = -7.25E-06      DCJSW_NZ18E2R   = -8.15E-12      
++ DCJSWG_NZ18E2R  = -3.3E-12       DVTH0_NZ18E2R   = -0.09291       DTOX_NZ18E2R    = 0              
++ DVSAT_NZ18E2R   = 5475
+*3.3V MV NMOS 
++ DXW_N33E2R      = 1.E-08         DVTH_N33E2R     = -0.105         DCJ_N33E2R      = -4.97E-05      
++ DCJSW_N33E2R    = -2.625E-12     DCJSWG_N33E2R   = -1.615E-11     DCGDO_N33E2R    = 0              
++ DCGSO_N33E2R    = 0              DTOX_N33E2R     = 0              DXL_N33E2R      = -1.E-08     
++ DVSAT_N33E2R    = 600      
+*3.3V MV PMOS 
++ DXW_P33E2R      = -1.E-08        DVTH_P33E2R     = -0.1276        DCJ_P33E2R      = 2.69E-05       
++ DCJSW_P33E2R    = 3.625E-12      DCJSWG_P33E2R   = 7.6E-12        DCGDO_P33E2R    = 0              
++ DCGSO_P33E2R    = 0              DTOX_P33E2R     = 0              DXL_P33E2R      = 1.E-08  
++ DVSAT_P33E2R    = -6.0520E+04
+*15.5V HV NMOS 
++ DXW_N155E2R     = 1.E-08         DVTH_N155E2R    = -0.1           DCJ_N155E2R     = -1.045E-05     
++ DCJSW_N155E2R   = -5.9E-12       DCJSWG_N155E2R  = -9.7E-12       DCGDO_N155E2R   = 0              
++ DCGSO_N155E2R   = 0              DTOX_N155E2R    = 0              DXL_N155E2R     = -1.E-08    
++ DVSAT_N155E2R   = 1.5040E+04    
+*15.5V HV ZMOS 
++ DXW_NZ155E2R    = 1.E-08         DVTH_NZ155E2R   = -0.15663       DCJ_NZ155E2R    = -6.45E-06      
++ DCJSW_NZ155E2R  = -6.55E-12      DCJSWG_NZ155E2R = -5.75E-12      DCGDO_NZ155E2R  = 0              
++ DCGSO_NZ155E2R  = 0              DTOX_NZ155E2R   = 0              DXL_NZ155E2R    = -1.E-08        
++ DVSAT_NZ155E2R  = 2.00952E+04    
+*5V HV PMOS 
++ DXW_P50E2R      = -1.E-08        DVTH_P50E2R     = -0.128375      DCJ_P50E2R      = 2.53E-05       
++ DCJSW_P50E2R    = 3.045E-12      DCJSWG_P50E2R   = 6.75E-12       DCGDO_P50E2R    = 0              
++ DCGSO_P50E2R    = 0              DTOX_P50E2R     = 0              DXL_P50E2R      = 1.E-08    
++ DVSAT_P50E2R    = -3.5300E+04    
+*15.5V REAL HV PMOS 
++ DXW_P155E2R     = -2.5E-08       DVTH_P155E2R    = -0.12454       DCJ_P155E2R     = 2.53E-05       
++ DCJSW_P155E2R   = 2.91E-12       DCJSWG_P155E2R  = 5.05E-12       DCGDO_P155E2R   = 0              
++ DCGSO_P155E2R   = 0              DTOX_P155E2R    = 0              DXL_P155E2R     = 1.6E-07        
++ DVSAT_P155E2R   = -5.8900E+04    
+*5V HV NMOS 
++ DXW_N50E2R      = 1.E-08         DVTH_N50E2R     = -0.102         DCJ_N50E2R      = -1.045E-05     
++ DCJSW_N50E2R    = -5.9E-12       DCJSWG_N50E2R   = -9.7E-12       DCGDO_N50E2R    = 0              
++ DCGSO_N50E2R    = 0              DTOX_N50E2R     = 0              DXL_N50E2R      = -1.E-08        
++ DVSAT_N50E2R    = 1.5000E+04     
+*5V HV ZMOS 
++ DXW_NZ50E2R     = 1.E-08         DVTH_NZ50E2R    = -0.13915       DCJ_NZ50E2R     = -6.45E-06      
++ DCJSW_NZ50E2R   = -6.55E-12      DCJSWG_NZ50E2R  = -5.75E-12      DCGDO_NZ50E2R   = 0              
++ DCGSO_NZ50E2R   = 0              DTOX_NZ50E2R    = 0              DXL_NZ50E2R     = -1.E-08       
++ DVSAT_NZ50E2R   = 1.0548E+04   
+.INC 'e2r018_v1p8.mdl' 
+.ENDL  FNSP
+.LIB SNFP
+.PARAM
+*1.8V core NMOS 
++DTOX_N18E2R      = 0            DXL_N18E2R       = 1.00E-8      DXW_N18E2R       = -1.8E-8 
++DVTH_N18E2R      = 0.045        DCJ_N18E2R       = 4.84E-5      DCJSW_N18E2R     = 3.975E-12
++DCJSWG_N18E2R    = 2.09E-11     DCGDO_N18E2R     = 0            DCGSO_N18E2R     = 0
++DPVTH0_N18E2R    = 3e-15
+*1.8V core PMOS
++DTOX_P18E2R      = 0            DXL_P18E2R       = -1.00E-8     DXW_P18E2R       = 1.8E-8 
++DVTH_P18E2R      = 0.02         DCJ_P18E2R       = -5.35E-5     DCJSW_P18E2R     = -4.945E-12
++DCJSWG_P18E2R    = -2.535E-11   DCGDO_P18E2R     = 0            DCGSO_P18E2R     = 0
++DPVTH0_P18E2R    = 1e-15
+*1.8V native NMOS
++ DXL_NZ18E2R     = 1.E-08         DXW_NZ18E2R     = -1.E-08        DCGSO_NZ18E2R   = 0              
++ DCGDO_NZ18E2R   = 0              DCJ_NZ18E2R     = 7.25E-06       DCJSW_NZ18E2R   = 8.15E-12       
++ DCJSWG_NZ18E2R  = 3.3E-12        DVTH0_NZ18E2R   = 0.094463       DTOX_NZ18E2R    = 0    
++ DVSAT_NZ18E2R   = -1.7650E+04
+*3.3V MV NMOS 
++ DXW_N33E2R      = -1.E-08        DVTH_N33E2R     = 0.1058         DCJ_N33E2R      = 4.97E-05       
++ DCJSW_N33E2R    = 2.625E-12      DCJSWG_N33E2R   = 1.615E-11      DCGDO_N33E2R    = 0              
++ DCGSO_N33E2R    = 0              DTOX_N33E2R     = 0              DXL_N33E2R      = 1.E-08      
++ DVSAT_N33E2R    = -4394 
+*3.3V MV PMOS 
++ DXW_P33E2R      = 1.E-08         DVTH_P33E2R     = 0.1411         DCJ_P33E2R      = -2.69E-05      
++ DCJSW_P33E2R    = -3.625E-12     DCJSWG_P33E2R   = -7.6E-12       DCGDO_P33E2R    = 0              
++ DCGSO_P33E2R    = 0              DTOX_P33E2R     = 0              DXL_P33E2R      = -1.E-08        
++ DVSAT_P33E2R    = 3.1800E+04 
+*15.5V HV NMOS 
++ DXW_N155E2R     = -1.E-08        DVTH_N155E2R    = 0.135          DCJ_N155E2R     = 1.045E-05      
++ DCJSW_N155E2R   = 5.9E-12        DCJSWG_N155E2R  = 9.7E-12        DCGDO_N155E2R   = 0              
++ DCGSO_N155E2R   = 0              DTOX_N155E2R    = 0              DXL_N155E2R     = 1.E-08   
++ DVSAT_N155E2R   = -2.5230E+04    
+*15.5V HV ZMOS 
++ DXW_NZ155E2R    = -1.E-08        DVTH_NZ155E2R   = 0.12078        DCJ_NZ155E2R    = 6.45E-06       
++ DCJSW_NZ155E2R  = 6.55E-12       DCJSWG_NZ155E2R = 5.75E-12       DCGDO_NZ155E2R  = 0              
++ DCGSO_NZ155E2R  = 0              DTOX_NZ155E2R   = 0              DXL_NZ155E2R    = 1.E-08         
++ DVSAT_NZ155E2R  = -1.6295E+04    
+*5V HV PMOS 
++ DXW_P50E2R      = 1.E-08         DVTH_P50E2R     = 0.134845       DCJ_P50E2R      = -2.53E-05      
++ DCJSW_P50E2R    = -3.045E-12     DCJSWG_P50E2R   = -6.75E-12      DCGDO_P50E2R    = 0              
++ DCGSO_P50E2R    = 0              DTOX_P50E2R     = 0              DXL_P50E2R      = -1.E-08       
++ DVSAT_P50E2R    = 4.5600E+04     
+*15.5V REAL HV PMOS 
++ DXW_P155E2R     = 2.5E-08        DVTH_P155E2R    = 0.117          DCJ_P155E2R     = -2.53E-05      
++ DCJSW_P155E2R   = -2.91E-12      DCJSWG_P155E2R  = -5.05E-12      DCGDO_P155E2R   = 0              
++ DCGSO_P155E2R   = 0              DTOX_P155E2R    = 0              DXL_P155E2R     = -1.6E-07       
++ DVSAT_P155E2R   = 3.4300E+04 
+*5V HV NMOS 
++ DXW_N50E2R      = -1.E-08        DVTH_N50E2R     = 0.1328         DCJ_N50E2R      = 1.045E-05      
++ DCJSW_N50E2R    = 5.9E-12        DCJSWG_N50E2R   = 9.7E-12        DCGDO_N50E2R    = 0              
++ DCGSO_N50E2R    = 0              DTOX_N50E2R     = 0              DXL_N50E2R      = 1.E-08         
++ DVSAT_N50E2R    = -1.8820E+04    
+*5V HV ZMOS 
++ DXW_NZ50E2R     = -1.E-08        DVTH_NZ50E2R    = 0.13853        DCJ_NZ50E2R     = 6.45E-06       
++ DCJSW_NZ50E2R   = 6.55E-12       DCJSWG_NZ50E2R  = 5.75E-12       DCGDO_NZ50E2R   = 0              
++ DCGSO_NZ50E2R   = 0              DTOX_NZ50E2R    = 0              DXL_NZ50E2R     = 1.E-08         
++ DVSAT_NZ50E2R   = -1.8868E+04
+.INC 'e2r018_v1p8.mdl' 
+.ENDL  SNFP
+*******************
+* BJT Corner model
+******************* 
+.LIB BJT_TT
+.PARAM
+*1.8V CORE PNP
++DBF_PNP18A100E2R     = 0.00      DIS_PNP18A100E2R       = 0.00      DNF_PNP18A100E2R       = 0.00         
++DBF_PNP18A25E2R      = 0.00      DIS_PNP18A25E2R        = 0.00      DNF_PNP18A25E2R        = 0.00         
++DBF_PNP18A4E2R       = 0.00      DIS_PNP18A4E2R         = 0.00      DNF_PNP18A4E2R         = 0.00         
++DCJE_PNP18A100E2R    = 0.00      DCJE_PNP18A25E2R       = 0.00      DCJE_PNP18A4E2R        = 0.00            
++DCJC_PNP18A100E2R    = 0.00      DCJC_PNP18A25E2R       = 0.00      DCJC_PNP18A4E2R        = 0.00 
+*3.3V IO PNP
++DBF_PNP33A100E2R     = 0.00      DIS_PNP33A100E2R       = 0.00      DNF_PNP33A100E2R       = 0.00         
++DBF_PNP33A25E2R      = 0.00      DIS_PNP33A25E2R        = 0.00      DNF_PNP33A25E2R        = 0.00         
++DBF_PNP33A4E2R       = 0.00      DIS_PNP33A4E2R         = 0.00      DNF_PNP33A4E2R         = 0.00         
++DCJE_PNP33A100E2R    = 0.00      DCJE_PNP33A25E2R       = 0.00      DCJE_PNP33A4E2R        = 0.00            
++DCJC_PNP33A100E2R    = 0.00      DCJC_PNP33A25E2R       = 0.00      DCJC_PNP33A4E2R        = 0.00 
+.INC 'e2r018_v1p8_bjt.mdl' 
+.ENDL BJT_TT
+.LIB BJT_FF
+.PARAM
+*1.8V CORE PNP
++DBF_PNP18A100E2R     = 4.20E-1    DIS_PNP18A100E2R       = 1.756E-18   DNF_PNP18A100E2R       = -0.008         
++DBF_PNP18A25E2R      = 5.20E-1    DIS_PNP18A25E2R        = 7.751E-19   DNF_PNP18A25E2R        = -0.008         
++DBF_PNP18A4E2R       = 6.90E-1    DIS_PNP18A4E2R         = 1.950E-19   DNF_PNP18A4E2R         = -0.008         
++DCJC_PNP18A100E2R    = -3.46E-15  DCJC_PNP18A25E2R       = -1.98E-15   DCJC_PNP18A4E2R        = -1.26E-15
++DCJE_PNP18A100E2R    = -5.55E-15  DCJE_PNP18A25E2R       = -1.44E-15   DCJE_PNP18A4E2R        = -2.54E-16
+*3.3V IO PNP
++DBF_PNP33A100E2R     = 0.989      DIS_PNP33A100E2R       = 7.65E-18    DNF_PNP33A100E2R       = -0.0081         
++DBF_PNP33A25E2R      = 1.032      DIS_PNP33A25E2R        = 2.493E-18   DNF_PNP33A25E2R        = -0.008104         
++DBF_PNP33A4E2R       = 1.02       DIS_PNP33A4E2R         = 5.94E-19    DNF_PNP33A4E2R         = -0.008112         
++DCJE_PNP33A100E2R    = -2.84E-15  DCJE_PNP33A25E2R       = -7.45E-16   DCJE_PNP33A4E2R        = -1.37E-16            
++DCJC_PNP33A100E2R    = -3.974E-15 DCJC_PNP33A25E2R       = -2.328E-15  DCJC_PNP33A4E2R        = -1.5168E-15 
+.INC 'e2r018_v1p8_bjt.mdl' 
+.ENDL BJT_FF
+.LIB BJT_SS
+.PARAM
+*1.8V CORE PNP
++DBF_PNP18A100E2R     = -4.20E-1   DIS_PNP18A100E2R       = -1.756E-18  DNF_PNP18A100E2R       = 0.008         
++DBF_PNP18A25E2R      = -5.20E-1   DIS_PNP18A25E2R        = -7.751E-19  DNF_PNP18A25E2R        = 0.008         
++DBF_PNP18A4E2R       = -6.90E-1   DIS_PNP18A4E2R         = -1.950E-19  DNF_PNP18A4E2R         = 0.008         
++DCJC_PNP18A100E2R    = 3.46E-15   DCJC_PNP18A25E2R       = 1.98E-15    DCJC_PNP18A4E2R        = 1.26E-15
++DCJE_PNP18A100E2R    = 5.55E-15   DCJE_PNP18A25E2R       = 1.44E-15    DCJE_PNP18A4E2R        = 2.54E-16
+*3.3V IO PNP
++DBF_PNP33A100E2R     = -0.989     DIS_PNP33A100E2R       = -7.65E-18   DNF_PNP33A100E2R       = 0.0081         
++DBF_PNP33A25E2R      = -1.032     DIS_PNP33A25E2R        = -2.493E-18  DNF_PNP33A25E2R        = 0.008104         
++DBF_PNP33A4E2R       = -1.02      DIS_PNP33A4E2R         = -5.94E-19   DNF_PNP33A4E2R         = 0.008112         
++DCJE_PNP33A100E2R    = 2.84E-15   DCJE_PNP33A25E2R       = 7.45E-16    DCJE_PNP33A4E2R        = 1.37E-16            
++DCJC_PNP33A100E2R    = 3.974E-15  DCJC_PNP33A25E2R       = 2.328E-15   DCJC_PNP33A4E2R        = 1.5168E-15 
+.INC 'e2r018_v1p8_bjt.mdl' 
+.ENDL BJT_SS
+*******************
+* RES Corner model
+*******************
+.LIB RES_TT
+.PARAM
+*Resistor
++DRSH_RNDIF         = 0            DRSH_RPDIF           = 0            DRSH_RNPO          = 0    
++DRSH_RNPO_3T       = 0            DRSH_RPPO            = 0            DRSH_RPPO_3T       = 0     
++DRSH_RNWSTI        = 0            DRSH_RNWAA           = 0            DRSH_RNDIFSAB      = 0            
++DRSH_RPDIFSAB      = 0            DRSH_RNPOSAB         = 0            DRSH_RNPOSAB_3T    = 0
++DRSH_RPPOSAB       = 0            DRSH_RPPOSAB_3T      = 0            DRSH_RM1           = 0            
++DRSH_RM2           = 0            DRSH_RM3             = 0            DRSH_RM4           = 0            
++DRSH_RM5           = 0            DRSH_RM6             = 0            DRSH_RPDIFSAB_NSTD = 0            
++DRSH_RNPOSAB_NSTD  = 0            DRSH_RNPOSAB_NSTD_3T = 0            DRSH_RNDIFSAB_NSTD = 0            
++DRSH_RPPOSAB_NSTD  = 0            DRSH_RPPOSAB_NSTD_3T = 0          
++DRSH_RTIMSABE2R       = 0            DRSH_RHRPO           = 0            DRSH_RHRPO_3T      = 0
++DDW_RNDIF          = 0            DDW_RPDIF            = 0            DDW_RNPO           = 0    
++DDW_RNPO_3T        = 0            DDW_RPPO             = 0            DDW_RPPO_3T        = 0        
++DDW_RNWSTI         = 0            DDW_RNWAA            = 0            DDW_RNDIFSAB       = 0            
++DDW_RPDIFSAB       = 0            DDW_RNPOSAB          = 0            DDW_RNPOSAB_3T     = 0
++DDW_RPPOSAB        = 0            DDW_RPPOSAB_3T       = 0            DDW_RM1            = 0            
++DDW_RM2            = 0            DDW_RM3              = 0            DDW_RM4            = 0            
++DDW_RM5            = 0            DDW_RM6              = 0            DDW_RPDIFSAB_NSTD  = 0            
++DDW_RNPOSAB_NSTD   = 0            DDW_RNPOSAB_NSTD_3T  = 0            DDW_RNDIFSAB_NSTD  = 0            
++DDW_RPPOSAB_NSTD   = 0            DDW_RPPOSAB_NSTD_3T  = 0      
++DDW_RTIMSABE2R        = 0            DDW_RHRPO            = 0            DDW_RHRPO_3T       = 0
+.INC 'e2r018_v1p8_res.mdl'
+.ENDL RES_TT
+.LIB RES_FF
+.PARAM
+*Resistor
+*Resistor
++DRSH_RNDIF         = -2.78        DRSH_RPDIF           = -3.63        DRSH_RNPO          = -2.34   
++DRSH_RNPO_3T       = -2.34        DRSH_RPPO            = -2.88        DRSH_RPPO_3T       = -2.88    
++DRSH_RNWSTI        = -95          DRSH_RNWAA           = -101         DRSH_RNDIFSAB      = -20.6         
++DRSH_RPDIFSAB      = -40.1        DRSH_RNPOSAB         = -38.1        DRSH_RNPOSAB_3T    = -38.1
++DRSH_RPPOSAB       = -48.7        DRSH_RPPOSAB_3T      = -48.7        DRSH_RM1           = -0.023       
++DRSH_RM2           = -0.023       DRSH_RM3             = -0.023       DRSH_RM4           = -0.023       
++DRSH_RM5           = -0.023       DRSH_RM6           = -0.009         DRSH_RPDIFSAB_NSTD = -40.1          
++DRSH_RNPOSAB_NSTD  = -38.1        DRSH_RNPOSAB_NSTD_3T = -38.1        DRSH_RNDIFSAB_NSTD = -20.6         
++DRSH_RPPOSAB_NSTD  = -48.7        DRSH_RPPOSAB_NSTD_3T = -48.7        
++DRSH_RTIMSABE2R       = -100.5       DRSH_RHRPO           = -201.2       DRSH_RHRPO_3T      = -201.2
++DDW_RNDIF          = 0            DDW_RPDIF            = 0            DDW_RNPO           = 0   
++DDW_RNPO_3T        = 0            DDW_RPPO             = 0            DDW_RPPO_3T        = 0        
++DDW_RNWSTI         = 0            DDW_RNWAA            = 0            DDW_RNDIFSAB       = 0            
++DDW_RPDIFSAB       = 0            DDW_RNPOSAB          = 0            DDW_RNPOSAB_3T     = 0
++DDW_RPPOSAB        = 0            DDW_RPPOSAB_3T       = 0            DDW_RM1            = 0            
++DDW_RM2            = 0            DDW_RM3              = 0            DDW_RM4            = 0            
++DDW_RM5            = 0            DDW_RM6              = 0            DDW_RPDIFSAB_NSTD  = 0            
++DDW_RNPOSAB_NSTD   = 0            DDW_RNPOSAB_NSTD_3T  = 0            DDW_RNDIFSAB_NSTD  = 0            
++DDW_RPPOSAB_NSTD   = 0            DDW_RPPOSAB_NSTD_3T  = 0          
++DDW_RTIMSABE2R        = 0     DDW_RHRPO            = 0            DDW_RHRPO_3T       = 0
+.INC 'e2r018_v1p8_res.mdl'
+.ENDL RES_FF
+.LIB RES_SS
+.PARAM
+*Resistor
++DRSH_RNDIF         = 2.22         DRSH_RPDIF           = 2.37         DRSH_RNPO          = 1.66    
++DRSH_RNPO_3T       = 1.66         DRSH_RPPO            = 2.12         DRSH_RPPO_3T       = 2.12   
++DRSH_RNWSTI        = 169          DRSH_RNWAA           = 99           DRSH_RNDIFSAB      = 20.5          
++DRSH_RPDIFSAB      = 40           DRSH_RNPOSAB         = 38.1         DRSH_RNPOSAB_3T    = 38.1
++DRSH_RPPOSAB       = 48.6         DRSH_RPPOSAB_3T      = 48.6         DRSH_RM1           = 0.023        
++DRSH_RM2           = 0.023        DRSH_RM3             = 0.023        DRSH_RM4           = 0.023        
++DRSH_RM5           = 0.023        DRSH_RM6             = 0.009        DRSH_RPDIFSAB_NSTD = 40           
++DRSH_RNPOSAB_NSTD  = 38.1         DRSH_RNPOSAB_NSTD_3T = 38.1         DRSH_RNDIFSAB_NSTD = 20.5          
++DRSH_RPPOSAB_NSTD  = 48.6         DRSH_RPPOSAB_NSTD_3T = 48.6       
++DRSH_RTIMSABE2R       = 100.5        DRSH_RHRPO           = 201.2        DRSH_RHRPO_3T      = 201.2
++DDW_RNDIF          = 0            DDW_RPDIF            = 0            DDW_RNPO           = 0    
++DDW_RNPO_3T        = 0            DDW_RPPO             = 0            DDW_RPPO_3T        = 0      
++DDW_RNWSTI         = 0            DDW_RNWAA            = 0            DDW_RNDIFSAB       = 0            
++DDW_RPDIFSAB       = 0            DDW_RNPOSAB          = 0            DDW_RNPOSAB_3T     = 0
++DDW_RPPOSAB        = 0            DDW_RPPOSAB_3T       = 0            DDW_RM1            = 0            
++DDW_RM2            = 0            DDW_RM3              = 0            DDW_RM4            = 0            
++DDW_RM5            = 0            DDW_RM6            = 0              DDW_RPDIFSAB_NSTD  = 0            
++DDW_RNPOSAB_NSTD   = 0            DDW_RNPOSAB_NSTD_3T  = 0            DDW_RNDIFSAB_NSTD  = 0            
++DDW_RPPOSAB_NSTD   = 0            DDW_RPPOSAB_NSTD_3T  = 0    
++DDW_RTIMSABE2R        = 0      DDW_RHRPO            = 0            DDW_RHRPO_3T       = 0
+.INC 'e2r018_v1p8_res.mdl'
+.ENDL RES_SS
+******************************
+* PIP capacitance Corner model
+******************************
+.LIB PIP_TT
+.PARAM
+*PIP
++DPIPE2R   = 0
+.INC 'e2r018_v1p8_pip.mdl' 
+.ENDL PIP_TT
+.LIB PIP_FF
+.PARAM
+*PIP
++DPIPE2R  = -6.165E-4
+.INC 'e2r018_v1p8_pip.mdl' 
+.ENDL PIP_FF
+.LIB PIP_SS
+.PARAM
+*PIP
++DPIPE2R  = 6.165E-4
+.INC 'e2r018_v1p8_pip.mdl' 
+.ENDL PIP_SS
+******************************
+* MIM capacitance Corner model
+******************************
+.LIB MIM_TT
+.PARAM
+*MIM
++DMIME2R   = 0
+.INC 'e2r018_v1p8_mim.mdl' 
+.ENDL MIM_TT
+.LIB MIM_FF
+.PARAM
+*MIM
++DMIME2R   = -2E-4
+.INC 'e2r018_v1p8_mim.mdl' 
+.ENDL MIM_FF
+.LIB MIM_SS
+.PARAM
+*MIM
++DMIME2R   = 2E-4
+.INC 'e2r018_v1p8_mim.mdl' 
+.ENDL MIM_SS

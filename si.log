@@ -1,0 +1,30 @@
+Virtuoso Framework License (111) was checked out successfully. Total checkout time was 0.01s.
+
+
+Running netlist
+
+Begin Incremental Netlisting Mar 25 15:51:05 2021
+
+Loading smic18ee/libInit.il ...
+	Loading smic18ee/loadCxt.ile ... done!
+	Loading context 'smic18ee' from library 'smic18ee' ... done!
+	Loading context 'pdkUtils' from library 'smic18ee' ... done!
+	Loading smic18ee/libInitCustomExit.il ... Loading libInitCustomExit.il for smic18ee
+done!
+Loaded smic18ee/libInit.il successfully!
+*WARNING* (TECH-290323): techParam: Invalid parameter specified - "V4_1".
+*WARNING* (TECH-290323): techParam: Invalid parameter specified - "V4_2".
+
+*WARNING* (TECH-290323): techParam: Invalid parameter specified - "M5_3".
+
+ERROR (OSSHNL-116): Unable to descend into any of the views defined in the view list, 'cdl schematic', for the
+instance 'M0' in cell 'INV'. Add one of these views to the cell 'p33e2r' in the
+library 'smic18ee', or modify the view list so that it contains an existing view.
+
+ERROR (OSSHNL-116): Unable to descend into any of the views defined in the view list, 'cdl schematic', for the
+instance 'M1' in cell 'NAND'. Add one of these views to the cell 'p33e2r' in the
+library 'smic18ee', or modify the view list so that it contains an existing view.
+
+End netlisting Mar 25 15:51:05 2021
+ERROR (OSSHNL-514): Netlist generation failed because of the errors reported above. The netlist might not have been generated at all, or the generated netlist could be corrupt. Fix the reported errors and regenerate the netlist.
+

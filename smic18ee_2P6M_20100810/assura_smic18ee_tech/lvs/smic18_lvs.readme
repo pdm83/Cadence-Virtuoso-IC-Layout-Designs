@@ -1,0 +1,90 @@
+;;#####################################################################
+;;
+;; (@)# SMIC ASSURA( Version ASSURA410 ) LVS COMMAND FILE
+;;
+;; (@)# FOR SMIC 0.18UM EEPROM 2P6M(2P5M,2P4M,2P3M,2P2M) 1.8V/3.3V/5.0V/15.5V PROCESS
+;;
+;;######################################################################
+;;----------------------------------------------------------------------
+;;               CHANGE HISTORY
+;; Date       Revision     Who        Description
+;;------     ----------  -------  ----------------------
+;;06/13/2007    1.1      Cherry    Initial Version
+;;12/05/2007    1.1.a    Cherry    Modify 3t poly resistor dummy from RESP3T to RESP1*RESP3T.
+;;03/08/2010    1.2      Agnes     Based on the following process documents:
+;;				   DESIGN RULE:            TD-EE18-DR-2002 Rev.:10T
+;;				                           (Tech Dev. Rev.:0.9)
+;;				   SPICE MODEL:            TD-EE18-SP-2001 Rev.:11R
+;;				                           (Tech Dev. Rev.:1.7)
+;;				   PCM SPEC:               TD-EE18-PC-2001 Rev.:2T
+;;				                           (Tech Dev. Rev.:0.2)
+;;				   MEMORY CELL DESIGN RULE:TD-EE18-CL-2001 Rev.:5T
+;;				                           (Tech Dev. Rev.:0.6)
+;;				   MEMORY CELL LAYOUT:     TD-EE18-CL-2003 Rev.:3T
+;;				                           (Tech Dev. Rev.:0.3)
+;;
+;;				   What's updated:
+;;				   1) Update SP : 4R -> 11R
+;;
+;;03/17/2010    1.3      Drincy    Based on the following process documents:
+;;                                 DESIGN RULE:            TD-EE18-DR-2002 Rev.:10T
+;;                                                         (Tech Dev. Rev.:0.9)
+;;                                 SPICE MODEL:            TD-EE18-SP-2001 Rev.:11R
+;;                                                         (Tech Dev. Rev.:1.7)
+;;                                 PCM SPEC:               TD-EE18-PC-2001 Rev.:2T
+;;                                                         (Tech Dev. Rev.:0.2)
+;;                                 MEMORY CELL DESIGN RULE:TD-EE18-CL-2001 Rev.:5T
+;;                                                         (Tech Dev. Rev.:0.6)
+;;                                 MEMORY CELL LAYOUT:     TD-EE18-CL-2003 Rev.:3T
+;;                                                         (Tech Dev. Rev.:0.3)
+;;
+;;                                 What's updated:
+;;                                 1) Add binding.rul : c n18	n18e2r
+;;							c p18	p18e2r
+;;							c ndio18 ndio18e2r
+;;							c pdio18 pdio18e2r
+;;							c RESISTOR rngtsab
+;;
+;;				   2) Add PCM device RNGTSAB,RPGTSAB,RNCGSAB
+;;					  (which is not included in Spice Model)
+;;
+;;				   3) Change l_NMOS/l_PMOS check method.
+;;					     replaced with l=Area/w .
+;;
+;;----------------------------------------------------------------------
+
+*************************************************************************
+
+ (1)
+
+   README File for Assura LVS
+
+   These file are provided:
+ 
+   extract.rul	  	   -  Device extraction file 
+   compare.rul	           -  LVS rules file 
+   smic18_lvs.rsf	   -  Sample RSF
+   smic18_lvs_include.rsf  -  Options file used for LVS compare
+   smic18_lvs.readme	   -  This file
+   binding.rul             -  Sample bind file
+   lvs.csh	           -  Batch Mode run command
+
+ (2)
+
+   The user is encouraged to edit the compare.rul file as needed.
+   For example, the user may want to change the tolerances for 
+   device combining and parameter comparison.
+
+ (3)
+
+   The sample RSF files are provided as a template to run 
+   Assura LVS from Unix. 
+
+ (4)
+
+   When running Assura LVS,if the input is a netlist generated from the Schematics of the Cadence PDK,please
+   confirm that the binding.rul is selected,otherwise it will bring errors as devices mismatch.If the input
+   is the schematics,the binding.rul is not needed.
+
+
+*************************************************************************

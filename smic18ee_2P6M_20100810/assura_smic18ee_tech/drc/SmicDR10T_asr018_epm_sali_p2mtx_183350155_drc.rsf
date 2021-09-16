@@ -1,0 +1,40 @@
+;$Author: chengfen $
+;$Revision: 1.3
+;$Date: 2010/05/25 09:23:22 $
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;                                                                               ;
+;       0.18um Assura DRC command file for                                      ;
+;                                                                               ;
+;                                                                               ;
+;       SMIC: 0.18um e-EEPROM 2P3M (4M/5M/6M) Salicide 1.8V/3.3V/5.0V/15.5V     ;
+;              Process Layout Design Rule                                       ;
+;       Doc. NO.: TD-EE18-DR-2002               Rev.:10T                        ;
+;                                                                               ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+avParameters(
+  ?inputLayout ( "gds2" "GDSII" ) ; input your full path gds file name
+
+  ?cellName "TOPCELLNAME"
+  ?rulesFile "RUNFILENAME"
+  ?runName "RUNNAME"
+  ?workingDirectory "."
+
+; Switches
+;     "top_m6"		; Default to check rules for 6 layers of metal
+;?set "top_m5"		; Switch to check rules for 5 layers of metal
+;?set "top_m4"		; Switch to check rules for 4 layers of metal
+;?set "top_m3"          ; Switch to check rules for 3 layers of metal
+;?set "top_m2"          ; Switch to check rules for 2 layers of metal
+;?set "GP_Res.1"        ; Switch to check rules for GP_Res.1; GP_Res.1 is recommendation rule.
+;?set "noDensityChecking";Switch to check GT Density. Default to check rules for metal density.
+;?set "NoflagOffGrid"   ; Switch to check offgrid
+;?set "Non45/90_edge"   ; Switch to check non45/90 edge
+   ?flagNon45 t
+   ?userUnits "micron"
+   ?overwrite t
+   ?textPriOnly nil
+   ?textLevel ( 0:100 )
+   ?joinPins top
+   ?avrpt t
+) ; avParameters completed

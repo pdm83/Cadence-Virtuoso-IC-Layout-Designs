@@ -1,0 +1,7 @@
+# File Created by lyjslay at Tue Mar 23 14:13:31 2021
+# assisted by CdsLibEditor
+SOFTINCLUDE /opt/Cadence/IC617/share/cdssetup/cds.lib
+DEFINE smic18ee ./smic18ee
+DEFINE smic65_OA smic65llrf_121825_2tm_cds_1P10M_2010_3_9_0.4.1/smic65_OA
+DEFINE NCSU_TechLib_FreePDK15 /home/lyjslay/ClassDemo/FreePDK15/cdslib/NCSU_TechLib_FreePDK15
+DEFINE lyjlib /home/lyjslay/ClassDemo/lyjlib

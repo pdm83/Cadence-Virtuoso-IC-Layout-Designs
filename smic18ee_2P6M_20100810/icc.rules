@@ -1,0 +1,285 @@
+; Translation Rules 2.0
+; Title: icc.rules
+; Technology File: smic18ee
+; Creator: Rules Editor 5.0.33.500.1.10
+
+iccRevision = "2.0"
+iccTechnologyFile = "smic18ee"
+
+iccLayers =
+    list(
+        list( '("M6" "drawing") "metal" "vertical" 0.44 0.46 nil t)
+        list( '("V5" "drawing") "cut" "off" 0.36 0.35 nil t)
+	list( '("M5" "drawing") "metal" "horizontal" 0.28 0.28 nil t)
+	list( '("V4" "drawing") "cut" "off" 0.26 0.26 nil t)
+	list( '("M4" "drawing") "metal" "vertical" 0.28 0.28 nil t)
+	list( '("V3" "drawing") "cut" "off" 0.26 0.26 nil t)
+	list( '("M3" "drawing") "metal" "horizontal" 0.28 0.28 nil t)
+	list( '("V2" "drawing") "cut" "off" 0.26 0.26 nil t)
+	list( '("M2" "drawing") "metal" "vertical" 0.28 0.28 nil t)
+	list( '("V1" "drawing") "cut" "off" 0.26 0.26 nil t)
+	list( '("M1" "drawing") "metal" "horizontal" 0.23 0.23 nil t)
+	list( '("CT" "drawing") "cut" "off" 0.22 0.22 nil t)
+	list( '("GT" "drawing") "polysilicon" "orthogonal" 0.60 0.40 nil t)
+	list( '("GP" "drawing") "polysilicon" "orthogonal" 0.18 0.25 nil t)
+	list( '("AA" "drawing") "n_diffusion" "off" 0.42 0.42 nil t)
+	list( '("SN" "drawing") "none" "off" 0.44 0.44 nil t)
+	list( '("SP" "drawing") "none" "off" 0.44 0.44 nil t)
+	list( '("NW" "drawing") "none" "off" 0.86 1.4 nil t)
+    )
+
+iccVias =
+    list(
+	list( '("smic18ee" "M1_GT" "symbolic") t)
+	list( '("smic18ee" "M1_GP" "symbolic") t)
+	list( '("smic18ee" "M1_AA" "symbolic") t)
+	list( '("smic18ee" "M1_SN" "symbolic") t)
+	list( '("smic18ee" "M1_SP" "symbolic") t)
+	list( '("smic18ee" "M1_SUB" "symbolic") t)
+	list( '("smic18ee" "M1_PSUB" "symbolic") t)
+	list( '("smic18ee" "M1_NW" "symbolic") t)
+	list( '("smic18ee" "M1_DNW" "symbolic") t)
+	list( '("smic18ee" "M1_TPW" "symbolic") t)
+	list( '("smic18ee" "M2_M1" "symbolic") t)
+	list( '("smic18ee" "M3_M2" "symbolic") t)
+	list( '("smic18ee" "M4_M3" "symbolic") t)
+	list( '("smic18ee" "M5_M4" "symbolic") t)
+        list( '("smic18ee" "M6_M5" "symbolic") t)
+    )
+
+iccEquivalentLayers =
+    list(
+        list(
+            '("M6" "drawing")
+            '("M6" "boundary")
+            '("M6" "pin")
+        )
+        list(
+            '("V5" "drawing")
+            '("V5" "boundary")
+
+	list(
+	    '("M5" "drawing")
+	    '("M5" "boundary")
+	    '("M5" "pin")
+	)
+	list(
+	    '("V4" "drawing")
+	    '("V4" "boundary")
+	)
+	list(
+	    '("M4" "drawing")
+	    '("M4" "boundary")
+	    '("M4" "pin")
+	)
+	list(
+	    '("V3" "drawing")
+	    '("V3" "boundary")
+	)
+	list(
+	    '("M3" "drawing")
+	    '("M3" "boundary")
+	    '("M3" "pin")
+	)
+	list(
+	    '("V2" "drawing")
+	    '("V2" "boundary")
+	)
+	list(
+	    '("M2" "drawing")
+	    '("M2" "boundary")
+	    '("M2" "pin")
+	)
+	list(
+	    '("V1" "drawing")
+	    '("V1" "boundary")
+	)
+	list(
+	    '("M1" "drawing")
+	    '("M1" "boundary")
+	    '("M1" "pin")
+	)
+	list(
+	    '("CT" "drawing")
+	    '("CT" "boundary")
+	)
+	list(
+	    '("GT" "drawing")
+	    '("GT" "boundary")
+	    '("GT" "pin")
+	)
+	list(
+	    '("GP" "drawing")
+	    '("GP" "boundary")
+	    '("GP" "pin")
+	)
+    )
+
+iccBoundaryLayers =
+    list(
+        list( '("M6" "drawing") '("prBoundary" "drawing") 0.0)
+        list( '("V5" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("M5" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("V4" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("M4" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("V3" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("M3" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("V2" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("M2" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("V1" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("M1" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("CT" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("GT" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("GP" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("AA" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("SN" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("SP" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("NW" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("PSUB" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("TPW" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("DNW" "drawing") '("prBoundary" "drawing") 0.0)
+    )
+
+iccKeepouts = list(
+    list( nil list(
+	list(
+	    "=>" list('("AA" "drawing"))
+	    '("GT" "drawing") "routing" t
+	)
+	list(
+	    "=>" list('("AA" "drawing"))
+	    '("GP" "drawing") "routing" t
+	)
+	list(
+	    "and" list('("AA" "drawing") '("GT" "drawing"))
+	    '("GT" "drawing") "routing" t
+	)
+	list(
+	    "and" list('("AA" "drawing") '("GP" "drawing"))
+	    '("GP" "drawing") "routing" t
+	)
+	list(
+	    "and" list('("AA" "drawing") '("GT" "drawing"))
+	    '("M1" "drawing") "routing" t
+	)
+	list(
+	    "and" list('("AA" "drawing") '("GP" "drawing"))
+	    '("M1" "drawing") "routing" t
+	)
+	list(
+	    "and" list('("AA" "drawing") '("GT" "drawing"))
+	    '("M2" "drawing") "routing" t
+	)
+	list(
+	    "and" list('("AA" "drawing") '("GP" "drawing"))
+	    '("M2" "drawing") "routing" t
+	)
+	list(
+	    "and" list('("AA" "drawing") '("GT" "drawing"))
+	    '("M3" "drawing") "routing" t
+	)
+	list(
+	    "and" list('("AA" "drawing") '("GP" "drawing"))
+	    '("M3" "drawing") "routing" t
+	)
+	list(
+	    "and" list('("AA" "drawing") '("GT" "drawing"))
+	    '("M4" "drawing") "routing" t
+	)
+	list(
+	    "and" list('("AA" "drawing") '("GP" "drawing"))
+	    '("M4" "drawing") "routing" t
+	)
+	list(
+	    "and" list('("AA" "drawing") '("GT" "drawing"))
+	    '("M5" "drawing") "routing" t
+	)
+	list(
+	    "and" list('("AA" "drawing") '("GP" "drawing"))
+	    '("M5" "drawing") "routing" t
+	)
+        
+        list(
+            "and" list('("AA" "drawing") '("GT" "drawing"))
+            '("M6" "drawing") "routing" t
+        )
+        list(
+            "and" list('("AA" "drawing") '("GP" "drawing"))
+            '("M6" "drawing") "routing" t
+        )
+
+
+	list(
+	    "=>" list('("MIM" "drawing"))
+	    '("M1" "drawing") "routing" t
+	)
+	list(
+	    "=>" list('("MIM" "drawing"))
+	    '("M2" "drawing") "routing" t
+	)
+	list(
+	    "=>" list('("MIM" "drawing"))
+	    '("M3" "drawing") "routing" t
+	)
+	list(
+	    "=>" list('("MIM" "drawing"))
+	    '("M4" "drawing") "routing" t
+	)
+        list(
+            "=>" list('("MIM" "drawing"))
+            '("M5" "drawing") "routing" t
+        )
+
+	list(
+	    "=>" list('("INDMY" "drawing"))
+	    '("GT" "drawing") "routing" t
+	)
+	list(
+	    "=>" list('("INDMY" "drawing"))
+	    '("GP" "drawing") "routing" t
+	)
+	list(
+	    "=>" list('("INDMY" "drawing"))
+	    '("M1" "drawing") "routing" t
+	)
+	list(
+	    "=>" list('("INDMY" "drawing"))
+	    '("M2" "drawing") "routing" t
+	)
+	list(
+	    "=>" list('("INDMY" "drawing"))
+	    '("M3" "drawing") "routing" t
+	)
+	list(
+	    "=>" list('("INDMY" "drawing"))
+	    '("M4" "drawing") "routing" t
+	)
+        list(
+            "=>" list('("INDMY" "drawing"))
+            '("M5" "drawing") "routing" t
+        )
+
+	list(
+	    "=>" list('("INDMY" "drawing"))
+	    '("M6" "drawing") "routing" t
+	)
+	list(
+	    "c-not" list('("M5" "drawing") '("INDMY" "drawing"))
+	    '("M6" "drawing") "routing" t
+	)
+    )   32)
+)
+
+iccConductors = list(
+    list( nil list(
+	list(
+	    "and" list('("GT" "drawing") '("AA" "drawing"))
+	    '("GT" "drawing") "MOSFET" t
+	)
+	list(
+	    "and" list('("GP" "drawing") '("AA" "drawing"))
+	    '("GP" "drawing") "MOSFET" t
+	)
+    )   32)
+)
+

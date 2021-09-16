@@ -1,0 +1,9 @@
+*
+* No part of this file can be released without the consent of SMIC.
+*
+
+This file indicates the simulation tool version we used to generate this version of the SPICE models. If your simulator is older than what we used, mistake may occure. We suggest that users to use the same version or the newer version of the simulators specified below:
+
+A. Synopsys HSPICE version -------- Y-2006.09-SP1
+B. Cadence spectre version -------- V6.2.1
+C. Mentor Graphics Eldo version --- v6.10_3.1

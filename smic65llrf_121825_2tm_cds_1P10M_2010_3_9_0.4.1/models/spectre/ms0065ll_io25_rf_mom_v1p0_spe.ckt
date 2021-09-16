@@ -1,0 +1,496 @@
+//* 
+//* No part of this file can be released without the consent of SMIC.
+//*
+//**************************************************************************************************************
+//* SMIC 65nm Low Leakage 1P10M(1P9M, 1P8M, 1P7M, 1P6M) Salicide 1.2V/1.8V/2.5V SPICE model (for SPECTRE only) *
+//**************************************************************************************************************
+//*
+//* Release version    : 1.0
+//*
+//* Release date       : 09/30/2009
+//*
+//* Simulation tool    : Cadence spectre V6.2.1
+//*
+//*
+//*  MOM Capacitor   :
+//*
+//*        *-----------------------------------------------------------------------* 
+//*        |                 Type                     |          MOM subckt        |
+//*        *-----------------------------------------------------------------------* 
+//*        |    MOM stacked from metal1 to metal3     |  mom13_rf  |  mom13_rf_3t  |
+//*        *-----------------------------------------------------------------------*
+//*        |    MOM stacked from metal2 to metal4     |  mom24_rf  |  mom24_rf_3t  |
+//*        *-----------------------------------------------------------------------*
+//*        |    MOM stacked from metal3 to metal5     |  mom35_rf  |  mom35_rf_3t  |
+//*        *-----------------------------------------------------------------------*
+//*        |    MOM stacked from metal4 to metal6     |  mom46_rf  |  mom46_rf_3t  |
+//*        *-----------------------------------------------------------------------*
+//*        |    MOM stacked from metal2 to metal5     |  mom25_rf  |  mom25_rf_3t  |
+//*        *-----------------------------------------------------------------------*
+//*        |    MOM stacked from metal3 to metal6     |  mom36_rf  |  mom36_rf_3t  |
+//*        *-----------------------------------------------------------------------*
+//*        |    MOM stacked from metal2 to metal6     |  mom26_rf  |  mom26_rf_3t  |  
+//*        *-----------------------------------------------------------------------*
+//*        |    MOM stacked from metal1 to metal6     |  mom16_rf  |  mom16_rf_3t  |  
+//*        *-----------------------------------------------------------------------*
+//*
+//*
+simulator lang=spectre  insensitive=yes
+//*****************************************************************
+//* 65nm MOM Capacitor for M1~M3 (MOM stacked start from M1 to M3)*
+//*****************************************************************
+//* 1=port1, 2=port2
+subckt mom13_rf (1 2)
+//* mom capacitor scalable model parameters
+parameters lr=12u nr=20
+parameters devt   = temp      cvc1 = 6.43665e-6     cvc2 = 1.90679e-6            ctc1 =4.64706E-6
+parameters tcoef  = 1+ctc1*(devt-25)
++c0        = ((9.52e-5+DMOM_RF_m1x)*3+1e-5)*1e-6 
++Cf_rf_1   = ((c0*lr*nr)-0.7*1e-15)
++Cf_rf     = (c0*lr*nr)
++Ls_rf     = max((7.2*pwr(Cf_rf*1e15,-1))*1E-9,1E-13)
++Rs_rf     = max(14*pwr(Cf_rf*1e15,-0.48),1E-6)
++Rsub1_rf  = max(8.8e4*pwr((Cf_rf*1e15+25),-1),1E-3)
++Csub1_rf  = 1e-15
++Cox1_rf   = max((0.0155*lr*1e6*nr-0.8346)*1E-15,1E-18)
++Rsub2_rf  = max(Rsub1_rf,1E-3)
++Csub2_rf  = 1e-15 
++Cox2_rf   = max(Cox1_rf,1E-18)
+//* equivalent circuit
+ls    (1 11)  inductor   l=Ls_rf
+cf    (22 2)  capacitor  c=Cf_rf_1*tcoef*(1.0+v(22,2)*(cvc1+cvc2*v(22,2)))
+rs    (11 22) resistor   r=Rs_rf
+rsub1 (10 0)  resistor   r=Rsub1_rf
+csub1 (10 0)  capacitor  c=Csub1_rf
+cox1  (1 10)  capacitor  c=Cox1_rf
+rsub2 (20 0)  resistor   r=Rsub2_rf
+csub2 (20 0)  capacitor  c=Csub2_rf
+cox2  (2 20)  capacitor  c=Cox2_rf
+ends mom13_rf
+//*****************************************************************
+//* 65nm MOM Capacitor for M1~M3 (MOM stacked start from M1 to M3)*
+//*****************************************************************
+//* 1=port1, 2=port2, Nwell is N type well
+subckt mom13_rf_3t (1 2 Nwell)
+//* mom capacitor scalable model parameters
+parameters lr=12u nr=20
+parameters devt   = temp      cvc1 = 6.43665e-6     cvc2 = 1.90679e-6            ctc1 =4.64706E-6
+parameters tcoef  = 1+ctc1*(devt-25)
++c0        = ((9.52e-5+DMOM_RF_m1x_3t)*3+1e-5)*1e-6 
++Cf_rf_1   = ((c0*lr*nr)-0.7*1e-15)
++Cf_rf     = (c0*lr*nr)
++Ls_rf     = max((7.2*pwr(Cf_rf*1e15,-1))*1E-9,1E-13)
++Rs_rf     = max(14*pwr(Cf_rf*1e15,-0.48),1E-6)
++Rsub1_rf  = max(8.8e4*pwr((Cf_rf*1e15+25),-1),1E-3)
++Csub1_rf  = 1e-15
++Cox1_rf   = max((0.0155*lr*1e6*nr-0.8346)*1E-15,1E-18)
++Rsub2_rf  = max(Rsub1_rf,1E-3)
++Csub2_rf  = 1e-15 
++Cox2_rf   = max(Cox1_rf,1E-18)
+//* equivalent circuit
+ls    (1 11)  inductor   l=Ls_rf
+cf    (22 2)  capacitor  c=Cf_rf_1*tcoef*(1.0+v(22,2)*(cvc1+cvc2*v(22,2)))
+rs    (11 22) resistor   r=Rs_rf
+rsub1 (10 Nwell)  resistor   r=Rsub1_rf
+csub1 (10 Nwell)  capacitor  c=Csub1_rf
+cox1  (1 10)  capacitor  c=Cox1_rf
+rsub2 (20 Nwell)  resistor   r=Rsub2_rf
+csub2 (20 Nwell)  capacitor  c=Csub2_rf
+cox2  (2 20)  capacitor  c=Cox2_rf
+ends mom13_rf_3t
+//*****************************************************************
+//* 65nm MOM Capacitor for M1~M6 (MOM stacked start from M1 to M6)*
+//*****************************************************************
+//* 1=port1, 2=port2
+subckt mom16_rf (1 2)
+//* mom capacitor scalable model parameters
+parameters lr=12u nr=20
+parameters devt   = temp      cvc1 = 6.43665e-6     cvc2 = 1.90679e-6            ctc1 =4.64706E-6
+parameters tcoef  = 1+ctc1*(devt-25)
++c0        = ((9.52e-5+DMOM_RF_m1x)*6+1e-5)*1e-6
++Cf_rf     = (c0*lr*nr)
++Ls_rf     = max((7.2*pwr(Cf_rf*1e15,-1))*1E-9,1E-13)
++Rs_rf     = max(14*pwr(Cf_rf*1e15,-0.48),1E-6)
++Rsub1_rf  = max(8.8e4*pwr((Cf_rf*1e15+25),-1),1E-3)
++Csub1_rf  = 1e-15 
++Cox1_rf   = max((0.0145*lr*1e6*nr+0.26)*1E-15,1E-18)
++Rsub2_rf  = max(Rsub1_rf,1E-3)
++Csub2_rf  = 1e-15
++Cox2_rf   = max(Cox1_rf,1E-18)
+//* equivalent circuit
+ls    (1 11)  inductor   l=Ls_rf
+cf    (22 2)  capacitor  c=Cf_rf*tcoef*(1.0+v(22,2)*(cvc1+cvc2*v(22,2)))
+rs    (11 22) resistor   r=Rs_rf
+rsub1 (10 0)  resistor   r=Rsub1_rf
+csub1 (10 0)  capacitor  c=Csub1_rf
+cox1  (1 10)  capacitor  c=Cox1_rf
+rsub2 (20 0)  resistor   r=Rsub2_rf
+csub2 (20 0)  capacitor  c=Csub2_rf
+cox2  (2 20)  capacitor  c=Cox2_rf
+ends mom16_rf
+//*****************************************************************
+//* 65nm MOM Capacitor for M1~M6 (MOM stacked start from M1 to M6)*
+//*****************************************************************
+//* 1=port1, 2=port2, Nwell is N type well
+subckt mom16_rf_3t (1 2 Nwell)
+//* mom capacitor scalable model parameters
+parameters lr=12u nr=20
+parameters devt   = temp      cvc1 = 6.43665e-6     cvc2 = 1.90679e-6            ctc1  =4.64706E-6
+parameters tcoef  = 1+ctc1*(devt-25)
++c0        = ((9.52e-5+DMOM_RF_m1x_3t)*6+1e-5)*1e-6
++Cf_rf     = (c0*lr*nr)
++Ls_rf     = max((7.2*pwr(Cf_rf*1e15,-1))*1E-9,1E-13)
++Rs_rf     = max(14*pwr(Cf_rf*1e15,-0.48),1E-6)
++Rsub1_rf  = max(8.8e4*pwr((Cf_rf*1e15+25),-1),1E-3)
++Csub1_rf  = 1e-15 
++Cox1_rf   = max((0.0145*lr*1e6*nr+0.26)*1E-15,1E-18)
++Rsub2_rf  = max(Rsub1_rf,1E-3)
++Csub2_rf  = 1e-15
++Cox2_rf   = max(Cox1_rf,1E-18)
+//* equivalent circuit
+ls    (1 11)  inductor   l=Ls_rf
+cf    (22 2)  capacitor  c=Cf_rf*tcoef*(1.0+v(22,2)*(cvc1+cvc2*v(22,2)))
+rs    (11 22) resistor   r=Rs_rf
+rsub1 (10 Nwell)  resistor   r=Rsub1_rf
+csub1 (10 Nwell)  capacitor  c=Csub1_rf
+cox1  (1 10)  capacitor  c=Cox1_rf
+rsub2 (20 Nwell)  resistor   r=Rsub2_rf
+csub2 (20 Nwell)  capacitor  c=Csub2_rf
+cox2  (2 20)  capacitor  c=Cox2_rf
+ends mom16_rf_3t
+//*****************************************************************
+//* 65nm MOM Capacitor for M2~M4 (MOM stacked start from M2 to M4)*
+//*****************************************************************
+//* 1=port1, 2=port2
+subckt mom24_rf (1 2)
+//* mom capacitor scalable model parameters
+parameters lr=12u nr=20 
+parameters devt   = temp      cvc1 = 6.43665e-6     cvc2 = 1.90679e-6            ctc1    =4.64706E-6
+parameters tcoef  = 1+ctc1*(devt-25)
++c0        = ((1.015E-04+DMOM_RF_mnx)*3-3.05E-05)*1e-6
++Cf_rf     = (c0*lr*nr)
++Ls_rf     = max((0.0066*pwr(Cf_rf*1e12,-1.0071))*1E-9,1E-13)
++Rs_rf     = max(0.65*pwr(Cf_rf*1e12,-0.47),0.001)
++Rsub1_rf  = max(400*pwr(Cf_rf*1e12,-0.5),1E-3)
++Csub1_rf  = 1e-15
++Cox1_rf   = max((0.0053*lr*1e6*nr-0.26)*1E-15,1E-18)
++Rsub2_rf  = max(Rsub1_rf,1E-3)
++Csub2_rf  = 1e-15
++Cox2_rf   = max(Cox1_rf,1E-18)
+//* equivalent circuit
+ls    (1 11)  inductor   l=Ls_rf
+cf    (22 2)  capacitor  c=Cf_rf*tcoef*(1.0+v(22,2)*(cvc1+cvc2*v(22,2)))
+rs    (11 22) resistor   r=Rs_rf
+rsub1 (10 0)  resistor   r=Rsub1_rf
+csub1 (10 0)  capacitor  c=1e-15
+cox1  (1 10)  capacitor  c=Cox1_rf
+rsub2 (20 0)  resistor   r=Rsub2_rf
+csub2 (20 0)  capacitor  c=Csub2_rf
+cox2  (2 20)  capacitor  c=Cox2_rf
+ends mom24_rf
+//*****************************************************************
+//* 65nm MOM Capacitor for M2~M4 (MOM stacked start from M2 to M4)*
+//*****************************************************************
+//* 1=port1, 2=port2, Nwell is N type well
+subckt mom24_rf_3t (1 2 Nwell)
+//* mom capacitor scalable model parameters
+parameters lr=12u nr=20 
+parameters devt   = temp      cvc1 = 6.43665e-6     cvc2 = 1.90679e-6            ctc1    =4.64706E-6
+parameters tcoef  = 1+ctc1*(devt-25)
++c0        = ((1.015E-04+DMOM_RF_mnx_3t)*3-3.05E-05)*1e-6
++Cf_rf     = (c0*lr*nr)
++Ls_rf     = max((0.0066*pwr(Cf_rf*1e12,-1.0071))*1E-9,1E-13)
++Rs_rf     = max(0.65*pwr(Cf_rf*1e12,-0.47),0.001)
++Rsub1_rf  = max(400*pwr(Cf_rf*1e12,-0.5),1E-3)
++Csub1_rf  = 1e-15
++Cox1_rf   = max((0.0053*lr*1e6*nr-0.26)*1E-15,1E-18)
++Rsub2_rf  = max(Rsub1_rf,1E-3)
++Csub2_rf  = 1e-15
++Cox2_rf   = max(Cox1_rf,1E-18)
+//* equivalent circuit
+ls    (1 11)  inductor   l=Ls_rf
+cf    (22 2)  capacitor  c=Cf_rf*tcoef*(1.0+v(22,2)*(cvc1+cvc2*v(22,2)))
+rs    (11 22) resistor   r=Rs_rf
+rsub1 (10 Nwell)  resistor   r=Rsub1_rf
+csub1 (10 Nwell)  capacitor  c=1e-15
+cox1  (1 10)  capacitor  c=Cox1_rf
+rsub2 (20 Nwell)  resistor   r=Rsub2_rf
+csub2 (20 Nwell)  capacitor  c=Csub2_rf
+cox2  (2 20)  capacitor  c=Cox2_rf
+ends mom24_rf_3t
+//*****************************************************************
+//* 65nm MOM Capacitor for M2~M5 (MOM stacked start from M2 to M5)*
+//*****************************************************************
+//* 1=port1, 2=port2
+subckt mom25_rf (1 2)
+//* mom capacitor scalable model parameters
+parameters lr=18u nr=20 
+parameters devt   = temp      cvc1 = 6.43665e-6     cvc2 = 1.90679e-6            ctc1    =4.64706E-6
+parameters tcoef  = 1+ctc1*(devt-25)
++c0 = ((1.015E-04+dmom_rf_mnx)*4-3.05E-05)*1e-6
++cf_rf = (c0*lr*nr)
++rsub=max(400*pwr(Cf_rf*1e12,-0.5),1E-3)
++cox=max((0.0049*lr*1e6*nr-0.2)*1E-15,1E-18)
+//* equivalent circuit
+ls    (1 11)  inductor   l=max((0.0066*pwr(Cf_rf*1e12,-1.0071))*1E-9,1E-13)
+cf    (22 2)  capacitor   c=cf_rf*tcoef*(1.0+v(22,2)*(cvc1+cvc2*v(22,2)))
+rs    (11 22) resistor   r=max(0.65*pwr(Cf_rf*1e12,-0.47),1E-6)
+rsub1 (10 0)  resistor   r=rsub
+csub1 (10 0)  capacitor  c=1e-15
+cox1  (1 10)  capacitor  c=cox
+rsub2 (20 0)  resistor   r=rsub
+csub2 (20 0)  capacitor  c=1e-15
+cox2  (2 20)  capacitor  c=cox
+ends mom25_rf
+//*****************************************************************
+//* 65nm MOM Capacitor for M2~M5 (MOM stacked start from M2 to M5)*
+//*****************************************************************
+//* 1=port1, 2=port2, Nwell is N type well
+subckt mom25_rf_3t (1 2 Nwell)
+//* mom capacitor scalable model parameters
+parameters lr=18u nr=20 
+parameters devt   = temp      cvc1 = 6.43665e-6     cvc2 = 1.90679e-6            ctc1    =4.64706E-6
+parameters tcoef  = 1+ctc1*(devt-25)
++c0 = ((1.015E-04+dmom_rf_mnx_3t)*4-3.05E-05)*1e-6
++cf_rf = (c0*lr*nr)
++rsub=max(400*pwr(Cf_rf*1e12,-0.5),1E-3)
++cox=max((0.0049*lr*1e6*nr-0.2)*1E-15,1E-18)
+//* equivalent circuit
+ls    (1 11)  inductor   l=max((0.0066*pwr(Cf_rf*1e12,-1.0071))*1E-9,1E-13)
+cf    (22 2)  capacitor   c=cf_rf*tcoef*(1.0+v(22,2)*(cvc1+cvc2*v(22,2)))
+rs    (11 22) resistor   r=max(0.65*pwr(Cf_rf*1e12,-0.47),1E-6)
+rsub1 (10 Nwell)  resistor   r=rsub
+csub1 (10 Nwell)  capacitor  c=1e-15
+cox1  (1 10)  capacitor  c=cox
+rsub2 (20 Nwell)  resistor   r=rsub
+csub2 (20 Nwell)  capacitor  c=1e-15
+cox2  (2 20)  capacitor  c=cox
+ends mom25_rf_3t
+//*****************************************************************
+//* 65nm MOM Capacitor for M2~M6 (MOM stacked start from M2 to M6)*
+//*****************************************************************
+//* 1=port1, 2=port2
+subckt mom26_rf (1 2)
+//* mom capacitor scalable model parameters
+parameters lr=12u nr=20
+parameters devt   = temp      cvc1 = 6.43665e-6     cvc2 = 1.90679e-6            ctc1    =4.64706E-6
+parameters tcoef  = 1+ctc1*(devt-25)
++c0        = ((1.015E-04+DMOM_RF_mnx)*5-3.05E-05)*1e-6
++Cf_rf     = (c0*lr*nr)
++Ls_rf     = max((0.0066*pwr(Cf_rf*1e12,-1.0071))*1E-9,1E-13)
++Rs_rf     = max(0.65*pwr(Cf_rf*1e12,-0.47),1E-6)
++Rsub1_rf  = max(400*pwr(Cf_rf*1e12,-0.5),1E-3)
++Csub1_rf  = 1e-15
++Cox1_rf   = max((0.0042*lr*1e6*nr)*1E-15,1E-18)
++Rsub2_rf  = max(Rsub1_rf,1E-3)
++Csub2_rf  = 1e-15
++Cox2_rf   = max(Cox1_rf,1E-18)
+//* equivalent circuit
+ls    (1 11)  inductor   l=Ls_rf
+cf    (22 2)  capacitor  c=Cf_rf*tcoef*(1.0+v(22,2)*(cvc1+cvc2*v(22,2)))
+rs    (11 22) resistor   r=Rs_rf
+rsub1 (10 0)  resistor   r=Rsub1_rf
+csub1 (10 0)  capacitor  c=1e-15
+cox1  (1 10)  capacitor  c=Cox1_rf
+rsub2 (20 0)  resistor   r=Rsub2_rf
+csub2 (20 0)  capacitor  c=Csub2_rf
+cox2  (2 20)  capacitor  c=Cox2_rf
+ends mom26_rf
+//*****************************************************************
+//* 65nm MOM Capacitor for M2~M6 (MOM stacked start from M2 to M6)*
+//*****************************************************************
+//* 1=port1, 2=port2, Nwell is N type well
+subckt mom26_rf_3t (1 2 Nwell)
+//* mom capacitor scalable model parameters
+parameters lr=12u nr=20
+parameters devt   = temp      cvc1 = 6.43665e-6     cvc2 = 1.90679e-6            ctc1    =4.64706E-6
+parameters tcoef  = 1+ctc1*(devt-25)
++c0        = ((1.015E-04+DMOM_RF_mnx_3t)*5-3.05E-05)*1e-6
++Cf_rf     = (c0*lr*nr)
++Ls_rf     = max((0.0066*pwr(Cf_rf*1e12,-1.0071))*1E-9,1E-13)
++Rs_rf     = max(0.65*pwr(Cf_rf*1e12,-0.47),1E-6)
++Rsub1_rf  = max(400*pwr(Cf_rf*1e12,-0.5),1E-3)
++Csub1_rf  = 1e-15
++Cox1_rf   = max((0.0042*lr*1e6*nr)*1E-15,1E-18)
++Rsub2_rf  = max(Rsub1_rf,1E-3)
++Csub2_rf  = 1e-15
++Cox2_rf   = max(Cox1_rf,1E-18)
+//* equivalent circuit
+ls    (1 11)  inductor   l=Ls_rf
+cf    (22 2)  capacitor  c=Cf_rf*tcoef*(1.0+v(22,2)*(cvc1+cvc2*v(22,2)))
+rs    (11 22) resistor   r=Rs_rf
+rsub1 (10 Nwell)  resistor   r=Rsub1_rf
+csub1 (10 Nwell)  capacitor  c=1e-15
+cox1  (1 10)  capacitor  c=Cox1_rf
+rsub2 (20 Nwell)  resistor   r=Rsub2_rf
+csub2 (20 Nwell)  capacitor  c=Csub2_rf
+cox2  (2 20)  capacitor  c=Cox2_rf
+ends mom26_rf_3t
+//*****************************************************************
+//* 65nm MOM Capacitor for M3~M5 (MOM stacked start from M3 to M5)*
+//*****************************************************************
+//* 1=port1, 2=port2
+subckt mom35_rf (1 2)
+//* mom capacitor scalable model parameters
+parameters lr=12u nr=20
+parameters devt   = temp      cvc1 = 6.43665e-6     cvc2 = 1.90679e-6            ctc1 =4.64706E-6
+parameters tcoef  = 1+ctc1*(devt-25)
++c0        = ((1.015E-04+DMOM_RF_mnx)*3-3.05E-05)*1e-6
++Cf_rf     = (c0*lr*nr)             
++Ls_rf     = max((0.0066*pwr(Cf_rf*1e12,-1.0071))*1E-9,1E-13)
++Rs_rf     = max(0.65*pwr(Cf_rf*1e12,-0.47),0.001)
++Rsub1_rf  = max(400*pwr(Cf_rf*1e12,-0.5),1E-3)
++Csub1_rf  = 1e-15  
++Cox1_rf   = max((0.003*lr*1e6*nr+0.1)*1E-15,1E-18)
++Rsub2_rf  = max(Rsub1_rf,1E-3)
++Csub2_rf  = 1e-15  
++Cox2_rf   = max(Cox1_rf,1E-18)
+//* equivalent circuit
+ls    (1 11)  inductor   l=Ls_rf
+cf    (22 2)  capacitor  c=Cf_rf*tcoef*(1.0+v(22,2)*(cvc1+cvc2*v(22,2)))
+rs    (11 22) resistor   r=Rs_rf
+rsub1 (10 0)  resistor   r=Rsub1_rf
+csub1 (10 0)  capacitor  c=Csub1_rf
+cox1  (1 10)  capacitor  c=Cox1_rf
+rsub2 (20 0)  resistor   r=Rsub2_rf
+csub2 (20 0)  capacitor  c=Csub2_rf
+cox2  (2 20)  capacitor  c=Cox2_rf
+ends mom35_rf
+//*****************************************************************
+//* 65nm MOM Capacitor for M3~M5 (MOM stacked start from M3 to M5)*
+//*****************************************************************
+//* 1=port1, 2=port2, Nwell is N type well
+subckt mom35_rf_3t (1 2 Nwell)
+//* mom capacitor scalable model parameters
+parameters lr=12u nr=20
+parameters devt   = temp      cvc1 = 6.43665e-6     cvc2 = 1.90679e-6            ctc1  =4.64706E-6
+parameters tcoef  = 1+ctc1*(devt-25)
++c0        = ((1.015E-04+DMOM_RF_mnx_3t)*3-3.05E-05)*1e-6
++Cf_rf     = (c0*lr*nr)             
++Ls_rf     = max((0.0066*pwr(Cf_rf*1e12,-1.0071))*1E-9,1E-13)
++Rs_rf     = max(0.65*pwr(Cf_rf*1e12,-0.47),0.001)
++Rsub1_rf  = max(400*pwr(Cf_rf*1e12,-0.5),1E-3)
++Csub1_rf  = 1e-15  
++Cox1_rf   = max((0.003*lr*1e6*nr+0.1)*1E-15,1E-18)
++Rsub2_rf  = max(Rsub1_rf,1E-3)
++Csub2_rf  = 1e-15  
++Cox2_rf   = max(Cox1_rf,1E-18)
+//* equivalent circuit
+ls    (1 11)  inductor   l=Ls_rf
+cf    (22 2)  capacitor  c=Cf_rf*tcoef*(1.0+v(22,2)*(cvc1+cvc2*v(22,2)))
+rs    (11 22) resistor   r=Rs_rf
+rsub1 (10 Nwell)  resistor   r=Rsub1_rf
+csub1 (10 Nwell)  capacitor  c=Csub1_rf
+cox1  (1 10)  capacitor  c=Cox1_rf
+rsub2 (20 Nwell)  resistor   r=Rsub2_rf
+csub2 (20 Nwell)  capacitor  c=Csub2_rf
+cox2  (2 20)  capacitor  c=Cox2_rf
+ends mom35_rf_3t
+//*****************************************************************
+//* 65nm MOM Capacitor for M3~M6 (MOM stacked start from M3 to M6)*
+//*****************************************************************
+//* 1=port1, 2=port2
+subckt mom36_rf (1 2)
+//* mom capacitor scalable model parameters
+parameters lr=18u nr=20 
+parameters devt   = temp      cvc1 = 6.43665e-6     cvc2 = 1.90679e-6            ctc1    =4.64706E-6
+parameters tcoef  = 1+ctc1*(devt-25)
++c0 = ((1.015E-04+dmom_rf_mnx)*4-3.05E-05)*1e-6
++cf_rf = (c0*lr*nr)
++rsub=max(400*pwr(Cf_rf*1e12,-0.5),1E-3)
++cox=max((0.0035*lr*1e6*nr)*1E-15,1E-18)
+//* equivalent circuit
+ls    (1 11)  inductor   l=max((0.0066*pwr(Cf_rf*1e12,-1.0071))*1E-9,1E-13)
+cf    (22 2)  capacitor   c=cf_rf*tcoef*(1.0+v(22,2)*(cvc1+cvc2*v(22,2)))
+rs    (11 22) resistor   r=max(0.65*pwr(Cf_rf*1e12,-0.47),1E-6)
+rsub1 (10 0)  resistor   r=rsub
+csub1 (10 0)  capacitor  c=1e-15
+cox1  (1 10)  capacitor  c=cox
+rsub2 (20 0)  resistor   r=rsub
+csub2 (20 0)  capacitor  c=1e-15
+cox2  (2 20)  capacitor  c=cox
+ends mom36_rf
+//*****************************************************************
+//* 65nm MOM Capacitor for M3~M6 (MOM stacked start from M3 to M6)*
+//*****************************************************************
+//* 1=port1, 2=port2, Nwell is N type well
+subckt mom36_rf_3t (1 2 Nwell)
+//* mom capacitor scalable model parameters
+parameters lr=18u nr=20 
+parameters devt   = temp      cvc1 = 6.43665e-6     cvc2 = 1.90679e-6            ctc1    =4.64706E-6
+parameters tcoef  = 1+ctc1*(devt-25)
++c0 = ((1.015E-04+dmom_rf_mnx_3t)*4-3.05E-05)*1e-6
++cf_rf = (c0*lr*nr)
++rsub=max(400*pwr(Cf_rf*1e12,-0.5),1E-3)
++cox=max((0.0035*lr*1e6*nr)*1E-15,1E-18)
+//* equivalent circuit
+ls    (1 11)  inductor   l=max((0.0066*pwr(Cf_rf*1e12,-1.0071))*1E-9,1E-13)
+cf    (22 2)  capacitor   c=cf_rf*tcoef*(1.0+v(22,2)*(cvc1+cvc2*v(22,2)))
+rs    (11 22) resistor   r=max(0.65*pwr(Cf_rf*1e12,-0.47),1E-6)
+rsub1 (10 Nwell)  resistor   r=rsub
+csub1 (10 Nwell)  capacitor  c=1e-15
+cox1  (1 10)  capacitor  c=cox
+rsub2 (20 Nwell)  resistor   r=rsub
+csub2 (20 Nwell)  capacitor  c=1e-15
+cox2  (2 20)  capacitor  c=cox
+ends mom36_rf_3t
+//*****************************************************************
+//* 65nm MOM Capacitor for M4~M6 (MOM stacked start from M4 to M6)*
+//*****************************************************************
+//* 1=port1, 2=port2
+subckt mom46_rf (1 2)
+//* mom capacitor scalable model parameters
+parameters lr=12u nr=20 Nlayer=3
+parameters devt   = temp      cvc1 = 6.43665e-6     cvc2 = 1.90679e-6            ctc1    =4.64706E-6
+parameters tcoef  = 1+ctc1*(devt-25)
++c0        = ((1.015E-04+DMOM_RF_mnx)*Nlayer-3.05E-05)*1e-6
++Cf_rf     = (c0*lr*nr)
++Ls_rf     = max((0.0066*pwr(Cf_rf*1e12,-1.0071))*1E-9,1E-13)
++Rs_rf     = max(0.65*pwr(Cf_rf*1e12,-0.47),0.001)
++Rsub1_rf  = max(400*pwr(Cf_rf*1e12,-0.5),1E-3)
++Csub1_rf  = 1e-15
++Cox1_rf   = max((0.0019*lr*1e6*nr+0.13)*1E-15,1E-18)
++Rsub2_rf  = max(Rsub1_rf,1E-3)
++Csub2_rf  = 1e-15
++Cox2_rf   = max(Cox1_rf,1E-18)
+//* equivalent circuit
+ls    (1 11)  inductor   l=Ls_rf
+cf    (22 2)  capacitor  c=Cf_rf*tcoef*(1.0+v(22,2)*(cvc1+cvc2*v(22,2)))
+rs    (11 22) resistor   r=Rs_rf
+rsub1 (10 0)  resistor   r=Rsub1_rf
+csub1 (10 0)  capacitor  c=1e-15
+cox1  (1 10)  capacitor  c=Cox1_rf
+rsub2 (20 0)  resistor   r=Rsub2_rf
+csub2 (20 0)  capacitor  c=Csub2_rf
+cox2  (2 20)  capacitor  c=Cox2_rf
+ends mom46_rf
+//*****************************************************************
+//* 65nm MOM Capacitor for M4~M6 (MOM stacked start from M4 to M6)*
+//*****************************************************************
+//* 1=port1, 2=port2, Nwell is N type well
+subckt mom46_rf_3t (1 2 Nwell)
+//* mom capacitor scalable model parameters
+parameters lr=12u nr=20 Nlayer=3
+parameters devt   = temp      cvc1 = 6.43665e-6     cvc2 = 1.90679e-6            ctc1    =4.64706E-6
+parameters tcoef  = 1+ctc1*(devt-25)
++c0        = ((1.015E-04+DMOM_RF_mnx_3t)*Nlayer-3.05E-05)*1e-6
++Cf_rf     = (c0*lr*nr)
++Ls_rf     = max((0.0066*pwr(Cf_rf*1e12,-1.0071))*1E-9,1E-13)
++Rs_rf     = max(0.65*pwr(Cf_rf*1e12,-0.47),0.001)
++Rsub1_rf  = max(400*pwr(Cf_rf*1e12,-0.5),1E-3)
++Csub1_rf  = 1e-15
++Cox1_rf   = max((0.0019*lr*1e6*nr+0.13)*1E-15,1E-18)
++Rsub2_rf  = max(Rsub1_rf,1E-3)
++Csub2_rf  = 1e-15
++Cox2_rf   = max(Cox1_rf,1E-18)
+//* equivalent circuit
+ls    (1 11)  inductor   l=Ls_rf
+cf    (22 2)  capacitor  c=Cf_rf*tcoef*(1.0+v(22,2)*(cvc1+cvc2*v(22,2)))
+rs    (11 22) resistor   r=Rs_rf
+rsub1 (10 Nwell)  resistor   r=Rsub1_rf
+csub1 (10 Nwell)  capacitor  c=1e-15
+cox1  (1 10)  capacitor  c=Cox1_rf
+rsub2 (20 Nwell)  resistor   r=Rsub2_rf
+csub2 (20 Nwell)  capacitor  c=Csub2_rf
+cox2  (2 20)  capacitor  c=Cox2_rf
+ends mom46_rf_3t

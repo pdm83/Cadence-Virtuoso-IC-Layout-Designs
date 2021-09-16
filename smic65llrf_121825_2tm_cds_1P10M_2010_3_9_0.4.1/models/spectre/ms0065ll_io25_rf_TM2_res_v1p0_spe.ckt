@@ -1,0 +1,37 @@
+//*Spectre resistor subcircuit format
+//* No part of this file can be released without the consent of SMIC.
+simulator lang=spectre
+ahdl_include "res_rf.va"
+// *
+// * no part of this file can be released without the consent of smic.
+//**************************************************************************************************************
+//* SMIC 65nm Low Leakage 1P10M(1P9M, 1P8M, 1P7M, 1P6M) Salicide 1.2V/1.8V/2.5V SPICE model (for SPECTRE only) *
+//**************************************************************************************************************
+// *
+// * release version    : 1.0
+// *
+// * release date       : 09/30/2009
+// *
+// * simulation tool    : Cadence spectre V6.2.1
+// *
+// *   resistor         :
+// *        *----------------------------------------------------------------------*
+// *        |       resistor type               |     resistor subcircuit          |
+// *        |======================================================================|
+// *        |     Ultra-Thick Top metal(TM2)    |             rtm2_rf_ckt          |
+// *        *----------------------------------------------------------------------*
+// *
+//******************************* 
+//* 65nm top metal 2 resistance *
+//******************************* 
+subckt rtm2_rf_ckt (n2 n1 sub)  
+parameters l=0 w=0 devt=temp     rtc1 = 3.8494E-03     rtc2 = 8.5805E-07
++ dw = 6.67E-8         tref = 25           rsh = 5.358e-3+drsh_rtm2_rf
++ rjc1a = -1.3993E-03            rjc1b = 2.999E-05
++ rjc2a = 1.7608E-05            rjc2b = 1.5719E-06
++ cj = 5.193E-06                  cjsw = 1.228E-10
++ cap = cj*(w-2.0*dw)*l/2+cjsw*(w-2.0*dw+l)
+C1 (n2 sub) capacitor c = cap
+R1 (n2 n1 n2 n1) metalres_rf_hdl lr=l wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.10 
+C2 (n1 sub) capacitor c = cap
+ends rtm2_rf_ckt

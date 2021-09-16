@@ -1,0 +1,1170 @@
+* This file contains 1.2V, 1.8V, 2.5V and 2.5V Overdrive to 3.3V corner model parameters.
+* Five corners are supported: TT, FF, SS, FNSP and SNFP.
+* This file should be used with the model parameter files 'l0065ll_io25_od33_v1p0.mdl', 'l0065ll_io25_od33_v1p0_dio.mdl',
+* 'l0065ll_io25_od33_v1p0_bjt.mdl', 'l0065ll_io25_od33_v1p0_res.mdl', 'l0065ll_io25_od33_v1p0_res.ckt', 'l0065ll_io25_od33_v1p0_var.ckt'
+* and 'l0065ll_io25_od33_v1p0_mom.ckt'.
+* No part of this file can be released without the consent of SMIC.
+
+******************
+* MOS Corner model      
+******************
+
+.LIB TT
+.option gmindc=1e-14
+.PARAM
+*1.2V core NMOS 
++DTOXE_N12LL        = 0               DTOXP_N12LL        = 0               DXL_N12LL          = 0            
++DXW_N12LL          = 0               DVTH_N12LL         = 0               DCJS_N12LL         = 0 
++DCJSWS_N12LL       = 0               DCJSWGS_N12LL      = 0               DCGDO_N12LL        = 0            
++DCGSO_N12LL        = 0               DCGDL_N12LL        = 0               DCGSL_N12LL        = 0
++DCF_N12LL          = 0               DLVTH0_N12LL       = 0               DPVTH0_N12LL       = 0
++DLU0_N12LL         = 0               DPU0_N12LL         = 0                                                              
+
+*1.2V core PMOS
++DTOXE_P12LL        = 0               DTOXP_P12LL        = 0               DXL_P12LL          = 0            
++DXW_P12LL          = 0               DVTH_P12LL         = 0               DCJS_P12LL         = 0 
++DCJSWS_P12LL       = 0               DCJSWGS_P12LL      = 0               DCGDO_P12LL        = 0            
++DCGSO_P12LL        = 0               DCGDL_P12LL        = 0               DCGSL_P12LL        = 0
++DCF_P12LL          = 0               DLVTH0_P12LL       = 0               DPVTH0_P12LL       = 0 
++DLU0_P12LL         = 0               DPU0_P12LL         = 0                                                                       
+
+*1.2V Native NMOS 
++DTOXE_NT12LL       = 0               DTOXP_NT12LL       = 0               DXL_NT12LL         = 0 
++DXW_NT12LL         = 0               DVTH_NT12LL        = 0               DCJS_NT12LL        = 0 
++DCJSWS_NT12LL      = 0               DCJSWGS_NT12LL     = 0               DCGDO_NT12LL       = 0 
++DCGSO_NT12LL       = 0               DCGDL_NT12LL       = 0               DCGSL_NT12LL       = 0
++DCF_NT12LL         = 0               DLVTH0_NT12LL      = 0  
+
+*1.2V HVT core NMOS
++DTOXE_NHVT12LL     = 0               DTOXP_NHVT12LL     = 0               DXL_NHVT12LL       = 0            
++DXW_NHVT12LL       = 0               DVTH_NHVT12LL      = 0               DCJS_NHVT12LL      = 0 
++DCJSWS_NHVT12LL    = 0               DCJSWGS_NHVT12LL   = 0               DCGDO_NHVT12LL     = 0            
++DCGSO_NHVT12LL     = 0               DCGDL_NHVT12LL     = 0               DCGSL_NHVT12LL     = 0
++DCF_NHVT12LL       = 0               DPVTH0_NHVT12LL    = 0               DWVTH0_NHVT12LL    = 0
++DLVTH0_NHVT12LL    = 0
+
+*1.2V HVT core PMOS
++DTOXE_PHVT12LL     = 0               DTOXP_PHVT12LL     = 0               DXL_PHVT12LL       = 0            
++DXW_PHVT12LL       = 0               DVTH_PHVT12LL      = 0               DCJS_PHVT12LL      = 0 
++DCJSWS_PHVT12LL    = 0               DCJSWGS_PHVT12LL   = 0               DCGDO_PHVT12LL     = 0            
++DCGSO_PHVT12LL     = 0               DCGDL_PHVT12LL     = 0               DCGSL_PHVT12LL     = 0
++DCF_PHVT12LL       = 0               DWVTH0_PHVT12LL    = 0               DLVTH0_PHVT12LL    = 0
++DPVTH0_PHVT12LL    = 0 	      DLU0_PHVT12LL	 = 0
+
+*1.2V LVT core NMOS
++DTOXE_NLVT12LL     = 0               DTOXP_NLVT12LL     = 0               DXL_NLVT12LL       = 0
++DXW_NLVT12LL       = 0               DVTH_NLVT12LL      = 0               DCJS_NLVT12LL      = 0
++DCJSWS_NLVT12LL    = 0               DCJSWGS_NLVT12LL   = 0               DCGDO_NLVT12LL     = 0
++DCGSO_NLVT12LL     = 0               DCGDL_NLVT12LL     = 0               DCGSL_NLVT12LL     = 0
++DCF_NLVT12LL       = 0               DLVTH0_NLVT12LL    = 0               DPVTH0_NLVT12LL    = 0
++DWVTH0_NLVT12LL    = 0               DLU0_NLVT12LL      = 0
+
+*1.2V LVT core PMOS
++DTOXE_PLVT12LL     = 0               DTOXP_PLVT12LL     = 0               DXL_PLVT12LL       = 0 
++DXW_PLVT12LL       = 0               DVTH_PLVT12LL      = 0               DCJS_PLVT12LL      = 0 
++DCJSWS_PLVT12LL    = 0               DCJSWGS_PLVT12LL   = 0               DCGDO_PLVT12LL     = 0 
++DCGSO_PLVT12LL     = 0               DCGDL_PLVT12LL     = 0               DCGSL_PLVT12LL     = 0
++DCF_PLVT12LL       = 0               DLVTH0_PLVT12LL    = 0               DPVTH0_PLVT12LL    = 0                           
+
+*1.8V IO NMOS 
++DTOXE_N18LL        = 0               DTOXP_N18LL        = 0               DXL_N18LL          = 0            
++DXW_N18LL          = 0               DVTH_N18LL         = 0               DCJS_N18LL         = 0            
++DCJSWS_N18LL       = 0               DCJSWGS_N18LL      = 0               DCGDO_N18LL        = 0            
++DCGSO_N18LL        = 0               DCF_N18LL          = 0               DCGDL_N18LL        = 0            
++DCGSL_N18LL        = 0               DLVTH0_N18LL       = 0               DPVTH0_N18LL       = 0
++DLU0_N18LL         = 0               DPU0_N18LL         = 0
+
+*1.8V IO PMOS
++DTOXE_P18LL        = 0               DTOXP_P18LL        = 0               DXL_P18LL         = 0             
++DXW_P18LL          = 0               DVTH_P18LL         = 0               DCJS_P18LL        = 0             
++DCJSWS_P18LL       = 0               DCJSWGS_P18LL      = 0               DCGDO_P18LL       = 0             
++DCGSO_P18LL        = 0               DCGDL_P18LL        = 0               DCGSL_P18LL       = 0             
++DCF_P18LL          = 0               DLVTH0_P18LL       = 0               DPVTH0_P18LL      = 0               
++DLU0_P18LL         = 0               DPU0_P18LL         = 0
+
+*1.8V IO Native NMOS
++DTOXE_NT18LL       = 0               DTOXP_NT18LL       = 0               DXL_NT18LL        = 0             
++DXW_NT18LL         = 0               DVTH_NT18LL        = 0               DCJS_NT18LL       = 0             
++DCJSWS_NT18LL      = 0               DCJSWGS_NT18LL     = 0               DCGDO_NT18LL      = 0             
++DCGSO_NT18LL       = 0               DCGDL_NT18LL       = 0               DCGSL_NT18LL      = 0             
++DCF_NT18LL         = 0               DLVTH0_NT18LL      = 0               DPVTH0_NT18LL     = 0 
++DLU0_NT18LL        = 0               DPU0_NT18LL        = 0
+
+*2.5V(OD 3.3V) IO NMOS 
++DTOXE_NOD33LL        = 0             DTOXP_NOD33LL        = 0             DXL_NOD33LL          = 0            
++DXW_NOD33LL          = 0             DVTH_NOD33LL         = 0             DCJS_NOD33LL         = 0            
++DCJSWS_NOD33LL       = 0             DCJSWGS_NOD33LL      = 0             DCGDO_NOD33LL        = 0            
++DCGSO_NOD33LL        = 0             DCF_NOD33LL          = 0             DCGDL_NOD33LL        = 0            
++DCGSL_NOD33LL        = 0             DLVTH0_NOD33LL       = 0             DPVTH0_NOD33LL       = 0               
++DLU0_NOD33LL         = 0             DPU0_NOD33LL         = 0
+
+*2.5V(OD 3.3V) IO PMOS
++DTOXE_POD33LL        = 0             DTOXP_POD33LL        = 0             DXL_POD33LL         = 0             
++DXW_POD33LL          = 0             DVTH_POD33LL         = 0             DCJS_POD33LL        = 0             
++DCJSWS_POD33LL       = 0             DCJSWGS_POD33LL      = 0             DCGDO_POD33LL       = 0             
++DCGSO_POD33LL        = 0             DCGDL_POD33LL        = 0             DCGSL_POD33LL       = 0             
++DCF_POD33LL          = 0             DLVTH0_POD33LL       = 0             DPVTH0_POD33LL      = 0               
++DLU0_POD33LL         = 0             DPU0_POD33LL         = 0
+
+*2.5V IO NMOS 
++DTOXE_N25LL        = 0               DTOXP_N25LL        = 0               DXL_N25LL          = 0            
++DXW_N25LL          = 0               DVTH_N25LL         = 0               DCJS_N25LL         = 0            
++DCJSWS_N25LL       = 0               DCJSWGS_N25LL      = 0               DCGDO_N25LL        = 0            
++DCGSO_N25LL        = 0               DCF_N25LL          = 0               DCGDL_N25LL        = 0            
++DCGSL_N25LL        = 0               DLVTH0_N25LL       = 0               DPVTH0_N25LL       = 0               
++DLU0_N25LL         = 0               DPU0_N25LL         = 0
+
+*2.5V IO PMOS
++DTOXE_P25LL        = 0               DTOXP_P25LL        = 0               DXL_P25LL         = 0             
++DXW_P25LL          = 0               DVTH_P25LL         = 0               DCJS_P25LL        = 0             
++DCJSWS_P25LL       = 0               DCJSWGS_P25LL      = 0               DCGDO_P25LL       = 0             
++DCGSO_P25LL        = 0               DCGDL_P25LL        = 0               DCGSL_P25LL       = 0             
++DCF_P25LL          = 0               DLVTH0_P25LL       = 0               DPVTH0_P25LL      = 0               
++DLU0_P25LL         = 0               DPU0_P25LL         = 0
+
+*2.5V IO Native NMOS
++DTOXE_NT25LL       = 0               DTOXP_NT25LL       = 0               DXL_NT25LL        = 0             
++DXW_NT25LL         = 0               DVTH_NT25LL        = 0               DCJS_NT25LL       = 0             
++DCJSWS_NT25LL      = 0               DCJSWGS_NT25LL     = 0               DCGDO_NT25LL      = 0             
++DCGSO_NT25LL       = 0               DCGDL_NT25LL       = 0               DCGSL_NT25LL      = 0             
++DCF_NT25LL         = 0               DLVTH0_NT25LL      = 0               DU0_NT25LL        = 0                                                                                               
+                                                                                                      
+.INC 'l0065ll_io25_od33_v1p0.mdl' 
+.ENDL  TT
+
+.LIB FF
+.option gmindc=1e-14
+.PARAM
+*1.2V core NMOS 
++DTOXE_N12LL        = -4.8E-11        DTOXP_N12LL        = -4.8E-11        DXL_N12LL          = -1E-9   
++DXW_N12LL          = 2E-9            DVTH_N12LL         = -0.02           DCJS_N12LL         = -7.7E-5 
++DCJSWS_N12LL       = -1.45E-12       DCJSWGS_N12LL      = -1.33E-11       DCGDO_N12LL        = 3.5E-12   
++DCGSO_N12LL        = 3.5E-12         DCGDL_N12LL        = 5E-12           DCGSL_N12LL        = 5E-12
++DCF_N12LL          = 4.145E-12       DLVTH0_N12LL       = -8.5E-10        DPVTH0_N12LL       = -5.3E-16
++DLU0_N12LL         = 1.3E-10         DPU0_N12LL         = 6.5E-17
+
+*1.2V core PMOS
++DTOXE_P12LL        = -4.8E-11        DTOXP_P12LL        = -4.8E-11        DXL_P12LL          = -1E-9    
++DXW_P12LL          = 2E-9            DVTH_P12LL         = 0.018           DCJS_P12LL         = -5.46E-5 
++DCJSWS_P12LL       = -1.2E-12        DCJSWGS_P12LL      = -1.42E-11       DCGDO_P12LL        = 2.725E-12    
++DCGSO_P12LL        = 2.725E-12       DCGDL_P12LL        = 6.4E-12         DCGSL_P12LL        = 6.4E-12
++DCF_P12LL          = 4.125E-12       DLVTH0_P12LL       = 1.13E-9         DPVTH0_P12LL       = 6.2E-16
++DLU0_P12LL         = 7E-11           DPU0_P12LL         = 1.5E-17
+
+*1.2V Native NMOS 
++DTOXE_NT12LL       = -4.8E-11        DTOXP_NT12LL       = -4.8E-11        DXL_NT12LL         = -1E-9     
++DXW_NT12LL         = 2E-9            DVTH_NT12LL        = -0.03           DCJS_NT12LL        = -1.525E-05
++DCJSWS_NT12LL      = -2.3E-12        DCJSWGS_NT12LL     = -1.55E-12       DCGDO_NT12LL       = 6E-12 
++DCGSO_NT12LL       = 6E-12           DCGDL_NT12LL       = 4E-12           DCGSL_NT12LL       = 4E-12
++DCF_NT12LL         = 4.135E-12       DLVTH0_NT12LL      = -6E-9
+
+*1.2V HVT core NMOS
++DTOXE_NHVT12LL     = -4.8E-11        DTOXP_NHVT12LL     = -4.8E-11        DXL_NHVT12LL       = -1E-9   
++DXW_NHVT12LL       = 2E-9            DVTH_NHVT12LL      = -0.016          DCJS_NHVT12LL      = -1.005E-4 
++DCJSWS_NHVT12LL    = -2.55E-12       DCJSWGS_NHVT12LL   = -1.51E-11       DCGDO_NHVT12LL     = 4E-12   
++DCGSO_NHVT12LL     = 4E-12           DCGDL_NHVT12LL     = 5E-12           DCGSL_NHVT12LL     = 5E-12 
++DCF_NHVT12LL       = 4.125E-12       DPVTH0_NHVT12LL    = -7E-16          DWVTH0_NHVT12LL    = -5.0E-10
++DLVTH0_NHVT12LL    = -6.0E-10       
+
+*1.2V HVT core PMOS
++DTOXE_PHVT12LL     = -4.8E-11        DTOXP_PHVT12LL     = -4.8E-11        DXL_PHVT12LL       = -1E-9    
++DXW_PHVT12LL       = 2E-9            DVTH_PHVT12LL      = 0.016           DCJS_PHVT12LL      = -5.46E-5 
++DCJSWS_PHVT12LL    = -1.22E-12       DCJSWGS_PHVT12LL   = -1.61E-11       DCGDO_PHVT12LL     = 1.77E-12    
++DCGSO_PHVT12LL     = 1.77E-12        DCGDL_PHVT12LL     = 6.0E-12         DCGSL_PHVT12LL     = 6.0E-12
++DCF_PHVT12LL       = 4.08E-12        DWVTH0_PHVT12LL    = 1.5E-09         DLVTH0_PHVT12LL    = 5E-10
++DPVTH0_PHVT12LL    = 8E-16           DLU0_PHVT12LL      = 6E-12
+
+*1.2V LVT core NMOS
++DTOXE_NLVT12LL     = -4.8E-11        DTOXP_NLVT12LL     = -4.8E-11        DXL_NLVT12LL       = -1E-9
++DXW_NLVT12LL       = 2E-9            DVTH_NLVT12LL      = -0.015          DCJS_NLVT12LL      = -6.0E-5
++DCJSWS_NLVT12LL    = -1.43E-12       DCJSWGS_NLVT12LL   = -1.25E-11       DCGDO_NLVT12LL     = 6.5E-12
++DCGSO_NLVT12LL     = 6.5E-12         DCGDL_NLVT12LL     = 2.5E-12         DCGSL_NLVT12LL     = 2.5E-12
++DCF_NLVT12LL       = 4.13E-12        DLVTH0_NLVT12LL    = -7E-10          DPVTH0_NLVT12LL    = -4E-16
++DWVTH0_NLVT12LL    = -6E-10          DLU0_NLVT12LL      = 1.3E-10
+
+*1.2V LVT core PMOS
++DTOXE_PLVT12LL     = -4.8E-11        DTOXP_PLVT12LL     = -4.8E-11        DXL_PLVT12LL       = -1E-9
++DXW_PLVT12LL       = 2E-9            DVTH_PLVT12LL      = 0.03            DCJS_PLVT12LL      = -5.56E-5
++DCJSWS_PLVT12LL    = -1.17E-12       DCJSWGS_PLVT12LL   = -1.01E-11       DCGDO_PLVT12LL     = 4.5E-12
++DCGSO_PLVT12LL     = 4.5E-12         DCGDL_PLVT12LL     = 5.0E-12         DCGSL_PLVT12LL     = 5.0E-12
++DCF_PLVT12LL       = 4.13E-12        DLVTH0_PLVT12LL    = 1.8E-09         DPVTH0_PLVT12LL    = 3.5E-16                      
+
+*1.8V IO NMOS                                                    
++DTOXE_N18LL        = -7.5E-11        DTOXP_N18LL        = -7.5E-11        DXL_N18LL          = -3.0E-9         
++DXW_N18LL          = 4.5E-9          DVTH_N18LL         = -0.038          DCJS_N18LL         = -5.91e-5        
++DCJSWS_N18LL       = -1.625E-12      DCJSWGS_N18LL      = -8.635E-12      DCGDO_N18LL        = 8.5E-12         
++DCGSO_N18LL        = 8.5E-12         DCF_N18LL          = 3.7E-12         DCGDL_N18LL        = 5.0E-12                
++DCGSL_N18LL        = 5.0E-12         DLVTH0_N18LL       = -1.0E-09        DPVTH0_N18LL       = -1.05E-15
++DLU0_N18LL         = 3.6E-10         DPU0_N18LL         = 7E-17
+
+*1.8V IO PMOS
++DTOXE_P18LL        = -7.5E-11        DTOXP_P18LL        = -7.5E-11        DXL_P18LL          = -3.0E-9       
++DXW_P18LL          = 4.5E-9          DVTH_P18LL         = 0.035           DCJS_P18LL         = -9.29E-05      
++DCJSWS_P18LL       = -7.88E-14       DCJSWGS_P18LL      = -1.321E-11      DCGDO_P18LL        = 8.75E-12       
++DCGSO_P18LL        = 8.75E-12        DCGDL_P18LL        = 7.50E-12        DCGSL_P18LL        = 7.50E-12      
++DCF_P18LL          = 4.1E-12         DLVTH0_P18LL       = 1.4E-09         DPVTH0_P18LL       = 1E-15           
++DLU0_P18LL         = 9E-11           DPU0_P18LL         = 5E-17
+
+*1.8V IO Native NMOS
++DTOXE_NT18LL       = -7.5E-11        DTOXP_NT18LL       = -7.5E-11        DXL_NT18LL         = -3.0E-9       
++DXW_NT18LL         = 4.5E-9          DVTH_NT18LL        = -0.045          DCJS_NT18LL        = -1.54E-5      
++DCJSWS_NT18LL      = -2.345E-12      DCJSWGS_NT18LL     = -1.04E-11       DCGDO_NT18LL       = 8.5E-12       
++DCGSO_NT18LL       = 8.5E-12         DCGDL_NT18LL       = 5.0E-12         DCGSL_NT18LL       = 5.0E-12      
++DCF_NT18LL         = 3.7E-12         DLVTH0_NT18LL      = -5.0E-09        DPVTH0_NT18LL      = -6.4E-15        
++DLU0_NT18LL        = 1.25E-09        DPU0_NT18LL        = 2.0E-16
+
+*2.5V(OD 3.3V) IO NMOS                                                    
++DTOXE_NOD33LL        = -1.0E-10      DTOXP_NOD33LL        = -1.0E-10      DXL_NOD33LL          = -4.5E-9        
++DXW_NOD33LL          = 4.5E-9        DVTH_NOD33LL         = -0.034        DCJS_NOD33LL         = -5.69e-5        
++DCJSWS_NOD33LL       = -2.48E-12     DCJSWGS_NOD33LL      = -1.05E-11     DCGDO_NOD33LL        = 6.0E-12         
++DCGSO_NOD33LL        = 6.0E-12       DCGDL_NOD33LL        = 1.21E-11      DCGSL_NOD33LL        = 1.21E-11               
++DCF_NOD33LL          = 3.17E-12      DLVTH0_NOD33LL       = -2.3E-09      DPVTH0_NOD33LL       = -3.5E-15        
++DLU0_NOD33LL         = 2.05E-9       DPU0_NOD33LL         = 7.5E-16
+
+*2.5V(OD 3.3V) IO PMOS
++DTOXE_POD33LL        = -1.0E-10      DTOXP_POD33LL        = -1.0E-10      DXL_POD33LL          = -4.5E-9       
++DXW_POD33LL          = 4.5E-9        DVTH_POD33LL         = 0.024         DCJS_POD33LL         = -6.03E-5      
++DCJSWS_POD33LL       = -1.40E-12     DCJSWGS_POD33LL      = -1.10E-11     DCGDO_POD33LL        = 7.00E-12       
++DCGSO_POD33LL        = 7.00E-12      DCGDL_POD33LL        = 1.24E-11      DCGSL_POD33LL        = 1.24E-11      
++DCF_POD33LL          = 3.17E-12      DLVTH0_POD33LL       = 3.1E-09       DPVTH0_POD33LL       = 1.70E-15        
++DLU0_POD33LL         = 2.9E-10       DPU0_POD33LL         = 5.5E-17    
+
+*2.5V IO NMOS                                                    
++DTOXE_N25LL        = -1.0E-10        DTOXP_N25LL        = -1.0E-10        DXL_N25LL          = -4.5E-9        
++DXW_N25LL          = 4.5E-9          DVTH_N25LL         = -0.034          DCJS_N25LL         = -5.69e-5        
++DCJSWS_N25LL       = -2.48E-12       DCJSWGS_N25LL      = -1.05E-11       DCGDO_N25LL        = 6.0E-12         
++DCGSO_N25LL        = 6.0E-12         DCGDL_N25LL        = 1.21E-11        DCGSL_N25LL        = 1.21E-11               
++DCF_N25LL          = 3.17E-12        DLVTH0_N25LL       = -2.3E-09        DPVTH0_N25LL       = -3.5E-15        
++DLU0_N25LL         = 2.05E-9         DPU0_N25LL         = 7.5E-16
+
+*2.5V IO PMOS
++DTOXE_P25LL        = -1.0E-10        DTOXP_P25LL        = -1.0E-10        DXL_P25LL          = -4.5E-9       
++DXW_P25LL          = 4.5E-9          DVTH_P25LL         = 0.024           DCJS_P25LL         = -6.03E-5      
++DCJSWS_P25LL       = -1.40E-12       DCJSWGS_P25LL      = -1.10E-11       DCGDO_P25LL        = 7.00E-12       
++DCGSO_P25LL        = 7.00E-12        DCGDL_P25LL        = 1.24E-11        DCGSL_P25LL        = 1.24E-11      
++DCF_P25LL          = 3.17E-12        DLVTH0_P25LL       = 3.1E-09         DPVTH0_P25LL       = 1.70E-15        
++DLU0_P25LL         = 2.9E-10         DPU0_P25LL         = 5.5E-17      
+
+*2.5V IO Native NMOS
++DTOXE_NT25LL       = -1.0E-10        DTOXP_NT25LL       = -1.0E-10        DXL_NT25LL         = -4.5E-9       
++DXW_NT25LL         = 4.5E-9          DVTH_NT25LL        = -0.034          DCJS_NT25LL        = -1.74E-5      
++DCJSWS_NT25LL      = -2.00E-12       DCJSWGS_NT25LL     = -1.02E-11       DCGDO_NT25LL       = 1.00E-11       
++DCGSO_NT25LL       = 1.00E-11        DCGDL_NT25LL       = 8.95E-12        DCGSL_NT25LL       = 8.95E-12      
++DCF_NT25LL         = 3.22E-12        DLVTH0_NT25LL      = -3.1E-08        DU0_NT25LL         = 1.0E-3         
+        
+.INC 'l0065ll_io25_od33_v1p0.mdl' 
+.ENDL  FF
+
+.LIB SS
+.option gmindc=1e-14
+.PARAM
+*1.2V core NMOS 
++DTOXE_N12LL        = 4.8E-11         DTOXP_N12LL        = 4.8E-11         DXL_N12LL          = 1E-9   
++DXW_N12LL          = -2E-9           DVTH_N12LL         = 0.02            DCJS_N12LL         = 7.7E-5  
++DCJSWS_N12LL       = 1.45E-12        DCJSWGS_N12LL      = 1.33E-11        DCGDO_N12LL        = -3.5E-12  
++DCGSO_N12LL        = -3.5E-12        DCGDL_N12LL        = -5E-12          DCGSL_N12LL        = -5E-12 
++DCF_N12LL          = -4.145E-12      DLVTH0_N12LL       = 8.5E-10         DPVTH0_N12LL       = 5.3E-16
++DLU0_N12LL         = -1.3E-10        DPU0_N12LL         = -6.5E-17
+
+*1.2V core PMOS 
++DTOXE_P12LL        = 4.8E-11         DTOXP_P12LL        = 4.8E-11         DXL_P12LL          = 1E-9            
++DXW_P12LL          = -2E-9           DVTH_P12LL         = -0.018          DCJS_P12LL         = 5.46E-5 
++DCJSWS_P12LL       = 1.2E-12         DCJSWGS_P12LL      = 1.42E-11        DCGDO_P12LL        = -2.725E-12  
++DCGSO_P12LL        = -2.725E-12      DCGDL_P12LL        = -6.4E-12        DCGSL_P12LL        = -6.4E-12
++DCF_P12LL          = -4.125E-12      DLVTH0_P12LL       = -1.13E-9        DPVTH0_P12LL       = -6.2E-16
++DLU0_P12LL         = -7E-11          DPU0_P12LL         = -1.5E-17
+
+*1.2V Native NMOS
++DTOXE_NT12LL       = 4.8E-11         DTOXP_NT12LL       = 4.8E-11         DXL_NT12LL         = 1E-9     
++DXW_NT12LL         = -2E-9           DVTH_NT12LL        = 0.03            DCJS_NT12LL        = 1.525E-05
++DCJSWS_NT12LL      = 2.3E-12         DCJSWGS_NT12LL     = 1.55E-12        DCGDO_NT12LL       = -6E-12
++DCGSO_NT12LL       = -6E-12          DCGDL_NT12LL       = -4E-12          DCGSL_NT12LL       = -4E-12 
++DCF_NT12LL         = -4.135E-12      DLVTH0_NT12LL      = 6E-9
+
+*1.2V HVT core NMOS
++DTOXE_NHVT12LL     = 4.8E-11         DTOXP_NHVT12LL     = 4.8E-11         DXL_NHVT12LL       = 1E-9   
++DXW_NHVT12LL       = -2E-9           DVTH_NHVT12LL      = 0.016           DCJS_NHVT12LL      = 1.005E-4 
++DCJSWS_NHVT12LL    = 2.55E-12        DCJSWGS_NHVT12LL   = 1.51E-11        DCGDO_NHVT12LL     = -4E-12   
++DCGSO_NHVT12LL     = -4E-12          DCGDL_NHVT12LL     = -5E-12          DCGSL_NHVT12LL     = -5E-12 
++DCF_NHVT12LL       = -4.125E-12      DPVTH0_NHVT12LL    = 7E-16           DWVTH0_NHVT12LL    = 5.0E-10
++DLVTH0_NHVT12LL    = 6.0E-10
+
+*1.2V HVT core PMOS 
++DTOXE_PHVT12LL     = 4.8E-11         DTOXP_PHVT12LL     = 4.8E-11         DXL_PHVT12LL       = 1E-9            
++DXW_PHVT12LL       = -2E-9           DVTH_PHVT12LL      = -0.016          DCJS_PHVT12LL      = 5.46E-5 
++DCJSWS_PHVT12LL    = 1.22E-12        DCJSWGS_PHVT12LL   = 1.61E-11        DCGDO_PHVT12LL     = -1.77E-12  
++DCGSO_PHVT12LL     = -1.77E-12       DCGDL_PHVT12LL     = -6.0E-12        DCGSL_PHVT12LL     = -6.0E-12
++DCF_PHVT12LL       = -4.08E-12       DWVTH0_PHVT12LL    = -1.5E-09        DLVTH0_PHVT12LL    = -5E-10
++DPVTH0_PHVT12LL    = -8E-16          DLU0_PHVT12LL      = -6E-12
+
+*1.2V LVT core NMOS 
++DTOXE_NLVT12LL     = 4.8E-11         DTOXP_NLVT12LL     = 4.8E-11         DXL_NLVT12LL       = 1E-9    
++DXW_NLVT12LL       = -2E-9           DVTH_NLVT12LL      = 0.015           DCJS_NLVT12LL      = 6.0E-5  
++DCJSWS_NLVT12LL    = 1.43E-12        DCJSWGS_NLVT12LL   = 1.25E-11        DCGDO_NLVT12LL     = -6.5E-12  
++DCGSO_NLVT12LL     = -6.5E-12        DCGDL_NLVT12LL     = -2.5E-12        DCGSL_NLVT12LL     = -2.5E-12
++DCF_NLVT12LL       = -4.13E-12       DLVTH0_NLVT12LL    = 7E-10           DPVTH0_NLVT12LL    = 4E-16
++DWVTH0_NLVT12LL    = 6E-10           DLU0_NLVT12LL      = -1.3E-10
+
+*1.2V LVT core PMOS
++DTOXE_PLVT12LL     = 4.8E-11         DTOXP_PLVT12LL     = 4.8E-11         DXL_PLVT12LL       = 1E-9
++DXW_PLVT12LL       = -2E-9           DVTH_PLVT12LL      = -0.03           DCJS_PLVT12LL      = 5.56E-5
++DCJSWS_PLVT12LL    = 1.17E-12        DCJSWGS_PLVT12LL   = 1.01E-11        DCGDO_PLVT12LL     = -4.5E-12
++DCGSO_PLVT12LL     = -4.5E-12        DCGDL_PLVT12LL     = -5.0E-12        DCGSL_PLVT12LL     = -5.0E-12
++DCF_PLVT12LL       = -4.13E-12       DLVTH0_PLVT12LL    = -1.8E-09        DPVTH0_PLVT12LL    = -3.5E-16
+                      
+*1.8V IO NMOS                                                    
++DTOXE_N18LL        = 7.5E-11         DTOXP_N18LL        = 7.5E-11         DXL_N18LL          = 3.0E-9          
++DXW_N18LL          = -4.5E-9         DVTH_N18LL         = 0.038           DCJS_N18LL         = 5.91e-5         
++DCJSWS_N18LL       = 1.625E-12       DCJSWGS_N18LL      = 8.635E-12       DCGDO_N18LL        = -8.5E-12        
++DCGSO_N18LL        = -8.5E-12        DCF_N18LL          = -3.7E-12        DCGDL_N18LL        = -5.0E-12             
++DCGSL_N18LL        = -5.0E-12        DLVTH0_N18LL       = 6E-10           DPVTH0_N18LL       = 1.05E-15
++DLU0_N18LL         = -3.5E-10        DPU0_N18LL         = -5E-17
+  
+*1.8V IO PMOS
++DTOXE_P18LL        = 7.5E-11         DTOXP_P18LL        = 7.5E-11         DXL_P18LL          = 3.0E-9       
++DXW_P18LL          = -4.5E-9         DVTH_P18LL         = -0.035          DCJS_P18LL         = 9.29E-05       
++DCJSWS_P18LL       = 7.88E-14        DCJSWGS_P18LL      = 1.321E-11       DCGDO_P18LL        = -8.75E-12      
++DCGSO_P18LL        = -8.75E-12       DCGDL_P18LL        = -7.50E-12       DCGSL_P18LL        = -7.50E-12     
++DCF_P18LL          = -4.1E-12        DLVTH0_P18LL       = -1.1E-09        DPVTH0_P18LL       = -1.00E-15       
++DLU0_P18LL         = -8E-11          DPU0_P18LL         = -4.2E-17
+
+*1.8V IO Native NMOS
++DTOXE_NT18LL       = 7.5E-11         DTOXP_NT18LL       = 7.5E-11         DXL_NT18LL         = 3.0E-9        
++DXW_NT18LL         = -4.5E-9         DVTH_NT18LL        = 0.045           DCJS_NT18LL        = 1.54E-05       
++DCJSWS_NT18LL      = 2.345E-12       DCJSWGS_NT18LL     = 1.04E-11        DCGDO_NT18LL       = -8.5E-12      
++DCGSO_NT18LL       = -8.5E-12        DCGDL_NT18LL       = -5.0E-12        DCGSL_NT18LL       = -5.0E-12     
++DCF_NT18LL         = -3.7E-12        DLVTH0_NT18LL      = 4.5E-09         DPVTH0_NT18LL      = 6.1E-15         
++DLU0_NT18LL        = -1.15E-09       DPU0_NT18LL        = -2.0E-16
+
+*2.5V(OD 3.3V) IO NMOS                                                    
++DTOXE_NOD33LL        = 1.0E-10       DTOXP_NOD33LL        = 1.0E-10       DXL_NOD33LL          = 4.5E-9          
++DXW_NOD33LL          = -4.5E-9       DVTH_NOD33LL         = 0.034         DCJS_NOD33LL         = 5.69e-5         
++DCJSWS_NOD33LL       = 2.48E-12      DCJSWGS_NOD33LL      = 1.05E-11      DCGDO_NOD33LL        = -6.0E-12        
++DCGSO_NOD33LL        = -6.0E-12      DCGDL_NOD33LL        = -1.21E-11     DCGSL_NOD33LL        = -1.21E-11            
++DCF_NOD33LL          = -3.17E-12     DLVTH0_NOD33LL       = 2.0E-09       DPVTH0_NOD33LL       = 3.4E-15         
++DLU0_NOD33LL         = -1.85E-9      DPU0_NOD33LL         = -5.0E-16
+
+*2.5V(OD 3.3V) IO PMOS
++DTOXE_POD33LL        = 1.0E-10       DTOXP_POD33LL        = 1.0E-10       DXL_POD33LL          = 4.5E-9        
++DXW_POD33LL          = -4.5E-9       DVTH_POD33LL         = -0.024        DCJS_POD33LL         = 6.03E-5       
++DCJSWS_POD33LL       = 1.40E-12      DCJSWGS_POD33LL      = 1.10E-11      DCGDO_POD33LL        = -7.00E-12      
++DCGSO_POD33LL        = -7.00E-12     DCGDL_POD33LL        = -1.24E-11     DCGSL_POD33LL        = -1.24E-11     
++DCF_POD33LL          = -3.17E-12     DLVTH0_POD33LL       = -2.55E-9      DPVTH0_POD33LL       = -1.55E-15      
++DLU0_POD33LL         = -2.5E-10      DPU0_POD33LL         = -4.0E-17
+
+*2.5V IO NMOS                                                    
++DTOXE_N25LL        = 1.0E-10         DTOXP_N25LL        = 1.0E-10         DXL_N25LL          = 4.5E-9          
++DXW_N25LL          = -4.5E-9         DVTH_N25LL         = 0.034           DCJS_N25LL         = 5.69e-5         
++DCJSWS_N25LL       = 2.48E-12        DCJSWGS_N25LL      = 1.05E-11        DCGDO_N25LL        = -6.0E-12        
++DCGSO_N25LL        = -6.0E-12        DCGDL_N25LL        = -1.21E-11       DCGSL_N25LL        = -1.21E-11            
++DCF_N25LL          = -3.17E-12       DLVTH0_N25LL       = 2.0E-09         DPVTH0_N25LL       = 3.4E-15         
++DLU0_N25LL         = -1.85E-9        DPU0_N25LL         = -5.0E-16
+
+*2.5V IO PMOS
++DTOXE_P25LL        = 1.0E-10         DTOXP_P25LL        = 1.0E-10         DXL_P25LL          = 4.5E-9        
++DXW_P25LL          = -4.5E-9         DVTH_P25LL         = -0.024          DCJS_P25LL         = 6.03E-5       
++DCJSWS_P25LL       = 1.40E-12        DCJSWGS_P25LL      = 1.10E-11        DCGDO_P25LL        = -7.00E-12      
++DCGSO_P25LL        = -7.00E-12       DCGDL_P25LL        = -1.24E-11       DCGSL_P25LL        = -1.24E-11     
++DCF_P25LL          = -3.17E-12       DLVTH0_P25LL       = -2.55E-9        DPVTH0_P25LL       = -1.55E-15      
++DLU0_P25LL         = -2.5E-10        DPU0_P25LL         = -4.0E-17
+
+*2.5V IO Native NMOS
++DTOXE_NT25LL       = 1.0E-10         DTOXP_NT25LL       = 1.0E-10         DXL_NT25LL         = 4.5E-9         
++DXW_NT25LL         = -4.5E-9         DVTH_NT25LL        = 0.034           DCJS_NT25LL        = 1.74E-5       
++DCJSWS_NT25LL      = 2.00E-12        DCJSWGS_NT25LL     = 1.02E-11        DCGDO_NT25LL       = -1.00E-11      
++DCGSO_NT25LL       = -1.00E-11       DCGDL_NT25LL       = -8.95E-12       DCGSL_NT25LL       = -8.95E-12     
++DCF_NT25LL         = -3.22E-12       DLVTH0_NT25LL      = 3.1E-08         DU0_NT25LL         = -1.0E-3                       
+
+.INC 'l0065ll_io25_od33_v1p0.mdl' 
+.ENDL  SS
+
+.LIB FNSP
+.option gmindc=1e-14
+.PARAM
+*1.2V core NMOS   
++DTOXE_N12LL        = 0               DTOXP_N12LL        = 0               DXL_N12LL          = 0   
++DXW_N12LL          = 0               DVTH_N12LL         = -0.02           DCJS_N12LL         = -7.7E-5 
++DCJSWS_N12LL       = -1.45E-12       DCJSWGS_N12LL      = -1.33E-11       DCGDO_N12LL        = 0   
++DCGSO_N12LL        = 0               DCGDL_N12LL        = 0               DCGSL_N12LL        = 0 
++DCF_N12LL          = 0               DLVTH0_N12LL       = -8.5E-10        DPVTH0_N12LL       = -5.3E-16
++DLU0_N12LL         = 1.3E-10         DPU0_N12LL         = 6.5E-17
+
+*1.2V core PMOS
++DTOXE_P12LL        = 0               DTOXP_P12LL        = 0               DXL_P12LL          = 0          
++DXW_P12LL          = 0               DVTH_P12LL         = -0.018          DCJS_P12LL         = 5.46E-5 
++DCJSWS_P12LL       = 1.2E-12         DCJSWGS_P12LL      = 1.42E-11        DCGDO_P12LL        = 0  
++DCGSO_P12LL        = 0               DCGDL_P12LL        = 0               DCGSL_P12LL        = 0
++DCF_P12LL          = 0               DLVTH0_P12LL       = -1.13E-9        DPVTH0_P12LL       = -6.2E-16
++DLU0_P12LL         = -7E-11          DPU0_P12LL         = -1.5E-17
+
+*1.2V Native NMOS 
++DTOXE_NT12LL       = 0               DTOXP_NT12LL       = 0               DXL_NT12LL         = 0    
++DXW_NT12LL         = 0               DVTH_NT12LL        = -0.03           DCJS_NT12LL        = -1.525E-05
++DCJSWS_NT12LL      = -2.3E-12        DCJSWGS_NT12LL     = -1.55E-12       DCGDO_NT12LL       = 0         
++DCGSO_NT12LL       = 0               DCGDL_NT12LL       = 0               DCGSL_NT12LL       = 0                             
++DCF_NT12LL         = 0               DLVTH0_NT12LL      = -6E-9
+
+*1.2V HVT core NMOS
++DTOXE_NHVT12LL     = 0               DTOXP_NHVT12LL     = 0               DXL_NHVT12LL       = 0   
++DXW_NHVT12LL       = 0               DVTH_NHVT12LL      = -0.016          DCJS_NHVT12LL      = -1.005E-4 
++DCJSWS_NHVT12LL    = -2.55E-12       DCJSWGS_NHVT12LL   = -1.51E-11       DCGDO_NHVT12LL     = 0   
++DCGSO_NHVT12LL     = 0               DCGDL_NHVT12LL     = 0               DCGSL_NHVT12LL     = 0 
++DCF_NHVT12LL       = 0               DPVTH0_NHVT12LL    = -7E-16          DWVTH0_NHVT12LL    = -5.0E-10
++DLVTH0_NHVT12LL    = -6.0E-10
+
+*1.2V HVT core PMOS
++DTOXE_PHVT12LL     = 0               DTOXP_PHVT12LL     = 0               DXL_PHVT12LL       = 0            
++DXW_PHVT12LL       = 0               DVTH_PHVT12LL      = -0.016          DCJS_PHVT12LL      = 5.46E-5 
++DCJSWS_PHVT12LL    = 1.22E-12        DCJSWGS_PHVT12LL   = 1.61E-11        DCGDO_PHVT12LL     = 0  
++DCGSO_PHVT12LL     = 0               DCGDL_PHVT12LL     = 0               DCGSL_PHVT12LL     = 0
++DCF_PHVT12LL       = 0               DWVTH0_PHVT12LL    = -1.5E-09        DLVTH0_PHVT12LL    = -5E-10
++DPVTH0_PHVT12LL    = -8E-16          DLU0_PHVT12LL      = -6E-12
+
+*1.2V LVT core NMOS
++DTOXE_NLVT12LL     = 0               DTOXP_NLVT12LL     = 0               DXL_NLVT12LL       = 0   
++DXW_NLVT12LL       = 0               DVTH_NLVT12LL      = -0.015          DCJS_NLVT12LL      = -6.0E-5 
++DCJSWS_NLVT12LL    = -1.43E-12       DCJSWGS_NLVT12LL   = -1.25E-11       DCGDO_NLVT12LL     = 0   
++DCGSO_NLVT12LL     = 0               DCGDL_NLVT12LL     = 0               DCGSL_NLVT12LL     = 0 
++DCF_NLVT12LL       = 0               DLVTH0_NLVT12LL    = -7E-10          DPVTH0_NLVT12LL    = -4E-16
++DWVTH0_NLVT12LL    = -6E-10          DLU0_NLVT12LL      = 1.3E-10
+
+*1.2V LVT core PMOS
++DTOXE_PLVT12LL     = 0               DTOXP_PLVT12LL     = 0               DXL_PLVT12LL       = 0          
++DXW_PLVT12LL       = 0               DVTH_PLVT12LL      = -0.03           DCJS_PLVT12LL      = 5.56E-5 
++DCJSWS_PLVT12LL    = 1.17E-12        DCJSWGS_PLVT12LL   = 1.01E-11        DCGDO_PLVT12LL     = 0  
++DCGSO_PLVT12LL     = 0               DCGDL_PLVT12LL     = 0               DCGSL_PLVT12LL     = 0
++DCF_PLVT12LL       = 0               DLVTH0_PLVT12LL    = -1.8E-09        DPVTH0_PLVT12LL    = -3.5E-16
+                      
+*1.8V IO NMOS                                                    
++DTOXE_N18LL        = 0               DTOXP_N18LL        = 0               DXL_N18LL          = 0       
++DXW_N18LL          = 0               DVTH_N18LL         = -0.038          DCJS_N18LL         = -5.91e-5        
++DCJSWS_N18LL       = -1.625E-12      DCJSWGS_N18LL      = -8.635E-12      DCGDO_N18LL        = 0               
++DCGSO_N18LL        = 0               DCF_N18LL          = 0               DCGDL_N18LL        = 0              
++DCGSL_N18LL        = 0               DLVTH0_N18LL       = -1.0E-09        DPVTH0_N18LL       = -1.05E-15
++DLU0_N18LL         = 3.6E-10         DPU0_N18LL         = 7E-17
+  
+*1.8V IO PMOS
++DTOXE_P18LL        = 0               DTOXP_P18LL        = 0               DXL_P18LL          = 0      
++DXW_P18LL          = 0               DVTH_P18LL         = -0.035          DCJS_P18LL         = 9.29E-05       
++DCJSWS_P18LL       = 7.88E-14        DCJSWGS_P18LL      = 1.321E-11       DCGDO_P18LL        = 0             
++DCGSO_P18LL        = 0               DCGDL_P18LL        = 0               DCGSL_P18LL        = 0             
++DCF_P18LL          = 0               DLVTH0_P18LL       = -1.1E-09        DPVTH0_P18LL       = -1.00E-15       
++DLU0_P18LL         = -8E-11          DPU0_P18LL         = -4.2E-17
+
+*1.8V IO Native NMOS
++DTOXE_NT18LL       = 0               DTOXP_NT18LL       = 0               DXL_NT18LL         = 0     
++DXW_NT18LL         = 0               DVTH_NT18LL        = -0.045          DCJS_NT18LL        = -1.54E-5      
++DCJSWS_NT18LL      = -2.345E-12      DCJSWGS_NT18LL     = -1.04E-11       DCGDO_NT18LL       = 0             
++DCGSO_NT18LL       = 0               DCGDL_NT18LL       = 0               DCGSL_NT18LL       = 0             
++DCF_NT18LL         = 0               DLVTH0_NT18LL      = -5.0E-09        DPVTH0_NT18LL      = -6.4E-15        
++DLU0_NT18LL        = 1.25E-09        DPU0_NT18LL        = 2.0E-16
+
+*2.5V(OD 3.3V) IO NMOS                                                    
++DTOXE_NOD33LL        = 0             DTOXP_NOD33LL        = 0             DXL_NOD33LL          = 0        
++DXW_NOD33LL          = 0             DVTH_NOD33LL         = -0.034        DCJS_NOD33LL         = -5.69e-5        
++DCJSWS_NOD33LL       = -2.48E-12     DCJSWGS_NOD33LL      = -1.05E-11     DCGDO_NOD33LL        = 0               
++DCGSO_NOD33LL        = 0             DCGDL_NOD33LL        = 0             DCGSL_NOD33LL        = 0               
++DCF_NOD33LL          = 0             DLVTH0_NOD33LL       = -2.3E-09      DPVTH0_NOD33LL       = -3.5E-15        
++DLU0_NOD33LL         = 2.05E-9       DPU0_NOD33LL         = 7.5E-16        
+
+*2.5V(OD 3.3V) IO PMOS
++DTOXE_POD33LL        = 0             DTOXP_POD33LL        = 0             DXL_POD33LL         = 0       
++DXW_POD33LL          = 0             DVTH_POD33LL         = -0.024        DCJS_POD33LL        = 6.03E-5       
++DCJSWS_POD33LL       = 1.40E-12      DCJSWGS_POD33LL      = 1.10E-11      DCGDO_POD33LL       = 0             
++DCGSO_POD33LL        = 0             DCGDL_POD33LL        = 0             DCGSL_POD33LL       = 0             
++DCF_POD33LL          = 0             DLVTH0_POD33LL       = -2.55E-9      DPVTH0_POD33LL       = -1.55E-15      
++DLU0_POD33LL          = -2.5E-10     DPU0_POD33LL         = -4.0E-17
+
+*2.5V IO NMOS                                                    
++DTOXE_N25LL        = 0               DTOXP_N25LL        = 0               DXL_N25LL          = 0        
++DXW_N25LL          = 0               DVTH_N25LL         = -0.034          DCJS_N25LL         = -5.69e-5        
++DCJSWS_N25LL       = -2.48E-12       DCJSWGS_N25LL      = -1.05E-11       DCGDO_N25LL        = 0               
++DCGSO_N25LL        = 0               DCGDL_N25LL        = 0               DCGSL_N25LL        = 0               
++DCF_N25LL          = 0               DLVTH0_N25LL       = -2.3E-09        DPVTH0_N25LL       = -3.5E-15        
++DLU0_N25LL         = 2.05E-9         DPU0_N25LL         = 7.5E-16        
+
+*2.5V IO PMOS
++DTOXE_P25LL        = 0               DTOXP_P25LL        = 0               DXL_P25LL         = 0       
++DXW_P25LL          = 0               DVTH_P25LL         = -0.024          DCJS_P25LL        = 6.03E-5       
++DCJSWS_P25LL       = 1.40E-12        DCJSWGS_P25LL      = 1.10E-11        DCGDO_P25LL       = 0             
++DCGSO_P25LL        = 0               DCGDL_P25LL        = 0               DCGSL_P25LL       = 0             
++DCF_P25LL          = 0               DLVTH0_P25LL       = -2.55E-9        DPVTH0_P25LL       = -1.55E-15      
++DLU0_P25LL          = -2.5E-10       DPU0_P25LL         = -4.0E-17        
+  
+*2.5V IO Native NMOS
++DTOXE_NT25LL       = 0               DTOXP_NT25LL       = 0               DXL_NT25LL        = 0      
++DXW_NT25LL         = 0               DVTH_NT25LL        = -0.034          DCJS_NT25LL       = -1.74E-5      
++DCJSWS_NT25LL      = -2.00E-12       DCJSWGS_NT25LL     = -1.02E-11       DCGDO_NT25LL      = 0             
++DCGSO_NT25LL       = 0               DCGDL_NT25LL       = 0               DCGSL_NT25LL      = 0             
++DCF_NT25LL         = 0               DLVTH0_NT25LL      = -3.1E-08        DU0_NT25LL        = 1.0E-3                            
+
+.INC 'l0065ll_io25_od33_v1p0.mdl' 
+.ENDL  FNSP
+
+.LIB SNFP
+.option gmindc=1e-14
+.PARAM
+*1.2V core NMOS 
++DTOXE_N12LL        = 0               DTOXP_N12LL        = 0               DXL_N12LL          = 0   
++DXW_N12LL          = 0               DVTH_N12LL         = 0.02            DCJS_N12LL         = 7.7E-5 
++DCJSWS_N12LL       = 1.45E-12        DCJSWGS_N12LL      = 1.33E-11        DCGDO_N12LL        = 0   
++DCGSO_N12LL        = 0               DCGDL_N12LL        = 0               DCGSL_N12LL        = 0 
++DCF_N12LL          = 0               DLVTH0_N12LL       = 8.5E-10         DPVTH0_N12LL       = 5.3E-16
++DLU0_N12LL         = -1.3E-10        DPU0_N12LL         = -6.5E-17
+
+*1.2V core PMOS
++DTOXE_P12LL        = 0               DTOXP_P12LL        = 0               DXL_P12LL          = 0            
++DXW_P12LL          = 0               DVTH_P12LL         = 0.018           DCJS_P12LL         = -5.46E-5 
++DCJSWS_P12LL       = -1.2E-12        DCJSWGS_P12LL      = -1.42E-11       DCGDO_P12LL        = 0    
++DCGSO_P12LL        = 0               DCGDL_P12LL        = 0               DCGSL_P12LL        = 0
++DCF_P12LL          = 0               DLVTH0_P12LL       = 1.13E-9         DPVTH0_P12LL       = 6.2E-16
++DLU0_P12LL         = 7E-11           DPU0_P12LL         = 1.5E-17
+
+*1.2V Native NMOS 
++DTOXE_NT12LL       = 0               DTOXP_NT12LL       = 0               DXL_NT12LL         = 0     
++DXW_NT12LL         = 0               DVTH_NT12LL        = 0.03            DCJS_NT12LL        = 1.525E-05
++DCJSWS_NT12LL      = 2.3E-12         DCJSWGS_NT12LL     = 1.55E-12        DCGDO_NT12LL       = 0        
++DCGSO_NT12LL       = 0               DCGDL_NT12LL       = 0               DCGSL_NT12LL       = 0                   
++DCF_NT12LL         = 0               DLVTH0_NT12LL      = 6E-9
+
+*1.2V HVT core NMOS
++DTOXE_NHVT12LL     = 0               DTOXP_NHVT12LL     = 0               DXL_NHVT12LL       = 0   
++DXW_NHVT12LL       = 0               DVTH_NHVT12LL      = 0.016           DCJS_NHVT12LL      = 1.005E-4 
++DCJSWS_NHVT12LL    = 2.55E-12        DCJSWGS_NHVT12LL   = 1.51E-11        DCGDO_NHVT12LL     = 0   
++DCGSO_NHVT12LL     = 0               DCGDL_NHVT12LL     = 0               DCGSL_NHVT12LL     = 0 
++DCF_NHVT12LL       = 0               DPVTH0_NHVT12LL    = 7E-16           DWVTH0_NHVT12LL    = 5.0E-10
++DLVTH0_NHVT12LL    = 6.0E-10
+
+*1.2V HVT core PMOS
++DTOXE_PHVT12LL     = 0               DTOXP_PHVT12LL     = 0               DXL_PHVT12LL       = 0            
++DXW_PHVT12LL       = 0               DVTH_PHVT12LL      = 0.016           DCJS_PHVT12LL      = -5.46E-5 
++DCJSWS_PHVT12LL    = -1.22E-12       DCJSWGS_PHVT12LL   = -1.61E-11       DCGDO_PHVT12LL     = 0    
++DCGSO_PHVT12LL     = 0               DCGDL_PHVT12LL     = 0               DCGSL_PHVT12LL     = 0
++DCF_PHVT12LL       = 0               DWVTH0_PHVT12LL    = 1.5E-09         DLVTH0_PHVT12LL    = 5E-10
++DPVTH0_PHVT12LL    = 8E-16           DLU0_PHVT12LL      = 6E-12
+
+*1.2V LVT core NMOS
++DTOXE_NLVT12LL     = 0               DTOXP_NLVT12LL     = 0               DXL_NLVT12LL       = 0    
++DXW_NLVT12LL       = 0               DVTH_NLVT12LL      = 0.015           DCJS_NLVT12LL      = 6.0E-5  
++DCJSWS_NLVT12LL    = 1.43E-12        DCJSWGS_NLVT12LL   = 1.25E-11        DCGDO_NLVT12LL     = 0  
++DCGSO_NLVT12LL     = 0               DCGDL_NLVT12LL     = 0               DCGSL_NLVT12LL     = 0
++DCF_NLVT12LL       = 0               DLVTH0_NLVT12LL    = 7E-10           DPVTH0_NLVT12LL    = 4E-16
++DWVTH0_NLVT12LL    = 6E-10           DLU0_NLVT12LL      = -1.3E-10
+
+*1.2V LVT core PMOS
++DTOXE_PLVT12LL     = 0               DTOXP_PLVT12LL     = 0               DXL_PLVT12LL       = 0            
++DXW_PLVT12LL       = 0               DVTH_PLVT12LL      = 0.03            DCJS_PLVT12LL      = -5.56E-5 
++DCJSWS_PLVT12LL    = -1.17E-12       DCJSWGS_PLVT12LL   = -1.01E-11       DCGDO_PLVT12LL     = 0    
++DCGSO_PLVT12LL     = 0               DCGDL_PLVT12LL     = 0               DCGSL_PLVT12LL     = 0
++DCF_PLVT12LL       = 0               DLVTH0_PLVT12LL    = 1.8E-09         DPVTH0_PLVT12LL    = 3.5E-16
+                      
+*1.8V IO NMOS                                                    
++DTOXE_N18LL        = 0               DTOXP_N18LL        = 0               DXL_N18LL          = 0          
++DXW_N18LL          = 0               DVTH_N18LL         = 0.038           DCJS_N18LL         = 5.91e-5         
++DCJSWS_N18LL       = 1.625E-12       DCJSWGS_N18LL      = 8.635E-12       DCGDO_N18LL        = 0              
++DCGSO_N18LL        = 0               DCF_N18LL          = 0               DCGDL_N18LL        = 0              
++DCGSL_N18LL        = 0               DLVTH0_N18LL       = 6E-10           DPVTH0_N18LL       = 1.05E-15
++DLU0_N18LL         = -3.5E-10        DPU0_N18LL         = -5E-17
+
+*1.8V IO PMOS
++DTOXE_P18LL        = 0               DTOXP_P18LL        = 0               DXL_P18LL          = 0     
++DXW_P18LL          = 0               DVTH_P18LL         = 0.035           DCJS_P18LL         = -9.29E-05    
++DCJSWS_P18LL       = -7.88E-14       DCJSWGS_P18LL      = -1.321E-11      DCGDO_P18LL        = 0             
++DCGSO_P18LL        = 0               DCGDL_P18LL        = 0               DCGSL_P18LL        = 0             
++DCF_P18LL          = 0               DLVTH0_P18LL       = 1.4E-09         DPVTH0_P18LL       = 1E-15           
++DLU0_P18LL         = 9E-11           DPU0_P18LL         = 5E-17
+
+*1.8V IO Native NMOS
++DTOXE_NT18LL       = 0               DTOXP_NT18LL       = 0               DXL_NT18LL         = 0        
++DXW_NT18LL         = 0               DVTH_NT18LL        = 0.045           DCJS_NT18LL        = 1.54E-05       
++DCJSWS_NT18LL      = 2.345E-12       DCJSWGS_NT18LL     = 1.04E-11        DCGDO_NT18LL       = 0             
++DCGSO_NT18LL       = 0               DCGDL_NT18LL       = 0               DCGSL_NT18LL       = 0             
++DCF_NT18LL         = 0               DLVTH0_NT18LL      = 4.5E-09         DPVTH0_NT18LL      = 6.1E-15         
++DLU0_NT18LL        = -1.15E-09       DPU0_NT18LL        = -2.0E-16
+
+*2.5V(OD 3.3V) IO NMOS                                                    
++DTOXE_NOD33LL        = 0             DTOXP_NOD33LL        = 0             DXL_NOD33LL          = 0         
++DXW_NOD33LL          = 0             DVTH_NOD33LL         = 0.034         DCJS_NOD33LL         = 5.69e-5         
++DCJSWS_NOD33LL       = 2.48E-12      DCJSWGS_NOD33LL      = 1.05E-11      DCGDO_NOD33LL        = 0              
++DCGSO_NOD33LL        = 0             DCGDL_NOD33LL        = 0             DCGSL_NOD33LL        = 0               
++DCF_NOD33LL          = 0             DLVTH0_NOD33LL       = 2.0E-09       DPVTH0_NOD33LL       = 3.4E-15         
++DLU0_NOD33LL         = -1.85E-9      DPU0_NOD33LL         = -5.0E-16        
+
+*2.5V(OD 3.3V) IO PMOS
++DTOXE_POD33LL        = 0             DTOXP_POD33LL        = 0             DXL_POD33LL          = 0       
++DXW_POD33LL          = 0             DVTH_POD33LL         = 0.024         DCJS_POD33LL         = -6.03E-5    
++DCJSWS_POD33LL       = -1.40E-12     DCJSWGS_POD33LL      = -1.10E-11     DCGDO_POD33LL        = 0             
++DCGSO_POD33LL        = 0             DCGDL_POD33LL        = 0             DCGSL_POD33LL        = 0             
++DCF_POD33LL          = 0             DLVTH0_POD33LL       = 3.1E-09       DPVTH0_POD33LL       = 1.70E-15        
++DLU0_POD33LL         = 2.9E-10       DPU0_POD33LL         = 5.5E-17
+
+*2.5V IO NMOS                                                    
++DTOXE_N25LL        = 0               DTOXP_N25LL        = 0               DXL_N25LL          = 0         
++DXW_N25LL          = 0               DVTH_N25LL         = 0.034           DCJS_N25LL         = 5.69e-5         
++DCJSWS_N25LL       = 2.48E-12        DCJSWGS_N25LL      = 1.05E-11        DCGDO_N25LL        = 0              
++DCGSO_N25LL        = 0               DCGDL_N25LL        = 0               DCGSL_N25LL        = 0               
++DCF_N25LL          = 0               DLVTH0_N25LL       = 2.0E-09         DPVTH0_N25LL       = 3.4E-15         
++DLU0_N25LL         = -1.85E-9        DPU0_N25LL         = -5.0E-16        
+
+*2.5V IO PMOS
++DTOXE_P25LL        = 0               DTOXP_P25LL        = 0               DXL_P25LL          = 0       
++DXW_P25LL          = 0               DVTH_P25LL         = 0.024           DCJS_P25LL         = -6.03E-5    
++DCJSWS_P25LL       = -1.40E-12       DCJSWGS_P25LL      = -1.10E-11       DCGDO_P25LL        = 0             
++DCGSO_P25LL        = 0               DCGDL_P25LL        = 0               DCGSL_P25LL        = 0             
++DCF_P25LL          = 0               DLVTH0_P25LL       = 3.1E-09         DPVTH0_P25LL       = 1.70E-15        
++DLU0_P25LL         = 2.9E-10         DPU0_P25LL         = 5.5E-17                  
+
+*2.5V IO Native NMOS
++DTOXE_NT25LL       = 0               DTOXP_NT25LL       = 0               DXL_NT25LL         = 0       
++DXW_NT25LL         = 0               DVTH_NT25LL        = 0.034           DCJS_NT25LL        = 1.74E-5       
++DCJSWS_NT25LL      = 2.00E-12        DCJSWGS_NT25LL     = 1.02E-11        DCGDO_NT25LL       = 0             
++DCGSO_NT25LL       = 0               DCGDL_NT25LL       = 0               DCGSL_NT25LL       = 0             
++DCF_NT25LL         = 0               DLVTH0_NT25LL      = 3.1E-08         DU0_NT25LL         = -1.0E-3                                   
+ 
+.INC 'l0065ll_io25_od33_v1p0.mdl' 
+.ENDL  SNFP
+
+**********************
+MOS Monte Carlo Model
+*********************
+.LIB MC
+.option gmindc=1e-14
+.PARAM
++sigma               = agauss(0,1,3)
++a                   = sigma
++b                   = sigma
++c                   = sigma
+
+*1.2V core NMOS 
++DTOXE_N12LL        = '-4.8E-11*a'        DTOXP_N12LL        = '-4.8E-11*a'        DXL_N12LL          = '-1E-9*a'   
++DXW_N12LL          = '2E-9*a'            DVTH_N12LL         = '-0.02*a'           DCJS_N12LL         = '-7.7E-5*a' 
++DCJSWS_N12LL       = '-1.45E-12*a'       DCJSWGS_N12LL      = '-1.33E-11*a'       DCGDO_N12LL        = '3.5E-12*a'   
++DCGSO_N12LL        = '3.5E-12*a'         DCGDL_N12LL        = '5E-12*a'           DCGSL_N12LL        = '5E-12*a'
++DCF_N12LL          = '4.145E-12*a'       DLVTH0_N12LL       = '-8.5E-10*a'        DPVTH0_N12LL       = '-5.3E-16*a'
++DLU0_N12LL         = '1.3E-10*a'         DPU0_N12LL         = '6.5E-17*a'                              
+                                                                                                   
+*1.2V core PMOS                                                                                    
++DTOXE_P12LL        = '-4.8E-11*b'        DTOXP_P12LL        = '-4.8E-11*b'        DXL_P12LL          = '-1E-9*b'    
++DXW_P12LL          = '2E-9*b'            DVTH_P12LL         = '0.018*b'           DCJS_P12LL         = '-5.46E-5*b' 
++DCJSWS_P12LL       = '-1.2E-12*b'        DCJSWGS_P12LL      = '-1.42E-11*b'       DCGDO_P12LL        = '2.725E-12*b'    
++DCGSO_P12LL        = '2.725E-12*b'       DCGDL_P12LL        = '6.4E-12*b'         DCGSL_P12LL        = '6.4E-12*b'
++DCF_P12LL          = '4.125E-12*b'       DLVTH0_P12LL       = '1.13E-9*b'         DPVTH0_P12LL       = '6.2E-16*b'
++DLU0_P12LL         = '7E-11*b'           DPU0_P12LL         = '1.5E-17*b'                                 
+                                                                                                   
+*1.2V Native NMOS                                                                                  
++DTOXE_NT12LL       = '-4.8E-11*c'        DTOXP_NT12LL       = '-4.8E-11*c'        DXL_NT12LL         = '-1E-9*c'     
++DXW_NT12LL         = '2E-9*c'            DVTH_NT12LL        = '-0.03*c'           DCJS_NT12LL        = '-1.525E-05*c'
++DCJSWS_NT12LL      = '-2.3E-12*c'        DCJSWGS_NT12LL     = '-1.55E-12*c'       DCGDO_NT12LL       = '6E-12*c' 
++DCGSO_NT12LL       = '6E-12*c'           DCGDL_NT12LL       = '4E-12*c'           DCGSL_NT12LL       = '4E-12*c'
++DCF_NT12LL         = '4.135E-12*c'       DLVTH0_NT12LL      = '-6E-9*c'                                
+                                                                                                   
+*1.2V HVT core NMOS                                                                                
++DTOXE_NHVT12LL     = '-4.8E-11*a'        DTOXP_NHVT12LL     = '-4.8E-11*a'        DXL_NHVT12LL       = '-1E-9*a'   
++DXW_NHVT12LL       = '2E-9*a'            DVTH_NHVT12LL      = '-0.016*a'          DCJS_NHVT12LL      = '-1.005E-4*a' 
++DCJSWS_NHVT12LL    = '-2.55E-12*a'       DCJSWGS_NHVT12LL   = '-1.51E-11*a'       DCGDO_NHVT12LL     = '4E-12*a'   
++DCGSO_NHVT12LL     = '4E-12*a'           DCGDL_NHVT12LL     = '5E-12*a'           DCGSL_NHVT12LL     = '5E-12*a' 
++DCF_NHVT12LL       = '4.125E-12*a'       DPVTH0_NHVT12LL    = '-7E-16*a'          DWVTH0_NHVT12LL    = '-5.0E-10*a'
++DLVTH0_NHVT12LL    = '-6.0E-10*a'                                                                  
+                                                                                                   
+*1.2V HVT core PMOS                                                                                
++DTOXE_PHVT12LL     = '-4.8E-11*b'        DTOXP_PHVT12LL     = '-4.8E-11*b'        DXL_PHVT12LL       = '-1E-9*b'    
++DXW_PHVT12LL       = '2E-9*b'            DVTH_PHVT12LL      = '0.016*b'           DCJS_PHVT12LL      = '-5.46E-5*b' 
++DCJSWS_PHVT12LL    = '-1.22E-12*b'       DCJSWGS_PHVT12LL   = '-1.61E-11*b'       DCGDO_PHVT12LL     = '1.77E-12*b'    
++DCGSO_PHVT12LL     = '1.77E-12*b'        DCGDL_PHVT12LL     = '6.0E-12*b'         DCGSL_PHVT12LL     = '6.0E-12*b'
++DCF_PHVT12LL       = '4.08E-12*b'        DWVTH0_PHVT12LL    = '1.5E-09*b'         DLVTH0_PHVT12LL    = '5E-10*b'
++DPVTH0_PHVT12LL    = '8E-16*b'           DLU0_PHVT12LL      = '6E-12*b'                                
+                                                                                                   
+*1.2V LVT core NMOS                                                                                
++DTOXE_NLVT12LL     = '-4.8E-11*a'        DTOXP_NLVT12LL     = '-4.8E-11*a'        DXL_NLVT12LL       = '-1E-9*a'
++DXW_NLVT12LL       = '2E-9*a'            DVTH_NLVT12LL      = '-0.015*a'          DCJS_NLVT12LL      = '-6.0E-5*a'
++DCJSWS_NLVT12LL    = '-1.43E-12*a'       DCJSWGS_NLVT12LL   = '-1.25E-11*a'       DCGDO_NLVT12LL     = '6.5E-12*a'
++DCGSO_NLVT12LL     = '6.5E-12*a'         DCGDL_NLVT12LL     = '2.5E-12*a'         DCGSL_NLVT12LL     = '2.5E-12*a'
++DCF_NLVT12LL       = '4.13E-12*a'        DLVTH0_NLVT12LL    = '-7E-10*a'          DPVTH0_NLVT12LL    = '-4E-16*a'
++DWVTH0_NLVT12LL    = '-6E-10*a'          DLU0_NLVT12LL      = '1.3E-10*a'                              
+                                                                                                   
+*1.2V LVT core PMOS                                                                                
++DTOXE_PLVT12LL     = '-4.8E-11*b'        DTOXP_PLVT12LL     = '-4.8E-11*b'        DXL_PLVT12LL       = '-1E-9*b'
++DXW_PLVT12LL       = '2E-9*b'            DVTH_PLVT12LL      = '0.03*b'            DCJS_PLVT12LL      = '-5.56E-5*b'
++DCJSWS_PLVT12LL    = '-1.17E-12*b'       DCJSWGS_PLVT12LL   = '-1.01E-11*b'       DCGDO_PLVT12LL     = '4.5E-12*b'
++DCGSO_PLVT12LL     = '4.5E-12*b'         DCGDL_PLVT12LL     = '5.0E-12*b'         DCGSL_PLVT12LL     = '5.0E-12*b'
++DCF_PLVT12LL       = '4.13E-12*b'        DLVTH0_PLVT12LL    = '1.8E-09*b'         DPVTH0_PLVT12LL    = '3.5E-16*b'                      
+                                                                                                   
+*1.8V IO NMOS                                                    
++DTOXE_N18LL        = '-7.5E-11*a'        DTOXP_N18LL        = '-7.5E-11*a'        DXL_N18LL          = '-3.0E-9*a'         
++DXW_N18LL          = '4.5E-9*a'          DVTH_N18LL         = '-0.038*a'          DCJS_N18LL         = '-5.91e-5*a'        
++DCJSWS_N18LL       = '-1.625E-12*a'      DCJSWGS_N18LL      = '-8.635E-12*a'      DCGDO_N18LL        = '8.5E-12*a'         
++DCGSO_N18LL        = '8.5E-12*a'         DCF_N18LL          = '3.7E-12*a'         DCGDL_N18LL        = '5.0E-12*a'                
++DCGSL_N18LL        = '5.0E-12*a'         DLVTH0_N18LL       = '-1.0E-09*a'        DPVTH0_N18LL       = '-1.05E-15*a'
++DLU0_N18LL         = '3.6E-10*a'         DPU0_N18LL         = '7E-17*a'
+
+*1.8V IO PMOS
++DTOXE_P18LL        = '-7.5E-11*b'        DTOXP_P18LL        = '-7.5E-11*b'        DXL_P18LL          = '-3.0E-9*b'       
++DXW_P18LL          = '4.5E-9*b'          DVTH_P18LL         = '0.035*b'           DCJS_P18LL         = '-9.29E-05*b'      
++DCJSWS_P18LL       = '-7.88E-14*b'       DCJSWGS_P18LL      = '-1.321E-11*b'      DCGDO_P18LL        = '8.75E-12*b'       
++DCGSO_P18LL        = '8.75E-12*b'        DCGDL_P18LL        = '7.50E-12*b'        DCGSL_P18LL        = '7.50E-12*b'      
++DCF_P18LL          = '4.1E-12*b'         DLVTH0_P18LL       = '1.4E-09*b'         DPVTH0_P18LL       = '1E-15*b'           
++DLU0_P18LL         = '9E-11*b'           DPU0_P18LL         = '5E-17*b'
+
+*1.8V IO Native NMOS
++DTOXE_NT18LL       = '-7.5E-11*c'        DTOXP_NT18LL       = '-7.5E-11*c'        DXL_NT18LL         = '-3.0E-9*c'       
++DXW_NT18LL         = '4.5E-9*c'          DVTH_NT18LL        = '-0.045*c'          DCJS_NT18LL        = '-1.54E-5*c'      
++DCJSWS_NT18LL      = '-2.345E-12*c'      DCJSWGS_NT18LL     = '-1.04E-11*c'       DCGDO_NT18LL       = '8.5E-12*c'       
++DCGSO_NT18LL       = '8.5E-12*c'         DCGDL_NT18LL       = '5.0E-12*c'         DCGSL_NT18LL       = '5.0E-12*c'      
++DCF_NT18LL         = '3.7E-12*c'         DLVTH0_NT18LL      = '-5.0E-09*c'        DPVTH0_NT18LL      = '-6.4E-15*c'        
++DLU0_NT18LL        = '1.25E-09*c'        DPU0_NT18LL        = '2.0E-16*c'
+
+*2.5V(OD 3.3V) IO NMOS                                                    
++DTOXE_NOD33LL        = '-1.0E-10*a'      DTOXP_NOD33LL        = '-1.0E-10*a'      DXL_NOD33LL          = '-4.5E-9*a'        
++DXW_NOD33LL          = '4.5E-9*a'        DVTH_NOD33LL         = '-0.034*a'        DCJS_NOD33LL         = '-5.69e-5*a'        
++DCJSWS_NOD33LL       = '-2.48E-12*a'     DCJSWGS_NOD33LL      = '-1.05E-11*a'     DCGDO_NOD33LL        = '6.0E-12*a'         
++DCGSO_NOD33LL        = '6.0E-12*a'       DCGDL_NOD33LL        = '1.21E-11*a'      DCGSL_NOD33LL        = '1.21E-11*a'               
++DCF_NOD33LL          = '3.17E-12*a'      DLVTH0_NOD33LL       = '-2.3E-09*a'      DPVTH0_NOD33LL       = '-3.5E-15*a'        
++DLU0_NOD33LL         = '2.05E-9*a'       DPU0_NOD33LL         = '7.5E-16*a'
+
+*2.5V(OD 3.3V) IO PMOS
++DTOXE_POD33LL        = '-1.0E-10*b'      DTOXP_POD33LL        = '-1.0E-10*b'      DXL_POD33LL          = '-4.5E-9*b'       
++DXW_POD33LL          = '4.5E-9*b'        DVTH_POD33LL         = '0.024*b'         DCJS_POD33LL         = '-6.03E-5*b'      
++DCJSWS_POD33LL       = '-1.40E-12*b'     DCJSWGS_POD33LL      = '-1.10E-11*b'     DCGDO_POD33LL        = '7.00E-12*b'       
++DCGSO_POD33LL        = '7.00E-12*b'      DCGDL_POD33LL        = '1.24E-11*b'      DCGSL_POD33LL        = '1.24E-11*b'      
++DCF_POD33LL          = '3.17E-12*b'      DLVTH0_POD33LL       = '3.1E-09*b'       DPVTH0_POD33LL       = '1.70E-15*b'        
++DLU0_POD33LL         = '2.9E-10*b'       DPU0_POD33LL         = '5.5E-17*b'
+
+*2.5V IO NMOS                                                    
++DTOXE_N25LL        = '-1.0E-10*a'        DTOXP_N25LL        = '-1.0E-10*a'        DXL_N25LL          = '-4.5E-9*a'        
++DXW_N25LL          = '4.5E-9*a'          DVTH_N25LL         = '-0.034*a'          DCJS_N25LL         = '-5.69e-5*a'        
++DCJSWS_N25LL       = '-2.48E-12*a'       DCJSWGS_N25LL      = '-1.05E-11*a'       DCGDO_N25LL        = '6.0E-12*a'         
++DCGSO_N25LL        = '6.0E-12*a'         DCGDL_N25LL        = '1.21E-11*a'        DCGSL_N25LL        = '1.21E-11*a'               
++DCF_N25LL          = '3.17E-12*a'        DLVTH0_N25LL       = '-2.3E-09*a'        DPVTH0_N25LL       = '-3.5E-15*a'        
++DLU0_N25LL         = '2.05E-9*a'         DPU0_N25LL         = '7.5E-16*a'
+
+*2.5V IO PMOS
++DTOXE_P25LL        = '-1.0E-10*b'        DTOXP_P25LL        = '-1.0E-10*b'        DXL_P25LL          = '-4.5E-9*b'       
++DXW_P25LL          = '4.5E-9*b'          DVTH_P25LL         = '0.024*b'           DCJS_P25LL         = '-6.03E-5*b'      
++DCJSWS_P25LL       = '-1.40E-12*b'       DCJSWGS_P25LL      = '-1.10E-11*b'       DCGDO_P25LL        = '7.00E-12*b'       
++DCGSO_P25LL        = '7.00E-12*b'        DCGDL_P25LL        = '1.24E-11*b'        DCGSL_P25LL        = '1.24E-11*b'      
++DCF_P25LL          = '3.17E-12*b'        DLVTH0_P25LL       = '3.1E-09*b'         DPVTH0_P25LL       = '1.70E-15*b'        
++DLU0_P25LL         = '2.9E-10*b'         DPU0_P25LL         = '5.5E-17*b'          
+
+*2.5V IO Native NMOS
++DTOXE_NT25LL       = '-1.0E-10*c'        DTOXP_NT25LL       = '-1.0E-10*c'        DXL_NT25LL         = '-4.5E-9*c'       
++DXW_NT25LL         = '4.5E-9*c'          DVTH_NT25LL        = '-0.034*c'          DCJS_NT25LL        = '-1.74E-5*c'      
++DCJSWS_NT25LL      = '-2.00E-12*c'       DCJSWGS_NT25LL     = '-1.02E-11*c'       DCGDO_NT25LL       = '1.00E-11*c'       
++DCGSO_NT25LL       = '1.00E-11*c'        DCGDL_NT25LL       = '8.95E-12*c'        DCGSL_NT25LL       = '8.95E-12*c'      
++DCF_NT25LL         = '3.22E-12*c'        DLVTH0_NT25LL      = '-3.1E-08*c'        DU0_NT25LL         = '1.0E-3*c'                             
+        
+.INC 'l0065ll_io25_od33_v1p0.mdl' 
+.ENDL  MC
+
+**********************
+* PNP BJT Corner model
+**********************
+
+.LIB BJT_TT
+.PARAM
+*1.2V CORE BJT
++DBF_PNP12A100LL  = 0.00            DIS_PNP12A100LL = 0.00            DNF_PNP12A100LL = 0.00
++DBF_PNP12A25LL   = 0.00            DIS_PNP12A25LL  = 0.00            DNF_PNP12A25LL  = 0.00
++DBF_PNP12A4LL    = 0.00            DIS_PNP12A4LL   = 0.00            DNF_PNP12A4LL   = 0.00
++DCJE_PNP12A100LL = 0.00            DCJE_PNP12A25LL = 0.00            DCJE_PNP12A4LL  = 0.00
++DCJC_PNP12A100LL = 0.00            DCJC_PNP12A25LL = 0.00            DCJC_PNP12A4LL  = 0.00
+
++DBF_NPN12A100LL  = 0.00            DIS_NPN12A100LL = 0.00            DNF_NPN12A100LL = 0.00
++DBF_NPN12A25LL   = 0.00            DIS_NPN12A25LL  = 0.00            DNF_NPN12A25LL  = 0.00
++DBF_NPN12A4LL    = 0.00            DIS_NPN12A4LL   = 0.00            DNF_NPN12A4LL   = 0.00
++DCJE_NPN12A100LL = 0.00            DCJE_NPN12A25LL = 0.00            DCJE_NPN12A4LL  = 0.00
++DCJC_NPN12A100LL = 0.00            DCJC_NPN12A25LL = 0.00            DCJC_NPN12A4LL  = 0.00
+
+*1.8V IO BJT
++DBF_PNP18A100LL  = 0.00            DIS_PNP18A100LL = 0.00            DNF_PNP18A100LL = 0.00
++DBF_PNP18A25LL   = 0.00            DIS_PNP18A25LL  = 0.00            DNF_PNP18A25LL  = 0.00
++DBF_PNP18A4LL    = 0.00            DIS_PNP18A4LL   = 0.00            DNF_PNP18A4LL   = 0.00
++DCJE_PNP18A100LL = 0.00            DCJE_PNP18A25LL = 0.00            DCJE_PNP18A4LL  = 0.00
++DCJC_PNP18A100LL = 0.00            DCJC_PNP18A25LL = 0.00            DCJC_PNP18A4LL  = 0.00
+
++DBF_NPN18A100LL  = 0.00            DIS_NPN18A100LL = 0.00            DNF_NPN18A100LL = 0.00
++DBF_NPN18A25LL   = 0.00            DIS_NPN18A25LL  = 0.00            DNF_NPN18A25LL  = 0.00
++DBF_NPN18A4LL    = 0.00            DIS_NPN18A4LL   = 0.00            DNF_NPN18A4LL   = 0.00
++DCJE_NPN18A100LL = 0.00            DCJE_NPN18A25LL = 0.00            DCJE_NPN18A4LL  = 0.00
++DCJC_NPN18A100LL = 0.00            DCJC_NPN18A25LL = 0.00            DCJC_NPN18A4LL  = 0.00
+
+*2.5V IO BJT
++DBF_PNP25A100LL  = 0.00            DIS_PNP25A100LL = 0.00            DNF_PNP25A100LL = 0.00
++DBF_PNP25A25LL   = 0.00            DIS_PNP25A25LL  = 0.00            DNF_PNP25A25LL  = 0.00
++DBF_PNP25A4LL    = 0.00            DIS_PNP25A4LL   = 0.00            DNF_PNP25A4LL   = 0.00
++DCJE_PNP25A100LL = 0.00            DCJE_PNP25A25LL = 0.00            DCJE_PNP25A4LL  = 0.00
++DCJC_PNP25A100LL = 0.00            DCJC_PNP25A25LL = 0.00            DCJC_PNP25A4LL  = 0.00
+
++DBF_NPN25A100LL  = 0.00            DIS_NPN25A100LL = 0.00            DNF_NPN25A100LL = 0.00
++DBF_NPN25A25LL   = 0.00            DIS_NPN25A25LL  = 0.00            DNF_NPN25A25LL  = 0.00
++DBF_NPN25A4LL    = 0.00            DIS_NPN25A4LL   = 0.00            DNF_NPN25A4LL   = 0.00
++DCJE_NPN25A100LL = 0.00            DCJE_NPN25A25LL = 0.00            DCJE_NPN25A4LL  = 0.00
++DCJC_NPN25A100LL = 0.00            DCJC_NPN25A25LL = 0.00            DCJC_NPN25A4LL  = 0.00
+
+.INC 'l0065ll_io25_od33_v1p0_bjt.mdl' 
+.ENDL BJT_TT
+
+.LIB BJT_FF
+.PARAM
+*1.2V CORE BJT
++DBF_PNP12A100LL  = 6.58E-2         DIS_PNP12A100LL = 9.79E-19       DNF_PNP12A100LL = -0.008    
++DBF_PNP12A25LL   = 8.23E-2         DIS_PNP12A25LL  = 3.76E-19       DNF_PNP12A25LL  = -0.008    
++DBF_PNP12A4LL    = 1.06E-1         DIS_PNP12A4LL   = 5.28E-20       DNF_PNP12A4LL   = -0.008    
++DCJE_PNP12A100LL = -5.51E-15       DCJE_PNP12A25LL = -1.39E-15      DCJE_PNP12A4LL  = -2.28E-16
++DCJC_PNP12A100LL = -3.81E-15       DCJC_PNP12A25LL = -2.30E-15      DCJC_PNP12A4LL  = -1.53E-15
+
++DBF_NPN12A100LL  = 4.24E-1         DIS_NPN12A100LL = 3.10E-18       DNF_NPN12A100LL = -0.008    
++DBF_NPN12A25LL   = 5.52E-1         DIS_NPN12A25LL  = 7.37E-19       DNF_NPN12A25LL  = -0.008    
++DBF_NPN12A4LL    = 7.64E-1         DIS_NPN12A4LL   = 1.79E-19       DNF_NPN12A4LL   = -0.008    
++DCJE_NPN12A100LL = -7.76E-15       DCJE_NPN12A25LL = -1.95E-15      DCJE_NPN12A4LL  = -3.20E-16
++DCJC_NPN12A100LL = -8.25E-15       DCJC_NPN12A25LL = -4.40E-15      DCJC_NPN12A4LL  = -2.64E-15
+
+*1.8V IO BJT
++DBF_PNP18A100LL  = 6.18E-2         DIS_PNP18A100LL = 1.18E-18       DNF_PNP18A100LL = -0.008    
++DBF_PNP18A25LL   = 7.58E-2         DIS_PNP18A25LL  = 3.58E-19       DNF_PNP18A25LL  = -0.008    
++DBF_PNP18A4LL    = 9.65E-2         DIS_PNP18A4LL   = 6.03E-20       DNF_PNP18A4LL   = -0.008    
++DCJE_PNP18A100LL = -7.34E-15       DCJE_PNP18A25LL = -1.84E-15      DCJE_PNP18A4LL  = -2.97E-16
++DCJC_PNP18A100LL = -3.81E-15       DCJC_PNP18A25LL = -2.30E-15      DCJC_PNP18A4LL  = -1.53E-15
+
++DBF_NPN18A100LL  = 3.92E-1         DIS_NPN18A100LL = 2.42E-18       DNF_NPN18A100LL = -0.008    
++DBF_NPN18A25LL   = 4.98E-1         DIS_NPN18A25LL  = 8.54E-19       DNF_NPN18A25LL  = -0.008    
++DBF_NPN18A4LL    = 6.76E-1         DIS_NPN18A4LL   = 1.79E-19       DNF_NPN18A4LL   = -0.008    
++DCJE_NPN18A100LL = -5.98E-15       DCJE_NPN18A25LL = -1.51E-15      DCJE_NPN18A4LL  = -2.49E-16
++DCJC_NPN18A100LL = -8.25E-15       DCJC_NPN18A25LL = -4.40E-15      DCJC_NPN18A4LL  = -2.64E-15
+
+*2.5V IO BJT
++DBF_PNP25A100LL  = 1.02E-01        DIS_PNP25A100LL = -1.02E-18       DNF_PNP25A100LL = 0.008    
++DBF_PNP25A25LL   = 1.26E-01        DIS_PNP25A25LL  = -3.88E-19       DNF_PNP25A25LL  = 0.008    
++DBF_PNP25A4LL    = 1.58E-01        DIS_PNP25A4LL   = -8.41E-20       DNF_PNP25A4LL   = 0.008    
++DCJE_PNP25A100LL = -6.09E-15       DCJE_PNP25A25LL = -1.54E-15       DCJE_PNP25A4LL  = -2.53E-16
++DCJC_PNP25A100LL = -3.81E-15       DCJC_PNP25A25LL = -2.30E-15       DCJC_PNP25A4LL  = -1.53E-15
+
++DBF_NPN25A100LL  = 4.62E-01        DIS_NPN25A100LL = -2.42E-18       DNF_NPN25A100LL = 0.008    
++DBF_NPN25A25LL   = 6.00E-01        DIS_NPN25A25LL  = -8.54E-19       DNF_NPN25A25LL  = 0.008    
++DBF_NPN25A4LL    = 7.90E-01        DIS_NPN25A4LL   = -1.79E-19       DNF_NPN25A4LL   = 0.008    
++DCJE_NPN25A100LL = -5.78E-15       DCJE_NPN25A25LL = -1.47E-15       DCJE_NPN25A4LL  = -2.47E-16
++DCJC_NPN25A100LL = -8.25E-15       DCJC_NPN25A25LL = -4.40E-15       DCJC_NPN25A4LL  = -2.64E-15
+
+
+.INC 'l0065ll_io25_od33_v1p0_bjt.mdl' 
+.ENDL BJT_FF
+
+.LIB BJT_SS
+.PARAM
+*1.2V CORE BJT
++DBF_PNP12A100LL  = -6.58E-2        DIS_PNP12A100LL = -9.79E-19      DNF_PNP12A100LL = 0.008    
++DBF_PNP12A25LL   = -8.23E-2        DIS_PNP12A25LL  = -3.76E-19      DNF_PNP12A25LL  = 0.008    
++DBF_PNP12A4LL    = -1.06E-1        DIS_PNP12A4LL   = -5.28E-20      DNF_PNP12A4LL   = 0.008    
++DCJE_PNP12A100LL = 5.51E-15        DCJE_PNP12A25LL = 1.39E-15       DCJE_PNP12A4LL  = 2.28E-16
++DCJC_PNP12A100LL = 3.81E-15        DCJC_PNP12A25LL = 2.30E-15       DCJC_PNP12A4LL  = 1.53E-15
+
++DBF_NPN12A100LL  = -4.24E-1        DIS_NPN12A100LL = -3.10E-18      DNF_NPN12A100LL = 0.008    
++DBF_NPN12A25LL   = -5.52E-1        DIS_NPN12A25LL  = -7.37E-19      DNF_NPN12A25LL  = 0.008    
++DBF_NPN12A4LL    = -7.64E-1        DIS_NPN12A4LL   = -1.79E-19      DNF_NPN12A4LL   = 0.008    
++DCJE_NPN12A100LL = 7.76E-15        DCJE_NPN12A25LL = 1.95E-15       DCJE_NPN12A4LL  = 3.20E-16
++DCJC_NPN12A100LL = 8.25E-15        DCJC_NPN12A25LL = 4.40E-15       DCJC_NPN12A4LL  = 2.64E-15
+
+*1.8V IO BJT
++DBF_PNP18A100LL  = -6.18E-2        DIS_PNP18A100LL = -1.18E-18      DNF_PNP18A100LL = 0.008    
++DBF_PNP18A25LL   = -7.58E-2        DIS_PNP18A25LL  = -3.58E-19      DNF_PNP18A25LL  = 0.008    
++DBF_PNP18A4LL    = -9.65E-2        DIS_PNP18A4LL   = -6.03E-20      DNF_PNP18A4LL   = 0.008    
++DCJE_PNP18A100LL = 7.34E-15        DCJE_PNP18A25LL = 1.84E-15       DCJE_PNP18A4LL  = 2.97E-16
++DCJC_PNP18A100LL = 3.81E-15        DCJC_PNP18A25LL = 2.30E-15       DCJC_PNP18A4LL  = 1.53E-15
+
++DBF_NPN18A100LL  = -3.92E-1        DIS_NPN18A100LL = -2.42E-18      DNF_NPN18A100LL = 0.008    
++DBF_NPN18A25LL   = -4.98E-1        DIS_NPN18A25LL  = -8.54E-19      DNF_NPN18A25LL  = 0.008    
++DBF_NPN18A4LL    = -6.76E-1        DIS_NPN18A4LL   = -1.79E-19      DNF_NPN18A4LL   = 0.008    
++DCJE_NPN18A100LL = 5.98E-15        DCJE_NPN18A25LL = 1.51E-15       DCJE_NPN18A4LL  = 2.49E-16
++DCJC_NPN18A100LL = 8.25E-15        DCJC_NPN18A25LL = 4.40E-15       DCJC_NPN18A4LL  = 2.64E-15
+
+*2.5V IO BJT
++DBF_PNP25A100LL  = -1.02E-01        DIS_PNP25A100LL = 1.02E-18       DNF_PNP25A100LL = -0.008    
++DBF_PNP25A25LL   = -1.26E-01        DIS_PNP25A25LL  = 3.88E-19       DNF_PNP25A25LL  = -0.008    
++DBF_PNP25A4LL    = -1.58E-01        DIS_PNP25A4LL   = 8.41E-20       DNF_PNP25A4LL   = -0.008    
++DCJE_PNP25A100LL = 6.09E-15         DCJE_PNP25A25LL = 1.54E-15       DCJE_PNP25A4LL  = 2.53E-16
++DCJC_PNP25A100LL = 3.81E-15         DCJC_PNP25A25LL = 2.30E-15       DCJC_PNP25A4LL  = 1.53E-15
+
++DBF_NPN25A100LL  = -4.62E-01        DIS_NPN25A100LL = 2.42E-18       DNF_NPN25A100LL = -0.008    
++DBF_NPN25A25LL   = -6.00E-01        DIS_NPN25A25LL  = 8.54E-19       DNF_NPN25A25LL  = -0.008    
++DBF_NPN25A4LL    = -7.90E-01        DIS_NPN25A4LL   = 1.79E-19       DNF_NPN25A4LL   = -0.008    
++DCJE_NPN25A100LL = 5.78E-15         DCJE_NPN25A25LL = 1.47E-15       DCJE_NPN25A4LL  = 2.47E-16
++DCJC_NPN25A100LL = 8.25E-15         DCJC_NPN25A25LL = 4.40E-15       DCJC_NPN25A4LL  = 2.64E-15
+
+
+.INC 'l0065ll_io25_od33_v1p0_bjt.mdl' 
+.ENDL BJT_SS
+
+
+***********************
+* Diode Corner model
+***********************
+
+.LIB DIO_TT
+.PARAM
+*1.2V CORE DIODE
++DJS_NDIO12LL        = 0.00           DN_NDIO12LL           = 0.00          DJSW_NDIO12LL        = 0.00
++DJS_PDIO12LL        = 0.00           DN_PDIO12LL           = 0.00          DJSW_PDIO12LL        = 0.00
++DJS_NTDIO12ll       = 0.00           DN_NTDIO12ll          = 0.00          DJSW_NTDIO12ll       = 0.00
++DJS_NWDIOLL         = 0.00           DN_NWDIOLL            = 0.00          DJSW_NWDIOLL         = 0.00
++DJS_DND12LL         = 0.00           DN_DND12LL            = 0.00          DJSW_DND12LL         = 0.00           
++DJS_RWD12LL         = 0.00           DN_RWD12LL            = 0.00          DJSW_RWD12LL         = 0.00           
++DJS_DNWD12LL        = 0.00           DN_DNWD12LL           = 0.00          DJSW_DNWD12LL        = 0.00
++DCJ_NDIO12LL        = 0.00           DCJSW_NDIO12LL        = 0.00
++DCJ_PDIO12LL        = 0.00           DCJSW_PDIO12LL        = 0.00
++DCJ_NTDIO12ll       = 0.00           DCJSW_NTDIO12ll       = 0.00          
++DCJ_NWDIOLL         = 0.00           DCJSW_NWDIOLL         = 0.00
++DCJ_DND12LL         = 0.00           DCJSW_DND12LL         = 0.00           
++DCJ_RWD12LL         = 0.00           DCJSW_RWD12LL         = 0.00           
++DCJ_DNWD12LL        = 0.00           DCJSW_DNWD12LL        = 0.00
+
+*1.2V HVT CORE DIODE
++DJS_NDIO12llHVT     = 0.00           DN_NDIO12llHVT        = 0.00          DJSW_NDIO12llHVT     = 0.00  
++DJS_PDIO12llHVT     = 0.00           DN_PDIO12llHVT        = 0.00          DJSW_PDIO12llHVT     = 0.00
++DCJ_NDIO12llHVT     = 0.00           DCJSW_NDIO12llHVT     = 0.00          
++DCJ_PDIO12llHVT     = 0.00           DCJSW_PDIO12llHVT     = 0.00
+
+*1.2V LVT CORE DIODE
++DJS_NDIO12llLVT     = 0.00           DN_NDIO12llLVT        = 0.00          DJSW_NDIO12llLVT     = 0.00  
++DJS_PDIO12llLVT     = 0.00           DN_PDIO12llLVT        = 0.00          DJSW_PDIO12llLVT     = 0.00
++DCJ_NDIO12llLVT     = 0.00           DCJSW_NDIO12llLVT     = 0.00          
++DCJ_PDIO12llLVT     = 0.00           DCJSW_PDIO12llLVT     = 0.00    
+
+*1.8V IO DIODE
+
++DJS_NDIO18LL        = 0.00           DN_NDIO18LL           = 0.00          DJSW_NDIO18LL        = 0.00
++DJS_PDIO18LL        = 0.00           DN_PDIO18LL           = 0.00          DJSW_PDIO18LL        = 0.00
++DJS_NTDIO18LL       = 0.00           DN_NTDIO18LL          = 0.00          DJSW_NTDIO18LL       = 0.00
++DCJ_NDIO18LL        = 0.00           DCJSW_NDIO18LL        = 0.00
++DCJ_PDIO18LL        = 0.00           DCJSW_PDIO18LL        = 0.00
++DCJ_NTDIO18LL       = 0.00           DCJSW_NTDIO18LL       = 0.00
+
+*2.5V IO DIODE
++DJS_NDIO25LL        = 0.00           DN_NDIO25LL           = 0.00          DJSW_NDIO25LL        = 0.00
++DJS_PDIO25ll        = 0.00           DN_PDIO25ll           = 0.00          DJSW_PDIO25ll        = 0.00
++DJS_NTDIO25ll       = 0.00           DN_NTDIO25ll          = 0.00          DJSW_NTDIO25ll       = 0.00
++DCJ_NDIO25LL        = 0.00           DCJSW_NDIO25LL        = 0.00
++DCJ_PDIO25ll        = 0.00           DCJSW_PDIO25ll        = 0.00          
++DCJ_NTDIO25ll       = 0.00           DCJSW_NTDIO25ll       = 0.00 
+
+.INC 'l0065ll_io25_od33_v1p0_dio.mdl' 
+.ENDL DIO_TT
+
+.LIB DIO_FF
+.PARAM
+*1.2V CORE DIODE
++DJS_NDIO12LL        = 3.24E-08       DN_NDIO12LL           = -9.93E-03      DJSW_NDIO12LL        = 1.39E-14
++DJS_PDIO12LL        = 4.89E-08       DN_PDIO12LL           = -9.85E-03      DJSW_PDIO12LL        = 1.50E-14
++DJS_NTDIO12ll       = 6.00E-07       DN_NTDIO12ll          = -9.95E-03      DJSW_NTDIO12ll       = 1.75E-13
++DJS_NWDIOLL         = 1.02E-06       DN_NWDIOLL            = -1.01E-03      DJSW_NWDIOLL       = 1.40E-12
++DJS_DND12LL         = 3.00E-08       DN_DND12LL            = -1.00E-02      DJSW_DND12LL         = 9.60E-15
++DJS_RWD12LL         = 4.22E-08       DN_RWD12LL            = -9.83E-03      DJSW_RWD12LL         = 1.50E-13
++DJS_DNWD12LL        = 8.53E-07       DN_DNWD12LL           = -1.00E-02      DJSW_DNWD12LL        = 3.51E-12
++DCJ_NDIO12LL        = -7.70E-05      DCJSW_NDIO12LL        = -1.45E-12
++DCJ_PDIO12LL        = -5.46E-05      DCJSW_PDIO12LL        = -1.20E-12
++DCJ_NTDIO12ll       = -1.53E-05      DCJSW_NTDIO12ll       = -2.30E-12
++DCJ_NWDIOLL         = -5.85E-06      DCJSW_NWDIOLL         = -3.61E-11
++DCJ_DND12LL         = -7.46E-05      DCJSW_DND12LL         = -1.32E-12
++DCJ_RWD12LL         = -2.32E-05      DCJSW_RWD12LL         = -3.61E-11
++DCJ_DNWD12LL        = -2.97E-05      DCJSW_DNWD12LL        = -4.75E-11
+
+*1.2V HVT CORE DIODE
++DJS_NDIO12llHVT     = 3.00E-08       DN_NDIO12llHVT        = -9.85E-03       DJSW_NDIO12llHVT     = 1.00E-14
++DJS_PDIO12llHVT     = 3.60E-08       DN_PDIO12llHVT        = -9.84E-03       DJSW_PDIO12llHVT     = 1.20E-14
++DCJ_NDIO12llHVT     = -1.00E-04      DCJSW_NDIO12llHVT     = -2.55E-12        
++DCJ_PDIO12llHVT     = -5.46E-05      DCJSW_PDIO12llHVT     = -1.22E-12
+
+*1.2V LVT CORE DIODE
++DJS_NDIO12llLVT     = 3.30E-08       DN_NDIO12llLVT        = -9.84E-03       DJSW_NDIO12llLVT     = 1.10E-14 
++DJS_PDIO12llLVT     = 3.60E-08       DN_PDIO12llLVT        = -9.84E-03       DJSW_PDIO12llLVT     = 1.05E-14
++DCJ_NDIO12llLVT     = -5.98E-05      DCJSW_NDIO12llLVT     = -1.43E-12        
++DCJ_PDIO12llLVT     = -5.56E-05      DCJSW_PDIO12llLVT     = -1.17E-12  
+
+*1.8V IO DIODE
++DJS_NDIO18LL        = 3.30E-08       DN_NDIO18LL           = -9.91E-03       DJSW_NDIO18LL        = 1.96E-14
++DJS_PDIO18LL        = 3.80E-08       DN_PDIO18LL           = -9.87E-03       DJSW_PDIO18LL        = 1.60E-14
++DJS_NTDIO18LL       = 5.07E-07       DN_NTDIO18LL          = -1.00E-03       DJSW_NTDIO18LL       = 2.06E-13
++DCJ_NDIO18LL        = -5.91E-05      DCJSW_NDIO18LL        = -1.63E-12
++DCJ_PDIO18LL        = -9.29E-05      DCJSW_PDIO18LL        = -7.88E-14
++DCJ_NTDIO18LL       = -1.54E-05      DCJSW_NTDIO18LL       = -2.35E-12
+
+*2.5V IO DIODE
++DJS_NDIO25LL        = 2.96E-08       DN_NDIO25LL           = -9.89E-03       DJSW_NDIO25LL        = 1.15E-14
++DJS_PDIO25ll        = 3.02E-08       DN_PDIO25ll           = -9.83E-03       DJSW_PDIO25ll        = 9.00E-15
++DJS_NTDIO25ll       = 6.00E-07       DN_NTDIO25ll          = -9.91E-03       DJSW_NTDIO25ll       = 2.25E-13
++DCJ_NDIO25LL        = -5.69E-05      DCJSW_NDIO25LL        = -2.48E-12
++DCJ_PDIO25ll        = -6.03E-05      DCJSW_PDIO25ll        = -1.40E-12     
++DCJ_NTDIO25ll       = -1.74E-05      DCJSW_NTDIO25ll       = -2.00E-12 
+
+.INC 'l0065ll_io25_od33_v1p0_dio.mdl' 
+.ENDL DIO_FF
+
+.LIB DIO_SS
+.PARAM
+*1.2V CORE DIODE
++DJS_NDIO12LL        = -3.24E-08       DN_NDIO12LL           = 9.93E-03        DJSW_NDIO12LL        = -1.39E-14
++DJS_PDIO12LL        = -4.89E-08       DN_PDIO12LL           = 9.85E-03        DJSW_PDIO12LL        = -1.50E-14
++DJS_NTDIO12ll       = -6.00E-07       DN_NTDIO12ll          = 9.95E-03        DJSW_NTDIO12ll       = -1.75E-13
++DJS_NWDIOLL         = -1.02E-06       DN_NWDIOLL            = 1.01E-03        DJSW_NWDIOLL         = -1.40E-12
++DJS_DND12LL         = -3.00E-08       DN_DND12LL            = 1.00E-02        DJSW_DND12LL         = -9.60E-15
++DJS_RWD12LL         = -4.22E-08       DN_RWD12LL            = 9.83E-03        DJSW_RWD12LL         = -1.50E-13
++DJS_DNWD12LL        = -8.53E-07       DN_DNWD12LL           = 1.00E-02        DJSW_DNWD12LL        = -3.51E-12
++DCJ_NDIO12LL        = 7.70E-05        DCJSW_NDIO12LL        = 1.45E-12
++DCJ_PDIO12LL        = 5.46E-05        DCJSW_PDIO12LL        = 1.20E-12     
++DCJ_NTDIO12ll       = 1.53E-05        DCJSW_NTDIO12ll       = 2.30E-12     
++DCJ_NWDIOLL         = 5.85E-06        DCJSW_NWDIOLL         = 3.61E-11
++DCJ_DND12LL         = 7.46E-05        DCJSW_DND12LL         = 1.32E-12
++DCJ_RWD12LL         = 2.32E-05        DCJSW_RWD12LL         = 3.61E-11     
++DCJ_DNWD12LL        = 2.97E-05        DCJSW_DNWD12LL        = 4.75E-11
+
+*1.2V HVT CORE DIODE
++DJS_NDIO12llHVT     = -3.00E-08       DN_NDIO12llHVT        = 9.85E-03        DJSW_NDIO12llHVT     = -1.00E-14
++DJS_PDIO12llHVT     = -3.60E-08       DN_PDIO12llHVT        = 9.84E-03        DJSW_PDIO12llHVT     = -1.20E-14
++DCJ_NDIO12llHVT     = 1.00E-04        DCJSW_NDIO12llHVT     = 2.55E-12        
++DCJ_PDIO12llHVT     = 5.46E-05        DCJSW_PDIO12llHVT     = 1.22E-12
+
+*1.2V LVT CORE DIODE
++DJS_NDIO12llLVT     = -3.30E-08       DN_NDIO12llLVT        = 9.84E-03        DJSW_NDIO12llLVT     = -1.10E-14 
++DJS_PDIO12llLVT     = -3.60E-08       DN_PDIO12llLVT        = 9.84E-03        DJSW_PDIO12llLVT     = -1.05E-14
++DCJ_NDIO12llLVT     = 5.98E-05        DCJSW_NDIO12llLVT     = 1.43E-12        
++DCJ_PDIO12llLVT     = 5.56E-05        DCJSW_PDIO12llLVT     = 1.17E-12  
+
+*1.8V IO DIODE
++DJS_NDIO18LL        = -3.30E-08       DN_NDIO18LL           = 9.91E-03        DJSW_NDIO18LL        = -1.96E-14
++DJS_PDIO18LL        = -3.80E-08       DN_PDIO18LL           = 9.87E-03        DJSW_PDIO18LL        = -1.60E-14
++DJS_NTDIO18LL       = -5.07E-07       DN_NTDIO18LL          = 1.00E-03        DJSW_NTDIO18LL       = -2.06E-13
++DCJ_NDIO18LL        = 5.91E-05        DCJSW_NDIO18LL        = 1.63E-12
++DCJ_PDIO18LL        = 9.29E-05        DCJSW_PDIO18LL        = 7.88E-14
++DCJ_NTDIO18LL       = 1.54E-05        DCJSW_NTDIO18LL       = 2.35E-12
+
+*2.5V IO DIODE
++DJS_NDIO25LL        = -2.96E-08       DN_NDIO25LL           = 9.89E-03        DJSW_NDIO25LL        = -1.15E-14
++DJS_PDIO25ll        = -3.02E-08       DN_PDIO25ll           = 9.83E-03        DJSW_PDIO25ll        = -9.00E-15
++DJS_NTDIO25ll       = -6.00E-07       DN_NTDIO25ll          = 9.91E-03        DJSW_NTDIO25ll       = -2.25E-13
++DCJ_NDIO25LL        = 5.69E-05        DCJSW_NDIO25LL        = 2.48E-12 
++DCJ_PDIO25ll        = 6.03E-05        DCJSW_PDIO25ll        = 1.40E-12     
++DCJ_NTDIO25ll       = 1.74E-05        DCJSW_NTDIO25ll       = 2.00E-12
+
+.INC 'l0065ll_io25_od33_v1p0_dio.mdl' 
+.ENDL DIO_SS
+
+
+***********************
+* Resistor Corner model
+***********************
+
+.LIB RES_TT
+.PARAM
+*Resistor
++DRSH_RNDIF    = 0            DRSH_RPDIF    = 0            DRSH_RNPO     = 0            DRSH_RNPO_3T     = 0
++DRSH_RPPO     = 0            DRSH_RPPO_3T  = 0            DRSH_RNWSTI   = 0            DRSH_RNWAA       = 0
++DRSH_RNDIFSAB = 0            DRSH_RPDIFSAB = 0            DRSH_RNPOSAB  = 0            DRSH_RNPOSAB_3T  = 0
++DRSH_RPPOSAB  = 0            DRSH_RPPOSAB_3T  = 0         DRSH_RM1      = 0            DRSH_RM2         = 0
++DRSH_RM3      = 0            DRSH_RM4      = 0            DRSH_RM5      = 0
++DRSH_RM6      = 0            DRSH_RM7      = 0            DRSH_RM8      = 0
++DRSH_RTM1     = 0            DRSH_RTM2     = 0
++DDW_RNDIF     = 0            DDW_RPDIF     = 0            DDW_RNPO      = 0            DDW_RNPO_3T      = 0
++DDW_RPPO      = 0            DDW_RPPO_3T   = 0            DDW_RNWSTI    = 0            DDW_RNWAA        = 0
++DDW_RNDIFSAB  = 0            DDW_RPDIFSAB  = 0            DDW_RNPOSAB   = 0            DDW_RNPOSAB_3T   = 0
++DDW_RPPOSAB   = 0            DDW_RPPOSAB_3T   = 0         DDW_RM1       = 0            DDW_RM2          = 0
++DDW_RM3       = 0            DDW_RM4       = 0            DDW_RM5       = 0
++DDW_RM6       = 0            DDW_RM7       = 0            DDW_RM8       = 0
++DDW_RTM1      = 0            DDW_RTM2      = 0
+ 
+.INC 'l0065ll_io25_od33_v1p0_res.mdl'
+.ENDL  RES_TT
+
+.LIB RES_FF
+.PARAM
+*Resistor
++DRSH_RNDIF    = -4.132         DRSH_RPDIF    = -4.071         DRSH_RNPO     = -4.483         DRSH_RNPO_3T     = -4.483
++DRSH_RPPO     = -4.492         DRSH_RPPO_3T  = -4.492         DRSH_RNWSTI   = -117.841       DRSH_RNWAA       = -55.130
++DRSH_RNDIFSAB = -28.448        DRSH_RPDIFSAB = -59.219        DRSH_RNPOSAB  = -47.860        DRSH_RNPOSAB_3T  = -47.860
++DRSH_RPPOSAB  = -96.030        DRSH_RPPOSAB_3T  = -96.030     DRSH_RM1      = -0.0407        DRSH_RM2         = -0.0296
++DRSH_RM3      = -0.0296        DRSH_RM4      = -0.0296        DRSH_RM5      = -0.0296
++DRSH_RM6      = -0.0296        DRSH_RM7      = -0.0296        DRSH_RM8      = -0.0296
++DRSH_RTM1     = -0.00520       DRSH_RTM2     = -0.00520
++DDW_RNDIF     = -4.75E-09      DDW_RPDIF     = -4E-09         DDW_RNPO      = -4E-09         DDW_RNPO_3T      = -4E-09
++DDW_RPPO      = -3E-09         DDW_RPPO_3T   = -3E-09         DDW_RNWSTI    = -4.25E-09      DDW_RNWAA        = -5E-09
++DDW_RNDIFSAB  = -5E-09         DDW_RPDIFSAB  = -3E-09         DDW_RNPOSAB   = -4E-09         DDW_RNPOSAB_3T   = -4E-09
++DDW_RPPOSAB   = -4E-09         DDW_RPPOSAB_3T   = -4E-09      DDW_RM1       = -1E-09         DDW_RM2          = -2E-09
++DDW_RM3       = -2E-09         DDW_RM4       = -2E-09         DDW_RM5       = -2E-09
++DDW_RM6       = -2E-09         DDW_RM7       = -2E-09         DDW_RM8       = -2E-09
++DDW_RTM1      = -1E-09         DDW_RTM2      = -1E-09
+
+.INC 'l0065ll_io25_od33_v1p0_res.mdl'
+.ENDL  RES_FF
+
+.LIB RES_SS
+.PARAM
+*Resistor
++DRSH_RNDIF    = 4.132         DRSH_RPDIF    = 4.071         DRSH_RNPO     = 4.483          DRSH_RNPO_3T     = 4.483
++DRSH_RPPO     = 4.492         DRSH_RPPO_3T  = 4.492         DRSH_RNWSTI   = 117.841        DRSH_RNWAA       = 55.130
++DRSH_RNDIFSAB = 28.448        DRSH_RPDIFSAB = 59.219        DRSH_RNPOSAB  = 47.860         DRSH_RNPOSAB_3T  = 47.860
++DRSH_RPPOSAB  = 96.030        DRSH_RPPOSAB_3T  = 96.030     DRSH_RM1      = 0.0407         DRSH_RM2         = 0.0296
++DRSH_RM3      = 0.0296        DRSH_RM4      = 0.0296        DRSH_RM5      = 0.0296
++DRSH_RM6      = 0.0296        DRSH_RM7      = 0.0296        DRSH_RM8      = 0.0296
++DRSH_RTM1     = 0.00520       DRSH_RTM2     = 0.00520
++DDW_RNDIF     = 4.75E-09      DDW_RPDIF     = 4E-09         DDW_RNPO      = 4E-09          DDW_RNPO_3T      = 4E-09
++DDW_RPPO      = 3E-09         DDW_RPPO_3T   = 3E-09         DDW_RNWSTI    = 4.25E-09       DDW_RNWAA        = 5E-09
++DDW_RNDIFSAB  = 5E-09         DDW_RPDIFSAB  = 3E-09         DDW_RNPOSAB   = 4E-09          DDW_RNPOSAB_3T   = 4E-09
++DDW_RPPOSAB   = 4E-09         DDW_RPPOSAB_3T   = 4E-09      DDW_RM1       = 1E-09          DDW_RM2          = 2E-09
++DDW_RM3       = 2E-09         DDW_RM4       = 2E-09         DDW_RM5       = 2E-09
++DDW_RM6       = 2E-09         DDW_RM7       = 2E-09         DDW_RM8       = 2E-09
++DDW_RTM1      = 1E-09         DDW_RTM2      = 1E-09
+           
+.INC 'l0065ll_io25_od33_v1p0_res.mdl'
+.ENDL  RES_SS
+
+****************************
+* MOS Varactor Corner model
+****************************
+
+.LIB VAR_TT
+.PARAM
+*MOS Varactor
++DTOXE_PVAR12LL         = 0              DTOXP_PVAR12LL         = 0          DVTH_PVAR12LL         = 0
++DTOXE_PVAR18LL	        = 0              DTOXP_PVAR18LL         = 0          DVTH_PVAR18LL         = 0
++DTOXE_PVAR25LL         = 0              DTOXP_PVAR25LL         = 0          DVTH_PVAR25LL         = 0           
+
+.INC 'l0065ll_io25_od33_v1p0_var.ckt'
+.ENDL  VAR_TT
+
+.LIB VAR_FF
+.PARAM
+*MOS Varactor
++DTOXE_PVAR12LL         = 4E-11          DTOXP_PVAR12LL         = 4E-11      DVTH_PVAR12LL         = 0.040
++DTOXE_PVAR18LL         = 5E-11          DTOXP_PVAR18LL         = 5E-11      DVTH_PVAR18LL         = 0.018
++DTOXE_PVAR25LL         = 1E-10          DTOXP_PVAR25LL         = 1E-10      DVTH_PVAR25LL         = 0.025          
+
+.INC 'l0065ll_io25_od33_v1p0_var.ckt'
+.ENDL  VAR_FF
+
+.LIB VAR_SS
+.PARAM
+*MOS Varactor
++DTOXE_PVAR12LL         = -4E-11         DTOXP_PVAR12LL         = -4E-11     DVTH_PVAR12LL         = -0.040
++DTOXE_PVAR18LL         = -5E-11         DTOXP_PVAR18LL         = -5E-11     DVTH_PVAR18LL         = -0.018
++DTOXE_PVAR25LL         = -1E-10         DTOXP_PVAR25LL         = -1E-10     DVTH_PVAR25LL         = -0.025
+
+.INC 'l0065ll_io25_od33_v1p0_var.ckt'
+.ENDL  VAR_SS 
+
+*******************
+* MOM Corner model
+*******************
+.LIB MOM_TT
+.PARAM
++DMOM         = 0
+.INC 'l0065ll_io25_od33_v1p0_mom.ckt'
+.ENDL MOM_TT
+
+.LIB MOM_FF
+.PARAM
++DMOM         = -0.1
+.INC 'l0065ll_io25_od33_v1p0_mom.ckt'
+.ENDL MOM_FF
+
+.LIB MOM_SS
+.PARAM
++DMOM         = 0.1
+.INC 'l0065ll_io25_od33_v1p0_mom.ckt'
+.ENDL MOM_SS

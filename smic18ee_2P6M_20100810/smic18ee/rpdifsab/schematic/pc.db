@@ -1,0 +1,7 @@
+#
+smic18ee primRes2 symbol
+R0
+#ISCELL
+basic iopin symbol
+PIN1
+PIN0

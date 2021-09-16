@@ -1,0 +1,3 @@
+#!/bin/sh -f
+/home/eda/cadence/ASSURA410_IC5141/tools/assura/bin/assura /home/xiurong/SPDK18EE_183350155_CDBA_CDS_v1.61/smic18ee_2P6M_20100810/test_res_ckt.rsf -cdslib /home/xiurong/SPDK18EE_183350155_CDBA_CDS_v1.61/smic18ee_2P6M_20100810/cds.lib -gui
+exit $?

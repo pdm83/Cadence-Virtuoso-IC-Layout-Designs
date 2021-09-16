@@ -1,0 +1,249 @@
+; Translation Rules 2.0
+; Title: icc.rules
+; Technology File: smic65llrf_121825_2tm
+; Creator: Rules Editor 5.10.41.500.1.11
+; Creation Date: Jul 22 15:11:00 2005
+; From: @(#)$CDS: icfb.exe version 5.1.0 02/02/2005 16:24 (intelibm5.Cadence.COM) $
+; User: markzhu
+
+iccRevision = "2.0"
+iccTechnologyFile = "smic65llrf_121825_2tm"
+
+iccLayers =
+    list(
+        list( '("TM2" "drawing") "metal" "vertical" 1.5 1.5 nil t)
+        list( '("TV2" "drawing") "cut" "off" 0.36 0.34 nil t)
+        list( '("TM1" "drawing") "metal" "horizontal" 0.42 0.42 nil t)
+        list( '("TV1" "drawing") "cut" "off" 0.36 0.34 nil t)	
+        list( '("M8" "drawing") "metal" "vertical" 0.10 0.10 nil t)
+        list( '("V7" "drawing") "cut" "off" 0.09 0.11 nil t)
+        list( '("M7" "drawing") "metal" "horizontal" 0.10 0.10 nil t)
+        list( '("V6" "drawing") "cut" "off" 0.09 0.11 nil t)
+        list( '("M6" "drawing") "metal" "vertical" 0.10 0.10 nil t)
+        list( '("V5" "drawing") "cut" "off" 0.09 0.11 nil t)	
+        list( '("M5" "drawing") "metal" "horizontal" 0.10 0.10 nil t)
+        list( '("V4" "drawing") "cut" "off" 0.09 0.11 nil t)
+        list( '("M4" "drawing") "metal" "vertical" 0.10 0.10 nil t)
+        list( '("V3" "drawing") "cut" "off" 0.09 0.11 nil t)
+        list( '("M3" "drawing") "metal" "horizontal" 0.10 0.10 nil t)
+        list( '("V2" "drawing") "cut" "off" 0.09 0.11 nil t)
+        list( '("M2" "drawing") "metal" "vertical" 0.10 0.10 nil t)
+        list( '("V1" "drawing") "cut" "off" 0.09 0.11 nil t)
+        list( '("M1" "drawing") "metal" "horizontal" 0.09 0.09 nil t)
+        list( '("CT" "drawing") "cut" "off" 0.09 0.11 nil t)
+        list( '("GT" "drawing") "polysilicon" "orthogonal" 0.06 0.12 nil t)
+        list( '("AA" "drawing") "n_diffusion" "off" 0.11 0.14 nil t)
+        list( '("SN" "drawing") "none" "off" 0.18 0.18 nil t)
+        list( '("SP" "drawing") "none" "off" 0.18 0.18 nil t)
+        list( '("NW" "drawing") "none" "off" 0.32 0.32 nil t)
+    )
+
+iccVias =
+    list(
+	list( '("smic65llrf_121825_2tm" "M1_GT" "symbolic") t)
+	list( '("smic65llrf_121825_2tm" "M1_AA" "symbolic") t)
+	list( '("smic65llrf_121825_2tm" "M1_SN" "symbolic") t)
+	list( '("smic65llrf_121825_2tm" "M1_SP" "symbolic") t)
+	list( '("smic65llrf_121825_2tm" "M1_SUB" "symbolic") t)
+	list( '("smic65llrf_121825_2tm" "M1_NW" "symbolic") t)
+	list( '("smic65llrf_121825_2tm" "M2_M1" "symbolic") t)
+	list( '("smic65llrf_121825_2tm" "M3_M2" "symbolic") t)
+	list( '("smic65llrf_121825_2tm" "M4_M3" "symbolic") t)
+	list( '("smic65llrf_121825_2tm" "M5_M4" "symbolic") t)
+	list( '("smic65llrf_121825_2tm" "M6_M5" "symbolic") t)
+	list( '("smic65llrf_121825_2tm" "M7_M6" "symbolic") t)
+	list( '("smic65llrf_121825_2tm" "M8_M7" "symbolic") t)
+	list( '("smic65llrf_121825_2tm" "TM1_M8" "symbolic") t)	
+	list( '("smic65llrf_121825_2tm" "TM2_TM1" "symbolic") t)
+    )
+
+iccEquivalentLayers =
+    list(
+	list(
+	    '("TM2" "drawing")
+	    '("TM2" "boundary")
+	    '("TM2" "pin")
+	)
+	list(
+	    '("TV2" "drawing")
+	    '("TV2" "boundary")
+	)
+	list(
+	    '("TM1" "drawing")
+	    '("TM1" "boundary")
+	    '("TM1" "pin")
+	)
+	list(
+	    '("TV1" "drawing")
+	    '("TV1" "boundary")
+	)
+	list(
+	    '("M8" "drawing")
+	    '("M8" "boundary")
+	    '("M8" "pin")
+	)
+	list(
+	    '("V7" "drawing")
+	    '("V7" "boundary")
+	)
+	list(
+	    '("M7" "drawing")
+	    '("M7" "boundary")
+	    '("M7" "pin")
+	)
+	list(
+	    '("V6" "drawing")
+	    '("V6" "boundary")
+	)
+	list(
+	    '("M6" "drawing")
+	    '("M6" "boundary")
+	    '("M6" "pin")
+	)
+	list(
+	    '("V5" "drawing")
+	    '("V5" "boundary")
+	)
+	list(
+	    '("M5" "drawing")
+	    '("M5" "boundary")
+	    '("M5" "pin")
+	)
+	list(
+	    '("V4" "drawing")
+	    '("V4" "boundary")
+	)
+	list(
+	    '("M4" "drawing")
+	    '("M4" "boundary")
+	    '("M4" "pin")
+	)
+	list(
+	    '("V3" "drawing")
+	    '("V3" "boundary")
+	)
+	list(
+	    '("M3" "drawing")
+	    '("M3" "boundary")
+	    '("M3" "pin")
+	)
+	list(
+	    '("V2" "drawing")
+	    '("V2" "boundary")
+	)
+	list(
+	    '("M2" "drawing")
+	    '("M2" "boundary")
+	    '("M2" "pin")
+	)
+	list(
+	    '("V1" "drawing")
+	    '("V1" "boundary")
+	)
+	list(
+	    '("M1" "drawing")
+	    '("M1" "boundary")
+	    '("M1" "pin")
+	)
+	list(
+	    '("CT" "drawing")
+	    '("CT" "boundary")
+	)
+	list(
+	    '("GT" "drawing")
+	    '("GT" "boundary")
+	    '("GT" "pin")
+	)
+    )
+
+iccBoundaryLayers =
+    list(
+	list( '("TM2" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("TV2" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("TM1" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("TV1" "drawing") '("prBoundary" "drawing") 0.0)	
+	list( '("M8" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("V7" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("M7" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("V6" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("M6" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("V5" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("M5" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("V4" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("M4" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("V3" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("M3" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("V2" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("M2" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("V1" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("M1" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("CT" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("GT" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("AA" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("SN" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("SP" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("NW" "drawing") '("prBoundary" "drawing") 0.0)
+    )
+
+iccKeepouts = list(
+    list( nil list(
+	list(
+	    "=>" list('("AA" "drawing"))
+	    '("GT" "drawing") "routing" t
+	)
+	list(
+	    "and" list('("AA" "drawing") '("GT" "drawing"))
+	    '("GT" "drawing") "routing" t
+	)
+	list(
+	    "and" list('("AA" "drawing") '("GT" "drawing"))
+	    '("M1" "drawing") "routing" t
+	)
+	list(
+	    "and" list('("AA" "drawing") '("GT" "drawing"))
+	    '("M2" "drawing") "routing" t
+	)
+	list(
+	    "and" list('("AA" "drawing") '("GT" "drawing"))
+	    '("M3" "drawing") "routing" t
+	)
+	list(
+	    "and" list('("AA" "drawing") '("GT" "drawing"))
+	    '("M4" "drawing") "routing" t
+	)
+	list(
+	    "and" list('("AA" "drawing") '("GT" "drawing"))
+	    '("M5" "drawing") "routing" t
+	)
+	list(
+	    "and" list('("AA" "drawing") '("GT" "drawing"))
+	    '("M6" "drawing") "routing" t
+	)
+	list(
+	    "and" list('("AA" "drawing") '("GT" "drawing"))
+	    '("M7" "drawing") "routing" t
+	)
+	list(
+	    "and" list('("AA" "drawing") '("GT" "drawing"))
+	    '("M8" "drawing") "routing" t
+	)
+	list(
+	    "and" list('("AA" "drawing") '("GT" "drawing"))
+	    '("TM1" "drawing") "routing" t
+	)
+	list(
+	    "and" list('("AA" "drawing") '("GT" "drawing"))
+	    '("TM2" "drawing") "routing" t
+	)
+    )   32)
+)
+
+iccConductors = list(
+    list( nil list(
+	list(
+	    "and" list('("GT" "drawing") '("AA" "drawing"))
+	    '("GT" "drawing") "MOSFET" t
+	)
+    )   32)
+)
+

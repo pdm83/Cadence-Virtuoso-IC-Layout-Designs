@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      lyjslay
+HostName                       localhost
+ProcessIdentifier              3299
+ProcessCreationTime_UTC        1616576992
+ProcessCreationTime_Readable   Wed Mar 24 17:09:52 2021 CST
+AppIdentifier                  OA File System Design Manager
+OSType                         unix
+ReasonForPlacingEditLock       OpenAccess edit lock
+FilePathUsedToEditLock         /home/lyjslay/ClassDemo/lyjlib/GT/symbol/symbol.oa.cdslck
+TimeEditLocked                 Wed Mar 24 18:17:25 2021 CST

@@ -1,0 +1,880 @@
+***hspice Model Format 
+** library ind_spiral 
+** * 
+** * no part of this file can be released without the consent of smic. 
+** * 
+** ****************************************************************************************** 
+** *         smic 0.065um low leakage 1p8m 1.2v*1.8*2.5v spice model (for hspice only)         * 
+** ****************************************************************************************** 
+** * 
+** * release version    : 0.1 
+** * 
+** * release date       : Mar.*30*2009 
+** * 
+** * simulation tool    :  Synopsys Star-HSPICE version 2008.09-SP1
+** * 
+***  Inductor   : 
+***    *----------------------------------------*----------------------*----------------------*----------------------* 
+***    |  Turn & Radius  |  Turn=3,rin=30~90um  |  Turn=4,rin=30~90um  |   Turn=5,rin=30~90um |   Turn=6,rin=30~90um | 
+***    *----------------------------------------*----------------------*----------------------*----------------------* 
+***    |                 |    ind_rf_t3r30      |    ind_rf_t4r30      |     ind_rf_t5r30     |     ind_rf_t6r30     | 
+***    *                 -----------------------*----------------------*----------------------*----------------------* 
+***    |                 |    ind_rf_t3r40      |    ind_rf_t4r40      |     ind_rf_t5r40     |     ind_rf_t6r40     | 
+***    *                 -----------------------*----------------------*----------------------* ---------------------*       
+***    |                 |    ind_rf_t3r50      |    ind_rf_t4r50      |     ind_rf_t5r50     |     ind_rf_t6r50     | 
+***    *   Model Name    -----------------------*----------------------*----------------------*----------------------* 
+***    |                 |    ind_rf_t3r60      |    ind_rf_t4r60      |     ind_rf_t5r60     |     ind_rf_t6r60     | 
+***    *                 -----------------------*----------------------*----------------------*----------------------* 
+***    |                 |    ind_rf_t3r70      |    ind_rf_t4r70      |     ind_rf_t5r70     |     ind_rf_t6r70     | 
+***    *                 -----------------------*----------------------*----------------------*----------------------* 
+***    |                 |    ind_rf_t3r80      |    ind_rf_t4r80      |     ind_rf_t5r80     |     ind_rf_t6r80     | 
+***    *                 -----------------------*----------------------*----------------------*----------------------* 
+***    |                 |    ind_rf_t3r90      |    ind_rf_t4r90      |     ind_rf_t5r90     |     ind_rf_t6r90     | 
+***    *----------------------------------------*----------------------*----------------------*----------------------* 
+***   
+***  
+***     
+************************************************************************************** 
+***                 0.065um Two Port Spiral Inductor 
+************************************************************************************** 
+.subckt ind_rf_t3r30 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=3, w=8um, s=2.0um, TM1**TM2 inductor, rin=30um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 3***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 1.22 
+ls1 D D2 0.491e-9 
+rsk1 PLUS D1 2.8 
+lsk1 D1 D 0.36e-9 
+ls2 D2 D3 0.491e-9 
+rs2 D3 MINUS 1.22 
+rsk2 D3 D31 2.8 
+lsk2 D31 MINUS 0.36e-9 
+ccs PLUS MINUS 2.089e-15 
+cox1 PLUS A 59.71e-15 
+csub1 A 0 27.83e-15 
+rsub1 A 0 1386.0 
+cox2 MINUS B 67.43e-15 
+csub2 B 0 17.93e-15 
+rsub2 B 0 1458.0 
+cox3 D2 C 39.41e-15 
+csub3 C 0 3.871e-15 
+rsub3 C 0 500.0 
+.ends ind_rf_t3r30 
+
+.subckt ind_rf_t3r40 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=3, w=8um, s=2.0um, TM1**TM2 inductor, rin=40um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 3***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 1.35 
+ls1 D D2 0.658e-9 
+rsk1 PLUS D1 5.28 
+lsk1 D1 D 0.57e-9 
+ls2 D2 D3 0.658e-9 
+rs2 D3 MINUS 1.35 
+rsk2 D3 D31 3.58 
+lsk2 D31 MINUS 0.5e-9 
+ccs PLUS MINUS 4.401e-15 
+cox1 PLUS A 69.61e-15 
+csub1 A 0 30.7e-15 
+rsub1 A 0 1358.0 
+cox2 MINUS B 71.69e-15 
+csub2 B 0 21.49e-15 
+rsub2 B 0 1372.0 
+cox3 D2 C 46.57e-15 
+csub3 C 0 3.079e-15 
+rsub3 C 0 300.0 
+.ends ind_rf_t3r40 
+
+.subckt ind_rf_t3r50 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=3, w=8um, s=2.0um, TM1**TM2 inductor, rin=50um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 3***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 1.55 
+ls1 D D2 0.82e-9 
+rsk1 PLUS D1 3.28 
+lsk1 D1 D 0.36e-9 
+ls2 D2 D3 0.82e-9 
+rs2 D3 MINUS 1.55 
+rsk2 D3 D31 3.28 
+lsk2 D31 MINUS 0.5e-9 
+ccs PLUS MINUS 3.871e-15 
+cox1 PLUS A 56.84e-15 
+csub1 A 0 78.12e-15 
+rsub1 A 0 400.0 
+cox2 MINUS B 54.76e-15 
+csub2 B 0 53.37e-15 
+rsub2 B 0 486.0 
+cox3 D2 C 47.96e-15 
+csub3 C 0 5.257e-15 
+rsub3 C 0 700.0 
+.ends ind_rf_t3r50 
+
+.subckt ind_rf_t3r60 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=3, w=8um, s=2.0um, TM1**TM2 inductor, rin=60um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 3***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 1.2 
+ls1 D D2 1.008e-9 
+rsk1 PLUS D1 3.0 
+lsk1 D1 D 0.5e-9 
+ls2 D2 D3 1.008e-9 
+rs2 D3 MINUS 1.2 
+rsk2 D3 D31 3.0 
+lsk2 D31 MINUS 0.5e-9 
+ccs PLUS MINUS 6.544e-15 
+cox1 PLUS A 58.32e-15 
+csub1 A 0 80.89e-15 
+rsub1 A 0 372.0 
+cox2 MINUS B 58.32e-15 
+csub2 B 0 51.89e-15 
+rsub2 B 0 486.0 
+cox3 D2 C 59.31e-15 
+csub3 C 0 4.564e-15 
+rsub3 C 0 456.8 
+.ends ind_rf_t3r60 
+
+.subckt ind_rf_t3r70 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=3, w=8um, s=2.0um, TM1**TM2 inductor, rin=70um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 3***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 1.2 
+ls1 D D2 1.192e-9 
+rsk1 PLUS D1 2.6 
+lsk1 D1 D 0.43e-9 
+ls2 D2 D3 1.192e-9 
+rs2 D3 MINUS 1.2 
+rsk2 D3 D31 2.6 
+lsk2 D31 MINUS 0.43e-9 
+ccs PLUS MINUS 9.019e-15 
+cox1 PLUS A 61.79e-15 
+csub1 A 0 88.71e-15 
+rsub1 A 0 342.0 
+cox2 MINUS B 62.48e-15 
+csub2 B 0 53.37e-15 
+rsub2 B 0 472.0 
+cox3 D2 C 70.65e-15 
+csub3 C 0 6.643e-15 
+rsub3 C 0 440.0 
+.ends ind_rf_t3r70 
+
+.subckt ind_rf_t3r80 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=3, w=8um, s=2.0um, TM1**TM2 inductor, rin=80um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 3***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 1.3 
+ls1 D D2 1.38e-9 
+rsk1 PLUS D1 4.0 
+lsk1 D1 D 0.93e-9 
+ls2 D2 D3 1.38e-9 
+rs2 D3 MINUS 1.3 
+rsk2 D3 D31 4.0 
+lsk2 D31 MINUS 0.71e-9 
+ccs PLUS MINUS 10.21e-15 
+cox1 PLUS A 76.83e-15 
+csub1 A 0 84.46e-15 
+rsub1 A 0 463.2 
+cox2 MINUS B 65.35e-15 
+csub2 B 0 58.32e-15 
+rsub2 B 0 450.0 
+cox3 D2 C 74.83e-15 
+csub3 C 0 4.564e-15 
+rsub3 C 0 386.0 
+.ends ind_rf_t3r80 
+
+.subckt ind_rf_t3r90 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=3, w=8um, s=2.0um, TM1**TM2 inductor, rin=90um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 3***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 1.36 
+ls1 D D2 1.57e-9 
+rsk1 PLUS D1 4.0 
+lsk1 D1 D 0.71e-9 
+ls2 D2 D3 1.57e-9 
+rs2 D3 MINUS 1.36 
+rsk2 D3 D31 4.0 
+lsk2 D31 MINUS 0.71e-9 
+ccs PLUS MINUS 10.9e-15 
+cox1 PLUS A 82.28e-15 
+csub1 A 0 100.5e-15 
+rsub1 A 0 328.0 
+cox2 MINUS B 75.94e-15 
+csub2 B 0 65.35e-15 
+rsub2 B 0 429.0 
+cox3 D2 C 94.73e-15 
+csub3 C 0 8.821e-15 
+rsub3 C 0 342.0 
+.ends ind_rf_t3r90 
+
+.subckt ind_rf_t4r30 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=4, w=8um, s=2.0um, TM1**TM2 inductor, rin=30um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 4***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 1.2 
+ls1 D D2 0.885e-9 
+rsk1 PLUS D1 1.72 
+lsk1 D1 D 0.36e-9 
+ls2 D2 D3 0.885e-9 
+rs2 D3 MINUS 1.2 
+rsk2 D3 D31 1.72 
+lsk2 D31 MINUS 0.36e-9 
+ccs PLUS MINUS 8.029e-15 
+cox1 PLUS A 85.84e-15 
+csub1 A 0 30.01e-15 
+rsub1 A 0 914.0 
+cox2 MINUS B 72.38e-15 
+csub2 B 0 17.24e-15 
+rsub2 B 0 914.0 
+cox3 D2 C 39.41e-15 
+csub3 C 0 3.871e-15 
+rsub3 C 0 238.0 
+.ends ind_rf_t4r30 
+
+.subckt ind_rf_t4r40 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=4, w=8um, s=2.0um, TM1**TM2 inductor, rin=40um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 4***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 1.36 
+ls1 D D2 1.155e-9 
+rsk1 PLUS D1 2.28 
+lsk1 D1 D 0.5e-9 
+ls2 D2 D3 1.155e-9 
+rs2 D3 MINUS 1.36 
+rsk2 D3 D31 2.28 
+lsk2 D31 MINUS 0.43e-9 
+ccs PLUS MINUS 10.9e-15 
+cox1 PLUS A 66.74e-15 
+csub1 A 0 43.47e-15 
+rsub1 A 0 686.0 
+cox2 MINUS B 72.38e-15 
+csub2 B 0 22.88e-15 
+rsub2 B 0 1028.0 
+cox3 D2 C 50.95e-15 
+csub3 C 0 4.465e-15 
+rsub3 C 0 278.5 
+.ends ind_rf_t4r40 
+
+.subckt ind_rf_t4r50 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=4, w=8um, s=2.0um, TM1**TM2 inductor, rin=50um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 4***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 1.35 
+ls1 D D2 1.445e-9 
+rsk1 PLUS D1 2.0 
+lsk1 D1 D 0.36e-9 
+ls2 D2 D3 1.445e-9 
+rs2 D3 MINUS 1.35 
+rsk2 D3 D31 2.0 
+lsk2 D31 MINUS 0.43e-9 
+ccs PLUS MINUS 10.9e-15 
+cox1 PLUS A 86.08e-15 
+csub1 A 0 56.14e-15 
+rsub1 A 0 758.0 
+cox2 MINUS B 81.59e-15 
+csub2 B 0 34.26e-15 
+rsub2 B 0 786.0 
+cox3 D2 C 60.7e-15 
+csub3 C 0 5.95e-15 
+rsub3 C 0 372.0 
+.ends ind_rf_t4r50 
+
+.subckt ind_rf_t4r60 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=4, w=8um, s=2.0um, TM1**TM2 inductor, rin=60um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 4***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 1.4 
+ls1 D D2 1.74e-9 
+rsk1 PLUS D1 2.0 
+lsk1 D1 D 0.56e-9 
+ls2 D2 D3 1.74e-9 
+rs2 D3 MINUS 1.4 
+rsk2 D3 D31 2.0 
+lsk2 D31 MINUS 0.43e-9 
+ccs PLUS MINUS 13.77e-15 
+cox1 PLUS A 70.99e-15 
+csub1 A 0 74.56e-15 
+rsub1 A 0 360.0 
+cox2 MINUS B 68.22e-15 
+csub2 B 0 40.6e-15 
+rsub2 B 0 657.0 
+cox3 D2 C 76.42e-15 
+csub3 C 0 5.257e-15 
+rsub3 C 0 300.0 
+.ends ind_rf_t4r60 
+
+.subckt ind_rf_t4r70 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=4, w=8um, s=2.0um, TM1**TM2 inductor, rin=70um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 4***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 1.45 
+ls1 D D2 2.06e-9 
+rsk1 PLUS D1 2.86 
+lsk1 D1 D 0.57e-9 
+ls2 D2 D3 2.06e-9 
+rs2 D3 MINUS 1.45 
+rsk2 D3 D31 2.86 
+lsk2 D31 MINUS 0.57e-9 
+ccs PLUS MINUS 14.65e-15 
+cox1 PLUS A 82.28e-15 
+csub1 A 0 88.71e-15 
+rsub1 A 0 357.0 
+cox2 MINUS B 74.56e-15 
+csub2 B 0 48.42e-15 
+rsub2 B 0 586.0 
+cox3 D2 C 93.34e-15 
+csub3 C 0 5.257e-15 
+rsub3 C 0 314.0 
+.ends ind_rf_t4r70 
+
+.subckt ind_rf_t4r80 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=4, w=8um, s=2.0um, TM1**TM2 inductor, rin=80um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 4***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 1.71 
+ls1 D D2 2.36e-9 
+rsk1 PLUS D1 3.28 
+lsk1 D1 D 0.71e-9 
+ls2 D2 D3 2.36e-9 
+rs2 D3 MINUS 1.71 
+rsk2 D3 D31 3.28 
+lsk2 D31 MINUS 0.71e-9 
+ccs PLUS MINUS 15.85e-15 
+cox1 PLUS A 80.2e-15 
+csub1 A 0 105.3e-15 
+rsub1 A 0 256.8 
+cox2 MINUS B 74.56e-15 
+csub2 B 0 56.14e-15 
+rsub2 B 0 451.2 
+cox3 D2 C 104.7e-15 
+csub3 C 0 7.336e-15 
+rsub3 C 0 314.0 
+.ends ind_rf_t4r80 
+
+.subckt ind_rf_t4r90 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=4, w=8um, s=2.0um, TM1**TM2 inductor, rin=90um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 4***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 2.2 
+ls1 D D2 2.65e-9 
+rsk1 PLUS D1 2.86 
+lsk1 D1 D 0.57e-9 
+ls2 D2 D3 2.65e-9 
+rs2 D3 MINUS 2.2 
+rsk2 D3 D31 2.86 
+lsk2 D31 MINUS 0.57e-9 
+ccs PLUS MINUS 17.93e-15 
+cox1 PLUS A 66.74e-15 
+csub1 A 0 98.61e-15 
+rsub1 A 0 99.3 
+cox2 MINUS B 69.61e-15 
+csub2 B 0 75.94e-15 
+rsub2 B 0 336.0 
+cox3 D2 C 146.1e-15 
+csub3 C 0 6.643e-15 
+rsub3 C 0 303.5 
+.ends ind_rf_t4r90 
+
+.subckt ind_rf_t5r30 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=5, w=8um, s=2.0um, TM1**TM2 inductor, rin=30um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 5***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 1.79 
+ls1 D D2 1.418e-9 
+rsk1 PLUS D1 2.28 
+lsk1 D1 D 0.435e-9 
+ls2 D2 D3 1.418e-9 
+rs2 D3 MINUS 1.71 
+rsk2 D3 D31 1.86 
+lsk2 D31 MINUS 0.435e-9 
+ccs PLUS MINUS 8.821e-15 
+cox1 PLUS A 70.3e-15 
+csub1 A 0 59.71e-15 
+rsub1 A 0 371.5 
+cox2 MINUS B 85.84e-15 
+csub2 B 0 29.31e-15 
+rsub2 B 0 772.0 
+cox3 D2 C 46.57e-15 
+csub3 C 0 4.663e-15 
+rsub3 C 0 460.5 
+.ends ind_rf_t5r30 
+
+.subckt ind_rf_t5r40 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=5, w=8um, s=2.0um, TM1**TM2 inductor, rin=40um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 5***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 1.9 
+ls1 D D2 1.82e-9 
+rsk1 PLUS D1 2.28 
+lsk1 D1 D 0.5e-9 
+ls2 D2 D3 1.82e-9 
+rs2 D3 MINUS 1.9 
+rsk2 D3 D31 2.28 
+lsk2 D31 MINUS 0.5e-9 
+ccs PLUS MINUS 15.96e-15 
+cox1 PLUS A 73.86e-15 
+csub1 A 0 58.32e-15 
+rsub1 A 0 386.0 
+cox2 MINUS B 70.3e-15 
+csub2 B 0 27.14e-15 
+rsub2 B 0 779.0 
+cox3 D2 C 72.04e-15 
+csub3 C 0 10.21e-15 
+rsub3 C 0 350.0 
+.ends ind_rf_t5r40 
+
+.subckt ind_rf_t5r50 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=5, w=8um, s=2.0um, TM1**TM2 inductor, rin=50um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 5***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 2.0 
+ls1 D D2 2.25e-9 
+rsk1 PLUS D1 3.0 
+lsk1 D1 D 0.64e-9 
+ls2 D2 D3 2.25e-9 
+rs2 D3 MINUS 2.0 
+rsk2 D3 D31 3.0 
+lsk2 D31 MINUS 0.64e-9 
+ccs PLUS MINUS 14.46e-15 
+cox1 PLUS A 83.76e-15 
+csub1 A 0 80.89e-15 
+rsub1 A 0 342.0 
+cox2 MINUS B 70.3e-15 
+csub2 B 0 38.52e-15 
+rsub2 B 0 628.0 
+cox3 D2 C 93.34e-15 
+csub3 C 0 10.21e-15 
+rsub3 C 0 346.5 
+.ends ind_rf_t5r50 
+
+.subckt ind_rf_t5r60 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=5, w=8um, s=2.0um, TM1**TM2 inductor, rin=60um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 5***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 2.64 
+ls1 D D2 2.69e-9 
+rsk1 PLUS D1 3.5 
+lsk1 D1 D 0.6e-9 
+ls2 D2 D3 2.69e-9 
+rs2 D3 MINUS 2.64 
+rsk2 D3 D31 3.5 
+lsk2 D31 MINUS 0.6e-9 
+ccs PLUS MINUS 16.88e-15 
+cox1 PLUS A 64.66e-15 
+csub1 A 0 83.76e-15 
+rsub1 A 0 158.6 
+cox2 MINUS B 67.43e-15 
+csub2 B 0 45.55e-15 
+rsub2 B 0 560.0 
+cox3 D2 C 129.0e-15 
+csub3 C 0 13.77e-15 
+rsub3 C 0 314.0 
+.ends ind_rf_t5r60 
+
+.subckt ind_rf_t5r70 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=5, w=8um, s=2.0um, TM1**TM2 inductor, rin=70um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 5***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 2.57 
+ls1 D D2 3.13e-9 
+rsk1 PLUS D1 3.28 
+lsk1 D1 D 0.71e-9 
+ls2 D2 D3 3.13e-9 
+rs2 D3 MINUS 2.57 
+rsk2 D3 D31 3.28 
+lsk2 D31 MINUS 0.71e-9 
+ccs PLUS MINUS 17.93e-15 
+cox1 PLUS A 67.43e-15 
+csub1 A 0 50.5e-15 
+rsub1 A 0 115.8 
+cox2 MINUS B 67.43e-15 
+csub2 B 0 58.22e-15 
+rsub2 B 0 434.4 
+cox3 D2 C 156.0e-15 
+csub3 C 0 14.46e-15 
+rsub3 C 0 318.0 
+.ends ind_rf_t5r70 
+
+.subckt ind_rf_t5r80 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=5, w=8um, s=2.0um, TM1**TM2 inductor, rin=80um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 5***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 2.98 
+ls1 D D2 3.58e-9 
+rsk1 PLUS D1 3.72 
+lsk1 D1 D 0.79e-9 
+ls2 D2 D3 3.58e-9 
+rs2 D3 MINUS 2.98 
+rsk2 D3 D31 3.72 
+lsk2 D31 MINUS 0.71e-9 
+ccs PLUS MINUS 18.72e-15 
+cox1 PLUS A 72.10e-15 
+csub1 A 0 49.81e-15 
+rsub1 A 0 101.8 
+cox2 MINUS B 70.3e-15 
+csub2 B 0 64.66e-15 
+rsub2 B 0 371.2 
+cox3 D2 C 175.9e-15 
+csub3 C 0 15.16e-15 
+rsub3 C 0 305.6 
+.ends ind_rf_t5r80 
+
+.subckt ind_rf_t5r90 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=5, w=8um, s=2.0um, TM1**TM2 inductor, rin=90um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 5***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 2.93 
+ls1 D D2 4.05e-9 
+rsk1 PLUS D1 4.1 
+lsk1 D1 D 0.8e-9 
+ls2 D2 D3 4.05e-9 
+rs2 D3 MINUS 2.93 
+rsk2 D3 D31 4.1 
+lsk2 D31 MINUS 0.8e-9 
+ccs PLUS MINUS 20.26e-15 
+cox1 PLUS A 81.59e-15 
+csub1 A 0 75.94e-15 
+rsub1 A 0 118.6 
+cox2 MINUS B 75.94e-15 
+csub2 B 0 65.35e-15 
+rsub2 B 0 357.0 
+cox3 D2 C 193.3e-15 
+csub3 C 0 20.26e-15 
+rsub3 C 0 299.5 
+.ends ind_rf_t5r90 
+
+.subckt ind_rf_t6r30 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=6, w=8um, s=2.0um, TM1**TM2 inductor, rin=30um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 6***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 3.79 
+ls1 D D2 2.09e-9 
+rsk1 PLUS D1 5.0 
+lsk1 D1 D 0.86e-9 
+ls2 D2 D3 2.09e-9 
+rs2 D3 MINUS 3.79 
+rsk2 D3 D31 5.0 
+lsk2 D31 MINUS 0.86e-9 
+ccs PLUS MINUS 12.98e-15 
+cox1 PLUS A 52.58e-15 
+csub1 A 0 41.99e-15 
+rsub1 A 0 140.0 
+cox2 MINUS B 71.69e-15 
+csub2 B 0 32.09e-15 
+rsub2 B 0 758.0 
+cox3 D2 C 84.78e-15 
+csub3 C 0 6.643e-15 
+rsub3 C 0 400.0 
+.ends ind_rf_t6r30 
+
+.subckt ind_rf_t6r40 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=6, w=8um, s=2.0um, TM1**TM2 inductor, rin=40um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 6***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 3.1 
+ls1 D D2 2.64e-9 
+rsk1 PLUS D1 2.6 
+lsk1 D1 D 0.86e-9 
+ls2 D2 D3 2.64e-9 
+rs2 D3 MINUS 3.1 
+rsk2 D3 D31 2.6 
+lsk2 D31 MINUS 0.36e-9 
+ccs PLUS MINUS 13.08e-15 
+cox1 PLUS A 65.55e-15 
+csub1 A 0 46.94e-15 
+rsub1 A 0 122.8 
+cox2 MINUS B 72.38e-15 
+csub2 B 0 46.24e-15 
+rsub2 B 0 528.0 
+cox3 D2 C 116.2e-15 
+csub3 C 0 5.158e-15 
+rsub3 C 0 433.0 
+.ends ind_rf_t6r40 
+
+.subckt ind_rf_t6r50 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=6, w=8um, s=2.0um, TM1**TM2 inductor, rin=50um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 6***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 3.57 
+ls1 D D2 3.24e-9 
+rsk1 PLUS D1 3.28 
+lsk1 D1 D 0.64e-9 
+ls2 D2 D3 3.24e-9 
+rs2 D3 MINUS 3.57 
+rsk2 D3 D31 3.28 
+lsk2 D31 MINUS 0.64e-9 
+ccs PLUS MINUS 15.45e-15 
+cox1 PLUS A 68.22e-15 
+csub1 A 0 40.27e-15 
+rsub1 A 0 122.8 
+cox2 MINUS B 63.96e-15 
+csub2 B 0 49.81e-15 
+rsub2 B 0 428.8 
+cox3 D2 C 146.1e-15 
+csub3 C 0 8.821e-15 
+rsub3 C 0 375.0 
+.ends ind_rf_t6r50 
+
+.subckt ind_rf_t6r60 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=6, w=8um, s=2.0um, TM1**TM2 inductor, rin=60um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 6***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 2.71 
+ls1 D D2 3.87e-9 
+rsk1 PLUS D1 3.7 
+lsk1 D1 D 0.86e-9 
+ls2 D2 D3 3.87e-9 
+rs2 D3 MINUS 2.71 
+rsk2 D3 D31 3.7 
+lsk2 D31 MINUS 0.86e-9 
+ccs PLUS MINUS 17.83e-15 
+cox1 PLUS A 79.52e-15 
+csub1 A 0 61.59e-15 
+rsub1 A 0 130.0 
+cox2 MINUS B 77.33e-15 
+csub2 B 0 53.37e-15 
+rsub2 B 0 474.4 
+cox3 D2 C 182.9e-15 
+csub3 C 0 10.9e-15 
+rsub3 C 0 368.4 
+.ends ind_rf_t6r60 
+
+.subckt ind_rf_t6r70 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=6, w=8um, s=2.0um, TM1**TM2 inductor, rin=70um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 6***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 2.8 
+ls1 D D2 4.47e-9 
+rsk1 PLUS D1 3.14 
+lsk1 D1 D 0.86e-9 
+ls2 D2 D3 4.47e-9 
+rs2 D3 MINUS 2.8 
+rsk2 D3 D31 3.14 
+lsk2 D31 MINUS 0.86e-9 
+ccs PLUS MINUS 18.82e-15 
+cox1 PLUS A 87.23e-15 
+csub1 A 0 68.22e-15 
+rsub1 A 0 122.1 
+cox2 MINUS B 79.51e-15 
+csub2 B 0 61.09e-15 
+rsub2 B 0 402.6 
+cox3 D2 C 201.8e-15 
+csub3 C 0 15.85e-15 
+rsub3 C 0 335.5 
+.ends ind_rf_t6r70 
+
+.subckt ind_rf_t6r80 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=6, w=8um, s=2.0um, TM1**TM2 inductor, rin=80um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 6***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 3.36 
+ls1 D D2 5.07e-9 
+rsk1 PLUS D1 3.16 
+lsk1 D1 D 0.593e-9 
+ls2 D2 D3 5.08e-9 
+rs2 D3 MINUS 3.36 
+rsk2 D3 D31 3.28 
+lsk2 D31 MINUS 1.12e-9 
+ccs PLUS MINUS 20.21e-15 
+cox1 PLUS A 94.36e-15 
+csub1 A 0 75.25e-15 
+rsub1 A 0 114.5 
+cox2 MINUS B 85.84e-15 
+csub2 B 0 72.38e-15 
+rsub2 B 0 386.0 
+cox3 D2 C 215.8e-15 
+csub3 C 0 19.41e-15 
+rsub3 C 0 303.5 
+.ends ind_rf_t6r80 
+
+.subckt ind_rf_t6r90 PLUS MINUS 
+** *********************************************************************************** 
+** *********************************************************************************** 
+*****PLUS=port1(TM1**TM2), MINUS=port2(TM1**TM2)***** 
+*****0.065um spiral octagonal inductor two port equivalent circuit Single model***** 
+*****n=6, w=8um, s=2.0um, TM1**TM2 inductor, rin=90um***** 
+*****rin= inner radius; n= turns; w=width; s=spacing***** 
+*****spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 6***** 
+** *********************************************************************************** 
+** *********************************************************************************** 
+rs1 PLUS D 3.07 
+ls1 D D2 5.7e-9 
+rsk1 PLUS D1 3.4 
+lsk1 D1 D 1.0e-9 
+ls2 D2 D3 5.7e-9 
+rs2 D3 MINUS 3.07 
+rsk2 D3 D31 3.4 
+lsk2 D31 MINUS 1.0e-9 
+ccs PLUS MINUS 22.61e-15 
+cox1 PLUS A 103.3e-15 
+csub1 A 0 73.66e-15 
+rsub1 A 0 128.0 
+cox2 MINUS B 92.97e-15 
+csub2 B 0 64.66e-15 
+rsub2 B 0 382.0 
+cox3 D2 C 232.5e-15 
+csub3 C 0 30.01e-15 
+rsub3 C 0 300.0 
+.ends ind_rf_t6r90 
+
+** endlibrary ind_spiral 

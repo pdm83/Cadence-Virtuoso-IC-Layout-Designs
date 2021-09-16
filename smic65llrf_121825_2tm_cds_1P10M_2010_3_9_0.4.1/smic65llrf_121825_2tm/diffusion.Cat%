@@ -1,0 +1,8 @@
+TDMCHECKPOINT="1.0"
+smic65llrf_121825_2tm/rndif type="cell"
+smic65llrf_121825_2tm/rndifsab type="cell"
+smic65llrf_121825_2tm/rndifsab_ckt type="cell"
+smic65llrf_121825_2tm/rpdif type="cell"
+smic65llrf_121825_2tm/rpdif_ckt type="cell"
+smic65llrf_121825_2tm/rpdifsab type="cell"
+smic65llrf_121825_2tm/rpdifsab_ckt type="cell"

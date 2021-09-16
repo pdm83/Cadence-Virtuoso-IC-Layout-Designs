@@ -1,0 +1,26 @@
+* 
+* No part of this file can be released without the consent of SMIC.
+*
+******************************************************************************************
+*            SMIC 0.18um EEPROM 2P6M 1.8V/3.3V/5V/15.5V SPICE model(for ELDO only)     *
+******************************************************************************************
+*
+* Release version    : 1.7
+*
+* Release date       : 1/13/2010
+*
+* Simulation tool    : Mentor Graphics's Eldo v6.3_1.1 
+*
+*
+*   PIP capacitor    : pip 
+*   
+*   Valid temperature range is from -40C to 125C
+*
+*
+******************************************************************
+*                      PIP Capacitor                             * 
+******************************************************************
+.model pipe2r c
++COX = '2.055E-3+DPIPE2R'   TC1 = 3.772E-5    TREF  = 25
+*
+

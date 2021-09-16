@@ -1,0 +1,1889 @@
+NAND 1000
+PB.1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum PSUB width is 1.0
+PB.2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space for PSUB to PSUB is 1.0
+DNW_E1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width DNW  2.2
+DNW_E2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between two DNW (different potential)  6
+DNW_E3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between two DNW (same potential)  2 or 0
+DNW_E4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between  NW and  DNW is 5um
+DNW_E5
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between  PSUB and  DNW is 2.5
+DNW_E6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+DNW overlap PSUB or TPW is forbidden 
+DNW_E8
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+For DNW operating >10V guarding MUST be added DNW boundry ,in which no AA/GT is allowed.
+The Minimum PW guarding-ring     1.2
+TPW_E1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of an TPW  region  1
+TPW_E2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space  between  TPW    1
+TPW_E3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space  between  TPW to NW   0.78
+TPW_E4
+0 0 4 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space  between  TPW to DNW
+E04a. DNW Vop>10V RealHVPMOS  1.2
+E04b. DNW Vop<10V 3.3V or 5V device 0.78
+TPW_E5
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between TPW and PSUB  1 or 0
+TPW_E6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+TPW overlap PSUB,NW,DNW is foridden
+NW_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of an NW region is 0.86um
+NW_2a
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between two NW regions with the same potential is 0.60um
+Merge if space is less than 0.6um
+NW_2b
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between two NW with different potential is 1.40um
+NW_3
+0 0 5 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum dimension of an NW region not connected to the most
+positive power supply is 2.10um.
+Need to be changed depending on your power supply name
+In this case the most positive voltage
+NWE_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space NW to DNW  5.0
+NWE_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space NW to PSUB  1.5
+NWE_3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+NW overlap DNW is forbidden 
+NWE_4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+NW overlap PSUB is forbidden 
+NWE_5
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+NW overlap TPW is forbidden 
+NR_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure of AA beyond an NW is 1.0
+NR_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure of salicide NW to CT is 0.3
+NR_3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space from SAB to related NW is 0.3
+NR_4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space from SAB to related AA is 0.22
+NR_5
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum overlap of SN to SAB inside NW is 0.4
+NR_6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space from SAB to related CT in SAB hole is 0.3
+NR_7
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Min. NW space is 1.4
+NR_8
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+LDD,SN and SP implant inside NW resistance region is not allowed
+AA_1_2
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of an active region for interconnect is 0.22um
+Minimum width of an active region to define the width of MOS is 0.22um
+AA_3
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between N+ AA and N+ AA or P+ AA and P+ AA is 0.28um
+(both regions are either inside or outside NW)
+AA_4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure from NW edge to an N-well pick-up is 0.12um
+AA_5
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between N-Well edge and an N+ AA region is 0.43um
+AA_6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure between N-Well edge and a P+ AA region is 0.43um
+AA_7
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between N-Well edge and a P+ AA region is 0.12um
+AA_8
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between poly edge and edge of a butted diffusion AA region is 0.32um
+AA_9
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between N+ AA and P+ AA for butted diffusion is 0.00um
+AA_10a
+0 0 4 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum area of a butted diffusion AA is 0.176um2. At lease
+one segment(AA.10) of the consecutive SN/SP edge of butted
+diffusion AA should be longer than 0.42um.
+AA_10b
+0 0 1 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+AA_11
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum area of a stand-along AA region is 0.20um
+AA_12
+0 0 5 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+For the situation where N-well and P-well pick-ups are put
+head-to-head across the well boundary, the space between N-
+pick-up and P-pick-up should be 0.36um in order to meet
+the implant layout rules
+AAE_1
+0 0 7 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum AA width for
+01a. interconnect (N+ or P+)  0.6
+01b. TIM resistor  0.6
+01c. 5V/15.5V HVN/ZMOS,5V Quasi-HVPMOS  0.6
+01d. 3.3V MV N/MOS 0.6
+01e. 16V Real-HVPMOS  1.62    
+AAE_2
+0 0 4 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between two N+AA space (both inside PSUB) 
+02a. 5V HVN/ZMOS  0.9
+02b. 15.5V HVN/ZMOS  1.05
+AAE_3
+0 0 5 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between N+AA to (P+AA pickup) both inside PSUB
+03a. <= 6V N+AA   0.5
+03b. >= 6V N+AA   1
+03c. Butted Diffusion   0  / included in AA_9
+AAE_4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure from PSUB edge to (N+AA inside PSUB) 2.8
+AAE_5
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure from PSUB edge to (P+AA pick-up inside PSUB) 1.0
+AAE_6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between PSUB edge to (N+AA outside PSUB,NW,DNW) 0.5
+AAE_7
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between PSUB edge to (P+AA outside PSUB,NW,DNW) 0.4
+AAE_8
+0 0 5 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between two P+ AA (both inside DNW )
+08a. 3.3V MV PMOS    0.4
+08b. 5V Quasi-HVPMOS,or <=10V voltage difference  0.5
+08c. 16V Real-HVPMOS,or >=10V voltage difference  0.8
+AAE_9
+0 0 4 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between P+ AA to (N+ AA pick-up) both inside DNW
+09a. Non-Butted   1.5
+09b. Butted        0    / included in AA_9
+AAE_10
+0 0 4 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure from  DNW edge to (P+AA inside DNW)
+10a. 3.3V MV PMOS ,5V Quasi-HVPMOS   0.8
+10b. 16V Real-HVPMOS                 3.3
+AAE_11
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure from DNW edge to (N+AA pick-up inside DNW) 1.2
+AAE_12
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between DNW edge to (N+AA outside PSUB,NW,DNW)  1.2
+AAE_13
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between DNW edge to (P+AA outside PSUB,NW,DNW)  1.18
+AAE_14
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum  space between two N+AA space (both inside TPW)  0.4
+AAE_15
+0 0 4 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between N+AA to (P+AA pick-up) both inside TPW
+15a. Non-Butted     0.4
+15b. Butted   /included in AA_9
+AAE_16
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure from TPW edge to (N+AA inside TPW)  0.8
+AAE_17
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure from TPW edge to ((P+AA inside TPW)  0.4
+AAE_18
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Cross-over of AA to PSUB is NOT allowed . AA must be fully inside ,or outside PSUB
+AAE_19
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Cross-over of AA to DNW is NOT allowed . AA must be fully inside ,or outside DNW
+AAE_20
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Cross-over of AA to TPW is NOT allowed . AA must be fully inside ,or outside TPW
+AA_Notice
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+For 16v Real HVPMOS, it should be surrounded by N+AA as guarding for the rule AA.E10b of P+ inside DNW to DNW
+TIM.1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum TIM width  0.45
+TIM.2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum TIM to TIM space 0.45
+TIM.3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum TIM enclosure related AA
+TIM.4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum TIM space to unrelated AA
+TIM.5
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum TIM to TIM space 0.45
+TIM.6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum TIM enclosure of AA (NCODE) 0.1
+TIM.7
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum TIM enclosure of GP (NCODE) 0.12
+TIM.8
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum TIM space to unrelated GP (NCODE) 0.25
+TIM.9
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum TIM space to unrelated AA (NCODE) 0.2
+PF_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+HVPF is only drawn inside PSUB
+PF_2
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+AAs overlap of HVPF is regarded as the same potential
+Any two AAs with different potential must be covered by HVPF SEPARATELY .
+PF_3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+All N+AA must be covered by HVPF separately.
+PF_6a
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum/Maximum HVPF enclosure AA in PSUB
+06a. 5V HVN/ZMOS    =0.15 
+PF_6b
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum/Maximum HVPF enclosure AA in PSUB
+06b. 15.5V HVN/ZMOS    =0.225
+PF_7
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum HVPF to HVPF space 0.6
+PF_8
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum HVPF width  0.6
+VTN_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum VTHN width   0.45
+VTN_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum VTNH to VTNH space  0.45
+VTN_3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum VTNH enclosure to related AA  0.3
+VTN_4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum VTNH space to unrelated AA   0.3
+VTN_5
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum VTNH enclosure of related P1(GT) on AA 0.3
+VTN_6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum VTNH space to unrelated P1 (GT) on AA  0.3
+TOW_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+TOW MUST cover AA of special 3.3v MV N/PMOS
+TOW_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum TOW width 0.5
+TOW_3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum TOW-to-TOW space  0.6
+TOW_4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum TOW enclosure of related AA  0.3
+TOW_5
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum TOW space to un-related AA  0.3
+GTE_1a
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of GT for interconnect/Resistor purpose 0.6
+GTE_1b
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of GT 15.5V HVNMOS (inside PSUB) 1.7
+GTE_1c
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of GT 15.5V HZNMOS (inside PSUB) 2.1
+GTE_1d
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of GT 16V Real HVPMOS (inside DNW) 1
+GTE_1e
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of GT 5V HVNMOS (inside PSUB) 1.4
+GTE_1f
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of GT 5V HZNMOS (inside PSUB) 1.8
+GTE_1g
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of GT 5V Qusai-HV PMOS (inside DNW) 1.0
+GTE_1h
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of GT 3.3V MV NMOS (inside TPW) 0.6
+GTE_1i
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of GT 3.3V MV PMOS (inside DNW) 0.8
+GTE_2a
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of GT to GT on FOX  0.4
+GTE_2b
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+For 16V Real-HVPMOS .GT cross over AAs of different potential is NOT allowed .
+GTE_3c
+0 0 6 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space GT to GT on AA 
+03a. outside DNW    0.4
+03b. inside DNW,not 16v Real-HVPMOS 0.4
+03c. inside DNW,Real-HVPMOS (with CT between)  1.92
+03d. inside DNW,Real-HVPMOS (withoout CT between)  1.54
+GTE_3d
+0 0 6 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space GT to GT on AA
+03a. outside DNW    0.4
+03b. inside DNW,not 16v Real-HVPMOS 0.4
+03c. inside DNW,Real-HVPMOS (with CT between)  1.92
+03d. inside DNW,Real-HVPMOS (withoout CT between)  1.54
+GTE_4_5a
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of GT on FOX to related AA edge 0.2
+Minimum space of GT on FOX to unrelated AA edge (Except 16V Real-HVPMOS ) 0.2 
+GTE_5b
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of GT on FOX to unrelated AA edge ( 16V Real-HVPMOS ) 0.45
+GTE_6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of GT on FOX to un-related AA edge (Resistor purpose)  0.45
+GTE_7a
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of GT on AA to related AA edge (Except 16V Real-HVPMOS) 0.4
+GTE_7b
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of GT on AA to related AA edge for 16V Real-HVPMOS (with CT between)  1.77
+GTE_7c
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of GT on AA to related AA edge for 16V Real-HVPMOS (without CT between)  1.39 
+GTE_8
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum extension of GT to related AA edge (end-cap)  0.35
+ONO_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of ONO  0.6
+ONO_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between ONO and ONO 0.6
+ONO_3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum ONO enclosure of HV AA   0.6
+ONO_4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space for ONO to unrelated AA 0.6
+ONO_5
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum ONO enclosure of P1(GT)   0.6
+ONO_6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum ONO enclosure P2(CG)  0.6
+ONO_7
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space for ONO to unrelated P2(GP) OUTSIDE ONO  0.6
+ONO_8
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+All Poly1 (GT) must be inside ONO
+ONO_9
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+All Poly2 (CG) must be inside ONO ,cross-over is forbidden 
+ONO_10
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+All Poly2 (GP) must be outside ONO ,cross-over is forbidden 
+ONO_11
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+All AAs must be either inside or outside ONO, cross-over is forbidden
+CG_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of CG  0.5
+CG_3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of CG for Resistor purpose 0.7
+CG_4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of CG to CG on AA (on FOX) 0.4
+CG_5a
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of CG to GT (Non overlap case) 0.3
+CG_5b
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of CG to GT (Overlap,CG to GT space when CG inside GT ) 0.35
+CG_5c
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of CG to GT (Overlap,CG to GT space when GT inside CG ) 0.35
+CG_5d
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Outside EEarrays,overlap of CG and GT must be cover by SAB
+CG_6_7
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of POLY2(CG) on FOX to AA  0.2
+CG_8
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of POLY2(CG) on AA to related  AA edge  0.4
+CG_9
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum extension of CG to AA (end cap)   0.4
+CG_10
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+SP overlap of POLY2(CG) Resistor is not allowed 
+GP_1_2
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of a GP region for interconnects 0.18
+Minimum width of a GP region for channel length of 1.8V PMOS/NMOS  0.18
+GP_3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minmum space between two GP regions on AA with no contact  0.25
+GP_4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+@ Minmum space between two GP regions on field oxide area  0.25
+GP_5
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Extension beyond diffusion to form poly end cap  0.22
+GP_6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum extension from AA region to GP  0.32
+GP_7
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between field interconnect poly and AA 0.10 
+GP_10a_b
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Maximum length of salicide poly on STI between two contacts when poly width < = 0.24  50 
+Maximum length of salicide poly on STI between one contact and poly line end when poly <=0.24   50
+GP_11a
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+90 degree bent  on active area are  not allowed
+GP_13
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between two GP's with CT on active area is 0.375um
+GP_14
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Min. channel length of 1.8V device poly gate on AA with 45 bent is 0.21
+DDD_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of DDD  0.5
+DDD_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space for DDD to DDD  0.5
+DDD_3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure of DDD to related AA 0.5
+DDD_4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of DDD to unrelated AA  0.3
+DDD_5
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+DDD inside DNW or NW is forbidden
+DDD_6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+AA must be either fully inside DDD,or outside DDD
+NLL_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of an NLL region is 0.44um
+NLL_2
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between two NLL regions is 0.44um
+Merge if the space is less than 0.44um
+NLL_3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between an NLL region and a P+ AA region is 0.26um
+NLL_4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between an NLL region and a P+ pick-up AA region is 0.10um
+NLL_5
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum overlap from an NLL edge to an AA is 0.23um
+NLL_6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure of an NLL region over SN active region is 0.18um
+NLL_8_12
+0 0 4 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure of an NLL region to an N-channel poly gate is 0.32um
+Minimum enclosure of an NLL region over N-channel
+along the direction of poly gate is 0.35
+NLL_9
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum area of an NLL region is 0.40um
+NLL_10
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Separation from an NLL to a butted edge of a butted diffustion P+AA is 0
+NLL_14
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+NLL is not allowed in Non-salicide AA/poly resistor
+NLLE_1
+0 0 1 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+PLL_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of a PLL region is 0.44um
+PLL_2
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between two PLL regions is 0.44um
+Merge if the space is less than 0.44um
+PLL_3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space from a PLL region to an N+ AA region is 0.26um
+PLL_4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space from a PLL region to an N+ pick-up AA region is 0.10um
+PLL_5
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure from a PLL edge to an AA is 0.23um
+PLL_6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure of a PLL region beyond a SP active region is 0.18um
+PLL_8_12
+0 0 4 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure of an PLL region to an P-channel poly gate is 0.32um
+Minimum enclosure of an PLL region over P-channel
+along the direction of poly gate is 0.35
+PLL_9
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum area of a PLL region is 0.40um
+PLL_10
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Separation from a PLL to a butted edge of a butted diffustion N+ AA is 0.00um
+PLLE_1
+0 0 1 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+SNE_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Partial-overlap of SN to DNW or PSUB or TPW is not allowed .
+SNE_2a
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of SN to DNW or PSUB or TPW   0.3
+SNE_2b
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of SN to DNW or PSUB or TPW   0.3
+SNE_3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+CG must be fully inside SN ,cross-over of SN to CG is NOT allowed 
+SNE_4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure of SN to CG  0.26
+SNE_5
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+SN overlap of  GT inside NW is forbidden 
+SNE_6a
+0 0 4 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of SN to non-SN GT 
+From an SN edge butted well pickup to a P-Channel GT 3.3v MV ,5V Quas-HVPMOS < 0.3um
+extension of gate in the direction of GT   0.32 
+SNE_6b
+0 0 4 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of SN to non-SN GT
+From an SN edge butted well pickup to a P-Channel GT Real HVPMOS < 0.3um
+extension of gate in the direction of GT   1.2
+SNE_6c
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of SN to non-SN GT
+From an SN edge to a GT >= 0.3um extension of gate in the direction of GT  0.26
+SNE_7
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+GT for Resistor purpose must be covered by SN
+SN_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of a SN region is 0.44um
+SN_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between two SN regions is less than 0.44um
+SN_3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between a SN region and a P+ AA is 0.26um (inside N-Well)
+SN_4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between a SN region and of P+ pick-up AA region is 0.10um
+SN_5
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between a SN region and a non-butted edge of P-well pick-up
+P+ AA region if the distance between P+ AA and N-well<0.43um is 0.18um
+SN_6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space from a SN edge to a P-channel Poly gate is 0.32um
+SN_7_17
+0 0 4 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure of a SN edge to an N-channel Poly gate is 0.32um
+Minimum space from a SN edge to a N-channel Poly gate
+along the direction of poly gate is 0.35
+SN_8
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum overlap from a SN edge to an AA is 0.23um
+SN_9
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure of a SN region beyond a SN active region is 0.18um
+SN_10&11
+0 0 7 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure of a SN region beyond an N+ pick-up AA region is 0.02um
+if the distance between N+ AA and P-well>=0.43um
+a. To obey this rule and SN.3 simultaneously, the minimum space
+between N+ pick-up AA and SP active AA should be increased to 0.44um
+b. To obey this rule and SN.5 simultaneously, the minimum space
+between N+ pick-up AA and SP active AA should be increased to 0.36um
+SN_12&SP_12
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Separation from a SN region to butted edge of a butted diffusion SP AA is 0.00um
+SN_13&SP_13
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum extension of a SN region along the edge of a butted diffusion N+ AA/P+ AA is 0.00um
+SN_14
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum area of a SN region is 0.40um
+SN_15
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum extension of a SN region beyond a poly as a resistor
+SAB poly without SN or SP is not allowed
+SN_16
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space from a SN edge to a P-channel Poly gate
+along the direction of poly gate is 0.35
+SN_18&SP_18
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+SN is not allowed to overlap with SP
+SPE_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Partial-overlap of SP to DNW or PSUB or TPW is not allowed .
+SPE_2a
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of SP to DNW or PSUB or TPW   0.3
+SPE_2b
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of SP to DNW or PSUB or TPW   0.3
+SPE_3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+CG can not cover  SP ,cross-over of SP to CG is NOT allowed
+SPE_4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of SP to CG  0.26
+SPE_5
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+SP overlap of  GT inside NW is forbidden
+SPE_6a
+0 0 4 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of SP to non-SP GT
+From an SP edge butted well pickup to a N-Channel GT HVN/ZMOS < 0.3um
+extension of gate in the direction of GT   0.32
+SPE_6b
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of SP to non-SP GT
+From an SP edge to a GT >= 0.3um extension of gate in the direction of GT  0.26
+SPE_7
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+GT for Resistor purpose can not  be covered by SP
+SPE_8
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+SP must be drawn inside Real-HVPMOS AA,cross-over of SP to AA is NOT allowed 
+SPE_9
+0 0 4 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum SP width inside Real-HVPMOS Active area
+09a . with CT 0.82
+09b . without CT 0.44
+SPE_10
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Min/Max space of SP inside AA to GT gate edge   0.55
+SPE_11
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Min/Max space of SP inside AA to AA edge  0.4 
+SPE_12
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum Space of SP outside AA to Real-HVPMOS AA edge  0.26
+SP_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of a SP region is 0.44um
+SP_2
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between two SP regions is 0.44um
+Merge if the space is less than 0.44um
+SP_3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between a SP region and a N+ AA is 0.26um
+SP_4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between a SP region and a N+ pick-up AA region is 0.10um
+SP_5
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between a SP region and a non-butted edge of N-well pick-up
+N+AA region if the distance between N+ AA and P-well<0.43um is 0.18um
+SP_6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space from a SP edge to N-channel Poly gate is 0.32um
+SP_7_17
+0 0 4 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure of a SP edge to P-channel Poly gate is 0.32um
+Minimum space from a SP edge to a P-channel Poly gate
+along the direction of poly gate is 0.35
+SP_8
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum overlap from a SP edge to an AA is 0.23um
+SP_9
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure of a SP region beyond a SP active region is 0.18um
+SP_10&11
+0 0 7 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum extension of an SP region beyond a P+ pick-up AA region is 0.02um
+if the distance between P+AA and Nwell>=0.43um
+c. To obey this rule and SP.3 simultaneously,
+P+ pick-up AA to SN active AA minimum spacing must be increased to 0.44um
+d. To obey this rule and SP.5 simultaneously,
+P+ pick-up AA to SN pick-up AA minimum spacing must be increased to 0.36um
+SP_14
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum area of a SP region is 0.40um
+SP_15
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum extension of a SP region beyond a poly as a resistor
+SP_16
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space from a SP edge to a N-channel Poly gate
+along the direction of poly gate is 0.35
+SAB_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width is 0.43um
+SAB_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space is 0.43um
+SAB_3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space to unrelated diffusion is 0.22um
+SAB_4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space to contact is 0.22um
+SAB_5
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space to poly on diffusion is 0.45um
+SAB_6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum extension over related diffusion is 0.22um
+SAB_7
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum extension of an diffusion over related SAB is 0.22um
+SAB_8
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum extension of SAB over related poly on field oxide is 0.22um
+SAB_9
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of SAB to unrelated poly on field oxide is 0.30um
+SAB_10
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum area of SAB is 2.00um
+SAB_11
+0 0 4 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Below CTs in SAB area is forbidden
+11.a inside NW or PW
+11.b inside P+AA 
+SAB_E1_2
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+E1. SAB must covereal-HVPMOS AA,only S/D contact regions are allowed to open SAB (SAB opening)
+E2. SAB Opening must be drawn inside SP in Real-HVPMOS AA,cross-over of SAB Opening to SP is NOT allowed
+SAB_E3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum SAB Opening  width inside Real-HVPMOS AA  merge if < 0.52
+SAB_E4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure of SP to SAB Opening boundary (inside GT or AA)
+SAB_E5
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure of SAB to Real-HVPMOS AA 0.25
+SAB_E6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure of SAB to Real-HVPMOS  GT 0.25
+SAB_E7
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of SAB Opening on GT to GT 0.20
+CT_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Mininmum/Maximum contact size is 0.22um
+CT_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between two contacts is 0.25um
+CT_3
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between two contacts in a contact array
+with row and column numbers are both greater than 3 is 0.28um
+CT_4a
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between GP contact to AA is 0.20um
+CT_4b
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between GT/CG contact to AA is 0.40um
+CT_5a
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between GP gate to diffusion contact is 0.16um
+CT_5b
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between  diffusion contact to GT_poly on AA(5V)  is 0.19um
+CT_5c
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between diffusion contact to GT_poly on AA(15.5V) is 0.26um
+CT_5d
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between diffusion contact to CG_poly is 0.22um
+CT_6a
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure of an AA region beyond an AA CT region is 0.10um (outside PSUB or DNW)
+CT_6b
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure of an AA region beyond an AA CT region is 0.15um (intside PSUB or DNW)
+CT_7a
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum GP enclosure for a GP contact   0.10
+CT_7b
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum GT/CG enclosure for a  contact   0.20
+CT_9
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure of a SN region beyond an AA CT region is 0.12um
+CT_8
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure of an SP region beyond an AA CT region is 0.12um
+CT_10
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+CT on gate region is forbidden
+CT_11
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+AA contact located on SN/SP boundary is not allowed
+CT_12
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Non-salicided contacts si only allowed in PSUB,and the CT must be covered by SN
+CT_E1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Min space of CT to SAB Opening of Real-HVPMOS ,either on AA or GT  0.15
+CT_E2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space of CT to SP Opening of Real-HVPMOS ,either on AA or GT 0.30
+CT_E3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Min space of CT on AA to GT of Real-HVPMOS 0.85
+CT_E4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Min space of  CT on AA to AA edge of Real-HVPMOS 0.7
+M1_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of M1 region is 0.23um
+M1_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between two M1 regions is 0.23um
+M1_3&4
+0 0 4 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure of M1 region over CT region is 0.005um
+Minimum enclosure of M1 line end region beyond CT region is 0.06um
+For CT at 90 degree corner, one side must be considered as line end
+M1_5
+0 0 6 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between M1 lines with one or both metal line width
+and length are greater than 10um is 0.60um
+The minimum space must be maintained between a metal line and a
+small piece of metal(<10) that is connected to the wide metal
+within 1.0um range from the wide metal
+M1_6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum area of M1 region is 0.20um
+M2_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of an M2 region is 0.28um
+M2_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between two M2 regions is 0.28um
+M2_3_4
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum extension of M2 region beyond V1 region is 0.01
+Minimum extension of M2 line end region beyond V1 region is 0.06
+M2_5
+0 0 6 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between M2 lines with one or both metal line width
+and length are greater than 10um is 0.60um
+The minimum space must be maintained between a metal line and a
+small piece of metal(<10) that is connected to the wide metal
+within 1.0um range from the wide metal
+M2_6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum area of a M2 region is 0.20um
+M3_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of an M3 region is 0.28um
+M3_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between two M3 regions is 0.28um
+M3_3_4
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum extension of M3 region beyond V2 region is 0.01
+Minimum extension of M3 line end region beyond V2 region is 0.06
+M3_5
+0 0 6 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between M3 lines with one or both metal line width
+and length are greater than 10um is 0.60um
+The minimum space must be maintained between a metal line and a
+small piece of metal(<10) that is connected to the wide metal
+within 1.0um range from the wide metal
+M3_6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum area of a M3 region is 0.20um
+M4_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of an M4 region is 0.28um
+M4_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between two M4 regions is 0.28um
+M4_3_4
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum extension of M4 region beyond V3 region is 0.01
+Minimum extension of M4 line end region beyond V3 region is 0.06
+M4_5
+0 0 6 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between M4 lines with one or both metal line width
+and length are greater than 10um is 0.60um
+The minimum space must be maintained between a metal line and a
+small piece of metal(<10) that is connected to the wide metal
+within 1.0um range from the wide metal
+M4_6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum area of a M4 region is 0.20um
+M5_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of an M5 region is 0.28um
+M5_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between two M5 regions is 0.28um
+M5_3_4
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum extension of M5 region beyond V4 region is 0.01
+Minimum extension of M5 line end region beyond V4 region is 0.06
+M5_5
+0 0 6 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between M5 lines with one or both metal line width
+and length are greater than 10um is 0.60um
+The minimum space must be maintained between a metal line and a
+small piece of metal(<10) that is connected to the wide metal
+within 1.0um range from the wide metal
+M5_6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum area of a M5 region is 0.20um
+MT_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of a top metal is 0.44um
+MT_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between two top metal regions is 0.46um
+MT_3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum extension of MT region over TV region is 0.09
+MT_4
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between top metal lines with one or both metal line width
+and length are greater than 10um is 0.60um
+MT_5
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum area of an MT region is 0.56um
+V1_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum/maximum size of a V1 is 0.26um
+V1_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between two V1 is 0.26um
+V1_3_4
+0 0 5 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum metal 1 enclosure for a V1 is 0.01um
+If Metal 1 line end beyond V1, 0.06um
+For V1 located at the 90 degree corner, one side of metal extension
+must be treated as end-of-line and the other side follows V1.3
+V2_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum/maximum size of a V2 is 0.26um
+V2_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between two V2 is 0.26um
+V2_3_4
+0 0 5 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum metal 2 enclosure for a V2 is 0.01um
+If Metal 2 line end beyond V2, 0.06um
+For V2 located at the 90 degree corner, one side of metal extension
+must be treated as end-of-line and the other side follows V2.3
+V3_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum/maximum size of a V3 is 0.26um
+V3_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between two V3 is 0.26um
+V3_3_4
+0 0 5 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum metal 3 enclosure for a V3 is 0.01um
+If Metal 3 line end beyond V3, 0.06um
+For V3 located at the 90 degree corner, one side of metal extension
+must be treated as end-of-line and the other side follows V3.3
+V4_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum/maximum size of a V4 is 0.26um
+V4_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between two V4 is 0.26um
+V4_3_4
+0 0 5 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum metal 4 enclosure for a V4 is 0.01um
+If Metal 4 line end beyond V4, 0.06um
+For V4 located at the 90 degree corner, one side of metal extension
+must be treated as end-of-line and the other side follows V4.3
+VT_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum/maximum size of a VT is 0.36um
+VT_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between two VT is 0.35um
+VT_3_4
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum M5 enclosure for VT is 0.01um
+Minimum enclosure of M5 over VT along metal line direction is 0.06um
+PI_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Space between two polymide open area is 15
+PI_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between polyimide open area to chip edge is 15
+RES_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Min. TIM extension GT for TIM resistor is 0.30
+RES_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+GT must be drawn for TIM resistor
+CAP_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum GT extension TOW for TOW capacitor
+CAP_2a
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum TOW width for TOW capacitor
+CAP_2b
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Max. TOW width for TOW capacitor is 100
+CAP_3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+TOW must be covered by GT
+PIP_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum CG width for PIP ONO capacitor is 5.0
+PIP_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Min space of CT to CG or GT edge 0.35
+PIP_3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum enclosure of to GT to CG  0.35
+PIP_4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Min CG extension GT 0.35
+PIP_5
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Max CG width for PIP ONO capacitor  40
+PIP_6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Space between CT to CT for PIP is 0.40 
+PIP_7
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+CT on CG which stack on GT is forbidden
+PIP_8
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+If CG, GT of PIP be fully covered by SAB,Min.and Max.CT width should be 0.36
+PIP_9
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+For Salicide CT need , min and max cont is 0.22
+PIP_10
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Space of CT to SAB is 0.22
+PIP_11
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Width of SAB enclosure GT or CG is 0.25
+SPIP_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Min/Max CT w/o SAB block is 0.22
+SPIP_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+SAB extention/enlosure CG is 0.4
+SPIP_3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+CT on CG to GT under CG is 0.4
+SPIP_4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+AA enclosure TOW is 0.3
+SPIP_5
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+CT to CT space is 0.4
+SPIP_6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+GT enclosure TOW is 0.3
+SPIP_8
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+GT extension related AA is 0.35
+SPIP_suggestion
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Max GT length under CG is 5.0
+BJT_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum AA width for v-BJT emitter is 2.0,5.0,10.0
+BJT_3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Collector AA width is 2.0
+BJT_4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Base AA width is 1.5 
+BJT_6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+SP enclose emitter AA is 0.35
+BJT_7
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+SP for emitter AA to base AA is 0.65
+BJT_8
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+SN for base AA to base AA is 0.35
+BJT_9
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+SN for base AA to emitter AA is 0.65
+BJT_10
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+SP enclose collector AA is 0.4.
+BJT_11
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+SP for collector AA to base AA is 1.1
+BJT_12
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+NW to collector AA is 1.0
+BJT_13
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+NW enclose base AA is 0.5
+BJT_33_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum AA width for v-BJT emitter is 2.0,5.0,10.0
+BJT_33_3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Collector AA width is 1.03
+BJT_33_4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Base AA width is 1.5 
+BJT_33_5
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Collector AA to base AA is 1.5
+BJT_33_6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Base AA to emitter AA is 1.0
+BJT_33_7
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+DNW enclosure base AA is 0.5
+BJT_33_8
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+DNW to collector AA is 1.0
+BJT_33_9
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+TPW enclosure collector AA is 1.0
+BJT_33_10
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+TPW to base AA is 0.5
+BJT_33_11
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+SN enclosure AA is 0.2
+BJT_33_12
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+SP enclosure AA is 0.2
+MIM_1
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+MIM.1
+Minimum width of MIM region as top plate is 4.00
+MIM_2
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+MIM.2
+Minimum space between two MIM region as top plate is 1.20
+MIM_3
+0 0 4 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+MIM.3
+Minimum extension of MIM region beyond a Via which connect
+to this MIM is 0.50
+MIM_4
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+MIM.4
+Minimum extension of bottom plate(Mn-1) region on a MIM region is 0.5
+MIM_5
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+MIM.5
+MIM region cross bottom plate (Mn-1) Metal region is not allowed
+MIM_6
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+MIM.6
+Maximum dimension of a MIM region as capacitor top metal is 30.0
+MIM_7
+0 0 4 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+MIM.7
+Maximum dimension of a bottom metal (Mn-1) region in capacitor is 35
+If capacitor larger than 35*35,please use combination of smaller capacitor
+MIM_8a
+1 1 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+MIM.8a
+Min. density of MIM pattern is 3 %
+p 1 4
+CN NAND c 1 0 0 1 0 0 0
+540 -9515
+16910 -9515
+16910 -1000
+540 -1000
+MIM_9a
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+MIM.9a
+Both active and passive devices under MIM region are not allowed
+MIM_9b
+0 0 4 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+MIM.9b
+No via and metal layers under MIM region are allowed
+One DRC dummy layer "MIMDMY" is needed to separate MIM region from metal interconnection
+MIM_10
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+MIM.10
+Minimum extension of capacitor bottom metal beyond Via connect to Mn is 0.20
+MIM_11
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+MIM.11
+Minimum clearance of a top Via to MIM region is 0.50
+MIM_12
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+MIM.12
+Minimum space between two Via on MIM is 2.00
+MIM_13
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+MIM.13
+Minimum space between two Via on bottom metal(Mn-1) is 1.0
+MIM_14
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+MIM.14
+Minimum width of dummy MIM region is 0.60
+MIM_15
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+MIM.15
+Minimum space of dummy MIM to MIM region is 0.80
+MIM_16
+0 0 3 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+MIM.16
+Minimum space of dummy Mn-1 to Mn-1 is 0.80
+MIM_17
+0 0 4 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+MIM.17
+Minimum space of MiM cap bottom Metal(Mn) with Via to below all Metal layers is 2.0
+Below metal inside Cap bottom is not allowed
+ESD2_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of ESD2 region is 0.44
+ESD2_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between two ESD2 region is 0.44
+ESD3_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of ESD3 region is 0.44
+ESD3_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between two ESD3 region is 0.44
+HRP_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum extension from HRP region beyond a PO resistor region is 0.26
+HRP_3_4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum clearance from HRP region to Polygate of NMOS/PMOS is 0.32
+HRP_5
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum and maximum P+ implant for pickup oerlap with SAB is 0.30
+HRP_6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum extension from SAB region beyond a PO resistor region is 0.22
+HRP_7
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum width of Poly region for high resistance poly resistor is 2.00
+HRP_8
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Dummy layer "HRPDMY" is needed for DRC for high resistance Poly region
+HRP_10
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+it is not allowed to receive S/D-SN,and all LDD implant in the HRP region
+HRP_11
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+HRP only drawn in PW or NW
+PWI_1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+PWI inside or cross over a N-well is not allowed
+PWI_2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+PWI must be surrounded by PW
+PWI_3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum dimesion of PWI region is 0.84
+PWI_4
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space between 2 PWI region in same potential is 0.84
+PWI_5
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum GP as gate dimension of 1.8V native device is 0.50
+PWI_6
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum and Maximum PWI enclosure beyond SN (N+) AA region is 0.26
+PWI_7
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space from a PWI region to a normal AA region is 0.52
+PWI_8
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space from a PWI region to N-well edge is 1.62
+PWI_9
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Bent gate poly is not allowed to put in PWI region
+PWI_10
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+P+ region is not allowed to put in PWI region
+PWI_11
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Only one AA region is allowed to put in PWI region
+PWI_12
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Minimum space from a PWI region to DNW edge is 4.0
+PWI_13
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+GT is not allowed in PWI
+PD.GTa
+1 1 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Min. GT density is 15%
+p 1 4
+CN NAND c 1 0 0 1 0 0 0
+540 -9515
+16910 -9515
+16910 -1000
+540 -1000
+PD.GTb
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Max. GT density is 55%
+PD.CGa
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Min. CG density is 10%
+PD.CGb
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Max. CG density is 55%
+PD.GPa
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Min. GP density is 35%
+PD.GPb
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Max. GP density is 85%
+PD.M1
+1 1 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Min. density of metal1 area is 30% .
+p 1 4
+CN NAND c 1 0 0 1 0 0 0
+540 -9515
+16910 -9515
+16910 -1000
+540 -1000
+PD.M2
+1 1 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Min. density of metal2 area is 30% .
+p 1 4
+CN NAND c 1 0 0 1 0 0 0
+540 -9515
+16910 -9515
+16910 -1000
+540 -1000
+PD.M3
+1 1 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Min. density of metal3 area is 30% .
+p 1 4
+CN NAND c 1 0 0 1 0 0 0
+540 -9515
+16910 -9515
+16910 -1000
+540 -1000
+PD.M4
+1 1 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Min. density of metal4 area is 30% .
+p 1 4
+CN NAND c 1 0 0 1 0 0 0
+540 -9515
+16910 -9515
+16910 -1000
+540 -1000
+PD.M5
+1 1 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Min. density of metal5 area is 30% .
+p 1 4
+CN NAND c 1 0 0 1 0 0 0
+540 -9515
+16910 -9515
+16910 -1000
+540 -1000
+PD.M6
+1 1 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Min. density of metal6 area is 30% .
+p 1 4
+CN NAND c 1 0 0 1 0 0 0
+540 -9515
+16910 -9515
+16910 -1000
+540 -1000
+Convention_FLT_NW
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+NW without N+ pick up
+Convention_BPMO
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Pmos in PW
+Convention_BAD_IMP
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+AA area without any implant
+Convention_LAT_3a1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Convention_Lat_3a1: Maximum space from any point within Source/Drain region to the nearest  pick up AA region in side the same well for I/O and internal circuits
+Convention_LAT_3a2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Convention_Lat_3a2: Maximum space from any point within Source/Drain region to the nearest  pick up AA region in side the same well for I/O and internal circuits
+Convention_LAT_3b1
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Convention_Lat_3b1: Maximum space from any point within Source/Drain region to the nearest pickup AAregion inside the same well for I/O and internal circuits 
+Convention_LAT_3b2
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Convention_Lat_3b2: Maximum space from any point within Source/Drain region to the nearest pickup AAregion inside the same well for I/O and internal circuits 
+Convention_LAT_3b3
+0 0 2 Mar 25 15:07:57 2021                     
+Rule File Pathname: /home/lyjslay/ClassDemo/_SmicDR10T_cal018_epm_sali_p2mt6_18155.drc_
+Convention_Lat_3b3: Maximum space from any point within Source/Drain region to the nearest pickup AAregion inside the same well for I/O and internal circuits 
+DENSITY_PRINT_FILES
+0 0 12 Mar 25 15:07:57 2021
+density_report_GTa.log
+density_report_GTb.log
+density_report_CGa.log
+density_report_CGb.log
+density_report_GPa.log
+density_report_GPb.log
+density_report_M1a.log
+density_report_M2a.log
+density_report_M3a.log
+density_report_M4a.log
+density_report_M5a.log
+density_report_M6a.log

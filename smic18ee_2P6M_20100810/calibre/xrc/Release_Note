@@ -1,0 +1,315 @@
+
+
+
+                                     RELEASE NOTE
+
+
+*  Please read this release note before you run Calibre XRC !!!
+
+*  Content: 
+
+   1) Calibre/SmicSP11R_cal018_epm_sali_p2mtx_183350155.lvs_XRC
+
+      Calibre XRC deck for SMIC 0.18um EEPROM 2PXM Salicide 1.8/3.3/5.0/15.5V Process.
+
+   2) rules/SmicSP10R_018_epm_p2mt*_tran_typ/Cmin/Cmax_183350155.C
+      rules/SmicSP10R_018_epm_p2mt*_tran_typ/Cmin/Cmax_183350155.R
+
+      Rules for 2P*M.
+
+   3) Release_Note
+
+      This file.
+      
+*  Revision: V1.8
+
+*  Calibre Version for test : v2009.3_24.19
+*  Calibre xRC Version for test : v2009.3_24.19
+
+*  Release $Date: 2009/12/30 01:07:15 $
+
+*  Revision History
+
+ Rev.    Date       Who    What
+ ------- ---------- ------ -----------------------------------------------
+ V1.1    2006/05/31 Yang   Initial version
+ V1.2    2006/08/28 Cherry update basing on sp
+ V1.2.a  2007/10/30 Cherry Based on the following Process Documents:             
+                                                                               
+                           DESIGN RULE:            TD-EE18-DR-2002 Rev.:7T        
+                                                   (Tech Dev. Rev.:0.8)           
+                           SPICE MODEL:            TD-EE18-SP-2001 Rev.:4R        
+                                                   (Tech Dev. Rev.:1.3)           
+                           PCM SPEC:               TD-EE18-PC-2001 Rev.:2T        
+                                                   (Tech Dev. Rev.:0.2)           
+                           MEMORY CELL DESIGN RULE:TD-EE18-CL-2001 Rev.:5T        
+                                                   (Tech Dev. Rev.:0.6)           
+                           MEMORY CELL LAYOUT:     TD-EE18-CL-2003 Rev.:3T        
+                                                   (Tech Dev. Rev.:0.3)          
+                                                                                 
+                           What's modified:
+                           1)Update the Calibre xRC file.
+                           2)re-run rules using xCalibrate v2005.4_8.13.
+
+ V1.3   2009/12/03 Drincy  Based on the following process documents:              
+                                                                               
+                           DESIGN RULE:            TD-EE18-DR-2002 Rev.:9T        
+                                                   (Tech Dev. Rev.:0.8)           
+                           SPICE MODEL:            TD-EE18-SP-2001 Rev.:9R        
+                                                   (Tech Dev. Rev.:1.5)           
+                           PCM SPEC:               TD-EE18-PC-2001 Rev.:2T        
+                                                   (Tech Dev. Rev.:0.2)           
+                           MEMORY CELL DESIGN RULE:TD-EE18-CL-2001 Rev.:5T        
+                                                   (Tech Dev. Rev.:0.6)           
+                           MEMORY CELL LAYOUT:     TD-EE18-CL-2003 Rev.:3T        
+                                                   (Tech Dev. Rev.:0.3)           
+                                                                               
+                           What's updated:                                        
+
+                           1) Update DR : 7T -> 9T                                
+                                     SP : 4R -> 9R                               
+
+			   2) Calibre LVS version V2.4
+
+			   3) Update TM & rules file base on Spice Model : 9R
+				( Cal : 2009.2_18.12 )
+
+ V1.4   2009/12/04 Drincy  Based on the following process documents:
+
+                           DESIGN RULE:            TD-EE18-DR-2002 Rev.:9T
+                                                   (Tech Dev. Rev.:0.8)
+                           SPICE MODEL:            TD-EE18-SP-2001 Rev.:9R
+                                                   (Tech Dev. Rev.:1.5)
+                           PCM SPEC:               TD-EE18-PC-2001 Rev.:2T
+                                                   (Tech Dev. Rev.:0.2)
+                           MEMORY CELL DESIGN RULE:TD-EE18-CL-2001 Rev.:5T
+                                                   (Tech Dev. Rev.:0.6)
+                           MEMORY CELL LAYOUT:     TD-EE18-CL-2003 Rev.:3T
+                                                   (Tech Dev. Rev.:0.3)
+
+                           What's updated:
+
+                           1) Calibre LVS version V2.4 -> V2.5 ( RTIMSABE2R Rsh 685.14 -> 830 )
+
+ V1.4a  2009/12/11 Drincy  Based on the following process documents:
+
+                           DESIGN RULE:            TD-EE18-DR-2002 Rev.:9T
+                                                   (Tech Dev. Rev.:0.8)
+                           SPICE MODEL:            TD-EE18-SP-2001 Rev.:9R
+                                                   (Tech Dev. Rev.:1.5)
+                           PCM SPEC:               TD-EE18-PC-2001 Rev.:2T
+                                                   (Tech Dev. Rev.:0.2)
+                           MEMORY CELL DESIGN RULE:TD-EE18-CL-2001 Rev.:5T
+                                                   (Tech Dev. Rev.:0.6)
+                           MEMORY CELL LAYOUT:     TD-EE18-CL-2003 Rev.:3T
+                                                   (Tech Dev. Rev.:0.3)
+
+                           What's updated:
+
+                           1) Add xcalibrate version 2008.2_33.24 rules files.
+
+
+ V1.5   2009/12/30 Drincy  Based on the following process documents:
+
+                           DESIGN RULE:            TD-EE18-DR-2002 Rev.:9T
+                                                   (Tech Dev. Rev.:0.8)
+                           SPICE MODEL:            TD-EE18-SP-2001 Rev.:10R
+                                                   (Tech Dev. Rev.:1.5)
+                           PCM SPEC:               TD-EE18-PC-2001 Rev.:2T
+                                                   (Tech Dev. Rev.:0.2)
+                           MEMORY CELL DESIGN RULE:TD-EE18-CL-2001 Rev.:5T
+                                                   (Tech Dev. Rev.:0.6)
+                           MEMORY CELL LAYOUT:     TD-EE18-CL-2003 Rev.:3T
+                                                   (Tech Dev. Rev.:0.3)
+
+                           What's updated:
+
+                           1)  Update SP : 9R -> 10R
+                           2)  Update Calibre LVS & MIPT/TM/rules
+
+ V1.6 2010/02/02 Drincy Based on the following process documents:              
+                                                                               
+                        DESIGN RULE:            TD-EE18-DR-2002 Rev.:10T        
+                                                (Tech Dev. Rev.:0.9)           
+                        SPICE MODEL:            TD-EE18-SP-2001 Rev.:11R       
+                                                (Tech Dev. Rev.:1.7)           
+                        PCM SPEC:               TD-EE18-PC-2001 Rev.:2T        
+                                                (Tech Dev. Rev.:0.2)           
+                        MEMORY CELL DESIGN RULE:TD-EE18-CL-2001 Rev.:5T        
+                                                (Tech Dev. Rev.:0.6)           
+                        MEMORY CELL LAYOUT:     TD-EE18-CL-2003 Rev.:3T        
+                                                (Tech Dev. Rev.:0.3)           
+                                                                               
+                        What's updated:                                        
+                                                                               
+                        1) Update SP : 10R -> 11R                              
+				  DR :  9T -> 10T
+                        2) Update Calibre LVS (RS of RTIMSABE2R : 830 -> 592)                
+
+ V1.7 2010/03/24 Drincy Based on the following process documents:              
+                                                                               
+                        DESIGN RULE:            TD-EE18-DR-2002 Rev.:10T       
+                                                (Tech Dev. Rev.:0.9)           
+                        SPICE MODEL:            TD-EE18-SP-2001 Rev.:11R       
+                                                (Tech Dev. Rev.:1.7)           
+                        PCM SPEC:               TD-EE18-PC-2001 Rev.:2T        
+                                                (Tech Dev. Rev.:0.2)           
+                        MEMORY CELL DESIGN RULE:TD-EE18-CL-2001 Rev.:5T        
+                                                (Tech Dev. Rev.:0.6)           
+                        MEMORY CELL LAYOUT:     TD-EE18-CL-2003 Rev.:3T        
+                                                (Tech Dev. Rev.:0.3)           
+                                                                               
+                        What's updated:                                        
+
+			1) Update Calibre LVS_XRC (V2.7 -> V2.8) :
+
+				Redefine - ndio33, ndio50, ndio155, nzdio50
+					   nzdio155, pdio33, pdio50, pdio155
+					   gppoly & pvar_core_aux
+
+ V1.8 2010/08/16 Drincy Based on the following process documents:
+
+                        DESIGN RULE:            TD-EE18-DR-2002 Rev.:10T
+                                                (Tech Dev. Rev.:0.9)
+                        SPICE MODEL:            TD-EE18-SP-2001 Rev.:12R
+                                                (Tech Dev. Rev.:1.7)
+                        PCM SPEC:               TD-EE18-PC-2001 Rev.:2T
+                                                (Tech Dev. Rev.:0.2)
+                        MEMORY CELL DESIGN RULE:TD-EE18-CL-2001 Rev.:5T
+                                                (Tech Dev. Rev.:0.6)
+                        MEMORY CELL LAYOUT:     TD-EE18-CL-2003 Rev.:3T
+                                                (Tech Dev. Rev.:0.3)
+
+                        What's updated:
+
+                        1) Update Calibre lvs_XRC files ( 11R -> 12R ) :
+
+					RTIMSABE2R RS : 592 -> 695			 
+                                             	   DW : 8.55E-08 -> 4.821E-08        
+
+                        2) Redefine pipe2r_ckt : LR,WR,C                       
+                                 compare C of pipe2r_ckt in TRACE PROPERTY     
+                                                                               
+                        3) Redefine mime2r_ckt : LR,WR                         
+
+
+
+
+
+
+
+================
+*  USER NOTES :
+================
+
+
+   1. Options set in this command file are only for your reference. You should modify them based on your design.
+      Please make sure you have set these options to proper values before you run LVS.
+
+      Especially, please pay more attention to the following options:
+
+	//---------------------------------------------------------------------------------
+
+	//*OPTION 1: Define TOP Metal. The value can be 6, 5, 4, 3
+
+	#DEFINE TOPMETAL 6
+
+	//----------------------------------------------------------------------------------
+
+	//*OPTION 2: Define ERC Check or Not. The value can be TRUE or FALSE(Upper Case).
+
+	#DEFINE ERCCHECK  TRUE
+
+	//----------------------------------------------------------------------------------
+
+	//*OPTION 3: Define Property of resistor. The value can be WL or R.
+	//* WL(Upper Case): Using W & L as the property of Resistor.
+	//* R(Upper Case) : Using R as the property of Resistor.
+
+	#DEFINE RES_PROPERTY R
+
+	//----------------------------------------------------------------------------------
+
+	//*OPTION 4: Define Property of MIM. The value can be WL or C.
+	//* WL(Upper Case): Using W & L as the property of MIM.
+	//* C(Upper Case) : Using C as the property of MIM.
+
+	#DEFINE MIM_PROPERTY C
+
+	//----------------------------------------------------------------------------------
+
+	//*OPTION 5: Define Property of PIP. The value can be WL or C.
+	//* WL(Upper Case): Using W & L as the property of PIP.
+	//* C(Upper Case) : Using C as the property of PIP.
+
+	#DEFINE PIP_PROPERTY C
+
+	//----------------------------------------------------------------------------------
+
+	//*OPTION 6: Define interface resistance or not. The value can be TRUE or FALSE.
+	//*TRUE(Upper Case)  : Total resistance R = Rsh*L/(W-2*DW)+2*Rint
+	//*FALSE(Upper Case) : Total resistance R = Rsh*L/(W-2*DW)
+
+	#DEFINE ADD_RINT FALSE
+
+	//----------------------------------------------------------------------------------
+
+	// Capacitance deck
+
+	include "../rules/2009.2_18.12/SmicSP9R_cal018_epm_sali_p2mt*_18335155_*.R"
+	include "../rules/2009.2_18.12/SmicSP9R_cal018_epm_sali_p2mt*_18335155_*.C"
+
+	//----------------------------------------------------------------------------------
+
+
+   2. You should modify property tolerance based on your design.
+
+      DEVICE TYPE           Property         Default Tolerance
+      -----------           --------         -----------------
+       MOSFET                 W & L               5%
+       BJT                    AREA                5%
+       DIODE                  AREA                5%
+       RESISTOR               R                   5%
+       RESISTOE(CKT)          WR & LR             5%
+       MIME2R                 C                   5%
+       MIME2R(CKT)            WR & LR             5%
+       PIPE2R                 C                   5%
+       PIPE2R(CKT)            WR & LR             5%
+       PVAR19E2R(CKT)         WR & LR & NF        5% & 0%
+
+
+   3. If you want to do ERC Check, please make sure you have set option ERCCHECK to TRUE;
+
+      ##################################################################################
+
+      We strongly suggest you can pay more attenction to the following ERC feature:
+
+      >> LVS WON"T abort on ERC ERROR, both LVS and ERC reports need your check.
+
+      >> The following ERC report need your special attention.
+
+          Pwell pick-up layer ptd texted with power net !
+
+     ###################################################################################
+
+     The following ERC checks have been included in this command file:
+
+     1) Report soft-connect;
+
+     2) Check path to power and(or) ground;
+
+     3) Check nwell/DNW pick-up layer ntd connect to ground nets;
+
+        (nwell used as terminal of NW resistor and PNP are not included.)
+
+     4) Check pwell/PSUB/TPW pick-up layer ptd connect to power nets;
+
+     5) Check MOS N18E2R/P18E2R Source/Drain connect to Power and Ground;
+
+     NOTE:
+
+     >>  ERC results are output to erc.db.
+
+     >>  Turn off ERC check by #DEFINE ERCCHECK FALSE.
+
+

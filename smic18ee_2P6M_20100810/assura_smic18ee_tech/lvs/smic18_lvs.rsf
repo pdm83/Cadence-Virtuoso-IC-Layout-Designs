@@ -1,0 +1,76 @@
+;
+; sample RSF for running Assura LVS
+ 
+avParameters(
+ 
+;GDS2 Data - use this next line for GDS2 input
+  ?inputLayout ( "GDS2" "<file_name>" )  ; specify full path to gds file
+
+;DFII Data - use this next line for DFII input
+; ?inputLayout ( "df2" "<library>" )
+; ?viewName "<view_name>"
+ 
+  ?cellName "<top_cell_name>"
+  ?rulesFile "../smic18_lvs/extract.rul"
+  ?runName "myRun"
+  ?workingDirectory "./"
+  ?avrpt t
+  ?technology "smic18_lvs"
+  ?techLib "../assura_tech.lib"
+  ?textPriOnly nil
+ 
+; ?joinPins top               ; needed for block testing
+ 
+; EXTRACT RULE SWITCHES
+ 
+; ?set ("top_m2")           ; 2 layer metal process 
+; ?set ("top_m3")           ; 3 layer metal process 
+; ?set ("top_m4")           ; 4 layer metal process
+                            ; 5 layer metal process is default
+
+; ?set ("RES_CKT_RHRPO")     ; Extract CKT resistors.
+; ?set ("RES_CKT_RHRPO_3T")
+; ?set ("RES_CKT_RNDIF")
+; ?set ("RES_CKT_RNDIFSAB")
+; ?set ("RES_CKT_RNPO")
+; ?set ("RES_CKT_RNPOSAB")
+; ?set ("RES_CKT_RNPOSAB_3T")
+; ?set ("RES_CKT_RNPO_3T")
+; ?set ("RES_CKT_RNWAA")
+; ?set ("RES_CKT_RNWSTI")
+; ?set ("RES_CKT_RPDIF")
+; ?set ("RES_CKT_RPDIFSAB")
+; ?set ("RES_CKT_RPPO")
+; ?set ("RES_CKT_RPPOSAB")
+; ?set ("RES_CKT_RPPOSAB_3T")
+; ?set ("RES_CKT_RPPO_3T")
+; ?set ("RES_CKT_RTIMSAB")
+
+  ?set ("Skip_Soft-Connect_Checks")   
+
+)  ;end of avParameters
+ 
+
+; use load statement to read in LVS compare file
+ 
+load( "../smic18_lvs/compare.rul" )
+load( "../smic18_lvs/smic18_lvs_include.rsf" )
+ 
+avCompareRules(
+ 
+  schematic(
+;   netlist( dfII "./<netlist>" )
+;   netlist( cdl "./<netlist>" )
+;   netlist( spice "./<netlist>" )
+;   netlist( verilog "./<netlist>" )
+;   rootCell( "Sch_top_cell" )
+  )
+ 
+; bindingFile( "../smic18_lvs/binding.rul" )  
+; verifyTopLayPins( nil )    ; needed for block testing
+; verifyTopLayPins( nil )    
+ 
+)
+
+avLVS()
+

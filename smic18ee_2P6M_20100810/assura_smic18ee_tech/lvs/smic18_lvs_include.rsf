@@ -1,0 +1,418 @@
+;;#####################################################################
+;;
+;; (@)# SMIC ASSURA( Version ASSURA410 ) LVS COMMAND FILE
+;;
+;; (@)# FOR SMIC 0.18UM EEPROM 2P6M(2P5M,2P4M,2P3M,2P2M) 1.8V/3.3V/5.0V/15.5V PROCESS
+;;
+;;#######################################################################
+
+;DISCLAIMER
+
+;SMIC hereby provides the quality information to you but makes no claims,
+;promises or guarantees about the accuracy, completeness, or adequacy of
+;the information herein. The information contained herein is provided on
+;an "AS IS" basis without any warranty, and SMIC assumes no obligation to
+;provide support of any kind or otherwise maintain the information.
+;SMIC disclaims any representation that the information does not infringe
+;any intellectual property rights or proprietary rights of any third parties.
+;SMIC makes no other warranty, whether express, implied or statutory as to
+;any matter whatsoever, including but not limited to the accuracy or sufficiency
+;of any information or the merchantability and fitness for a particular purpose.
+;Neither SMIC nor any of its representatives shall be liable for any cause of
+;action incurred to connect to this service.
+
+;STATEMENT OF USE AND CONFIDENTIALITY
+
+;The following/attached material contains confidential and proprietary information
+;of SMIC. This material is based upon information which SMIC considers reliable,
+;but SMIC neither represents nor warrants that such information is accurate or
+;complete, and it must not be relied upon as such.  This information was prepared
+;for informational purposes and is for the use by SMIC's customer only.  SMIC
+;reserves the right to make changes in the information at any time without notice.
+;No part of this information may be reproduced, transmitted, transcribed, stored
+;in a retrieval system, or translated into any human or computer language, in any
+;form or by any means, electronic, mechanical, magnetic, optical, chemical, manual,
+;or otherwise, without the prior written consent of SMIC.  Any unauthorized use or
+;disclosure of this material is strictly prohibited and may be unlawful. By accepting
+;this material, the receiving party shall be deemed to have acknowledged, accepted,
+;and agreed to be bound by the foregoing limitations and restrictions. Thank you.
+
+;*********************************************************************************
+
+avParameters(
+  ?avrpt t
+  ?textPriOnly t
+)
+
+avCompareRules(
+     
+; ******************************************************************************
+; ; Module 1. DEFAULT PROGRAM OPTIONS LISTED FOR INFORMATION ONLY
+; ******************************************************************************
+
+; The following commands are the Assura LVS defaults.
+; This section is included to illustrate the default behavior.
+; See the next section for frequently used options.
+
+
+; CELL, PIN, NET and INSTANCE BINDINGS
+;  Bind cells and pins with the same name in the schematic and
+;  layout. Do not bind nets and instances with the same name.
+
+;nameBinding( (cell t) (pin t) (net t) (instance t) )
+
+;smartCaseForAutoBind( (cell t) (pin t) (net t) (instance t) )
+
+
+; GATE FORMATION
+; Combine parallel and series devices into blocks to aid 
+;  pin swap (permutability) analysis.
+ 
+; formGate( parallel_series )
+
+
+; SPLIT GATE MERGING
+;  The default for the mergeSplitGate command is to 
+;  not merge split gates
+
+; mergeSplitGate( nil )
+
+
+; PIN SWAP ANALYSIS
+;  Perform pin swap (permutability) analysis on cells where the
+;  number of pins plus the number of instances is less than 1000.
+
+; autoPinSwap( t 1000 )
+
+
+; CELL AND INSTANCE EXPANSION
+;  Do not expand a cell if pin swap fails to complete, 
+;    reduction counts are different or pin matching fails. 
+;  Do expand instances within a cell when the number of 
+;    instances in that cell mismatch.
+
+ expandOnError( 
+   (swap t) (reduce t) (pins nil) (match nil)
+   (swapThres nil) (instCount t) (skipMatchOnReduceError t) )
+
+
+; CLS FILE ERROR DETAIL LIMIT
+;  Limit the number of lines in any error detail section of the
+;  <runName>.cls output file to 10,000. Significantly increasing
+;  this value can increase run times and file size dramatically.
+
+; sectionLineLimit( 10000 )
+
+
+; CLS FILE SIZE LIMIT
+;  Limit the total size of the <runName>.cls output file 
+;   except the statistics and summary sections to 20,000 lines. 
+;  Significantly increasing this value can increase 
+;   run times and file size dramatically.
+
+; lineLimit( 20000 )
+
+
+; ************************************************************************
+; ; Module 2.  ADDITIONAL FREQUENTLY USED OPTIONS
+; ************************************************************************
+
+; The following commands are commonly used options.
+; Please change these commands as needed.
+
+
+; GATE FORMATION
+
+;  Uncomment the next line if you do NOT want to form pseudo
+;  devices out of parallel and series MOS configurations.
+
+;  formGate( none )
+
+;  Uncomment the next line if you want to form these
+;  pseduo gates:  NAND, NOR, AOI, OAI
+
+; formGate( logic )
+
+
+; SPLIT GATE MERGING
+
+;  Uncomment one of the next two lines if Assura 
+;   fails to merge all appropriate transistors
+
+;  "sameOrder" will merge split gates only when the 
+;   connection order through the gate is consistent
+
+;  "mergeAll" will merge all split gates 
+;  this option is not allowed with formGate(none)
+
+  mergeSplitGate( sameOrder )
+; mergeSplitGate( mergeAll )
+
+
+; CELL AND NET BINDING
+;  Uncomment the next line to use a binding file called "binding".
+
+; bindingFile( "binding" )
+
+
+; PRINT FILTER STATISTICS
+;  Uncomment the next line to list the contents of all bound
+;  cells before and after filtering and network reduction.
+
+; filterReduceStatistics()
+
+
+; RAM HIERARCHY DIFFERENCES
+;  Uncomment one or both of these lines if DRAM or SRAM cells exist
+;  in the design and there are known hierarchy differences between
+;  the schematic and layout.
+
+; dramReduce()
+; sramReduce()
+
+
+; FILTER OPTIONS
+;  Uncomment the "filter" line to add filter options.
+;  Several examples are shown.
+;  Refer to the Assura Developer's guide for more details.
+
+; Filter out resistors and diodes with at least one floating terminal
+
+; filter( "R" )
+
+; Filter out devices that have all terminals shorted together.
+
+  filter( "X" )
+
+; Filter out floating BJTs, diodes and resistors
+
+; filter( "Z" )
+
+
+; LIST FILTERED DEVICES
+;  Uncomment the next line to list devices that are filtered.
+
+; listFilteredDevices()
+
+
+; MISMATCHED COMBINED DEVICE DETAILS
+;  Uncomment the next line if you want to output details
+;  of combined devices when there is a mismatch.
+
+; defineDerivedInstances()
+
+
+; CROSS REFERENCE INFORMATION
+;  Uncomment the next line to create a <runName>.cxl file 
+;  with cross reference information.
+
+; listXRef()
+
+
+; UNMATCHED CELL LISTINGS
+;  Uncomment the next line for a complete listing of the 
+;   schematic and layout networks for each unmatched cell 
+;   in the <runName>.cls file. 
+;  This output is not limited by the section and line limit 
+;   commands and may produce very large output files.
+
+; showErrorNetwork()
+
+
+; INCLUDE UNMATCHED NET DETAILS
+;  Uncomment the next line to show all instances 
+;  attached to each unmatched net.
+
+; unmatchedNetDetail()
+
+; When the schematic or the layout contains unbound devices,  
+; let the run complete normally.
+
+  abortOnUnboundDevices(nil) 
+
+;+++++++++++ define the RF device information ++++++++++++
+
+  schematic(
+           genericDevice( "rhrpo_3t_ckt" )
+           genericDevice( "rhrpo_ckt" )
+           genericDevice( "rpdifsab_ckt")
+           genericDevice( "rndifsab_ckt")
+           genericDevice( "rndif_ckt")
+           genericDevice( "rpdif_ckt")
+           genericDevice( "rnposab_ckt")
+           genericDevice( "rpposab_ckt")
+           genericDevice( "rnpo_ckt")
+           genericDevice( "rppo_ckt")
+           genericDevice( "rnposab_3t_ckt")
+           genericDevice( "rpposab_3t_ckt")
+           genericDevice( "rnpo_3t_ckt")
+           genericDevice( "rppo_3t_ckt")
+           genericDevice( "rnwaa_ckt")
+           genericDevice( "rnwsti_ckt")
+           genericDevice( "rtimsabe2r_ckt")
+           genericDevice( "pvar18e2r_ckt" )
+           genericDevice( "mime2r_ckt" )
+           genericDevice( "pipe2r_ckt" )
+           )
+
+  layout(
+;       mosDevice( "n18_ckt_rf" ("D" "G" "S" "B") "wr" "lr" )
+        swapPins("rndifsab_ckt" "(p PLUS MINUS)" )
+        swapPins("rpdifsab_ckt" "(p PLUS MINUS)" )
+        swapPins("rnposab_ckt" "(p PLUS MINUS)" )
+        swapPins("rnposab_3t_ckt" "(p PLUS MINUS)" )
+        swapPins("rpposab_ckt" "(p PLUS MINUS)" )
+        swapPins("rpposab_3t_ckt" "(p PLUS MINUS)" )
+        swapPins("rndif_ckt" "(p PLUS MINUS)" )
+        swapPins("rpdif_ckt" "(p PLUS MINUS)" )
+        swapPins("rnpo_ckt" "(p PLUS MINUS)" )
+        swapPins("rnpo_3t_ckt" "(p PLUS MINUS)" )
+        swapPins("rppo_ckt" "(p PLUS MINUS)" )
+        swapPins("rppo_3t_ckt" "(p PLUS MINUS)" )
+        swapPins("rhrpo_ckt" "(p PLUS MINUS)" )
+        swapPins("rhrpo_3t_ckt" "(p PLUS MINUS)" )
+        swapPins("rnwsti_ckt" "(p PLUS MINUS)" )
+        swapPins("rnwaa_ckt" "(p PLUS MINUS)" )
+        swapPins("rtimsabe2r_ckt" "(p PLUS MINUS)" )
+        )
+
+;    groupModels(RES)
+
+; +++++++++ Define the compare function ++++++++++++++++
+
+  mergeParallel( CAP merge parallelMIMCAP )
+; merge parallel MOS
+
+  mergeParallel( "N18E2R" merge parallelMOS )
+  mergeParallel( "n18e2r" merge parallelMOS )
+  mergeParallel( "NZ18E2R" merge parallelMOS )
+  mergeParallel( "nz18e2r" merge parallelMOS )
+  mergeParallel( "N33E2R" merge parallelMOS )
+  mergeParallel( "n33e2r" merge parallelMOS )
+  mergeParallel( "N50E2R"  merge parallelMOS )
+  mergeParallel( "n50e2r"  merge parallelMOS )
+  mergeParallel( "N155E2R"  merge parallelMOS )
+  mergeParallel( "n155e2r"  merge parallelMOS )
+  mergeParallel( "NZ50E2R" merge parallelMOS )
+  mergeParallel( "nz50e2r" merge parallelMOS )
+  mergeParallel( "NZ155E2R"  merge parallelMOS )
+  mergeParallel( "nz155e2r"  merge parallelMOS )
+  mergeParallel( "P18E2R" merge parallelMOS )
+  mergeParallel( "p18e2r" merge parallelMOS )
+  mergeParallel( "P33E2R" merge parallelMOS )
+  mergeParallel( "p33e2r" merge parallelMOS )
+  mergeParallel( "P155E2R"  merge parallelMOS )
+  mergeParallel( "p155e2r"  merge parallelMOS )
+  mergeParallel( "P50E2R"   merge parallelMOS )
+  mergeParallel( "p50e2r"   merge parallelMOS )
+  mergeParallel( "NCG" merge parallelMOS )
+  mergeParallel( "NSG" merge parallelMOS )
+
+
+  mergeParallel( "C1" merge parallelMOSCAP )
+
+  mergeParallel( RES merge parallelRES )
+  mergeParallel( BJT merge parallelBJT )
+  mergeParallel( DIO merge parallelDIO )
+
+  mergeParallel( "mime2r_ckt" merge parallelCCKT )
+  mergeParallel( "pipe2r_ckt" merge parallelCCKT )
+  mergeParallel( "rndif_ckt" merge parallelRCKT )
+  mergeParallel( "rpdif_ckt" merge parallelRCKT )
+  mergeParallel( "rndifsab_ckt" merge parallelRCKT )
+  mergeParallel( "rpdifsab_ckt" merge parallelRCKT )
+  mergeParallel( "rpposab_ckt" merge parallelRCKT )
+  mergeParallel( "rpposab_3t_ckt" merge parallelRCKT )
+  mergeParallel( "rnposab_ckt" merge parallelRCKT )
+  mergeParallel( "rnposab_3t_ckt" merge parallelRCKT )
+  mergeParallel( "rppo_ckt" merge parallelRCKT )
+  mergeParallel( "rppo_3t_ckt" merge parallelRCKT )
+  mergeParallel( "rnpo_ckt" merge parallelRCKT )
+  mergeParallel( "rnpo_3t_ckt" merge parallelRCKT )
+  mergeParallel( "rnwsti_ckt" merge parallelRCKT )
+  mergeParallel( "rnwaa_ckt" merge parallelRCKT )
+  mergeParallel( "rhrpo_ckt" merge parallelRCKT )
+  mergeParallel( "rhrpo_3t_ckt" merge parallelRCKT )
+  mergeParallel( "rtimsabe2r_ckt" merge parallelRCKT )
+  mergeParallel( "pvar18e2r_ckt" merge parallelRVMOS )
+
+  mergeSeries( RES  merge seriesRES )
+  mergeSeries( CAP  noMerge )
+  mergeSeries( MOS  noMerge )
+  mergeSeries( BJT  noMerge )
+  mergeSeries( DIO  noMerge )
+
+  mergeSeries( "rndif_ckt" merge seriesRCKT )
+  mergeSeries( "rpdif_ckt" merge seriesRCKT )
+  mergeSeries( "rndifsab_ckt" merge seriesRCKT )
+  mergeSeries( "rpdifsab_ckt" merge seriesRCKT )
+  mergeSeries( "rpposab_ckt" merge seriesRCKT )
+  mergeSeries( "rpposab_3t_ckt" merge seriesRCKT )
+  mergeSeries( "rppo_ckt" merge seriesRCKT )
+  mergeSeries( "rppo_3t_ckt" merge seriesRCKT )
+  mergeSeries( "rhrpo_ckt" merge seriesRCKT )
+  mergeSeries( "rhrpo_3t_ckt" merge seriesRCKT )
+  mergeSeries( "rnposab_ckt" merge seriesRCKT )
+  mergeSeries( "rnposab_3t_ckt" merge seriesRCKT )
+  mergeSeries( "rnpo_ckt" merge seriesRCKT )
+  mergeSeries( "rnpo_3t_ckt" merge seriesRCKT )
+  mergeSeries( "rnwsti_ckt" merge seriesRCKT )
+  mergeSeries( "rnwaa_ckt" merge seriesRCKT )
+  mergeSeries( "rtimsabe2r_ckt" merge seriesRCKT )
+
+  compareParameter( "N18E2R" compareMOS )
+  compareParameter( "n18e2r" compareMOS )
+  compareParameter( "NZ18E2R" compareMOS )
+  compareParameter( "nz18e2r" compareMOS )
+  compareParameter( "N18DE2R"   compareMOS )
+  compareParameter( "N33E2R" compareMOS )
+  compareParameter( "n33e2r" compareMOS )
+  compareParameter( "N50E2R"  compareMOS )
+  compareParameter( "n50e2r"  compareMOS )
+  compareParameter( "N155E2R"  compareMOS )
+  compareParameter( "n155e2r"  compareMOS )
+  compareParameter( "NZ50E2R"  compareMOS )
+  compareParameter( "nz50e2r"  compareMOS )
+  compareParameter( "NZ155E2R"  compareMOS )
+  compareParameter( "nz155e2r"  compareMOS )
+  compareParameter( "P18E2R" compareMOS )
+  compareParameter( "p18e2r" compareMOS )
+  compareParameter( "P33E2R" compareMOS )
+  compareParameter( "p33e2r" compareMOS )
+  compareParameter( "P155E2R"  compareMOS )
+  compareParameter( "p155e2r"  compareMOS )
+  compareParameter( "P50E2R"  compareMOS )
+  compareParameter( "p50e2r"  compareMOS )
+  compareParameter( "NCG"  compareMOS )
+  compareParameter( "NSG"  compareMOS )
+  compareParameter( "pvar18e2r_ckt"  compareVMOS )
+
+  compareParameter( "C1"  compareMOSCAP )
+
+  compareParameter( DIO  compareDIO )
+  compareParameter( CAP  compareCAP )
+  compareParameter( BJT  compareBJT )
+  compareParameter( RES  compareRES )
+
+  compareParameter( "rnwsti_ckt" compareRCKT )
+  compareParameter( "rnwaa_ckt" compareRCKT )
+  compareParameter( "rndif_ckt" compareRCKT )
+  compareParameter( "rpdif_ckt" compareRCKT )
+  compareParameter( "rppo_ckt" compareRCKT )
+  compareParameter( "rnpo_ckt" compareRCKT )
+  compareParameter( "rndifsab_ckt" compareRCKT )
+  compareParameter( "rpdifsab_ckt" compareRCKT )
+  compareParameter( "rnposab_ckt" compareRCKT )
+  compareParameter( "rpposab_ckt" compareRCKT )
+  compareParameter( "rhrpo_ckt" compareRCKT )
+  compareParameter( "rhrpo_3t_ckt" compareRCKT )
+  compareParameter( "rppo_3t_ckt" compareRCKT )
+  compareParameter( "rnpo_3t_ckt" compareRCKT )
+  compareParameter( "rnposab_3t_ckt" compareRCKT )
+  compareParameter( "rpposab_3t_ckt" compareRCKT )
+  compareParameter( "rtimsabe2r_ckt" compareRCKT )
+  compareParameter( "mime2r_ckt" compareCCKT )
+; compareParameter( "pipe2r_ckt" compareCCKT )
+  compareParameter( "pipe2r_ckt" compareCAP )
+
+) ;end avCompareRules

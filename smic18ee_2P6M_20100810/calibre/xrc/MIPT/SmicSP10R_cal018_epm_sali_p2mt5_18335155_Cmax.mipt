@@ -1,0 +1,389 @@
+process = SmicSP10R_cal018_epm_sali_p2mt5_18335155_Cmax
+version = 1.0
+date = Dec 31 2009
+contact = Drincy_Wei
+cap_unit = ff	
+
+background_dielectric = 1	
+
+type = dielectric
+  name = FOXa
+  thickness = 0.094
+  eps = 4.2
+
+type = diffusion
+  name = diff
+  thickness = 0.2205
+  min_width = 0.22
+  min_spacing = 0.28
+  r_sheet = 7.57
+  src_drn = (nsdall psdall)
+
+type = contact
+  name = dfcont
+  min_width = 0.22
+  min_spacing = 0.25
+  measured_from = diff
+  measured_to = metal1
+  enclosure_up = 0.005
+  enclosure_down = 0.1
+
+type = dielectric
+  name = FOXb
+  thickness = 0.221
+  eps = 4.2
+
+type = poly
+  name = gppoly
+  thickness = 0.33
+  min_width = 0.18
+  min_spacing = 0.25
+  r_sheet = 9.78
+  tc1 = 2.92e-03
+  tc2 = -2.30e-08
+  edge_bias = -1.35e-02
+
+type = contact
+  name = GPcont
+  min_width = 0.22		
+  min_spacing = 0.25		
+  measured_from = gppoly
+  measured_to = metal1
+  enclosure_up = 0.005
+  enclosure_down = 0.1		
+
+type = dielectric
+  name = ILD1a
+  thickness = 0.036
+  eps = 5
+  conformal = true
+  topthk = 0.036
+  swthk = 0.036
+  ref_layer = gppoly
+
+type = dielectric
+  name = ILD1b
+  thickness = 0.9
+  eps = 4.2
+
+type = conductor
+  name = metal1
+  thickness = 0.528
+  min_width = 0.23
+  min_spacing = 0.23
+  r_sheet = 0.078
+  tc1 = 3.49e-03
+  tc2 = 6.93e-07
+  edge_bias = -4.93e-03
+
+type = via
+  name = V1
+  min_width = 0.26
+  min_spacing = 0.26
+  measured_from = metal1
+  measured_to = metal2
+  enclosure_up = 0.01
+  enclosure_down = 0.01
+
+type = dielectric
+  name = IMD1
+  thickness = 1.197
+  eps = 4.2
+
+type = conductor
+  name = metal2
+  thickness = 0.528
+  min_width = 0.28
+  min_spacing = 0.28
+  r_sheet = 0.078
+  tc1 = 3.60e-03
+  tc2 = 7.60e-07
+  edge_bias = 6.0e-03
+
+type = via
+  name = V2
+  min_width = 0.26
+  min_spacing = 0.26
+  measured_from = metal2
+  measured_to = metal3
+  enclosure_up = 0.01
+  enclosure_down = 0.01
+
+type = dielectric
+  name = IMD2
+  thickness = 1.197
+  eps = 4.2
+
+type = conductor
+  name = metal3
+  thickness = 0.528
+  min_width = 0.28
+  min_spacing = 0.28
+  r_sheet = 0.078
+  tc1 = 3.60e-03
+  tc2 = 7.60e-07
+  edge_bias = 6.0e-03
+
+type = via
+  name = V3
+  min_width = 0.26
+  min_spacing = 0.26
+  measured_from = metal3
+  measured_to = metal4a
+  enclosure_up = 0.01
+  enclosure_down = 0.01
+
+type = dielectric
+  name = IMD3
+  thickness = 1.197
+  eps = 4.2
+
+type = conductor
+  name = metal4a
+  thickness = 0.528
+  min_width = 0.28
+  min_spacing = 0.28
+  r_sheet = 0.078
+  tc1 = 3.60e-03
+  tc2 = 7.60e-07
+  edge_bias = 6.0e-03
+
+type = via
+  name = via4b
+  min_width = 0.26
+  min_spacing = 0.26
+  measured_from = metal4a
+  measured_to = metal5
+  enclosure_up = 0.01
+  enclosure_down = 0.01
+
+type = dielectric
+  name = IMD4a
+  thickness = 0.5622
+  eps = 4.2
+
+type = conductor
+  name = MIM
+  thickness = 0.22
+  min_width = 4
+  min_spacing = 1.2
+  r_sheet = 0.078
+
+type = via
+  name = via4a
+  min_width = 0.26
+  min_spacing = 0.26
+  measured_from = MIM
+  measured_to = metal5
+  enclosure_up = 0.01
+  enclosure_down = 0.50
+
+type = dielectric
+  name = IMD4b
+  thickness = 0.7248
+  eps = 4.2
+
+type = conductor
+  name = metal5
+  thickness = 0.968
+  min_width = 0.44
+  min_spacing = 0.46
+  r_sheet = 0.036
+  tc1 = 3.89e-03
+  tc2 = 1.01e-06
+  edge_bias = 4.41e-02
+
+type = dielectric
+  name = Pass1
+  thickness = 1.035
+  eps = 4.2
+
+type = dielectric
+  name = Pass2
+  thickness = 0.54
+  eps = 7
+
+profile = field_li
+
+type = base
+  name = field_li_base
+  zbottom = -1
+  thickness = 1
+
+type = dielectric
+  name = FOX
+  thickness = 0.315
+  eps = 4.2
+
+type = poly
+  name = gtpoly
+  thickness = 0.22
+  min_width = 0.18
+  min_spacing = 0.25
+  r_sheet = 9.78
+  tc1 = 2.92e-03
+  tc2 = -2.30e-08
+  edge_bias = -1.35e-02
+  required_layers = ( gtpoly )
+
+type = contact
+  name = GTcont
+  min_width = 0.22
+  min_spacing = 0.25
+  measured_from = gtpoly
+  measured_to = metal1
+  enclosure_up = 0.005
+  enclosure_down = 0.2
+
+type = dielectric
+  name = ILD1a
+  thickness = 0.036
+  eps = 5
+  conformal = true
+  topthk = 0.036
+  swthk = 0.036
+  ref_layer = gtpoly
+
+type = dielectric
+  name = ILD1b
+  thickness = 0.9
+  eps = 4.2
+
+type = conductor
+  name = metal1
+  thickness = 0.528
+  min_width = 0.23
+  min_spacing = 0.23
+  r_sheet = 0.078
+  tc1 = 3.49e-03
+  tc2 = 6.93e-07
+  edge_bias = -4.93e-03
+
+type = via
+  name = V1
+  min_width = 0.26
+  min_spacing = 0.26
+  measured_from = metal1
+  measured_to = metal2
+  enclosure_up = 0.01
+  enclosure_down = 0.01
+
+type = dielectric
+  name = IMD1
+  thickness = 1.197
+  eps = 4.2
+
+type = conductor
+  name = metal2
+  thickness = 0.528
+  min_width = 0.28
+  min_spacing = 0.28
+  r_sheet = 0.078
+  tc1 = 3.60e-03
+  tc2 = 7.60e-07
+  edge_bias = 6.0e-03
+
+type = via
+  name = V2
+  min_width = 0.26
+  min_spacing = 0.26
+  measured_from = metal2
+  measured_to = metal3
+  enclosure_up = 0.01
+  enclosure_down = 0.01
+
+type = dielectric
+  name = IMD2
+  thickness = 1.197
+  eps = 4.2
+
+type = conductor
+  name = metal3
+  thickness = 0.528
+  min_width = 0.28
+  min_spacing = 0.28
+  r_sheet = 0.078
+  tc1 = 3.60e-03
+  tc2 = 7.60e-07
+  edge_bias = 6.0e-03
+
+type = via
+  name = V3
+  min_width = 0.26
+  min_spacing = 0.26
+  measured_from = metal3
+  measured_to = metal4a
+  enclosure_up = 0.01
+  enclosure_down = 0.01
+
+type = dielectric
+  name = IMD3
+  thickness = 1.197
+  eps = 4.2
+
+type = conductor
+  name = metal4a
+  thickness = 0.528
+  min_width = 0.28
+  min_spacing = 0.28
+  r_sheet = 0.078
+  tc1 = 3.60e-03
+  tc2 = 7.60e-07
+  edge_bias = 6.0e-03
+
+type = via
+  name = via4b
+  min_width = 0.26
+  min_spacing = 0.26
+  measured_from = metal4a
+  measured_to = metal5
+  enclosure_up = 0.01
+  enclosure_down = 0.01
+
+type = dielectric
+  name = IMD4a
+  thickness = 0.5622
+  eps = 4.2
+
+type = conductor
+  name = MIM
+  thickness = 0.22
+  min_width = 4
+  min_spacing = 1.2
+  r_sheet = 0.078
+
+type = via
+  name = via4a
+  min_width = 0.26
+  min_spacing = 0.26
+  measured_from = MIM
+  measured_to = metal5
+  enclosure_up = 0.01
+  enclosure_down = 0.50
+
+type = dielectric
+  name = IMD4b
+  thickness = 0.7248
+  eps = 4.2
+
+type = conductor
+  name = metal5
+  thickness = 0.968
+  min_width = 0.44
+  min_spacing = 0.46
+  r_sheet = 0.036
+  tc1 = 3.89e-03
+  tc2 = 1.01e-06
+  edge_bias = 4.41e-02
+
+type = dielectric
+  name = Pass1
+  thickness = 1.035
+  eps = 4.2
+
+type = dielectric
+  name = Pass2
+  thickness = 0.54
+  eps = 7
+
+end profile = field_li

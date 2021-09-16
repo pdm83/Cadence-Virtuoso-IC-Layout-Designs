@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      lyjslay
+HostName                       lyjslay
+ProcessIdentifier              5102
+ProcessCreationTime_UTC        1617761317
+ProcessCreationTime_Readable   Wed Apr  7 10:08:37 2021 CST
+AppIdentifier                  /opt/Cadence/IC617/tools/dfII/bin/64bit/libManager
+OSType                         lnx86
+ReasonForPlacingEditLock       log file
+FilePathUsedToEditLock         /home/lyjslay/ClassDemo/libManager.log
+TimeEditLocked                 Wed Apr  7 10:09:11 2021 CST

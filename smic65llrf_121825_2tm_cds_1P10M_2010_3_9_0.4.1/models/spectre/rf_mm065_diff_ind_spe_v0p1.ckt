@@ -1,0 +1,980 @@
+//*Spectre Model Format
+// library ind_diff
+// *
+// * no part of this file can be released without the consent of smic.
+// *
+// ******************************************************************************************
+// *         smic 0.065um mixed signal 1p8m 1.2v/1.8/2.5v spice model (for spectre only)         *
+// ******************************************************************************************
+// *
+// * release version    : 0.1
+// *
+// * release date       : Mar./30/2009
+// *
+// * simulation tool    : Cadence spectre V6.0
+// *
+//*  Inductor   :
+//*    *--------------------------------------*--------------------*--------------------*---------------------*
+//*    |  Turn & Radius  | Turn=3,rin=30~90um | Turn=4,rin=30~90um | Turn=5,rin=30~90um | Turn=6,rin=30~90um  |
+//*    *--------------------------------------*--------------------*--------------------*---------------------*
+//*    |                 |   ind_diff_t3r30   |   ind_diff_t4r30   |   ind_diff_t5r30   |   ind_diff_t6r30    |
+//*    *                 ---------------------*--------------------*--------------------*---------------------*
+//*    |                 |   ind_diff_t3r40   |   ind_diff_t4r40   |   ind_diff_t5r40   |   ind_diff_t6r40    |
+//*    *                 ---------------------*--------------------*--------------------* --------------------*      
+//*    |                 |   ind_diff_t3r50   |   ind_diff_t4r50   |   ind_diff_t5r50   |   ind_diff_t6r50    |
+//*    *   Model Name    ---------------------*--------------------*--------------------*---------------------*
+//*    |                 |   ind_diff_t3r60   |   ind_diff_t4r60   |   ind_diff_t5r60   |   ind_diff_t6r60    |
+//*    *                 ---------------------*--------------------*--------------------*---------------------*
+//*    |                 |   ind_diff_t3r70   |   ind_diff_t4r70   |   ind_diff_t5r70   |   ind_diff_t6r70    |
+//*    *                 ---------------------*--------------------*--------------------*---------------------*
+//*    |                 |   ind_diff_t3r80   |   ind_diff_t4r80   |   ind_diff_t5r80   |   ind_diff_t6r80    |
+//*    *                 ---------------------*--------------------*--------------------*---------------------*
+//*    |                 |   ind_diff_t3r90   |   ind_diff_t4r90   |   ind_diff_t5r90   |   ind_diff_t6r90    |
+//*    *--------------------------------------*--------------------*--------------------*---------------------*
+//*  
+//* 
+//*    
+simulator lang=spectre  insensitive=yes
+//*********************************************
+//* 0.065um Three Port Differential Inductor
+//*********************************************
+subckt ind_diff_t3r30 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***PLUS=port1(TM1//TM2), MINUS=port2(TM1//TM2), CT=Center Tap(M1//M2//M3)***//
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=3, w=8um, s=2.0um, TM1//TM2 inductor, rin=30um***//
+//***rin= inner radius; n= turns; w=width; s=spacing***//
+//***spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 3***//
+// ***********************************************************************************
+// ***********************************************************************************
+rs1 (PLUS D) resistor r=0.802
+ls1 (D C) inductor l=0.279e-9
+rsk1 (PLUS D1) resistor r=0.41
+lsk1 (D1 D) inductor l=0.060e-9
+ls2 (C E) inductor l=0.278e-9
+rs2 (E MINUS) resistor r=1.05
+rsk2 (E E1) resistor r=0.49
+lsk2 (E1 MINUS) inductor l=0.06e-9
+ml1 mutual_inductor coupling=0.585 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=13.57e-15
+lshort (C F) inductor l=0.226e-9
+rshort (F CT) resistor r=0.345
+rssk (F F1) resistor r=7.64
+lssk (F1 CT) inductor l=0.7565e-9
+cox1 (PLUS A) capacitor c=15.85e-15
+csub1 (A 0) capacitor c=1.343e-15
+rsub1 (A 0) resistor r=1558.0
+cox2 (MINUS B) capacitor c=15.85e-15
+csub2 (B 0) capacitor c=1.343e-15
+rsub2 (B 0) resistor r=1558.0
+
+ends ind_diff_t3r30
+
+subckt ind_diff_t3r40 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***PLUS=port1(TM1//TM2), MINUS=port2(TM1//TM2), CT=Center Tap(M1//M2//M3)***//
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=3, w=8um, s=2.0um, TM1//TM2 inductor, rin=40um***//
+//***rin= inner redius; n= turns; w=width; s=spacing***//
+//***spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 3***//
+// ***********************************************************************************
+// ***********************************************************************************
+rs1 (PLUS D) resistor r=0.817
+ls1 (D C) inductor l=0.38e-9
+rsk1 (PLUS D1) resistor r=0.7
+lsk1 (D1 D) inductor l=0.099e-9
+ls2 (C E) inductor l=0.385e-9
+rs2 (E MINUS) resistor r=0.901
+rsk2 (E E1) resistor r=0.92
+lsk2 (E1 MINUS) inductor l=0.143e-9
+ml1 mutual_inductor coupling=0.585 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=25.65e-15
+lshort (C F) inductor l=0.216e-9
+rshort (F CT) resistor r=0.331
+rssk (F F1) resistor r=7.64
+lssk (F1 CT) inductor l=0.7565e-9
+cox1 (PLUS A) capacitor c=19.81e-15
+csub1 (A 0) capacitor c=3.793e-15
+rsub1 (A 0) resistor r=1386.0
+cox2 (MINUS B) capacitor c=19.81e-15
+csub2 (B 0) capacitor c=3.793e-15
+rsub2 (B 0) resistor r=1386.0
+
+ends ind_diff_t3r40
+
+subckt ind_diff_t3r50 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***PLUS=port1(TM1//TM2), MINUS=port2(TM1//TM2), CT=Center Tap(M1//M2//M3)***//
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=3, w=8um, s=2.0um, TM1//TM2 inductor, rin=50um***//
+//***rin= inner redius; n= turns; w=width; s=spacing***//
+//***spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 3***//
+// ***********************************************************************************
+// ***********************************************************************************
+rs1 (PLUS D) resistor r=0.91
+ls1 (D C) inductor l=0.48e-9
+rsk1 (PLUS D1) resistor r=0.69
+lsk1 (D1 D) inductor l=0.101e-9
+ls2 (C E) inductor l=0.49e-9
+rs2 (E MINUS) resistor r=0.9
+rsk2 (E E1) resistor r=0.67
+lsk2 (E1 MINUS) inductor l=0.13e-9
+ml1 mutual_inductor coupling=0.585 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=38.22e-15
+lshort (C F) inductor l=0.218e-9
+rshort (F CT) resistor r=0.430
+rssk (F F1) resistor r=7.64
+lssk (F1 CT) inductor l=0.7565e-9
+cox1 (PLUS A) capacitor c=18.92e-15
+csub1 (A 0) capacitor c=9.019e-15
+rsub1 (A 0) resistor r=1172.0
+cox2 (MINUS B) capacitor c=18.92e-15
+csub2 (B 0) capacitor c=9.019e-15
+rsub2 (B 0) resistor r=1172.0
+
+ends ind_diff_t3r50
+
+
+subckt ind_diff_t3r60 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***PLUS=port1(TM1//TM2), MINUS=port2(TM1//TM2), CT=Center Tap(M1//M2//M3)***//
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=3, w=8um, s=2.0um, TM1//TM2 inductor, rin=60um***//
+//***rin= inner redius; n= turns; w=width; s=spacing***//
+//***spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 3***//
+// ***********************************************************************************
+// ***********************************************************************************
+rs1 (PLUS D) resistor r=1.2
+ls1 (D C) inductor l=0.59e-9
+rsk1 (PLUS D1) resistor r=1.06
+lsk1 (D1 D) inductor l=0.14e-9
+ls2 (C E) inductor l=0.60e-9
+rs2 (E MINUS) resistor r=1.2
+rsk2 (E E1) resistor r=1.2
+lsk2 (E1 MINUS) inductor l=0.18e-9
+ml1 mutual_inductor coupling=0.585 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=41.59e-15
+lshort (C F) inductor l=0.203e-9
+rshort (F CT) resistor r=0.370
+rssk (F F1) resistor r=7.64
+lssk (F1 CT) inductor l=0.7565e-9
+cox1 (PLUS A) capacitor c=23.97e-15
+csub1 (A 0) capacitor c=20.21e-15
+rsub1 (A 0) resistor r=986.0
+cox2 (MINUS B) capacitor c=23.97e-15
+csub2 (B 0) capacitor c=20.26e-15
+rsub2 (B 0) resistor r=986.0
+
+ends ind_diff_t3r60
+
+subckt ind_diff_t3r70 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***PLUS=port1(TM1//TM2), MINUS=port2(TM1//TM2), CT=Center Tap(M1//M2//M3)***//
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=3, w=8um, s=2.0um, TM1//TM2 inductor, rin=70um***//
+//***rin= inner redius; n= turns; w=width; s=spacing***//
+//***spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 3***//
+// ***********************************************************************************
+// ***********************************************************************************
+rs1 (PLUS D) resistor r=1.3
+ls1 (D C) inductor l=0.71e-9
+rsk1 (PLUS D1) resistor r=1.55
+lsk1 (D1 D) inductor l=0.176e-9
+ls2 (C E) inductor l=0.71e-9
+rs2 (E MINUS) resistor r=1.2
+rsk2 (E E1) resistor r=0.92
+lsk2 (E1 MINUS) inductor l=0.155e-9
+ml1 mutual_inductor coupling=0.585 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=49.11e-15
+lshort (C F) inductor l=0.203e-9
+rshort (F CT) resistor r=0.430
+rssk (F F1) resistor r=7.64
+lssk (F1 CT) inductor l=0.7565e-9
+cox1 (PLUS A) capacitor c=18.0e-15
+csub1 (A 0) capacitor c=11.83e-15
+rsub1 (A 0) resistor r=886.0
+cox2 (MINUS B) capacitor c=18.0e-15
+csub2 (B 0) capacitor c=11.83e-15
+rsub2 (B 0) resistor r=886.0
+
+ends ind_diff_t3r70
+
+subckt ind_diff_t3r80 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***PLUS=port1(TM1//TM2), MINUS=port2(TM1//TM2), CT=Center Tap(M1//M2//M3)***//
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=3, w=8um, s=2.0um, TM1//TM2 inductor, rin=80um***//
+//***rin= inner redius; n= turns; w=width; s=spacing***//
+//***spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 3***//
+// ***********************************************************************************
+// ***********************************************************************************
+rs1 (PLUS D) resistor r=1.4
+ls1 (D C) inductor l=0.82e-9
+rsk1 (PLUS D1) resistor r=1.57
+lsk1 (D1 D) inductor l=0.2e-9
+ls2 (C E) inductor l=0.83e-9
+rs2 (E MINUS) resistor r=1.27
+rsk2 (E E1) resistor r=1.2
+lsk2 (E1 MINUS) inductor l=0.2e-9
+ml1 mutual_inductor coupling=0.585 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=54.06e-15
+lshort (C F) inductor l=0.192e-9
+rshort (F CT) resistor r=0.430
+rssk (F F1) resistor r=7.64
+lssk (F1 CT) inductor l=0.7565e-9
+cox1 (PLUS A) capacitor c=18.54e-15
+csub1 (A 0) capacitor c=10.46e-15
+rsub1 (A 0) resistor r=858.0
+cox2 (MINUS B) capacitor c=18.54e-15
+csub2 (B 0) capacitor c=10.46e-15
+rsub2 (B 0) resistor r=858.0
+
+ends ind_diff_t3r80
+
+subckt ind_diff_t3r90 (PLUS MINUS CT) 
+// ***********************************************************************************
+// ***********************************************************************************
+//***PLUS=port1(TM1//TM2), MINUS=port2(TM1//TM2), CT=Center Tap(M1//M2//M3)***//
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=3, w=8um, s=2.0um, TM1//TM2 inductor, rin=90um***//
+//***rin= inner redius; n= turns; w=width; s=spacing***//
+//***spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 3***//
+// ***********************************************************************************
+// ***********************************************************************************
+rs1 (PLUS D) resistor r=1.84
+ls1 (D C) inductor l=0.948e-9
+rsk1 (PLUS D1) resistor r=2.11
+lsk1 (D1 D) inductor l=0.29e-9
+ls2 (C E) inductor l=0.948e-9
+rs2 (E MINUS) resistor r=1.62
+rsk2 (E E1) resistor r=1.34
+lsk2 (E1 MINUS) inductor l=0.2e-9
+ml1 mutual_inductor coupling=0.585 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=59.61e-15
+lshort (C F) inductor l=0.182e-9
+rshort (F CT) resistor r=0.430
+rssk (F F1) resistor r=7.64
+lssk (F1 CT) inductor l=0.93e-9
+cox1 (PLUS A) capacitor c=14.96e-15
+csub1 (A 0) capacitor c=4.871e-15
+rsub1 (A 0) resistor r=700.0
+cox2 (MINUS B) capacitor c=14.96e-15
+csub2 (B 0) capacitor c=4.871e-15
+rsub2 (B 0) resistor r=700.0
+
+ends ind_diff_t3r90
+
+subckt ind_diff_t4r30 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***PLUS=port1(TM1//TM2), MINUS=port2(TM1//TM2), CT=Center Tap(M1//M2//M3)***//
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=4, w=8um, s=2.0um, TM1//TM2 inductor, rin=30um***//
+//***rin= inner redius; n= turns; w=width; s=spacing***//
+//***spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 4***//
+// ***********************************************************************************
+// ***********************************************************************************
+rs1 (PLUS D) resistor r=1.86
+ls1 (D C) inductor l=0.49e-9
+rsk1 (PLUS D1) resistor r=1.48
+lsk1 (D1 D) inductor l=0.176e-9
+ls2 (C E) inductor l=0.48e-9
+rs2 (E MINUS) resistor r=1.69
+rsk2 (E E1) resistor r=0.63
+lsk2 (E1 MINUS) inductor l=0.123e-9
+ml1 mutual_inductor coupling=0.603 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=46.34e-15
+lshort (C F) inductor l=0.254e-9
+rshort (F CT) resistor r=0.69
+rssk (F F1) resistor r=4.5
+lssk (F1 CT) inductor l=0.064e-9
+cox1 (PLUS A) capacitor c=17.73e-15
+csub1 (A 0) capacitor c=10.8e-15
+rsub1 (A 0) resistor r=1372.0
+cox2 (MINUS B) capacitor c=17.73e-15
+csub2 (B 0) capacitor c=10.8e-15
+rsub2 (B 0) resistor r=1372.0
+
+ends ind_diff_t4r30
+
+subckt ind_diff_t4r40 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***PLUS=port1(TM1//TM2), MINUS=port2(TM1//TM2), CT=Center Tap(M1//M2//M3)***//
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=4, w=8um, s=2.0um, TM1//TM2 inductor, rin=40um***//
+//***rin= inner redius; n= turns; w=width; s=spacing***//
+//***spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 4***//
+// ***********************************************************************************
+// ***********************************************************************************
+rs1 (PLUS D) resistor r=1.98
+ls1 (D C) inductor l=0.65e-9
+rsk1 (PLUS D1) resistor r=1.26
+lsk1 (D1 D) inductor l=0.176e-9
+ls2 (C E) inductor l=0.66e-9
+rs2 (E MINUS) resistor r=1.76
+rsk2 (E E1) resistor r=0.8
+lsk2 (E1 MINUS) inductor l=0.148e-9
+ml1 mutual_inductor coupling=0.603 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=55.35e-15
+lshort (C F) inductor l=0.239e-9
+rshort (F CT) resistor r=0.697
+rssk (F F1) resistor r=4.5
+lssk (F1 CT) inductor l=0.064e-9
+cox1 (PLUS A) capacitor c=14.96e-15
+csub1 (A 0) capacitor c=9.379e-15
+rsub1 (A 0) resistor r=1000
+cox2 (MINUS B) capacitor c=14.96e-15
+csub2 (B 0) capacitor c=9.379e-15
+rsub2 (B 0) resistor r=1000
+
+ends ind_diff_t4r40
+
+subckt ind_diff_t4r50 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***PLUS=port1(TM1//TM2), MINUS=port2(TM1//TM2), CT=Center Tap(M1//M2//M3)***//
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=4, w=8um, s=2.0um, TM1//TM2 inductor, rin=50um***//
+//***rin= inner redius; n= turns; w=width; s=spacing***//
+//***spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 4***//
+// ***********************************************************************************
+// ***********************************************************************************
+rs1 (PLUS D) resistor r=1.98
+ls1 (D C) inductor l=0.83e-9
+rsk1 (PLUS D1) resistor r=2.18
+lsk1 (D1 D) inductor l=0.282e-9
+ls2 (C E) inductor l=0.84e-9
+rs2 (E MINUS) resistor r=1.78
+rsk2 (E E1) resistor r=1.06
+lsk2 (E1 MINUS) inductor l=0.197e-9
+ml1 mutual_inductor coupling=0.603 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=63.07e-15
+lshort (C F) inductor l=0.233e-9
+rshort (F CT) resistor r=0.9272
+rssk (F F1) resistor r=4.5
+lssk (F1 CT) inductor l=0.064e-9
+cox1 (PLUS A) capacitor c=16.94e-15
+csub1 (A 0) capacitor c=12.56e-15
+rsub1 (A 0) resistor r=828.0
+cox2 (MINUS B) capacitor c=16.94e-15
+csub2 (B 0) capacitor c=12.56e-15
+rsub2 (B 0) resistor r=828.0
+
+ends ind_diff_t4r50
+
+subckt ind_diff_t4r60 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***PLUS=port1(TM1//TM2), MINUS=port2(TM1//TM2), CT=Center Tap(M1//M2//M3)***//
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=4, w=8um, s=2.0um, TM1//TM2 inductor, rin=60um***//
+//***rin= inner redius; n= turns; w=width; s=spacing***//
+//***spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 4***//
+// ***********************************************************************************
+// ***********************************************************************************
+rs1 (PLUS D) resistor r=2.46
+ls1 (D C) inductor l=1.01e-9
+rsk1 (PLUS D1) resistor r=1.83
+lsk1 (D1 D) inductor l=0.22e-9
+ls2 (C E) inductor l=1.01e-9
+rs2 (E MINUS) resistor r=2.04
+rsk2 (E E1) resistor r=1.06
+lsk2 (E1 MINUS) inductor l=0.197e-9
+ml1 mutual_inductor coupling=0.603 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=73.47e-15
+lshort (C F) inductor l=0.23e-9
+rshort (F CT) resistor r=1.00
+rssk (F F1) resistor r=4.5
+lssk (F1 CT) inductor l=0.064e-9
+cox1 (PLUS A) capacitor c=12.88e-15
+csub1 (A 0) capacitor c=4.136e-15
+rsub1 (A 0) resistor r=860.0
+cox2 (MINUS B) capacitor c=12.88e-15
+csub2 (B 0) capacitor c=4.136e-15
+rsub2 (B 0) resistor r=860.0
+
+ends ind_diff_t4r60
+
+
+subckt ind_diff_t4r70 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***PLUS=port1(TM1//TM2), MINUS=port2(TM1//TM2), CT=Center Tap(M1//M2//M3)***//
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=4, w=8um, s=2.0um, TM1//TM2 inductor, rin=70um***//
+//***rin= inner redius; n= turns; w=width; s=spacing***//
+//***spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 4***//
+// ***********************************************************************************
+// ***********************************************************************************
+rs1 (PLUS D) resistor r=2.36
+ls1 (D C) inductor l=1.2e-9
+rsk1 (PLUS D1) resistor r=1.83
+lsk1 (D1 D) inductor l=0.239e-9
+ls2 (C E) inductor l=1.2e-9
+rs2 (E MINUS) resistor r=2.32
+rsk2 (E E1) resistor r=1.34
+lsk2 (E1 MINUS) inductor l=0.218e-9
+ml1 mutual_inductor coupling=0.603 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=81.88e-15
+lshort (C F) inductor l=0.231e-9
+rshort (F CT) resistor r=1.14
+rssk (F F1) resistor r=4.5
+lssk (F1 CT) inductor l=0.064e-9
+cox1 (PLUS A) capacitor c=15.5e-15
+csub1 (A 0) capacitor c=6.586e-15
+rsub1 (A 0) resistor r=728
+cox2 (MINUS B) capacitor c=15.5e-15
+csub2 (B 0) capacitor c=6.586e-15
+rsub2 (B 0) resistor r=728
+
+ends ind_diff_t4r70
+
+
+subckt ind_diff_t4r80 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***PLUS=port1(TM1//TM2), MINUS=port2(TM1//TM2), CT=Center Tap(M1//M2//M3)***//
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=4, w=8um, s=2.0um, TM1//TM2 inductor, rin=80um***//
+//***rin= inner redius; n= turns; w=width; s=spacing***//
+//***spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 4***//
+// ***********************************************************************************
+// ***********************************************************************************
+rs1 (PLUS D) resistor r=2.28
+ls1 (D C) inductor l=1.38e-9
+rsk1 (PLUS D1) resistor r=1.54
+lsk1 (D1 D) inductor l=0.268e-9
+ls2 (C E) inductor l=1.39e-9
+rs2 (E MINUS) resistor r=2.01
+rsk2 (E E1) resistor r=1.43
+lsk2 (E1 MINUS) inductor l=0.3e-9
+ml1 mutual_inductor coupling=0.603 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=89.41e-15
+lshort (C F) inductor l=0.222e-9
+rshort (F CT) resistor r=1.28
+rssk (F F1) resistor r=3.29
+lssk (F1 CT) inductor l=0.07e-9
+cox1 (PLUS A) capacitor c=18.92e-15
+csub1 (A 0) capacitor c=5.9e-15
+rsub1 (A 0) resistor r=672
+cox2 (MINUS B) capacitor c=18.92e-15
+csub2 (B 0) capacitor c=5.9e-15
+rsub2 (B 0) resistor r=672
+
+ends ind_diff_t4r80
+
+subckt ind_diff_t4r90 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***PLUS=port1(TM1//TM2), MINUS=port2(TM1//TM2), CT=Center Tap(M1//M2//M3)***//
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=4, w=8um, s=2.0um, TM1//TM2 inductor, rin=90um***//
+//***rin= inner redius; n= turns; w=width; s=spacing***//
+//***spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 4***//
+// ***********************************************************************************
+// ***********************************************************************************
+rs1 (PLUS D) resistor r=2.18
+ls1 (D C) inductor l=1.59e-9
+rsk1 (PLUS D1) resistor r=1.47
+lsk1 (D1 D) inductor l=0.261e-9
+ls2 (C E) inductor l=1.59e-9
+rs2 (E MINUS) resistor r=2.18
+rsk2 (E E1) resistor r=1.15
+lsk2 (E1 MINUS) inductor l=0.26e-9
+ml1 mutual_inductor coupling=0.603 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=96.54e-15
+lshort (C F) inductor l=0.218e-9
+rshort (F CT) resistor r=1.34
+rssk (F F1) resistor r=4.5
+lssk (F1 CT) inductor l=0.064e-9
+cox1 (PLUS A) capacitor c=21.89e-15
+csub1 (A 0) capacitor c=5.9e-15
+rsub1 (A 0) resistor r=700
+cox2 (MINUS B) capacitor c=21.89e-15
+csub2 (B 0) capacitor c=5.9e-15
+rsub2 (B 0) resistor r=700
+
+ends ind_diff_t4r90
+
+subckt ind_diff_t5r30 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***PLUS=port1(TM1//TM2), MINUS=port2(TM1//TM2), CT=Center Tap(M1//M2//M3)***//
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=5, w=8um, s=2.0um, TM1//TM2 inductor, rin=30um***//
+//***rin= inner redius; n= turns; w=width; s=spacing***//
+//***spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 5***//
+// ***********************************************************************************
+// ***********************************************************************************
+rs1 (PLUS D) resistor r=2.1
+ls1 (D C) inductor l=0.668e-9
+rsk1 (PLUS D1) resistor r=1.2
+lsk1 (D1 D) inductor l=0.22e-9
+ls2 (C E) inductor l=0.668e-9
+rs2 (E MINUS) resistor r=2.0
+rsk2 (E E1) resistor r=0.92
+lsk2 (E1 MINUS) inductor l=0.22e-9
+ml1 mutual_inductor coupling=0.915 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=68.91e-15
+lshort (C F) inductor l=0.31e-9
+rshort (F CT) resistor r=0.359
+rssk (F F1) resistor r=6.06
+lssk (F1 CT) inductor l=0.21e-9
+cox1 (PLUS A) capacitor c=16.34e-15
+csub1 (A 0) capacitor c=3.793e-15
+rsub1 (A 0) resistor r=1386.0
+cox2 (MINUS B) capacitor c=16.34e-15
+csub2 (B 0) capacitor c=3.793e-15
+rsub2 (B 0) resistor r=1386.0
+
+ends ind_diff_t5r30
+
+subckt ind_diff_t5r40 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***PLUS=port1(TM1//TM2), MINUS=port2(TM1//TM2), CT=Center Tap(M1//M2//M3)***//
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=5, w=8um, s=2.0um, TM1//TM2 inductor, rin=40um***//
+//***rin= inner redius; n= turns; w=width; s=spacing***//
+//***spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 5***//
+// ***********************************************************************************
+// ***********************************************************************************
+rs1 (PLUS D) resistor r=2.31
+ls1 (D C) inductor l=0.88e-9
+rsk1 (PLUS D1) resistor r=2.25
+lsk1 (D1 D) inductor l=0.338e-9
+ls2 (C E) inductor l=0.88e-9
+rs2 (E MINUS) resistor r=2.12
+rsk2 (E E1) resistor r=1.22
+lsk2 (E1 MINUS) inductor l=0.28e-9
+ml1 mutual_inductor coupling=0.915 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=80.79e-15
+lshort (C F) inductor l=0.328e-9
+rshort (F CT) resistor r=0.38
+rssk (F F1) resistor r=6.2
+lssk (F1 CT) inductor l=0.35e-9
+cox1 (PLUS A) capacitor c=14.96e-15
+csub1 (A 0) capacitor c=2.764e-15
+rsub1 (A 0) resistor r=1128.0
+cox2 (MINUS B) capacitor c=14.96e-15
+csub2 (B 0) capacitor c=2.764e-15
+rsub2 (B 0) resistor r=1128.0
+
+ends ind_diff_t5r40
+
+
+subckt ind_diff_t5r50 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***PLUS=port1(TM1//TM2), MINUS=port2(TM1//TM2), CT=Center Tap(M1//M2//M3)***//
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=5, w=8um, s=2.0um, TM1//TM2 inductor, rin=50um***//
+//***rin= inner redius; n= turns; w=width; s=spacing***//
+//***spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 5***//
+// ***********************************************************************************
+// ***********************************************************************************
+rs1 (PLUS D) resistor r=2.49
+ls1 (D C) inductor l=1.09e-9
+rsk1 (PLUS D1) resistor r=2.26
+lsk1 (D1 D) inductor l=0.35e-9
+ls2 (C E) inductor l=1.09e-9
+rs2 (E MINUS) resistor r=2.32
+rsk2 (E E1) resistor r=1.12
+lsk2 (E1 MINUS) inductor l=0.268e-9
+ml1 mutual_inductor coupling=0.915 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=92.78e-15
+lshort (C F) inductor l=0.327e-9
+rshort (F CT) resistor r=0.373
+rssk (F F1) resistor r=6.2
+lssk (F1 CT) inductor l=0.093e-9
+cox1 (PLUS A) capacitor c=16.0e-15
+csub1 (A 0) capacitor c=3.6e-15
+rsub1 (A 0) resistor r=900.0
+cox2 (MINUS B) capacitor c=16.0e-15
+csub2 (B 0) capacitor c=3.6e-15
+rsub2 (B 0) resistor r=900.0
+
+ends ind_diff_t5r50
+
+subckt ind_diff_t5r60 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***PLUS=port1(TM1//TM2), MINUS=port2(TM1//TM2), CT=Center Tap(M1//M2//M3)***//
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=5, w=8um, s=2.0um, TM1//TM2 inductor, rin=60um***//
+//***rin= inner redius; n= turns; w=width; s=spacing***//
+//***spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 5***//
+// ***********************************************************************************
+// ***********************************************************************************
+rs1 (PLUS D) resistor r=2.34
+ls1 (D C) inductor l=1.32e-9
+rsk1 (PLUS D1) resistor r=1.9
+lsk1 (D1 D) inductor l=0.35e-9
+ls2 (C E) inductor l=1.32e-9
+rs2 (E MINUS) resistor r=2.43
+rsk2 (E E1) resistor r=1.55
+lsk2 (E1 MINUS) inductor l=0.35e-9
+ml1 mutual_inductor coupling=0.915 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=104.9e-15
+lshort (C F) inductor l=0.338e-9
+rshort (F CT) resistor r=0.37
+rssk (F F1) resistor r=6.2
+lssk (F1 CT) inductor l=0.7e-9
+cox1 (PLUS A) capacitor c=18.3e-15
+csub1 (A 0) capacitor c=4.25443e-15
+rsub1 (A 0) resistor r=835.8
+cox2 (MINUS B) capacitor c=18.3e-15
+csub2 (B 0) capacitor c=4.25443e-15
+rsub2 (B 0) resistor r=835.8
+
+ends ind_diff_t5r60
+
+subckt ind_diff_t5r70 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***PLUS=port1(TM1//TM2), MINUS=port2(TM1//TM2), CT=Center Tap(M1//M2//M3)***//
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=5, w=8um, s=2.0um, TM1//TM2 inductor, rin=70um***//
+//***rin= inner redius; n= turns; w=width; s=spacing***//
+//***spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 5***//
+// ***********************************************************************************
+// ***********************************************************************************
+rs1 (PLUS D) resistor r=2.6
+ls1 (D C) inductor l=1.55e-9
+rsk1 (PLUS D1) resistor r=1.45
+lsk1 (D1 D) inductor l=0.29e-9
+ls2 (C E) inductor l=1.56e-9
+rs2 (E MINUS) resistor r=2.6
+rsk2 (E E1) resistor r=1.41
+lsk2 (E1 MINUS) inductor l=0.35e-9
+ml1 mutual_inductor coupling=0.915 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=116.7e-15
+lshort (C F) inductor l=0.35e-9
+rshort (F CT) resistor r=0.394
+rssk (F F1) resistor r=6.83
+lssk (F1 CT) inductor l=0.7e-9
+cox1 (PLUS A) capacitor c=19.81e-15
+csub1 (A 0) capacitor c=4.25443e-15
+rsub1 (A 0) resistor r=835.819
+cox2 (MINUS B) capacitor c=19.81e-15
+csub2 (B 0) capacitor c=4.25443e-15
+rsub2 (B 0) resistor r=835.819
+
+ends ind_diff_t5r70
+
+subckt ind_diff_t5r80 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***PLUS=port1(TM1//TM2), MINUS=port2(TM1//TM2), CT=Center Tap(M1//M2//M3)***//
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=5, w=8um, s=2.0um, TM1//TM2 inductor, rin=80um***//
+//***rin= inner redius; n= turns; w=width; s=spacing***//
+//***spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 5***//
+// ***********************************************************************************
+// ***********************************************************************************
+rs1 (PLUS D) resistor r=2.38
+ls1 (D C) inductor l=1.8e-9
+rsk1 (PLUS D1) resistor r=2.2
+lsk1 (D1 D) inductor l=0.52e-9
+ls2 (C E) inductor l=1.8e-9
+rs2 (E MINUS) resistor r=2.38
+rsk2 (E E1) resistor r=2.11
+lsk2 (E1 MINUS) inductor l=0.53e-9
+ml1 mutual_inductor coupling=0.915 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=126.0e-15
+lshort (C F) inductor l=0.35e-9
+rshort (F CT) resistor r=0.33
+rssk (F F1) resistor r=6.83
+lssk (F1 CT) inductor l=0.7e-9
+cox1 (PLUS A) capacitor c=24.66e-15
+csub1 (A 0) capacitor c=5.46e-15
+rsub1 (A 0) resistor r=749.72
+cox2 (MINUS B) capacitor c=24.66e-15
+csub2 (B 0) capacitor c=5.46e-15
+rsub2 (B 0) resistor r=749.72
+
+ends ind_diff_t5r80
+
+subckt ind_diff_t5r90 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***PLUS=port1(TM1//TM2), MINUS=port2(TM1//TM2), CT=Center Tap(M1//M2//M3)***//
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=5, w=8um, s=2.0um, TM1//TM2 inductor, rin=90um***//
+//***rin= inner redius; n= turns; w=width; s=spacing***//
+//***spacing is fixed at 2.0um, width is fixed at 8um and n is fixed at 5***//
+// ***********************************************************************************
+// ***********************************************************************************
+rs1 (PLUS D) resistor r=3.1
+ls1 (D C) inductor l=2.02e-9
+rsk1 (PLUS D1) resistor r=2.32
+lsk1 (D1 D) inductor l=0.42e-9
+ls2 (C E) inductor l=2.02e-9
+rs2 (E MINUS) resistor r=3.1
+rsk2 (E E1) resistor r=2.22
+lsk2 (E1 MINUS) inductor l=0.42e-9
+ml1 mutual_inductor coupling=0.915 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=140.6e-15
+lshort (C F) inductor l=0.35e-9
+rshort (F CT) resistor r=0.49
+rssk (F F1) resistor r=6.06
+lssk (F1 CT) inductor l=0.77e-9
+cox1 (PLUS A) capacitor c=21.89e-15
+csub1 (A 0) capacitor c=12.19e-15
+rsub1 (A 0) resistor r=775.0
+cox2 (MINUS B) capacitor c=21.89e-15
+csub2 (B 0) capacitor c=6.057e-15
+rsub2 (B 0) resistor r=775.0
+
+ends ind_diff_t5r90
+
+subckt ind_diff_t6r30 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=6, w=8um, s=2.0um, TM1//TM2 inductor, rin=30um***//
+//***PLUS=port1, MINUS=port2, CT=Center Tap***//
+//***rin= inner redius; n= turns; w=width; s=spacing; t=conductor thickness***//
+//***spacing is fixed at 2.0um, width is fixed at 10um and n is fixed at 6***//
+// ***********************************************************************************
+// ***********************************************************************************
+
+rs1 (PLUS D) resistor r=2.43
+ls1 (D C) inductor l=0.999e-9
+rsk1 (PLUS D1) resistor r=1.48
+lsk1 (D1 D) inductor l=0.35e-9
+ls2 (C E) inductor l=1.0e-9
+rs2 (E MINUS) resistor r=2.39
+rsk2 (E E1) resistor r=1.2
+lsk2 (E1 MINUS) inductor l=0.35e-9
+ml1 mutual_inductor coupling=0.915 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=93.76e-15
+lshort (C F) inductor l=0.358e-9
+rshort (F CT) resistor r=0.55
+rssk (F F1) resistor r=6.441
+lssk (F1 CT) inductor l=0.21e-9
+cox1 (PLUS A) capacitor c=33.77e-15
+csub1 (A 0) capacitor c=6.586e-15
+rsub1 (A 0) resistor r=1628.0
+cox2 (MINUS B) capacitor c=33.77e-15
+csub2 (B 0) capacitor c=6.586e-15
+rsub2 (B 0) resistor r=1625.0
+
+ends ind_diff_t6r30
+
+subckt ind_diff_t6r40 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=6, w=8um, s=2.0um, TM1//TM2 inductor, rin=40um***//
+//***PLUS=port1, MINUS=port2, CT=Center Tap***//
+//***rin= inner redius; n= turns; w=width; s=spacing; t=conductor thickness***//
+//***spacing is fixed at 2.0um, width is fixed at 10um and n is fixed at 6***//
+// ***********************************************************************************
+// ***********************************************************************************
+
+rs1 (PLUS D) resistor r=2.55
+ls1 (D C) inductor l=1.29e-9
+rsk1 (PLUS D1) resistor r=2.01
+lsk1 (D1 D) inductor l=0.47e-9
+ls2 (C E) inductor l=1.29e-9
+rs2 (E MINUS) resistor r=2.55
+rsk2 (E E1) resistor r=1.28
+lsk2 (E1 MINUS) inductor l=0.4e-9
+ml1 mutual_inductor coupling=0.915 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=109.0e-15
+lshort (C F) inductor l=0.40e-9
+rshort (F CT) resistor r=0.60
+rssk (F F1) resistor r=9.6
+lssk (F1 CT) inductor l=0.74e-9
+cox1 (PLUS A) capacitor c=24.36e-15
+csub1 (A 0) capacitor c=8.007e-15
+rsub1 (A 0) resistor r=1314.0
+cox2 (MINUS B) capacitor c=24.36e-15
+csub2 (B 0) capacitor c=8.007e-15
+rsub2 (B 0) resistor r=1314.0
+
+ends ind_diff_t6r40
+
+subckt ind_diff_t6r50 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=6, w=8um, s=2.0um, TM1//TM2 inductor, rin=50um***//
+//***PLUS=port1, MINUS=port2, CT=Center Tap***//
+//***rin= inner redius; n= turns; w=width; s=spacing; t=conductor thickness***//
+//***spacing is fixed at 2.0um, width is fixed at 10um and n is fixed at 6***//
+// ***********************************************************************************
+// ***********************************************************************************
+
+rs1 (PLUS D) resistor r=2.57
+ls1 (D C) inductor l=1.6e-9
+rsk1 (PLUS D1) resistor r=2.39
+lsk1 (D1 D) inductor l=0.56e-9
+ls2 (C E) inductor l=1.6e-9
+rs2 (E MINUS) resistor r=2.54
+rsk2 (E E1) resistor r=1.83
+lsk2 (E1 MINUS) inductor l=0.49e-9
+ml1 mutual_inductor coupling=0.915 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=123.8e-15
+lshort (C F) inductor l=0.4e-9
+rshort (F CT) resistor r=0.88
+rssk (F F1) resistor r=8.94
+lssk (F1 CT) inductor l=0.58e-9
+cox1 (PLUS A) capacitor c=27.53e-15
+csub1 (A 0) capacitor c=11.49e-15
+rsub1 (A 0) resistor r=1258.0
+cox2 (MINUS B) capacitor c=27.53e-15
+csub2 (B 0) capacitor c=11.49e-15
+rsub2 (B 0) resistor r=1258.0
+
+ends ind_diff_t6r50
+
+subckt ind_diff_t6r60 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=6, w=8um, s=2.0um, TM1//TM2 inductor, rin=60um***//
+//***PLUS=port1, MINUS=port2, CT=Center Tap***//
+//***rin= inner redius; n= turns; w=width; s=spacing; t=conductor thickness***//
+//***spacing is fixed at 2.0um, width is fixed at 10um and n is fixed at 6***//
+// ***********************************************************************************
+// ***********************************************************************************
+
+rs1 (PLUS D) resistor r=2.96
+ls1 (D C) inductor l=1.9e-9
+rsk1 (PLUS D1) resistor r=2.39
+lsk1 (D1 D) inductor l=0.56e-9
+ls2 (C E) inductor l=1.9e-9
+rs2 (E MINUS) resistor r=2.96
+rsk2 (E E1) resistor r=2.39
+lsk2 (E1 MINUS) inductor l=0.56e-9
+ml1 mutual_inductor coupling=0.915 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=139.7e-15
+lshort (C F) inductor l=0.42e-9
+rshort (F CT) resistor r=0.87
+rssk (F F1) resistor r=9.44
+lssk (F1 CT) inductor l=0.92e-9
+cox1 (PLUS A) capacitor c=23.97e-15
+csub1 (A 0) capacitor c=13.59e-15
+rsub1 (A 0) resistor r=958.0
+cox2 (MINUS B) capacitor c=23.97e-15
+csub2 (B 0) capacitor c=13.59e-15
+rsub2 (B 0) resistor r=958.0
+
+ends ind_diff_t6r60
+
+subckt ind_diff_t6r70 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=6, w=8um, s=2.0um, TM1//TM2 inductor, rin=70um***//
+//***PLUS=port1, MINUS=port2, CT=Center Tap***//
+//***rin= inner redius; n= turns; w=width; s=spacing; t=conductor thickness***//
+//***spacing is fixed at 2.0um, width is fixed at 10um and n is fixed at 6***//
+// ***********************************************************************************
+// ***********************************************************************************
+
+rs1 (PLUS D) resistor r=2.82
+ls1 (D C) inductor l=2.22e-9
+rsk1 (PLUS D1) resistor r=2.75
+lsk1 (D1 D) inductor l=0.63e-9
+ls2 (C E) inductor l=2.22e-9
+rs2 (E MINUS) resistor r=2.82
+rsk2 (E E1) resistor r=2.54
+lsk2 (E1 MINUS) inductor l=0.7e-9
+ml1 mutual_inductor coupling=0.915 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=153.8e-15
+lshort (C F) inductor l=0.43e-9
+rshort (F CT) resistor r=0.985
+rssk (F F1) resistor r=9.86
+lssk (F1 CT) inductor l=2.3e-9
+cox1 (PLUS A) capacitor c=31.0e-15
+csub1 (A 0) capacitor c=19.12e-15
+rsub1 (A 0) resistor r=929.0
+cox2 (MINUS B) capacitor c=31.0e-15
+csub2 (B 0) capacitor c=19.12e-15
+rsub2 (B 0) resistor r=929.0
+
+ends ind_diff_t6r70
+
+subckt ind_diff_t6r80 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=6, w=8um, s=2.0um, TM1//TM2 inductor, rin=80um***//
+//***PLUS=port1, MINUS=port2, CT=Center Tap***//
+//***rin= inner redius; n= turns; w=width; s=spacing; t=conductor thickness***//
+//***spacing is fixed at 2.0um, width is fixed at 10um and n is fixed at 6***//
+// ***********************************************************************************
+// ***********************************************************************************
+rs1 (PLUS D) resistor r=2.82
+ls1 (D C) inductor l=2.55e-9
+rsk1 (PLUS D1) resistor r=4.23
+lsk1 (D1 D) inductor l=0.99e-9
+ls2 (C E) inductor l=2.55e-9
+rs2 (E MINUS) resistor r=2.82
+rsk2 (E E1) resistor r=2.61
+lsk2 (E1 MINUS) inductor l=0.77e-9
+ml1 mutual_inductor coupling=0.915 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=166.6e-15
+lshort (C F) inductor l=0.45e-9
+rshort (F CT) resistor r=1.07
+rssk (F F1) resistor r=9.932
+lssk (F1 CT) inductor l=0.812e-9
+cox1 (PLUS A) capacitor c=33.77e-15
+csub1 (A 0) capacitor c=19.12e-15
+rsub1 (A 0) resistor r=838.0
+cox2 (MINUS B) capacitor c=33.77e-15
+csub2 (B 0) capacitor c=19.12e-15
+rsub2 (B 0) resistor r=838.0
+
+ends ind_diff_t6r80
+
+subckt ind_diff_t6r90 (PLUS MINUS CT)
+// ***********************************************************************************
+// ***********************************************************************************
+//***0.065um differential octagonal inductor two port equivalent circuit Single model***//
+//***n=6, w=8um, s=2.0um, TM1//TM2 inductor, rin=90um***//
+//***PLUS=port1, MINUS=port2, CT=Center Tap***//
+//***rin= inner redius; n= turns; w=width; s=spacing; t=conductor thickness***//
+//***spacing is fixed at 2.0um, width is fixed at 10um and n is fixed at 6***//
+// ***********************************************************************************
+// ***********************************************************************************
+rs1 (PLUS D) resistor r=3.1
+ls1 (D C) inductor l=2.9e-9
+rsk1 (PLUS D1) resistor r=4.3
+lsk1 (D1 D) inductor l=0.99e-9
+ls2 (C E) inductor l=2.9e-9
+rs2 (E MINUS) resistor r=3.1
+rsk2 (E E1) resistor r=2.96
+lsk2 (E1 MINUS) inductor l=0.92e-9
+ml1 mutual_inductor coupling=0.901 ind1=ls1 ind2=ls2
+cs (PLUS MINUS) capacitor c=181.7e-15
+lshort (C F) inductor l=0.458e-9
+rshort (F CT) resistor r=1.02
+rssk (F F1) resistor r=10.7
+lssk (F1 CT) inductor l=0.85e-9
+cox1 (PLUS A) capacitor c=33.77e-15
+csub1 (A 0) capacitor c=13.57e-15
+rsub1 (A 0) resistor r=711.0
+cox2 (MINUS B) capacitor c=33.77e-15
+csub2 (B 0) capacitor c=13.57e-15
+rsub2 (B 0) resistor r=711.0
+
+ends ind_diff_t6r90
+
+
+
+
+
+// endlibrary ind_diff
+
+

@@ -1,0 +1,381 @@
+//*Spectre Model Format
+simulator lang=spectre  insensitive=yes
+
+// *
+// * no part of this file can be released without the consent of smic.
+// *
+// ************************************************************************************************************************************
+// *    smic 65nm logic low leakage 1p10m(1p9m, 1p8m, 1p7m) salicide 1.2v/1.8v/2.5v(overdrive to 3.3v) spice model (for spectre only) *
+// ************************************************************************************************************************************
+// *
+// * release version    : 1.0
+// *
+// * release date       : 6/15/2009
+// *
+// * simulation tool    : Cadence spectre V6.2.1
+// *
+// * model type         :
+// * junction diode     : spectre level 1
+// *
+// * model name:
+// *   junction diode   :
+// *        *----------------------------------------------------------------------------------*
+// *        | junction diode type|    1.2v   |   1.8v   |   2.5v   |  1.2v hvt   |  1.2v lvt   |
+// *        |==================================================================================|
+// *        |      n+/pwell      |  ndio12ll | ndio18ll | ndio25ll | ndio12llhvt | ndio12lllvt |
+// *        |----------------------------------------------------------------------------------|
+// *        |      p+/nwell      |  pdio12ll | pdio18ll | pdio25ll | pdio12llhvt | pdio12lllvt |
+// *        |----------------------------------------------------------------------------------|
+// *        |   native n+/pwell  |  ntdio12ll| ntdio18ll| ntdio25ll|     (na)    |    (na)     |
+// *        |----------------------------------------------------------------------------------|
+// *        |     nwell/psub     |  nwdioll  |   (na)   |    (na)  |     (na)    |    (na)     |
+// *        |----------------------------------------------------------------------------------|
+// *        |      n+/rwell      |  dnd12ll  |   (na)   |    (na)  |     (na)    |    (na)     |
+// *        |----------------------------------------------------------------------------------|
+// *        |    rwell/dnwell    |  rwd12ll  |   (na)   |    (na)  |     (na)    |    (na)     |
+// *        |----------------------------------------------------------------------------------|
+// *        |     dnwell/psub    |  dnwd12ll |   (na)   |    (na)  |     (na)    |    (na)     |
+// *        *----------------------------------------------------------------------------------*
+// *
+// *   the valid temperature range is from -40c to 125c
+// *
+// ***********************************************************************************
+// *                            1.2v n+/pwell diode model                            *
+// ***********************************************************************************
+// *
+model ndio12ll diode
++level=1 is = 1.08e-07+djs_ndio12ll allow_scaling = yes dskip = no imax=1e20 
++isw = 2.78e-14+djsw_ndio12ll 
++n = 9.93e-01+dn_ndio12ll ns = 9.93e-01+dn_ndio12ll 
++rs = 1.60e-08 ik = 4.29e+05 ikp = 1.10E-01 
++bv = 10.4 ibv = 277.8 
++trs = 1.22e-03 eg = 1.16 tnom = 25.0 
++xti = 3.0 tlev = 1 tlevc = 1 
++cjo = 1.54e-03+dcj_ndio12ll 
++cjsw = 2.9e-11+dcjsw_ndio12ll 
++mj = 5.78e-01 vj = 1.04e+00 
++mjsw = 1.94e-01 vjsw = 1.85e-01 
++cta = 8.52e-04 ctp = 1.00e-04 pta = 1.20e-03 
++ptp = 1.00e-04 fc = 0 
++area = 3.6e-9 perim = 2.4e-4 
+// *
+// ***********************************************************************************
+// *                            1.2v p+/nwell diode model                            *
+// ***********************************************************************************
+// *
+model pdio12ll diode
++level=1 is = 1.6302e-07+djs_pdio12ll allow_scaling = yes dskip = no imax=1e20 
++isw = 3e-14+djsw_pdio12ll 
++n = 0.985+dn_pdio12ll ns = 0.985+dn_pdio12ll 
++rs = 1.6533e-08 ik = 6.516e+05 ikp = 1.20E-01 
++bv = 9.8 ibv = 277.8 
++trs = 1.6e-03 eg = 1.16 tnom = 25.0 
++xti = 3.0 tlev = 1 tlevc = 1 
++cjo = 1.0919e-03+dcj_pdio12ll 
++cjsw = 2.4e-11+dcjsw_pdio12ll 
++mj = 0.33195 vj = 0.71816 
++mjsw = 0.10648 vjsw = 0.9 
++cta = 9.7062e-04 ctp = 2.1418e-05 pta = 1.62e-03 
++ptp = 1e-04 fc = 0 
++area = 3.6e-9 perim = 2.4e-4 
+// *
+// ***********************************************************************************
+// *                            1.8v n+/pwell diode model                            *
+// ***********************************************************************************
+// *
+model ndio18ll diode
++level=1 is = 1.1e-07+djs_ndio18ll allow_scaling = yes dskip = no imax=1e20 
++isw = 3.91e-14+djsw_ndio18ll 
++n = 9.91e-01+dn_ndio18ll ns = 9.91e-01+dn_ndio18ll 
++rs = 1.43e-08 ik = 4.94e+05 ikp = 1.76E-01 
++bv = 10.6 ibv = 277.8 
++trs = 1.7105e-03 eg = 1.16 tnom = 25.0 
++xti = 3.0 tlev = 1 tlevc = 1 
++cjo = 1.182e-03+dcj_ndio18ll 
++cjsw = 3.25e-11+dcjsw_ndio18ll 
++mj = 0.40032 vj = 0.80013 
++mjsw = 0.10301 vjsw = 0.33012 
++cta = 8.035e-04 ctp = 1.2929e-04 pta = 1.245e-03 
++ptp = 4.9253e-04 fc = 0 
++area = 3.6e-9 perim = 2.4e-4 
+// *
+// ***********************************************************************************
+// *                            1.8v p+/nwell diode model                            *
+// ***********************************************************************************
+// *
+model pdio18ll diode
++level=1 is = 1.265e-07+djs_pdio18ll allow_scaling = yes dskip = no imax=1e20 
++isw = 3.2e-14+djsw_pdio18ll 
++n = 9.87e-01+dn_pdio18ll ns = 9.87e-01+dn_pdio18ll 
++rs = 1.4636e-08 ik = 5.30e+05 ikp = 1.34E-01 
++bv = 8.5 ibv = 277.8 
++trs = 1.5143e-03 eg = 1.16 tnom = 25.0 
++xti = 3.0 tlev = 1 tlevc = 1 
++cjo = 1.8573E-03+dcj_pdio18ll 
++cjsw = 1.5755E-12+dcjsw_pdio18ll 
++mj = 0.44798 vj = 0.66526 
++mjsw = 0.2 vjsw = 0.97 
++cta = 7.9958E-04 ctp = 1.48e-03 pta = 9.1934E-04 
++ptp = 1e-04 fc = 0 
++area = 3.6e-9 perim = 2.4e-4  
+// *
+// ***********************************************************************************
+// *                            2.5v n+/pwell diode model                            *
+// ***********************************************************************************
+// *
+model ndio25ll diode
++level=1 is = 9.85e-08+djs_ndio25ll allow_scaling = yes dskip = no imax=1e20 
++isw = 2.30e-14+djsw_ndio25ll 
++n = 9.89e-01+dn_ndio25ll ns = 9.89e-01+dn_ndio25ll 
++rs = 1.61e-08 ik = 4.92e+05 ikp = 1.15E-01 
++bv = 10.05 ibv = 277.8 
++trs = 7.53e-04 eg = 1.16 tnom = 25.0 
++xti = 3.0 tlev = 1 tlevc = 1 
++cjo = 1.137e-03+dcj_ndio25ll 
++cjsw = 4.968e-11+dcjsw_ndio25ll 
++mj = 0.33903 vj = 0.71153 
++mjsw = 0.35851 vjsw = 0.42082 
++cta = 7.6409e-04 ctp = 7.5436e-04 pta = 1.2161e-03 
++ptp = 6.6817e-04 fc = 0 
++area = 3.6e-9 perim = 2.4e-4 
+// *
+// ***********************************************************************************
+// *                            2.5v p+/nwell diode model                            *
+// ***********************************************************************************
+// *
+model pdio25ll diode
++level=1 is = 1.008e-07+djs_pdio25ll allow_scaling = yes dskip = no imax=1e20 
++isw = 1.8e-14+djsw_pdio25ll 
++n = 0.983+dn_pdio25ll ns = 0.983+dn_pdio25ll 
++rs = 1.2178e-08 ik = 7.4001e+05 ikp = 1.32E-01 
++bv = 9 ibv = 277.8 
++trs = 1.4e-03 eg = 1.16 tnom = 25.0 
++xti = 3.0 tlev = 1 tlevc = 1 
++cjo = 1.2065e-03+dcj_pdio25ll 
++cjsw = 2.8e-11+dcjsw_pdio25ll 
++mj = 0.32801 vj = 0.7394 
++mjsw = 0.1 vjsw = 0.81452 
++cta = 9.0584e-04 ctp = 2.6456e-04 pta = 1.6126e-03 
++ptp = 2.0142e-03 fc = 0 
++area = 3.6e-9 perim = 2.4e-4 
+// *
+// ***********************************************************************************
+// *                            1.2v native n+/pwell diode model                     *
+// ***********************************************************************************
+// *
+model ntdio12ll diode
++level=1 is = 2.0e-06+djs_ntdio12ll allow_scaling = yes dskip = no imax=1e20 
++isw = 3.5e-13+djsw_ntdio12ll 
++n = 0.995+dn_ntdio12ll ns = 0.995+dn_ntdio12ll 
++rs = 1.2568e-08 ik = 2.6358e+04 ikp = 4.61E-03 
++bv = 17.0 ibv = 277.8 
++trs = 1.4e-03 eg = 1.16 tnom = 25.0 
++xti = 3.0 tlev = 1 tlevc = 1 
++cjo = 3.0509e-04+dcj_ntdio12ll 
++cjsw = 4.6e-11+dcjsw_ntdio12ll 
++mj = 0.669 vj = 0.864 
++mjsw = 0.442 vjsw = 0.902 
++cta = 7.7745e-04 ctp = 4.4813e-04 pta = 1.0e-03 
++ptp = 1.0e-3 fc = 0 
++area = 3.6e-9 perim = 2.4e-4 
+// *
+// ***********************************************************************************
+// *                            1.8v native n+/pwell diode model                     *
+// ***********************************************************************************
+// *
+model ntdio18ll diode
++level=1 is = 1.69e-06+djs_ntdio18ll allow_scaling = yes dskip = no imax=1e20 
++isw = 4.12e-13+djsw_ntdio18ll 
++n = 1+dn_ntdio18ll ns = 1+dn_ntdio18ll 
++rs = 1.36e-08 ik = 2.89e+04 ikp = 7.05E-03 
++bv = 16.5 ibv = 277.8 
++trs = 2.3115e-03 eg = 1.16 tnom = 25.0 
++xti = 3.0 tlev = 1 tlevc = 1 
++cjo = 3.08e-04+dcj_ntdio18ll 
++cjsw = 4.69e-11+dcjsw_ntdio18ll 
++mj = 7.35e-01 vj = 9.35e-01 
++mjsw = 4.15e-01 vjsw = 6.95e-01 
++cta = 1.78e-03 ctp = 6.82e-04 pta = 1.60e-03 
++ptp = 1.45e-03 fc = 0 
++area = 3.6e-9 perim = 2.4e-4 
+// *
+// ***********************************************************************************
+// *                            2.5v native n+/pwell diode model                     *
+// ***********************************************************************************
+// *
+model ntdio25ll diode
++level=1 is = 2e-06+djs_ntdio25ll allow_scaling = yes dskip = no imax=1e20 
++isw = 4.5e-13+djsw_ntdio25ll 
++n = 0.991+dn_ntdio25ll ns = 0.991+dn_ntdio25ll 
++rs = 1.2517e-08 ik = 2.6598e+04 ikp = 5.98E-03 
++bv = 16.2 ibv = 277.8 
++trs = 1.45e-03 eg = 1.16 tnom = 25.0 
++xti = 3.0 tlev = 1 tlevc = 1 
++cjo = 3.4804e-04+dcj_ntdio25ll 
++cjsw = 3.99e-11+dcjsw_ntdio25ll 
++mj = 0.85 vj = 0.98 
++mjsw = 0.2885 vjsw = 0.961 
++cta = 1.1567e-03 ctp = 4.2938e-04 pta = 1.1e-03 
++ptp = 2.342e-03 fc = 0 
++area = 3.6e-9 perim = 2.4e-4 
+// *
+// ************************************************************************************
+// *                             nwell/psub diode model                               *
+// ************************************************************************************
+// *
+model nwdioll diode
++level=1 is = 3.4e-06+djs_nwdioll allow_scaling = yes dskip = no imax=1e20 
++isw = 2.8e-12+djsw_nwdioll 
++n = 1.005+dn_nwdioll ns = 1.005+dn_nwdioll 
++rs = 2.04e-08 ik = 1.81e+04 ikp = 1.49E-02 
++bv = 11.05 ibv = 166.7 
++trs = 7.44e-04 eg = 1.16 tnom = 25.0 
++xti = 3.0 tlev = 1 tlevc = 1 
++cjo = 1.17e-04+dcj_nwdioll 
++cjsw = 7.2182e-10+dcjsw_nwdioll 
++mj = 0.38073 vj = 0.58343 
++mjsw = 0.33957 vjsw = 0.71012 
++cta = 2.67e-03 ctp = 9.23e-04 pta = 3.16e-03 
++ptp = 1.58e-03 fc = 0 
++area = 6e-9 perim = 3.2e-4 
+// *
+// ***********************************************************************************
+// *                            1.2v n+/pwell hvt diode model                        *
+// ***********************************************************************************
+// *
+model ndio12llhvt diode
++level=1 is = 1.0e-07+djs_ndio12llhvt allow_scaling = yes dskip = no imax=1e20 
++isw = 2e-14+djsw_ndio12llhvt 
++n = 0.985+dn_ndio12llhvt ns = 0.985+dn_ndio12llhvt 
++rs = 1.2056e-08 ik = 4.1912e+05 ikp = 8.38E-02 
++bv = 8.55 ibv = 277.8 
++trs = 1.4e-03 eg = 1.16 tnom = 25.0 
++xti = 3.0 tlev = 1 tlevc = 1 
++cjo = 2.0094e-03+dcj_ndio12llhvt 
++cjsw = 5.1e-11+dcjsw_ndio12llhvt 
++mj = 0.498 vj = 0.98 
++mjsw = 0.61789 vjsw = 0.95 
++cta = 6.6614e-04 ctp = 3.9726e-04 pta = 1.2993e-03 
++ptp = 1.1035e-03 fc = 0 
++area = 3.6e-9 perim = 2.4e-4 
+// *
+// ***********************************************************************************
+// *                            1.2v p+/nwell hvt diode model                        *
+// ***********************************************************************************
+// *
+model pdio12llhvt diode
++level=1 is = 1.2e-07+djs_pdio12llhvt allow_scaling = yes dskip = no imax=1e20 
++isw = 2.4e-14+djsw_pdio12llhvt 
++n = 0.984+dn_pdio12llhvt ns = 0.984+dn_pdio12llhvt 
++rs = 1.1921e-08 ik = 6.5114e+05 ikp = 1.30E-01 
++bv = 9.8 ibv = 277.8 
++trs = 1.2e-03 eg = 1.16 tnom = 25.0 
++xti = 3.0 tlev = 1 tlevc = 1 
++cjo = 1.0921e-03+dcj_pdio12llhvt 
++cjsw = 2.4341e-11+dcjsw_pdio12llhvt 
++mj = 0.31385 vj = 0.6908 
++mjsw = 0.10016 vjsw = 0.32178 
++cta = 7.6947e-04 ctp = 2.0049e-04 pta = 1.2568e-03 
++ptp = 5.7809e-04 fc = 0 
++area = 3.6e-9 perim = 2.4e-4 
+// *
+// ***********************************************************************************
+// *                            1.2v n+/pwell lvt diode model                        *
+// ***********************************************************************************
+// *
+model ndio12lllvt diode
++level=1 is = 1.1e-7+djs_ndio12lllvt allow_scaling = yes dskip = no imax=1e20 
++isw = 2.2e-14+djsw_ndio12lllvt 
++n = 0.984+dn_ndio12lllvt ns = 0.984+dn_ndio12lllvt 
++rs = 1.2289e-08 ik = 4.034e+05 ikp = 8.07E-02 
++bv = 11.2 ibv = 277.8 
++trs = 1.8e-03 eg = 1.16 tnom = 25.0 
++xti = 3.0 tlev = 1 tlevc = 1 
++cjo = 1.2e-03+dcj_ndio12lllvt 
++cjsw = 2.85e-11+dcjsw_ndio12lllvt 
++mj = 0.3575 vj = 0.74473 
++mjsw = 0.1 vjsw = 0.8 
++cta = 7.5206e-04 ctp = 2.8615e-04 pta = 1.2877e-03 
++ptp = 3.1548e-03 fc = 0 
++area = 3.6e-9 perim = 2.4e-4 
+// *
+// ***********************************************************************************
+// *                            1.2v p+/nwell lvt diode model                        *
+// ***********************************************************************************
+// *
+model pdio12lllvt diode
++level=1 is = 1.2e-07+djs_pdio12lllvt allow_scaling = yes dskip = no imax=1e20 
++isw = 2.1e-14+djsw_pdio12lllvt 
++n = 0.984+dn_pdio12lllvt ns = 0.984+dn_pdio12lllvt 
++rs = 1.2146e-08 ik = 6.5389e+05 ikp = 1.14E-01 
++bv = 9.8 ibv = 277.8 
++trs = 2.0e-03 eg = 1.16 tnom = 25.0 
++xti = 3.0 tlev = 1 tlevc = 1 
++cjo = 1.1124e-03+dcj_pdio12lllvt 
++cjsw = 2.3459e-11+dcjsw_pdio12lllvt 
++mj = 0.32685 vj = 0.71768 
++mjsw = 0.10016 vjsw = 0.9 
++cta = 7.636e-04 ctp = 1.9505e-04 pta = 1.2427e-03 
++ptp = 2.4564e-03 fc = 0 
++area = 3.6e-9 perim = 2.4e-4 
+// *
+// ***********************************************************************************
+// *                             n+/rwell diode model                                *
+// ***********************************************************************************
+// *
+model dnd12ll diode
++level=1 is = 1e-07+djs_dnd12ll allow_scaling = yes dskip = no imax=1e20 
++isw = 1.9193e-14+djsw_dnd12ll 
++n = 1+dn_dnd12ll ns = 1+dn_dnd12ll 
++rs = 2.6394e-08 ik = 1.2897e+05 ikp = 2.48E-02 
++bv = 10.65 ibv = 142.86 
++trs = 2.5683e-03 eg = 1.16 tnom = 25.0 
++xti = 3.0 tlev = 1 tlevc = 1 
++cjo = 1.4911e-03+dcj_dnd12ll 
++cjsw = 2.6308e-11+dcjsw_dnd12ll 
++mj = 0.57857 vj = 1.0087 
++mjsw = 0.16082 vjsw = 0.14281 
++cta = 1.0232e-03 ctp = 2.1042e-04 pta = 1.4826e-03 
++ptp = 1.5341e-04 fc = 0 
++area = 7.0e-9 perim = 1.42e-2 
+// *
+// ***********************************************************************************
+// *                             rwell/dnwell diode model                            *
+// ***********************************************************************************
+// *
+model rwd12ll diode
++level=1 is = 1.4068e-07+djs_rwd12ll allow_scaling = yes dskip = no imax=1e20 
++isw = 3e-13+djsw_rwd12ll 
++n = 0.98337+dn_rwd12ll ns = 0.98337+dn_rwd12ll 
++rs = 1.7581e-08 ik = 3.7528e+05 ikp = 8.00E-01 
++bv = 11.2 ibv = 166.7 
++trs = 2.5683e-03 eg = 1.16 tnom = 25.0 
++xti = 3.0 tlev = 1 tlevc = 1 
++cjo = 4.6412e-04+dcj_rwd12ll 
++cjsw = 7.2244e-10+dcjsw_rwd12ll 
++mj = 0.34253 vj = 0.66901 
++mjsw = 0.27094 vjsw = 0.65028 
++cta = 1.4561e-03 ctp = 7.2533e-04 pta = 2.1039e-03 
++ptp = 1.3446e-03 fc = 0 
++area = 6.0e-9 perim = 3.2e-4 
+// *
+// ***********************************************************************************
+// *                             dnwell/psub diode model                             *
+// ***********************************************************************************
+// *
+model dnwd12ll diode
++level=1 is = 2.8435e-06+djs_dnwd12ll allow_scaling = yes dskip = no imax=1e20 
++isw = 7.01e-12+djsw_dnwd12ll 
++n = 1+dn_dnwd12ll ns = 1+dn_dnwd12ll 
++rs = 2.5772e-08 ik = 1.308e+04 ikp = 3.22E-02 
++bv = 11.12 ibv = 166.7 
++trs = 2.2044e-03 eg = 1.16 tnom = 25.0 
++xti = 3.0 tlev = 1 tlevc = 1 
++cjo = 5.9465e-04+dcj_dnwd12ll 
++cjsw = 9.5052e-10+dcjsw_dnwd12ll 
++mj = 0.36622 vj = 0.69852 
++mjsw = 0.32658 vjsw = 0.61718 
++cta = 1.5483e-03 ctp = 1.6366e-03 pta = 2.4639e-03 
++ptp = 2.3793e-03 fc = 0 
++area = 6.0e-9 perim = 3.2e-4 
+// *

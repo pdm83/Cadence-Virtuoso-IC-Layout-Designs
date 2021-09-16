@@ -1,0 +1,22 @@
+# Layer Definition for 0.18um logic
+-----------------------------
+AA          drawing       10      0       
+NW	    drawing	  14      0
+TPW         drawing       16      0
+DNW         drawing       19      0        
+NLL	    drawing	  35	  0
+NLH	    drawing	  36	  0
+PLH	    drawing	  37	  0
+PLL	    drawing	  38	  0
+SN          drawing       40      0        
+SP          drawing       43      0       
+SAB         drawing       48      0
+VTNH        drawing       49      0
+CT          drawing       50      0        
+TOW         drawing       55      0
+ONO         drawing       56      0        
+M1          drawing       61      0        
+PSUB        drawing       85      0                
+HVPF        drawing       98      0        
+                
+       

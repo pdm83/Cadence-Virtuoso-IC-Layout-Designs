@@ -1,0 +1,35 @@
+// *Spectre Model Format
+simulator lang=spectre  insensitive=yes
+
+// *
+//* No part of this file can be released without the consent of SMIC.
+//*
+// ************************************************************************************************************************************
+// *    smic 65nm logic low leakage 1p10m(1p9m, 1p8m, 1p7m) salicide 1.2v/1.8v/2.5v(overdrive to 3.3v) spice model (for spectre only) *
+// ************************************************************************************************************************************
+//*
+//* Release version    : 1.0
+//*
+//* Release date       : 06/15/2009
+//*
+//* Simulation tool    : Cadence spectre V6.2.1
+//*
+//*  MOM Capacitor   :
+//*
+//*        *-------------------------------* 
+//*        | mom subckt   |    mom_ckt     |    
+//*        *-------------------------------*
+//*
+//*******************************
+//* 65nm MOM Capacitor
+//*******************************
+//* 1=port1, 2=port2
+subckt mom_ckt (1 2)
+//* mom capacitor scalable model parameters
+parameters lr   = 18u       nr   = 8      
+parameters devt= temp    cvc1 = -3.02470E-06     cvc2 = 1.13309E-06            ctc1    = 7.02e-7
+parameters tcoef  = 1+ctc1*(devt-25)
+//* equivalent circuit
+cap    (1 2)  capacitor  c=max((((-0.00000031835*pwr(lr*1e6,2)+0.00052402*lr*1e6-0.00022947)*nr+(0.0000092152*pwr(lr*1e6,2)-0.00073371*lr*1e6+0.0024303)))*1e-12*tcoef*(1+cvc1*v(1,2)+cvc2*v(1,2)*v(1,2)),1e-18)*(1+dmom)
+ends mom_ckt
+// *

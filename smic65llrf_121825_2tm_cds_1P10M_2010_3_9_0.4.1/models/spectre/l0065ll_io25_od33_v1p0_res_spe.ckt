@@ -1,0 +1,475 @@
+//*Spectre resistor subcircuit format
+//* No part of this file can be released without the consent of SMIC.
+simulator lang=spectre
+ahdl_include "res.va"
+//*
+//******************************************************************
+//*                silicide n+ diffusion resistance                *
+//******************************************************************  
+subckt rndif_ckt (n2 n1 sub)
+parameters l=0 w=0 devt=temp   
+// +vc1 = 6.53E-05                vc2 = 9.68E-05
++ rjc1a = 6.24E-05              rjc1b = 6.25E-10
++ rjc2a = 1.08E-08              rjc2b = 1.16E-12
++  rtc1 = 2.00E-03               rtc2 = -3.43E-08
++    dw = -9.80E-09+ddw_rndif   
++  tref = 25                      rsh = 14.131+drsh_rndif
+
+
+D1 (sub n2) ndio12ll area=(w-2*dw)*l/5 perim=(w-2*dw)+2*l/5 
+R1 (n2 na n2 n1) diffres_hdl ldraw=l lr=l/4 wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref  rmaxvcoef=1.12
+D2 (sub na) ndio12ll area=(w-2*dw)*l/5 perim=2*l/5 
+R2 (na nb n2 n1) diffres_hdl ldraw=l lr=l/4 wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref  rmaxvcoef=1.12
+D3 (sub nb) ndio12ll area=(w-2*dw)*l/5 perim=2*l/5 
+R3 (nb nc n2 n1) diffres_hdl ldraw=l lr=l/4 wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref  rmaxvcoef=1.12
+D4 (sub nc) ndio12ll area=(w-2*dw)*l/5 perim=2*l/5 
+R4 (nc n1 n2 n1) diffres_hdl ldraw=l lr=l/4 wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref  rmaxvcoef=1.12
+D5 (sub n1) ndio12ll area=(w-2*dw)*l/5 perim=(w-2*dw)+2*l/5 
+ends rndif_ckt 
+
+//****************************************************************** 
+//*                silicide p+ diffusion resistance                * 
+//****************************************************************** 
+subckt rpdif_ckt (n2 n1 sub) 
+parameters l=0 w=0 devt=temp 
+// +vc1 = -5.19E-06               vc2 = 2.39E-04
++ rjc1a = -7.61E-06             rjc1b = 4.49E-10
++ rjc2a = 2.59E-08              rjc2b = 1.35E-12
++  rtc1 = 2.49E-03               rtc2 = -7.69E-08
++    dw = -1.29E-08+ddw_rpdif 
++  tref = 25                      rsh = 12.148+drsh_rpdif
+
+D1 (n2 sub) pdio12ll area=(w-2*dw)*l/5 perim=(w-2*dw)+2*l/5 
+R1 (n2 na n2 n1) diffres_hdl ldraw=l lr=l/4 wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref  rmaxvcoef=1.12 
+D2 (na sub) pdio12ll area=(w-2*dw)*l/5 perim=2*l/5 
+R2 (na nb n2 n1) diffres_hdl ldraw=l lr=l/4 wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref  rmaxvcoef=1.12 
+D3 (nb sub) pdio12ll area=(w-2*dw)*l/5 perim=2*l/5 
+R3 (nb nc n2 n1) diffres_hdl ldraw=l lr=l/4 wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref  rmaxvcoef=1.12 
+D4 (nc sub) pdio12ll area=(w-2*dw)*l/5 perim=2*l/5 
+R4 (nc n1 n2 n1) diffres_hdl ldraw=l lr=l/4 wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref  rmaxvcoef=1.12 
+D5 (n1 sub) pdio12ll area=(w-2*dw)*l/5 perim=(w-2*dw)+2*l/5 
+ends rpdif_ckt
+ 
+//****************************************************************** 
+//*                  silicide n+ poly resistance                   *
+//****************************************************************** 
+subckt rnpo_ckt (n2 n1)  
+parameters l=0 w=0 devt=temp     
+// +vc1 = 9.11E-05                vc2 = 5.16E-04
++ rjc1a = -7.37E-05             rjc1b = 3.60E-08
++ rjc2a = 3.75E-08              rjc2b = 8.48E-12
++  rtc1 = 2.14E-03               rtc2 = -1.14E-07
++    dw = 4.90E-09+ddw_rnpo  
++  tref = 25                      rsh = 13.405+drsh_rnpo
+
+R1 (n2 n1 n2 n1) polyres_hdl ldraw=l lr=l wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.26 
+ends rnpo_ckt 
+ 
+//****************************************************************** 
+//*         silicide n+ poly resistance (three terminal)           *
+//****************************************************************** 
+subckt rnpo_3t_ckt (n2 n1 sub)  
+parameters l=0 w=0 devt=temp     
+// +vc1 = 9.11E-05                vc2 = 5.16E-04
++ rjc1a = -7.37E-05             rjc1b = 3.60E-08
++ rjc2a = 3.75E-08              rjc2b = 8.48E-12
++  rtc1 = 2.14E-03               rtc2 = -1.14E-07
++    dw = 4.90E-09+ddw_rnpo_3t  
++  tref = 25                      rsh = 13.405+drsh_rnpo_3t
++    cj = 1.0117E-04             cjsw = 6.9120E-11
++   cap = cj*(w-2.0*dw)*l/2+cjsw*(w-2.0*dw+l)
+
+C1 (n2 sub) capacitor c = cap
+R1 (n2 n1 n2 n1) polyres_hdl ldraw=l lr=l wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.26 
+C2 (n1 sub) capacitor c = cap
+ends rnpo_3t_ckt 
+
+//****************************************************************** 
+//*                  silicide p+ poly resistance                   * 
+//****************************************************************** 
+subckt rppo_ckt (n2 n1)  
+parameters l=0 w=0 devt=temp     
+// +vc1 = 1.45E-04                vc2 = 6.53E-04
++ rjc1a = -1.02E-04             rjc1b = 5.40E-08
++ rjc2a = 4.89E-08              rjc2b = 1.06E-11
++  rtc1 = 2.47E-03               rtc2 = -9.28E-08
++    dw = 4E-09+ddw_rppo   
++  tref = 25                      rsh = 12.420+drsh_rppo
+
+R1 (n2 n1 n2 n1) polyres_hdl ldraw=l lr=l wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.22  
+ends rppo_ckt
+
+//****************************************************************** 
+//*           silicide p+ poly resistance (three terminal)         * 
+//****************************************************************** 
+subckt rppo_3t_ckt (n2 n1 sub)  
+parameters l=0 w=0 devt=temp     
+// +vc1 = 1.45E-04                vc2 = 6.53E-04
++ rjc1a = -1.02E-04             rjc1b = 5.40E-08
++ rjc2a = 4.89E-08              rjc2b = 1.06E-11
++  rtc1 = 2.47E-03               rtc2 = -9.28E-08
++    dw = 4E-09+ddw_rppo_3t   
++  tref = 25                      rsh = 12.420+drsh_rppo_3t
++    cj = 1.0117E-04             cjsw = 6.9120E-11
++   cap = cj*(w-2.0*dw)*l/2+cjsw*(w-2.0*dw+l)
+
+C1 (n2 sub) capacitor c = cap
+R1 (n2 n1 n2 n1) polyres_hdl ldraw=l lr=l wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.22  
+C2 (n1 sub) capacitor c = cap
+ends rppo_3t_ckt
+ 
+//****************************************************************** 
+//*                     non-silicide resistors                     * 
+//****************************************************************** 
+//* 
+//****************************************************************** 
+//*                    nwell resistance under sti                  * 
+//****************************************************************** 
+subckt rnwsti_ckt (n2 n1 sub) 
+parameters l=0 w=0 devt=temp    
+// +vc1 = 1.33E-02                vc2 = -4.64E-04
++ rjc1a = -1.80E-03             rjc1b = 2.66E-07
++ rjc2a = 8.27E-10              rjc2b = -9.83E-14
++  rtc1 = 8.36E-04               rtc2 = 9.42E-06
++    dw = 1.28E-07+ddw_rnwsti  
++  tref = 25                      rsh = 653.4+drsh_rnwsti
+
+D1 (sub n2) nwdioll area=(w-2*dw)*l/5 perim=(w-2*dw)+2*l/5
+R1 (n2 na n2 n1) diffres_hdl ldraw=l lr=l/4 wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.15 rminvcoef=0.85 
+D2 (sub na) nwdioll area=(w-2*dw)*l/5 perim=2*l/5
+R2 (na nb n2 n1) diffres_hdl ldraw=l lr=l/4 wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.15 rminvcoef=0.85
+D3 (sub nb) nwdioll area=(w-2*dw)*l/5 perim=2*l/5
+R3 (nb nc n2 n1) diffres_hdl ldraw=l lr=l/4 wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.15 rminvcoef=0.85
+D4 (sub nc) nwdioll area=(w-2*dw)*l/5 perim=2*l/5
+R4 (nc n1 n2 n1) diffres_hdl ldraw=l lr=l/4 wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.15 rminvcoef=0.85
+D5 (sub n1) nwdioll area=(w-2*dw)*l/5 perim=(w-2*dw)+2*l/5
+
+ends rnwsti_ckt 
+
+//****************************************************************** 
+//*                    nwell resistance under aa                   * 
+//****************************************************************** 
+subckt rnwaa_ckt (n2 n1 sub) 
+parameters l=0 w=0 devt=temp   
+// +vc1 = 1.23E-02                vc2 = 8.92E-05
++ rjc1a = -2.80E-03             rjc1b = 2.66E-07
++ rjc2a = -3.10E-08             rjc2b = 3.21E-13
++  rtc1 = 1.77E-03               rtc2 = 6.93E-06
++    dw = 1.15E-07+ddw_rnwaa
++  tref = 25                     rsh = 373.00+drsh_rnwaa
+
+D1 (sub n2) nwdioll area=(w-2*dw)*l/5 perim=(w-2*dw)+2*l/5
+R1 (n2 na n2 n1) diffres_hdl ldraw=l lr=l/4 wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.15 rminvcoef=0.85 
+D2 (sub na) nwdioll area=(w-2*dw)*l/5 perim=2*l/5
+R2 (na nb n2 n1) diffres_hdl ldraw=l lr=l/4 wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.15 rminvcoef=0.85
+D3 (sub nb) nwdioll area=(w-2*dw)*l/5 perim=2*l/5
+R3 (nb nc n2 n1) diffres_hdl ldraw=l lr=l/4 wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.15 rminvcoef=0.85
+D4 (sub nc) nwdioll area=(w-2*dw)*l/5 perim=2*l/5
+R4 (nc n1 n2 n1) diffres_hdl ldraw=l lr=l/4 wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.15 rminvcoef=0.85
+D5 (sub n1) nwdioll area=(w-2*dw)*l/5 perim=(w-2*dw)+2*l/5
+ends rnwaa_ckt
+  
+//****************************************************************** 
+//*              non-silicide n+ diffusion resistance              * 
+//****************************************************************** 
+subckt rndifsab_ckt (n2 n1 sub) 
+parameters l=0 w=0 devt=temp     
+// +vc1 = 5.02E-04               vc2 = 5.34E-03
++ rjc1a = 4.08E-04             rjc1b = 6.03E-10
++ rjc2a = 1.75E-08             rjc2b = 6.17E-14
++  rtc1 = 1.43E-03              rtc2 = 8.07E-07
++    dw = 7.78E-09+ddw_rndifsab   dl = -1.88E-07
++  tref = 25                     rsh = 115.60+drsh_rndifsab
+
+D1 (sub n2) ndio12ll area=(w-2*dw)*(l-2*dl)/5 perim=(w-2*dw)+2*(l-2*dl)/5
+R1 (n2 nb n2 n1) diffres_hdl ldraw=l lr=(l-2*dl)/4 wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.12 
+D2 (sub nb) ndio12ll area=(w-2*dw)*(l-2*dl)/5 perim=2*(l-2*dl)/5
+R2 (nb nc n2 n1) diffres_hdl ldraw=l lr=(l-2*dl)/4 wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.12 
+D3 (sub nc) ndio12ll area=(w-2*dw)*(l-2*dl)/5 perim=2*(l-2*dl)/5
+R3 (nc nd n2 n1) diffres_hdl ldraw=l lr=(l-2*dl)/4 wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.12 
+D4 (sub nd) ndio12ll area=(w-2*dw)*(l-2*dl)/5 perim=2*(l-2*dl)/5
+R4 (nd n1 n2 n1) diffres_hdl ldraw=l lr=(l-2*dl)/4 wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.12 
+D5 (sub n1) ndio12ll area=(w-2*dw)*(l-2*dl)/5 perim=(w-2*dw)+2*(l-2*dl)/5
+ends rndifsab_ckt 
+
+//****************************************************************** 
+//*              non-silicide p+ diffusion resistance              *
+//****************************************************************** 
+subckt rpdifsab_ckt (n2 n1 sub) 
+parameters l=0 w=0 devt=temp       
+// +vc1 = -5.08E-04               vc2 = 2.97E-03
++ rjc1a = -8.98E-05             rjc1b = -2.70E-09
++ rjc2a = 1.45E-08              rjc2b = 1.69E-14
++  rtc1 = 1.60E-03               rtc2 = 1.43E-06
++    dw = 1.00E-09+ddw_rpdifsab    dl = -1.47E-07
++  tref = 25                      rsh = 259.00+drsh_rpdifsab
+
+D1 (n2 sub) pdio12ll area=(w-2*dw)*(l-2*dl)/5 perim=(w-2*dw)+2*(l-2*dl)/5
+R1 (n2 nb n2 n1) diffres_hdl ldraw=l lr=(l-2*dl)/4 wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.11
+D2 (nb sub) pdio12ll area=(w-2*dw)*(l-2*dl)/5 perim=2*(l-2*dl)/5
+R2 (nb nc n2 n1) diffres_hdl ldraw=l lr=(l-2*dl)/4 wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.11
+D3 (nc sub) pdio12ll area=(w-2*dw)*(l-2*dl)/5 perim=2*(l-2*dl)/5
+R3 (nc nd n2 n1) diffres_hdl ldraw=l lr=(l-2*dl)/4 wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.11
+D4 (nd sub) pdio12ll area=(w-2*dw)*(l-2*dl)/5 perim=2*(l-2*dl)/5
+R4 (nd n1 n2 n1) diffres_hdl ldraw=l lr=(l-2*dl)/4 wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.11
+D5 (n1 sub) pdio12ll area=(w-2*dw)*(l-2*dl)/5 perim=(w-2*dw)+2*(l-2*dl)/5
+ends rpdifsab_ckt
+
+//****************************************************************** 
+//*                non-silicide n+ poly resistance                 * 
+//****************************************************************** 
+subckt rnposab_ckt (n2 n1)  
+parameters l=0 w=0 devt=temp   
+// +vc1 = -2.62E-05               vc2 = -4.98E-03
++ rjc1a = 1.94E-04              rjc1b = -1.34E-09
++ rjc2a = -4.32E-09             rjc2b = -8.87E-14
++  rtc1 = -2.49E-04              rtc2 = 4.67E-07
++    dw = 2.27E-08+ddw_rnposab     dl = -1.29E-07
++  tref = 25                      rsh = 292.45+drsh_rnposab
+
+R1 (n2 n1 n2 n1) polyres_hdl ldraw=l lr=(l-2*dl) wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rminvcoef=0.834
+ends rnposab_ckt
+
+//****************************************************************** 
+//*        non-silicide n+ poly resistance (three terminal)        * 
+//****************************************************************** 
+subckt rnposab_3t_ckt (n2 n1 sub)  
+parameters l=0 w=0 devt=temp   
+// +vc1 = -2.62E-05               vc2 = -4.98E-03
++ rjc1a = 1.94E-04              rjc1b = -1.34E-09
++ rjc2a = -4.32E-09             rjc2b = -8.87E-14
++  rtc1 = -2.49E-04              rtc2 = 4.67E-07
++    dw = 2.27E-08+ddw_rnposab_3t  dl = -1.29E-07
++  tref = 25                      rsh = 292.45+drsh_rnposab_3t
++    cj = 1.0117E-04             cjsw = 6.9120E-11
++   cap = cj*(w-2.0*dw)*(l-2.0*dl)/2+cjsw*(w-2.0*dw+l-2.0*dl)
+
+C1 (n2 sub) capacitor c = cap
+R1 (n2 n1 n2 n1) polyres_hdl ldraw=l lr=(l-2*dl) wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rminvcoef=0.834
+C2 (n1 sub) capacitor c = cap
+ends rnposab_3t_ckt
+
+//****************************************************************** 
+//*                non-silicide p+ poly resistance                 * 
+//****************************************************************** 
+subckt rpposab_ckt (n2 n1)  
+parameters l=0 w=0 devt=temp       
+// +vc1 = -4.77E-04               vc2 = -1.69E-03
++ rjc1a = 1.29E-04              rjc1b = -3.91E-09
++ rjc2a = -3.37E-09             rjc2b = -2.73E-14
++  rtc1 = -3.04E-04              rtc2 = 5.33E-07
++    dw = 2.79E-08+ddw_rpposab     dl = -1.00E-07
++  tref = 25                      rsh = 679.210+drsh_rpposab
+
+R1 (n2 n1 n2 n1) polyres_hdl ldraw=l lr=(l-2*dl) wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rminvcoef=0.892
+ends rpposab_ckt
+
+//****************************************************************** 
+//*        non-silicide p+ poly resistance (three terminal)        * 
+//****************************************************************** 
+subckt rpposab_3t_ckt (n2 n1 sub)  
+parameters l=0 w=0 devt=temp       
+// +vc1 = -4.77E-04               vc2 = -1.69E-03
++ rjc1a = 1.29E-04              rjc1b = -3.91E-09
++ rjc2a = -3.37E-09             rjc2b = -2.73E-14
++  rtc1 = -3.04E-04              rtc2 = 5.33E-07
++    dw = 2.79E-08+ddw_rpposab_3t  dl = -1.00E-07
++  tref = 25                      rsh = 679.210+drsh_rpposab_3t
++    cj = 1.0117E-04             cjsw = 6.9120E-11
++   cap = cj*(w-2.0*dw)*(l-2.0*dl)/2+cjsw*(w-2.0*dw+l-2.0*dl)
+
+C1 (n2 sub) capacitor c = cap
+R1 (n2 n1 n2 n1) polyres_hdl ldraw=l lr=(l-2*dl) wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rminvcoef=0.892
+C2 (n1 sub) capacitor c = cap
+ends rpposab_3t_ckt
+
+//****************************************************************** 
+//*                       metal 1 resistance                       *
+//****************************************************************** 
+subckt rm1_ckt (n2 n1 sub)  
+parameters l=0 w=0 devt=temp     
+// +vc1 = 0                      vc2 = 1.18E-03
++ rjc1a = 0                    rjc1b = 0
++ rjc2a = 1.69E-07             rjc2b = 1.38E-10
++  rtc1 = 3.20E-03              rtc2 = 3.92E-07
++    dw = 8.40E-09+ddw_rm1   
++  tref = 25                     rsh = 0.1288+drsh_rm1
++    cj = 4.6333E-05            cjsw = 1.0044E-10
++   cap = cj*(w-2.0*dw)*l/2+cjsw*(w-2.0*dw+l)
+
+C1 (n2 sub) capacitor c = cap
+R1 (n2 n1 n2 n1) metalres_hdl ldraw=l lr=l wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.10 
+C2 (n1 sub) capacitor c = cap
+ends rm1_ckt
+
+//****************************************************************** 
+//*                       metal 2 resistance                       *
+//****************************************************************** 
+subckt rm2_ckt (n2 n1 sub)  
+parameters l=0 w=0 devt=temp     
+// +vc1 = 0                      vc2 = 1.37E-03
++ rjc1a = 0                    rjc1b = 0
++ rjc2a = 2.85E-07             rjc2b = 3.64E-10
++  rtc1 = 3.29E-03              rtc2 = 3.88E-07
++    dw = 1.61E-08+ddw_rm2   
++  tref = 25                     rsh = 0.0948+drsh_rm2
++    cj = 3.0000E-05            cjsw = 9.3210E-11
++   cap = cj*(w-2.0*dw)*l/2+cjsw*(w-2.0*dw+l)
+
+C1 (n2 sub) capacitor c = cap
+R1 (n2 n1 n2 n1) metalres_hdl ldraw=l lr=l wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.10 
+C2 (n1 sub) capacitor c = cap
+ends rm2_ckt
+
+//****************************************************************** 
+//*                       metal 3 resistance                       *
+//****************************************************************** 
+subckt rm3_ckt (n2 n1 sub)  
+parameters l=0 w=0 devt=temp    
+// +vc1 = 0                       vc2 = 1.37E-03
++ rjc1a = 0                     rjc1b = 0
++ rjc2a = 2.85E-07              rjc2b = 3.64E-10
++  rtc1 = 3.29E-03               rtc2 = 3.88E-07
++    dw = 1.61E-08+ddw_rm3   
++  tref = 25                      rsh = 0.0948+drsh_rm3
++    cj = 2.1200E-05             cjsw = 9.2990E-11
++   cap = cj*(w-2.0*dw)*l/2+cjsw*(w-2.0*dw+l)
+
+C1 (n2 sub) capacitor c = cap
+R1 (n2 n1 n2 n1) metalres_hdl ldraw=l lr=l wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.10 
+C2 (n1 sub) capacitor c = cap
+ends rm3_ckt
+
+//****************************************************************** 
+//*                       metal 4 resistance                       *
+//****************************************************************** 
+subckt rm4_ckt (n2 n1 sub)  
+parameters l=0 w=0 devt=temp     
+// +vc1 = 0                      vc2 = 1.37E-03
++ rjc1a = 0                    rjc1b = 0
++ rjc2a = 2.85E-07             rjc2b = 3.64E-10
++  rtc1 = 3.29E-03              rtc2 = 3.88E-07
++    dw = 1.61E-08+ddw_rm4    
++  tref = 25                     rsh = 0.0948+drsh_rm4
++    cj = 1.6400E-05            cjsw = 9.2810E-11
++   cap = cj*(w-2.0*dw)*l/2+cjsw*(w-2.0*dw+l)
+
+C1 (n2 sub) capacitor c = cap
+R1 (n2 n1 n2 n1) metalres_hdl ldraw=l lr=l wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.10 
+C2 (n1 sub) capacitor c = cap
+ends rm4_ckt
+
+//****************************************************************** 
+//*                       metal 5 resistance                       *
+//****************************************************************** 
+subckt rm5_ckt (n2 n1 sub)  
+parameters l=0 w=0 devt=temp    
+// +vc1 = 0                       vc2 = 1.37E-03
++ rjc1a = 0                     rjc1b = 0
++ rjc2a = 2.85E-07              rjc2b = 3.64E-10
++  rtc1 = 3.29E-03               rtc2 = 3.88E-07
++    dw = 1.61E-08+ddw_rm5    
++  tref = 25                      rsh = 0.0948+drsh_rm5
++    cj = 1.3300E-05             cjsw = 9.2730E-11
++   cap = cj*(w-2.0*dw)*l/2+cjsw*(w-2.0*dw+l)
+
+C1 (n2 sub) capacitor c = cap
+R1 (n2 n1 n2 n1) metalres_hdl ldraw=l lr=l wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.10 
+C2 (n1 sub) capacitor c = cap
+ends rm5_ckt
+
+//****************************************************************** 
+//*                       metal 6 resistance                       *
+//****************************************************************** 
+subckt rm6_ckt (n2 n1 sub)  
+parameters l=0 w=0 devt=temp    
+// +vc1 = 0                       vc2 = 1.37E-03
++ rjc1a = 0                     rjc1b = 0
++ rjc2a = 2.85E-07              rjc2b = 3.64E-10
++  rtc1 = 3.29E-03               rtc2 = 3.88E-07
++    dw = 1.61E-08+ddw_rm6   
++  tref = 25                      rsh = 0.0948+drsh_rm6
++    cj = 1.1300E-05             cjsw = 9.2740E-11
++   cap = cj*(w-2.0*dw)*l/2+cjsw*(w-2.0*dw+l)
+
+C1 (n2 sub) capacitor c = cap
+R1 (n2 n1 n2 n1) metalres_hdl ldraw=l lr=l wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.10 
+C2 (n1 sub) capacitor c = cap
+ends rm6_ckt
+
+//****************************************************************** 
+//*                       metal 7 resistance                       *
+//****************************************************************** 
+subckt rm7_ckt (n2 n1 sub)  
+parameters l=0 w=0 devt=temp     
+// +vc1 = 0                      vc2 = 1.37E-03
++ rjc1a = 0                    rjc1b = 0
++ rjc2a = 2.85E-07             rjc2b = 3.64E-10
++  rtc1 = 3.29E-03              rtc2 = 3.88E-07
++    dw = 1.61E-08+ddw_rm7   
++  tref = 25                     rsh = 0.0948+drsh_rm7
++    cj = 9.7400E-06            cjsw = 9.2710E-11
++   cap = cj*(w-2.0*dw)*l/2+cjsw*(w-2.0*dw+l)
+
+C1 (n2 sub) capacitor c = cap
+R1 (n2 n1 n2 n1) metalres_hdl ldraw=l lr=l wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.10 
+C2 (n1 sub) capacitor c = cap
+ends rm7_ckt
+
+//****************************************************************** 
+//*                       metal 8 resistance                       *
+//****************************************************************** 
+subckt rm8_ckt (n2 n1 sub)  
+parameters l=0 w=0 devt=temp 
+// +vc1 = 0                      vc2 = 1.37E-03
++ rjc1a = 0                    rjc1b = 0
++ rjc2a = 2.85E-07             rjc2b = 3.64E-10
++  rtc1 = 3.29E-03              rtc2 = 3.88E-07
++    dw = 1.61E-08+ddw_rm8   
++  tref = 25                     rsh = 0.0948+drsh_rm8
++    cj = 8.5800E-06            cjsw = 1.0211E-10
++   cap = cj*(w-2.0*dw)*l/2+cjsw*(w-2.0*dw+l)
+
+C1 (n2 sub) capacitor c = cap
+R1 (n2 n1 n2 n1) metalres_hdl ldraw=l lr=l wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.10 
+C2 (n1 sub) capacitor c = cap
+ends rm8_ckt
+
+//****************************************************************** 
+//*                   top metal 1 resistance                       *
+//****************************************************************** 
+subckt rtm1_ckt (n2 n1 sub)  
+parameters l=0 w=0 devt=temp     
+// +vc1 = 0                      vc2 = 7.98E-03
++ rjc1a = 0                    rjc1b = 0
++ rjc2a = 1.83E-06             rjc2b = 2.25E-10
++  rtc1 = 3.76E-03              rtc2 = 3.45E-07
++    dw = 1.80E-08+ddw_rtm1   
++  tref = 25                     rsh = 0.0180+drsh_rtm1
++    cj = 6.8333E-06            cjsw = 1.1153E-10
++   cap = cj*(w-2.0*dw)*l/2+cjsw*(w-2.0*dw+l)
+
+C1 (n2 sub) capacitor c = cap
+R1 (n2 n1 n2 n1) metalres_hdl ldraw=l lr=l wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.10 
+C2 (n1 sub) capacitor c = cap
+ends rtm1_ckt
+
+//****************************************************************** 
+//*                   top metal 2 resistance                       *
+//****************************************************************** 
+subckt rtm2_ckt (n2 n1 sub)  
+parameters l=0 w=0 devt=temp    
+// +vc1 = 0                      vc2 = 7.98E-03
++ rjc1a = 0                    rjc1b = 0
++ rjc2a = 1.83E-06             rjc2b = 2.25E-10
++  rtc1 = 3.76E-03              rtc2 = 3.45E-07
++    dw = 1.80E-08+ddw_rtm2  
++  tref = 25                     rsh = 0.0180+drsh_rtm2
++    cj = 5.2381E-06            cjsw = 1.1167E-10
++   cap = cj*(w-2.0*dw)*l/2+cjsw*(w-2.0*dw+l)
+
+C1 (n2 sub) capacitor c = cap
+R1 (n2 n1 n2 n1) metalres_hdl ldraw=l lr=l wr=w rtemp=devt etch=dw tc1=rtc1 tc2=rtc2 jc1a=rjc1a jc1b=rjc1b jc2a=rjc2a jc2b=rjc2b rsh0=rsh tnom=tref rmaxvcoef=1.10 
+C2 (n1 sub) capacitor c = cap
+ends rtm2_ckt
+

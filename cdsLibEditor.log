@@ -1,0 +1,42 @@
+\o Program:		@(#)$CDS: cdsLibEditor version 6.1.7 - CAT35 01/28/2016 23:43 (sjfnl179) $
+\o Sub version:		sub-version  IC6.1.7 - CAT35.15s004 
+\o Arguments:		-cdslib /home/lyjslay/ClassDemo/cds.lib -mpssession virtuoso5279 -mpshost lyjslay 
+\o Working Directory:	lyjslay:/home/lyjslay/ClassDemo
+\o 64-bit offsets
+\a nrSetWindowVisibility(cdsLibEditor "show")
+\o Qt version: 		4.8.5
+\a nrSetCurrentWindow(cdsLibEditor)
+\a nrResizeWindow(cdsLibEditor list(0 25 500 400))
+\a nrResizeWindow(cdsLibEditor list(377 48 500 400))
+\a nrListItemAction(cdsLibEditor->mainTable 0 0)
+\o Active cell: 0 0 "cdsDefTechLib"
+\a cdsLibEditor->editAddLibButton->value = t
+\a newLibraryDialog->filePathComboBox->value = "/home/lyjslay/ClassDemo"
+\a newLibraryDialog->useMappedName->value = nil
+\a nrSetWindowVisibility(newLibraryDialog "show")
+\a nrSetCurrentWindow(newLibraryDialog)
+\a nrResizeWindow(newLibraryDialog list(362 37 531 513))
+\a newLibraryDialog->dirListWidget->value = "smic65llrf_121825_2tm_cds_1P10M_2010_3_9_0.4.1"
+\a newLibraryDialog->filePathComboBox->value = "/home/lyjslay/ClassDemo/smic65llrf_121825_2tm_cds_1P10M_2010_3_9_0.4.1"
+\a newLibraryDialog->dirListWidget->value = nil
+\a newLibraryDialog->filePathComboBox->value = "/home/lyjslay/ClassDemo"
+\a nrListItemAction(newLibraryDialog->dirListWidget 2 0)
+\a newLibraryDialog->filePathComboBox->value = "/home/lyjslay/ClassDemo/smic65llrf_121825_2tm_cds_1P10M_2010_3_9_0.4.1"
+\a newLibraryDialog->libraryListBox->value = "smic65_OA"
+\a newLibraryDialog->useMappedName->value = t
+\a newLibraryDialog->libraryName->value = "smic65_OA"
+\a newLibraryDialog->okButton->value = t
+\a newLibraryDialog->libraryListBox->value = nil
+\a newLibraryDialog->useMappedName->value = nil
+\a newLibraryDialog->libraryName->value = ""
+\a nrListItemAction(cdsLibEditor->mainTable 10 0)
+\o Active cell: 10 0 ""
+\a nrSetCurrentWindow(cdsLibEditor)
+\a cdsLibEditor->fileExitButton->value = t
+\o QUESTION (CLE-205): You have made changes which have not been saved. \n\nWould you like to save your changes? 
+\a nrSetWindowVisibility(needSaveDialog "show")
+\a nrResizeWindow(needSaveDialog list(443 162 369 136))
+\a nrSetCurrentWindow(needSaveDialog)
+\a needSaveDialog->yesButton->value = t
+\a nrSetWindowVisibility(cdsLibEditor "hide")
+\a exit(0)

@@ -1,0 +1,8 @@
+#
+smic18ee primRes3_ckt symbol
+R0
+#ISCELL
+basic iopin symbol
+PIN2
+PIN1
+PIN0

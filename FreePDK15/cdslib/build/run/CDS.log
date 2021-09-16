@@ -1,0 +1,78 @@
+\# Program start time UTC 2014.07.13 17:20:21.280
+\# Local time Sunday 13 July 2014, 1:20 pm
+\o Program:		@(#)$CDS: virtuoso version 6.1.5 01/16/2012 21:57 (sjfdl074) $
+\o Hierarchy:		/afs/eos.ncsu.edu/dist/cadence/.install/lnx86/ic615/tools.lnx86/dfII/
+\o Sub version:		sub-version  IC6.1.5.500.9  (32-bit addresses)
+\# Host name (type):	soultrain.ece.ncsu.edu (x86_64)
+\# Operating system:	Linux 2.6.18-348.6.1.el5 #1 SMP Fri Apr 26 09:21:26 EDT 2013
+\# X display name (WxH):	soultrain.ece.ncsu.edu:80.0 (1024x868)
+\# Available geometry:			TL(0:0) BR(1023:867)
+\# X server:			RealVNC Ltd (VNC nograph server)
+\# Depth of Visual (Root):	16 (16)
+\# Number of Planes Used:	16
+\# X version:		11.0 (vendor release 3370)
+\# X resource pool:	base 0x800000, mask 0x3fffff (4194303), shift 0
+\# 			current id 0x31, current max 0x3ffffa (4194298)
+\# Memory report:	maximum data size 4294967295 (0xffffffff) bytes
+\# Memory report:	maximum process size 4294967295 (0xffffffff) bytes
+\# Initial sbrk value:	355663872 (0x15330000) bytes
+\# Available memory:	12527700 (0xbf2854) kilobytes
+\# System memory:	18401124 (0x118c764) kilobytes
+\# Maximum memory size:	3974635519 (0xece81fff) bytes
+\# Max mem available:	3974635519 (0xece81fff) bytes
+\# Initial memory used:	35332096 (0x21b2000) bytes
+\# Qt version:		4.5.3
+\# Window Manager:	other
+\# User Name:		wdavis
+\o Working Directory:	soultrain.ece.ncsu.edu:/local/home/wdavis/git/FreePDK15/cdslib/build/run
+\# Process Id:		10048
+\o 
+\o COPYRIGHT © 1992-2011  CADENCE DESIGN SYSTEMS INC.  ALL RIGHTS RESERVED.
+\o           © 1992-2011  UNIX SYSTEMS Laboratories INC.,
+\o                          Reproduced with permission.
+\o 
+\o This Cadence Design Systems program and online documentation are
+\o proprietary/confidential information and may be disclosed/used only
+\o as authorized in a license agreement controlling such use and disclosure.
+\o 
+\o           RESTRICTED RIGHTS NOTICE (SHORT FORM)
+\o Use/reproduction/disclosure is subject to restriction
+\o set forth at FAR 1252.227-19 or its equivalent.
+\# Available memory:	12524976 (0xbf1db0) kilobytes UTC 2014.07.13 17:20:21.523
+\o Loading geView.cxt 
+\o Loading menuBuilder.cxt 
+\o Loading schView.cxt 
+\o Loading selectSv.cxt 
+\o Loading LVS.cxt 
+\o Loading layerProc.cxt 
+\o Loading xlUI.cxt 
+\o Loading auCore.cxt 
+\o Loading vhdl.cxt 
+\o Loading seismic.cxt 
+\o Loading ci.cxt 
+\o Loading ams.cxt 
+\o Virtuoso Framework License (111) was checked out successfully. Total checkout time was 0.08s.
+\o loading vars from /home/wdavis/git/FreePDK15/cdslib/setup/cdsenv for tool layout
+\o ---------------------------------------------------------------------------
+\o Welcome to the FreePDK 15nm Free, Open-Source Process Design Kit
+\o 
+\o ---------------------------------------------------------------------------
+\o 
+\o Done loading FreePDK customizations.
+\p > 
+\i (pdkAppendTechfile) (exit)
+\o Begin pdkAppendTechfile
+\o Loading "/home/wdavis/git/FreePDK15/cdslib/build/cds/FreePDK.tf" into "/home/wdavis/git/FreePDK15/cdslib/NCSU_TechLib_FreePDK15"...INFO (TECH-150003): The technology database "NCSU_TechLib_FreePDK15" has been automatically
+\o updated from revision 1(DM 0) to revision 226610(DM 3)
+\o in virtual memory. It will be opened in 'a' mode for you to save it to disk.
+\o Loading techComp.cxt 
+\o INFO (TECH-180006): Compiling class 'layerDefinitions'....
+\o INFO (TECH-180006): Compiling class 'layerRules'....
+\o INFO (TECH-180006): Compiling class 'viaDefs'....
+\o INFO (TECH-180004): Compiling class 'constraintGroups'....
+\o INFO (TECH-180006): Compiling class 'devices'....
+\o INFO (TECH-180006): Compiling class 'leRules'....
+\o Techfile successfully appended.
+\o Finished pdkAppendTechfile
+\# Memory report: on exit 75157504 (0x47ad000) bytes, UTC 2014.07.13 17:20:37.592
+\# Memory report: peak usage 75157504 (0x47ad000) bytes

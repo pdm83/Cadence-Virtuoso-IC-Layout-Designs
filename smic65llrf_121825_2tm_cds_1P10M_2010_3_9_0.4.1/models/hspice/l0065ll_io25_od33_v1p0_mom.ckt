@@ -1,0 +1,36 @@
+* 
+* No part of this file can be released without the consent of SMIC.
+*
+*********************************************************************************************************************************
+*  SMIC 65nm Logic Low Leakage 1P10M(1P9M, 1P8M, 1P7M) Salicide 1.2V/1.8V/2.5V(Overdrive to 3.3V) SPICE model (for HSPICE only) *
+*********************************************************************************************************************************
+*
+* Release version    : 1.0
+*
+* Release date       : 06/15/2009
+*
+* Simulation tool    : Synopsys Star-HSPICE version 2006.09-SP1
+*
+*
+*  MOM Capacitor   :
+*
+*        *------------------------------* 
+*        | mom subckt   |   mom_ckt     |    
+*        *------------------------------*
+*
+*******************************
+* 65nm MOM Capacitor
+*******************************
+* 1=port1, 2=port2
+.subckt mom_ckt 1 2 lr=l nr=n
+* mom capacitor scalable model parameters
+.param
++ctc1  = 7.02e-7                  
++cvc1  = -3.02470E-06             cvc2 = 1.13309E-06        
++tcoef(temper) = '1.0+ctc1*(temper-25.0)'
++cf     = 'max(((-0.00000031835*pwr(lr*1e6,2)+0.00052402*lr*1e6-0.00022947)*nr+(0.0000092152*pwr(lr*1e6,2)-0.00073371*lr*1e6+0.0024303))*1e-12,1e-18)*(1+dmom)'              
+* equivalent circuit
+cap 1 2    'cf*tcoef(temper)*(1.0+v(1,2)*(cvc1+cvc2*v(1,2)))'
+.ends mom_ckt
+
+

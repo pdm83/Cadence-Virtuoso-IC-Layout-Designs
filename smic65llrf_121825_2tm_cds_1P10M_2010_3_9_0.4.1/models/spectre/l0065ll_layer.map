@@ -1,0 +1,22 @@
+# Layer Definition for 65nm low leakage			
+
+AA	drawing	10	
+NW	drawing	14	
+DG	drawing	29	
+NLL	drawing	35
+NLH     drawing	36
+PLH	drawing	37
+PLL	drawing	38	
+SN	drawing	40	
+SP	drawing	43	
+CT	drawing	50	
+M1	drawing	61	
+PSUB	drawing	85	
+NLHT	drawing	114	
+PLHT	drawing	115	
+TG	drawing	125	
+VTNH    drawing 47
+LVN     drawing 219
+VTPH    drawing 46
+LVP     drawing 218
+DNW     drawing 19 

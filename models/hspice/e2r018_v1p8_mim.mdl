@@ -1,0 +1,25 @@
+* 
+* No part of this file can be released without the consent of SMIC.
+*
+******************************************************************************************
+*            SMIC 0.18um EEPROM 2P6M 1.8V/3.3V/5V/15.5V SPICE model(for HSPICE only)     *
+******************************************************************************************
+*
+* Release version    : 1.7
+*
+* Release date       : 1/13/2010
+*
+* Simulation tool    : Synopsys Star-HSPICE version 2005.9
+*
+*
+*   MIM capacitor    : MIME2R 
+*   
+*   Valid temperature range is from -55C to 125C
+*
+*
+******************************************************************
+*                      MIM Capacitor                             * 
+******************************************************************
+.model MIME2R c
++COX = '9.71E-04+DMIME2R'         TC1 = -3.48E-05          TREF  = 25
+*

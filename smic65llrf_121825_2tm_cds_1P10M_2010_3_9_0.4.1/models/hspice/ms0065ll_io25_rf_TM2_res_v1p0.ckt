@@ -1,0 +1,36 @@
+*  
+* No part of this file can be released without the consent of SMIC. 
+*************************************************************************************************************
+* SMIC 65nm Low Leakage 1P10M(1P9M, 1P8M, 1P7M, 1P6M) Salicide 1.2V/1.8V/2.5V SPICE model (for HSPICE only) * 
+*************************************************************************************************************
+* 
+* Release version    : 1.0
+* 
+* Release date       : 09/30/2009
+* 
+* Simulation tool    : Synopsys Star-HSPICE version 2006.09-SP1
+* 
+*   Resistor         : 
+*        *--------------------------------------------------------------*  
+*        |       Resistor Type           | 		                |
+*        |===============================|==============================|         
+*        | Ultra-Thick Top metal(TM2)    |         rtm2_rf_ckt          | 
+*        *--------------------------------------------------------------*  
+*
+*****************************  
+* 65nm top metal 2 resistor *  
+*****************************
+.subckt rtm2_rf_ckt n2 n1 sub l=lr w=wr   
+.param  
++rsh       = '5.358e-3+drsh_rtm2_rf'     rtc1 = 3.8494E-03   rtc2 = 8.5805E-07   dw = 6.67E-8
++jc1a      = -1.3993E-03              jc1b = 2.999E-05
++jc2a      = 1.7608E-05              jc2b = 1.5719E-06
++rvc1      = 'jc1a+jc1b/l'         rvc2   = '(jc2a+jc2b/l)/l'          
++tcoef(temper)     = '1.0+(temper-25.0)*(rtc1+rtc2*(temper-25.0))' 
++weff = 'w-2*dw'    
++cox       = 5.193E-06            capsw    = 1.228E-10
+C1 n2 sub 'cox*weff*l/2+capsw*weff+capsw*l'    
+R1 n2 n1 'rsh*l/weff*tcoef(temper)*min(1.0+rvc1*abs(v(n2,n1))+rvc2*v(n2,n1)*v(n2,n1), 1.1)'
+C2 n1 sub 'cox*weff*l/2+capsw*weff+capsw*l'  
+.ends rtm2_rf_ckt
+*

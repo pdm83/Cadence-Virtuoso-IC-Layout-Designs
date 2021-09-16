@@ -1,0 +1,175 @@
+// *Spectre Model Format
+simulator lang=spectre  insensitive=yes
+
+// *
+// * no part of this file can be released without the consent of smic.
+// *
+// ************************************************************************************************************************************
+// *    smic 65nm logic low leakage 1p10m(1p9m, 1p8m, 1p7m) salicide 1.2v/1.8v/2.5v(overdrive to 3.3v) spice model (for spectre only) *
+// ************************************************************************************************************************************
+// *
+// * release version    : 1.0
+// *
+// * release date       : 06/15/2009
+// *
+// * simulation tool    : Cadence spectre V6.2.1
+// *
+// * model type         :
+// *   mosfet varactor  : bsim4v4.5
+// *
+// * model name         :
+// *   mosfet varactor  :
+// *     *----------------------------------------------------------------------*
+// *     |   mos varactor subckt   |     1.2v     |     1.8v     |     2.5v     |
+// *     |======================================================================|
+// *     |        n+/nwell         | pvar12ll_ckt | pvar18ll_ckt | pvar25ll_ckt |
+// *     *----------------------------------------------------------------------*
+// *
+// * the valid temperature range is from -40c to 125c
+// *   
+//*************************************
+//* 65nm 1.2V MOS Varactor 
+//*************************************
+//* Area=Wr*Lr*Nf
+subckt pvar12ll_ckt (1 2)
+//* mos varactor scalable model parameters
+parameters lr=10u wr=10u nf=1 ar=lr*wr*nf 
+main (2 1 2 2) pvar12ll l=lr w=wr*nf ad=0 as=0 pd=0 ps=0
+//* MOS Varactor Model
+model  pvar12ll  bsim4 type = p  
+**************************************************************
+*               MODEL FLAG PARAMETERS 
+**************************************************************
++lmin    = 1e-006          lmax    = 0.0001          wmin    = 1e-006        
++wmax    = 0.0001          version = 4.5             binunit = 2             
++paramchk= 1               mobmod  = 0               capmod  = 2             
++igcmod  = 1               igbmod  = 1               geomod  = 0             
++diomod  = 1               rdsmod  = 0               rbodymod= 0             
++rgeomod = 0               rgatemod= 0               permod  = 1             
++acnqsmod= 0               trnqsmod= 0               tempmod = 0             
+**************************************************************
+*               GENERAL MODEL PARAMETERS 
+**************************************************************
++tnom    = 25              toxe    = (2.8e-009+dtoxe_pvar12ll)  toxp    = (2.8e-009+dtoxp_pvar12ll)
++toxm    = 2.8e-009        dtox    = 0               epsrox  = 3.9           
++xpart   = 1               toxref  = 2.78e-009     
+**************************************************************
+*               DC PARAMETERS 
+**************************************************************
++vth0    = (-1.54+dvth_pvar12ll)  k1      = 0.519           k2      = 0             
++k3      = 0               lpe0    = 9e-008          xj      = 1.45e-007     
++ngate   = 4.1392e+022     ndep    = 1e+017          phin    = 0.085         
++vfb     = -1              alpha0  = 8e-012          alpha1  = 0.8           
++beta0   = 16.34           agidl   = 0.002           bgidl   = 2.3e+009      
++cgidl   = 0.5             egidl   = 0.8             aigbacc = 0.0226        
++bigbacc = 0.018639        cigbacc = 0.075           nigbacc = 1             
++aigbinv = 0.35            bigbinv = 0.03            cigbinv = 0.006         
++eigbinv = 1.1             nigbinv = 3               aigc    = 0.0077        
++bigc    = 0.0005922       cigc    = 0.0003          aigsd   = 0.00583       
++bigsd   = 0               cigsd   = 0.066           nigc    = 1.5           
++poxedge = 1               pigcd   = 2.5             ntox    = 1             
+**************************************************************
+*               CAPACITANCE PARAMETERS 
+**************************************************************
++cgso    = 0               cgdo    = 0               cgbo    = 0             
++cgdl    = 0               cgsl    = 0               cf      = 0             
++vfbcv   = -1              acde    = 0.855           moin    = 5             
++noff    = 3               voffcv  = 0.3           
+**************************************************************
+*               TEMPERATURE PARAMETERS 
+**************************************************************
++kt1     = 0.08            kt1l    = 0                       
+ends pvar12ll_ckt
+//*          
+//*************************************
+//* 65nm 1.8V MOS Varactor 
+//*************************************
+//* Area=Wr*Lr*Nf
+subckt pvar18ll_ckt (1 2)
+//* mos varactor scalable model parameters
+parameters lr=20u wr=20u nf=1 ar=lr*wr*nf 
+main (2 1 2 2) pvar18ll l=lr w=wr*nf ad=0 as=0 pd=0 ps=0
+//* MOS Varactor Model
+model  pvar18ll  bsim4 type = p
+**************************************************************
+*               MODEL FLAG PARAMETERS 
+**************************************************************
++lmin    = 1e-006          lmax    = 0.0001          wmin    = 1e-006        
++wmax    = 0.0001          version = 4.5             binunit = 2             
++paramchk= 1               mobmod  = 0               capmod  = 2             
++igcmod  = 1               igbmod  = 1               geomod  = 0             
++diomod  = 1               rdsmod  = 0               rbodymod= 0             
++rgeomod = 0               rgatemod= 0               permod  = 1             
++acnqsmod= 0               trnqsmod= 0               tempmod = 0             
+**************************************************************
+*               GENERAL MODEL PARAMETERS 
+**************************************************************
++tnom    = 25              toxe    = (3.94e-009+dtoxe_pvar18ll)  toxp    = (3.94e-009+dtoxp_pvar18ll)
++toxm    = 3.94e-009       dtox    = 0               epsrox  = 3.9           
++xpart   = 1             
+**************************************************************
+*               DC PARAMETERS 
+**************************************************************
++vth0    = (-1.655+dvth_pvar18ll)  k1      = 0.588           k2      = 0             
++k3      = 0               lpe0    = 2.0804e-007     xj      = 1.4e-007      
++ngate   = 5.45e+020       ndep    = 5e+016          phin    = 0.114         
++vfb     = -1            
+**************************************************************
+*               CAPACITANCE PARAMETERS 
+**************************************************************
++cgso    = 0               cgdo    = 0               cgbo    = 0             
++cgdl    = 0               cgsl    = 0               cf      = 0             
++vfbcv   = -1              acde    = 0.796           moin    = 5    
++noff    = 3               voffcv  = 0.85          
+**************************************************************
+*               TEMPERATURE PARAMETERS 
+**************************************************************
++kt1     = 0.08            kt1l    = 0                         
+ends pvar18ll_ckt
+//*          
+//*************************************
+//* 65nm 2.5V MOS Varactor 
+//*************************************
+//* Area=Wr*Lr*Nf
+subckt pvar25ll_ckt (1 2)
+//* mos varactor scalable model parameters
+parameters lr=20u wr=20u nf=1 ar=lr*wr*nf 
+main (2 1 2 2) pvar25ll l=lr w=wr*nf ad=0 as=0 pd=0 ps=0
+//* MOS Varactor Model
+model  pvar25ll  bsim4 type = p
+**************************************************************
+*               MODEL FLAG PARAMETERS 
+**************************************************************
++lmin    = 1e-006          lmax    = 0.0001          wmin    = 1e-006        
++wmax    = 0.0001          version = 4.5             binunit = 2             
++paramchk= 1               mobmod  = 0               capmod  = 2             
++igcmod  = 0               igbmod  = 0               geomod  = 0             
++diomod  = 1               rdsmod  = 0               rbodymod= 0             
++rgeomod = 0               rgatemod= 0               permod  = 1             
++acnqsmod= 0               trnqsmod= 0               tempmod = 0             
+**************************************************************
+*               GENERAL MODEL PARAMETERS 
+**************************************************************
++tnom    = 25              toxe    = (6.02e-009+dtoxe_pvar25ll)  toxp    = (6.02e-009+dtoxp_pvar25ll)
++toxm    = 6.02e-009       dtox    = 0               epsrox  = 3.9           
++xpart   = 0             
+**************************************************************
+*               DC PARAMETERS 
+**************************************************************
++vth0    = (-1.747+dvth_pvar25ll)  k1      = 0.759           k2      = 0             
++k3      = 0               lpe0    = 3.2e-008        xj      = 1.45e-007     
++ngate   = 1.2e+021        ndep    = 5e+016          phin    = 0.034         
++vfb     = -1            
+**************************************************************
+*               CAPACITANCE PARAMETERS 
+**************************************************************
++cgso    = 0               cgdo    = 0               cgbo    = 0             
++cgdl    = 0               cgsl    = 0               cf      = 0             
++vfbcv   = -1              acde    = 0.782           moin    = 5             
++noff    = 2.9999606       voffcv  = 2.0202136     
+**************************************************************
+*               TEMPERATURE PARAMETERS 
+**************************************************************
++kt1     = 0.08            kt1l    = 0   
+ends pvar25ll_ckt    
+ 

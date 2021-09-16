@@ -1,0 +1,192 @@
+*
+* No part of this file can be released without the consent of SMIC.
+*
+******************************************************************************************
+*            SMIC 0.18um EEPROM 2P6M 1.8V/3.3V/5V/15.5V SPICE model(for ELDO only)       *
+******************************************************************************************
+*
+* Release Version    : 1.7
+*
+* Release Date       : 1/13/2010
+*
+* Simulation tool    : Mentor Graphics's Eldo v6.3_1.1 
+*
+* Model type         :
+*   Vertical PNP BJT : ELDO Level 1
+* 
+* Model name         :
+*   Vertical PNP BJT :
+*        *-------------------------------------------------------------* 
+*        | P+/NWELL/PSUB BJT type        |      1.8V    |    3.3V      |
+*        |=============================================================|
+*        | Emitter Area: 10*10 um^2      | pnp18a100e2r | pnp33a100e2r |
+*        |-------------------------------------------------------------|  
+*        | Emitter Area: 5*5 um^2        |  pnp18a25e2r |  pnp33a25e2r |
+*        |-------------------------------------------------------------| 
+*        | Emitter Area: 2*2 um^2        |  pnp18a4e2r  |  pnp33a4e2r  |
+*        *-------------------------------------------------------------* 
+*
+*   Valid temperature range is from -40C to 125C
+* 
+***********************************************************************************
+*      1.8V Vertical P+/NWELL/PSUB BIPOLAR MODEL (Emitter Area=10x10um^2)         *
+***********************************************************************************
+.model pnp18a100e2r pnp           
++LEVEL    = 1 
++OPTACM=1
++VAF      = 553.93              IKF      = 2.80E-03            
++ISE      = 9.00E-17            NE       = 1.503               BR       = 9.00E-03            
++NR       = 0.993               VAR      = 25.0                IKR      = 2.09E-03            
++ISC      = 5.50E-17            NC       = 1.5                 RB       = 60.398              
++IRB      = 8.00E-04            RBM      = 2.0                 RE       = 1.1166              
++RC       = 17.11               XTI      = 3.0                 EG       = 1.16                
++TREF     = 25.0                NKF      = 0.5                 TLEV     = 0                   
++TLEVC    = 1                   XTB      = 0.00                TBF1     = 0.0049              
++TBR1     = -0.0001             TIKF1    = -0.004              TNF1     = -5E-5
++TNE1     = 0.0001              CTC      = 2E-3                CTE      = 8.76E-4             
++ VJE = 0.817  MJE = 0.415
++VJC      = 0.494               MJC      = 0.317               
++TVJC     = 2.53E-3             TVJE     = 1.53E-3                               
++IS       = '8.78E-18+DIS_PNP18A100E2R'
++BF       = '3.224+DBF_PNP18A100E2R'
++NF       = '0.9925+DNF_PNP18A100E2R'
++CJC      = '6.91E-14+DCJC_PNP18A100E2R'
++CJE      = '1.11E-13+DCJE_PNP18A100E2R'    
+*
+***********************************************************************************
+*       1.8V Vertical P+/NWELL/PSUB BIPOLAR MODEL (Emitter Area=5x5um^2)          *
+***********************************************************************************
+*
+.model pnp18a25e2r pnp
++LEVEL    = 1
++OPTACM=1
++VAF      = 553.93              IKF      = 1.30E-03            
++ISE      = 4.80E-17            NE       = 1.5                 BR       = 3.75E-03            
++NR       = 1.0                 VAR      = 25.0                IKR      = 2.09E-03            
++ISC      = 5.50E-17            NC       = 1.5                 RB       = 70.398              
++IRB      = 8.00E-04            RBM      = 2.0                 RE       = 1.9166              
++RC       = 17.11               XTI      = 3.0                 EG       = 1.16                
++TREF     = 25.0                NKF      = 0.5                 TLEV     = 0                   
++TLEVC    = 1                   XTB      = 0.00                TBF1     = 0.0051              
++TBR1     = 0.001               TIKF1    = -0.004              TNF1     = -0.0001             
++CTC      = 2E-3                CTE      = 8.76E-4             TVJC     = 2.53E-3
++ VJE = 0.817  MJE = 0.415
++VJC      = 0.494               MJC      = 0.317               
++TVJE     = 1.53E-3                               
++IS       = '3.10E-18+DIS_PNP18A25E2R'  
++BF       = '3.244+DBF_PNP18A25E2R'                
++NF       = '1.0+DNF_PNP18A25E2R'
++CJC      = '3.95E-14+DCJC_PNP18A25E2R' 
++CJE      = '2.87E-14+DCJE_PNP18A25E2R' 
+*
+***********************************************************************************
+*       1.8V Vertical P+/NWELL/PSUB BIPOLAR MODEL (Emitter Area=2x2um^2)          *
+***********************************************************************************
+*
+.model pnp18a4e2r pnp
++LEVEL    = 1
++OPTACM=1
++VAF      = 551.93              IKF      = 4.50E-04            
++ISE      = 1.10E-17            NE       = 1.47                BR       = 1.07E-03            
++NR       = 1.0                 VAR      = 19.0                IKR      = 1.79E-03            
++ISC      = 2.00E-17            NC       = 1.5                 RB       = 122.98               
++IRB      = 1.50E-03            RBM      = 2.0                 RE       = 2.16                
++RC       = 17.11               XTI      = 3.0                 EG       = 1.16                
++TREF     = 25.0                NKF      = 0.5                 TLEV     = 0                   
++TLEVC    = 1                   XTB      = 0.00                TBF1     = 0.00563              
++TBR1     = 0.0012              TIKF1    = -0.0043             TNF1     = 1.0E-4
++CTC      = 2E-3                CTE      = 8.76E-4             TVJC     = 2.53E-3                 
++ VJE = 0.817  MJE = 0.415
++VJC      = 0.494               MJC      = 0.317               
++TVJE     = 1.53E-3             
++IS       = '6.50E-19+DIS_PNP18A4E2R'  
++BF       = '3.4502+DBF_PNP18A4E2R'                
++NF       = '1.0+DNF_PNP18A4E2R'
++CJC      = '2.53E-14+DCJC_PNP18A4E2R' 
++CJE      = '5.07E-15+DCJE_PNP18A4E2R' 
+*
+***********************************************************************************
+*      3.3V Vertical P+/NWELL/PSUB BIPOLAR MODEL (Emitter Area=10x10um^2)         *
+***********************************************************************************
+*
+.model pnp33a100e2r pnp           
++LEVEL    = 1 
++OPTACM=1
++VAF      = 232                 IKF      = 1.07E-03            
++ISE      = 1.2069E-16          NE       = 1.5                 BR       = 0.0118            
++NR       = 1.013               VAR      = 26.0889             IKR      = 0.0392            
++ISC      = 9.50E-19            NC       = 1.5                 RB       = 45.0              
++IRB      = 1.7332E-03          RBM      = 2                   RE       = 2              
++RC       = 1.0                 XTI      = 3.0                 EG       = 1.16                
++TREF     = 25.0                NKF      = 0.5                 TLEV     = 0                   
++TLEVC    = 1                   XTB      = 0.00                TBF1     = 5.80E-03              
++TBR1     = -3.40E-04           TBF2     = 4.744E-06           TBR2     = 8.92E-06
++TIKF1    = -4.928E-03          TNF1     = -3.573E-05          TNR1     = 0.00
++TRB1     = 2.262E-03           TRB2     = -6.00E-06           
++CTC      = 1.38E-03            CTE      = 1.15E-3             
++ VJE = 0.727  MJE = 0.352
++VJC      = 0.453               MJC      = 0.236               
++TVJC     = 2.54E-03            TVJE     = 2.12E-3                               
++IS       = '2.55E-17+DIS_PNP33A100E2R'
++BF       = '4.945+DBF_PNP33A100E2R'
++NF       = '1.0125+DNF_PNP33A100E2R'
++CJC      = '7.9424E-14+DCJC_PNP33A100E2R'
++CJE      = '5.67E-14+DCJE_PNP33A100E2R'    
+*
+***********************************************************************************
+*       3.3V Vertical P+/NWELL/PSUB BIPOLAR MODEL (Emitter Area=5x5um^2)          *
+***********************************************************************************
+*
+.model pnp33a25e2r pnp
++LEVEL    = 1 
++OPTACM=1
++VAF      = 242                 IKF      = 4.4645E-04            
++ISE      = 5.00E-17            NE       = 1.5                 BR       = 4.875E-03            
++NR       = 1.013               VAR      = 21.132              IKR      = 0.0392            
++ISC      = 9.50E-19            NC       = 1.5                 RB       = 116.25              
++IRB      = 3.295E-04           RBM      = 2                   RE       = 2.00             
++RC       = 1.0                 XTI      = 3.0                 EG       = 1.16                
++TREF     = 25.0                NKF      = 0.5                 TLEV     = 0                   
++TLEVC    = 1                   XTB      = 0.00                TBF1     = 6.20E-03              
++TBR1     = -1.70e-4            TBF2     = 1.47E-06            TBR2     = 8.1E-06
++TIKF1    = -2.541E-03          TNF1     = -4.77E-05           TNR1     = -2.00E-05
++TRB1     = 1.235E-03           TRB2     = -6.00E-06           
++CTC      = 1.38E-03            CTE      = 1.15E-3             
++ VJE = 0.727  MJE = 0.352
++VJC      = 0.453               MJC      = 0.236               
++TVJC     = 2.54E-03            TVJE     = 2.12E-3                               
++IS       = '8.31E-18+DIS_PNP33A25E2R'
++BF       = '5.16+DBF_PNP33A25E2R'
++NF       = '1.013+DNF_PNP33A25E2R'
++CJC      = '4.6519E-14+DCJC_PNP33A25E2R'
++CJE      = '1.49E-14+DCJE_PNP33A25E2R'    
+*
+***********************************************************************************
+*       3.3V Vertical P+/NWELL/PSUB BIPOLAR MODEL (Emitter Area=2x2um^2)          *
+***********************************************************************************
+*
+.model pnp33a4e2r pnp
++LEVEL    = 1 
++OPTACM=1
++VAF      = 242                 IKF      = 2.10E-04            
++ISE      = 9.40E-18            NE       = 1.5                 BR       = 1.614E-03            
++NR       = 1.0148              VAR      = 15.6457             IKR      = 0.0036            
++ISC      = 2.53e-16            NC       = 1.5                 RB       = 171.6             
++IRB      = 4.767E-04           RBM      = 2                   RE       = 2              
++RC       = 1.0                 XTI      = 3.0                 EG       = 1.16                
++TREF     = 25.0                NKF      = 0.5                 TLEV     = 0                   
++TLEVC    = 1                   XTB      = 0.00                TBF1     = 7.20E-03              
++TBR1     = 0.00                TBF2     = 1.00e-05            TBR2     = 8.10E-06
++TIKF1    = -6.40E-03           TIKF2    = 2.35E-05            TNF1     = -5.385E-05           
++TNF2     = -4.00E-07           TRB1     = 5.75E-04            TRB2     = 1.0228E-05          
++CTC      = 1.38E-03            CTE      = 1.15E-3             
++ VJE = 0.727  MJE = 0.352
++VJC      = 0.453               MJC      = 0.236               
++TVJC     = 2.54E-03            TVJE     = 2.12E-03                               
++IS       = '1.98E-18+DIS_PNP33A4E2R'
++BF       = '5.1228+DBF_PNP33A4E2R'
++NF       = '1.014+DNF_PNP33A4E2R'
++CJC      = '3.0304E-14+DCJC_PNP33A4E2R'
++CJE      = '2.732E-15+DCJE_PNP33A4E2R'    
+*
+

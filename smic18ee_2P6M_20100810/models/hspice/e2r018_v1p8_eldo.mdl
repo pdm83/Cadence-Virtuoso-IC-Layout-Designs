@@ -1,0 +1,1218 @@
+* 
+* No part of this file can be released without the consent of SMIC.
+*
+******************************************************************************************
+*            SMIC 0.18um EEPROM 2P6M 1.8V/3.3V/5V/15.5V SPICE MODEL(for ELDO only)     *
+******************************************************************************************
+*
+* Release Version    : 1.7
+*
+* Release Date       : 1/13/2010
+*
+* Simulation tool    : Mentor Graphics's Eldo v6.6_1.1
+*
+* Model type         :
+*   MOSFET           : ELDO Level 53(BSIM3v3.24 for 1.8V MOSFET, BSIM3v3.2 for other MOSFET)
+*   Junction Diode   : ELDO Level 3
+* Model Name         :
+*
+*   MOSFET           :
+*        *--------------------------------------* 
+*        |   MOSFET type      |  1.8V/3.3V/HV   | 
+*        |======================================|
+*        |   1.8V NMOS        |     N18E2R      |
+*        *--------------------------------------* 
+*        |   1.8V PMOS        |     P18E2R      |
+*        *--------------------------------------* 
+*        |   1.8V Native NMOS |     NZ18E2R     |
+*        *--------------------------------------* 
+*        |   3.3V MV NMOS     |     N33E2R      |   
+*        *--------------------------------------*
+*        |   3.3V MV PMOS     |     P33E2R      |
+*        *--------------------------------------* 
+*        |   5V HV NMOS       |     N50E2R      | 
+*        *--------------------------------------* 
+*        |   5V HV PMOS       |     P50E2R      | 
+*        *--------------------------------------* 
+*        |   5V HV ZMOS       |     NZ50E2R     | 
+*        *--------------------------------------* 
+*        |   15.5V HV NMOS    |     N155E2R     | 
+*        *--------------------------------------* 
+*        |   15.5V HV ZMOS    |     NZ155E2R    | 
+*        *--------------------------------------* 
+*        |   15.5V HV PMOS    |     P155E2R     | 
+*        *--------------------------------------* 
+*
+*       Valid temperature range is from -40C to 125C 
+*
+*   Junction Diode:
+*        *--------------------------------------------------------------------*
+*        |Junction Diode type |   1.8V    |   3.3V    |     5.0V/15.5V HV     |
+*        |====================================================================|
+*        |      N+/PWELL      | ndio18e2r |     na    |         na            |
+*        *--------------------------------------------------------------------*
+*        |      N+/TPWELL     |     na    | ndio33e2r |         na            |
+*        *--------------------------------------------------------------------*
+*        |      N+/PSUB       |     na    |     na    | ndio50e2r| ndio155e2r |
+*        *--------------------------------------------------------------------*
+*        |      NZ+/PSUB      |     na    |     na    |nzdio50e2r|nzdio155e2r |
+*        *--------------------------------------------------------------------*
+*        |      P+/NWELL      | pdio18e2r |     na    |         na            |
+*        *--------------------------------------------------------------------*
+*        |      P+/DNWELL     |     na    | pdio33e2r | pdio50e2r | pdio155e2r|
+*        *--------------------------------------------------------------------*
+*        |     NWELL/PSUB     |                   nwdioe2r                    |
+*        *--------------------------------------------------------------------*
+*        |     DNWELL/PSUB    |                   dnwdioe2r                   |
+*        *--------------------------------------------------------------------*
+*
+*      Valid temperature range is from -40C to 125C
+* 
+***********************************************************************************
+*                              1.8V CORE NMOS MODEL                               *
+***********************************************************************************
+.model N18E2R nmos
++LEVEL    = 53                  OPTACM   = 1
+*
+* GENERAL PARAMETERS
+*
++CALCACM  = 1
++LMIN     = 1.5E-7              LMAX     = 1.0E-5              WMIN     = 1.9E-7              
++WMAX     = 1.0E-4              TNOM     = 25.0                VERSION  = 3.24                 
++TOX      = '3.87E-09+DTOX_N18E2R' TOXM     = 3.87E-09            XJ       = 1.6000000E-07       
++NCH      = 3.8694000E+17       LLN      = 1.1205959           LWN      = 0.9200000           
++WLN      = 1.0599999           WWN      = 0.8768474           LINT     = 1.5757085E-08       
++LL       = 2.6352781E-16       LW       = -2.2625584E-16      LWL      = -2.0576711E-22      
++WINT     = -1.4450482E-09      WL       = -2.3664573E-16      WW       = -3.6409690E-14      
++WWL      = -4.0000000E-21      MOBMOD   = 1                   BINUNIT  = 2                   
++XL       = '1.8E-8+DXL_N18E2R'    XW       = '0.00+DXW_N18E2R'      DWG      = -5.9600000E-09      
++DWB      = 4.5000000E-09         
+* DIODE PARAMETERS
++ACM      = 12                  LDIF     = 7.00E-08            HDIF     = 2.00E-07            
++RSH      = 7.08                RD       = 0                   RS       = 0                   
++RSC      = 1.7                 RDC      = 1.7                 
+*
+* THRESHOLD VOLTAGE PARAMETERS
+*
++VTH0     = '0.39+DVTH_N18E2R'     WVTH0    = -2.9709472E-08      PVTH0    = '5.0000000E-16+DPVTH0_N18E2R'       
++K1       = 0.6801043           WK1      = -2.4896840E-08      PK1      = 1.3000000E-15       
++K2       = -4.9977830E-02      K3       = 10.0000000          DVT0     = 1.3000000           
++DVT1     = 0.5771635           DVT2     = -0.1717554          DVT0W    = 0.00                
++DVT1W    = 0.00                DVT2W    = 0.00                NLX      = 7.5451030E-08       
++W0       = 5.5820150E-07       K3B      = -3.0000000                 
+*
+* MOBILITY PARAMETERS
+*
++VSAT     = 8.2500000E+04       PVSAT    = -8.3000000E-10      UA       = -1.0300000E-09      
++LUA      = 7.7349790E-19       PUA      = -1.0000000E-24      UB       = 2.3666682E-18       
++UC       = 1.2000000E-10       PUC      = 1.5000000E-24       RDSW     = 55.5497200          
++PRWB     = -0.2400000          PRWG     = 0.4000000           WR       = 1.0000000           
++U0       = 3.4000000E-02       LU0      = 2.3057663E-11       WU0      = -3.1009695E-09      
++A0       = 0.8300000           KETA     = -3.0000000E-03      LKETA    = -1.7000000E-09      
++A1       = 0.00                A2       = 0.9900000           AGS      = 0.3200000           
++B0       = 6.0000000E-08       B1       = 0.00                
+*
+* SUBTHRESHOLD CURRENT PARAMETERS
+*
++VOFF     = -0.1030000          LVOFF    = -3.3000000E-09      NFACTOR  = 1.2500000           
++LNFACTOR = 4.5000000E-08       CIT      = 0.00                CDSC     = 0.00                
++CDSCB    = 0.00                CDSCD    = 1.0000000E-04       ETA0     = 2.8000001E-02       
++ETAB     = -2.7000001E-02      DSUB     = 0.4000000           
+*
+* ROUT PARAMETERS
+*
++PCLM     = 1.2000000           PPCLM    = 2.9999999E-15       PDIBLC1  = 2.5000000E-02       
++PDIBLC2  = 3.8000000E-03       PPDIBLC2 = 2.7000001E-16       PDIBLCB  = 0.00                
++DROUT    = 0.5600000           PSCBE1   = 3.4500000E+08       PSCBE2   = 1.0000000E-06       
++PVAG     = 0.00                DELTA    = 1.0000000E-02       ALPHA0   = 1.7753978E-08       
++ALPHA1   = 0.1764000           LALPHA1  = 7.6250000E-09       BETA0    = 11.1683940  
+*
+* TEMPERATURE EFFECTS PARAMETERS
+*
++KT1      = -0.2572866          KT2      = -4.0000000E-02      AT       = 3.7000000E+04       
++PAT      = -7.5000000E-10      UTE      = -1.5500000          UA1      = 1.7600000E-09       
++LUA1     = 6.0000000E-18       WUA1     = -1.1000000E-16      PUA1     = -5.0000000E-25      
++UB1      = -2.4000000E-18      UC1      = -1.0000000E-10      LUC1     = 1.6999999E-17       
++PUC1     = -3.0000000E-24      KT1L     = -1.0000000E-09      PRT      = -55.0000000       
+*
+* NOISE PARAMETERS
+*
++NOIMOD   = 2                   NOIA     = 8.2282E+19            NOIB     = 1.3327E+04    
++NOIC     = -2.4937E-14         EM       = 1.7767E+07            EF       = 8.1800E-01 
+*
+* CAPACITANCE PARAMETERS
+*
++CJ       = '9.68E-04+DCJ_N18E2R'     MJ       = 0.346                PB       = 0.7                   
++CJSW     = '7.95E-11+DCJSW_N18E2R'   MJSW     = 0.538                PBSW     = 1                 
++CJSWG    = '4.18E-10+DCJSWG_N18E2R'  MJSWG    = 0.538                PBSWG    = 1
++TCJ      = 8.42E-04               TCJSW    = 6.69E-04             TCJSWG   = 6.69E-04      
++TPB      = 1.47E-03               TPBSW    = 8.68E-04             TPBSWG   = 8.68E-04
++JS       = 3.52E-07               JSW      = 3.0E-13              NJ       = 1.0392 
++XTI      = 3.25                   NQSMOD   = 0                    ELM      = 5
++CGDO     = '3.70E-10+DCGDO_N18E2R'   CGSO     = '3.70E-10+DCGSO_N18E2R' TLEVC    = 1            
++CAPMOD   = 3                      XPART    = 1                    CF       = 0.00                   
++ACDE     = 0.64                   MOIN     = 24                   NOFF     = 1.2025                 
++DLC      = 8.5E-09                DWC      = 4.5E-08
+*
+***********************************************************************************
+*                              1.8V CORE PMOS MODEL                               *
+***********************************************************************************
+*
+.model P18E2R pmos
++LEVEL    = 53                   OPTACM   = 1                 
+*
+* GENERAL PARAMETERS
+*
++CALCACM  = 1
++LMIN     = 1.5E-7              LMAX     = 1.0E-5              WMIN     = 1.9E-7              
++WMAX     = 1.0E-4              TNOM     = 25.0                VERSION  = 3.24                 
++TOX      = '3.74E-09+DTOX_P18E2R' TOXM     = 3.74E-09            XJ       = 1.7000001E-07       
++NCH      = 5.5000000E+17       LLN      = 1.0000000           LWN      = 1.0000000           
++WLN      = 1.0450000           WWN      = 1.0000000           LINT     = 1.0000000E-08       
++LL       = 3.4000000E-15       LW       = -3.3600000E-16      LWL      = 0.00                
++WINT     = 8.0000010E-09       WL       = 3.5904200E-15       WW       = -1.8999999E-15      
++WWL      = -1.1205000E-21      MOBMOD   = 1                   BINUNIT  = 2                   
++XL       = '-5.7E-09+DXL_P18E2R'  XW       = '0.00+DXW_P18E2R'      DWG      = -1.7361970E-08          
++DWB      = 2.0000000E-08       
+* DIODE PARAMETERS
++ACM      = 12                  LDIF     = 7.00E-08            HDIF     = 2.00E-07            
++RSH      = 7.83                RD       = 0                   RS       = 0                   
++RSC      = 1.5                 RDC      = 1.5                 
+*
+* THRESHOLD VOLTAGE PARAMETERS
+*
++VTH0     = '-0.402+DVTH_P18E2R'   WVTH0    = 1.2675420E-08       PVTH0    = '-1.2500000E-15+DPVTH0_P18E2R'      
++K1       = 0.5872390           LK1      = 3.5532110E-09       K2       = 7.0906860E-03       
++K3       = 2.5999999           DVT0     = 0.7194931           DVT1     = 0.2467441           
++DVT2     = 7.8089680E-02       DVT0W    = 0.00                DVT1W    = 8.0000000E+05       
++DVT2W    = 0.00                NLX      = 9.0000000E-08       W0       = 0.00                
++K3B      = 2.4862001           NGATE    = 3.1680000E+20               
+*
+* MOBILITY PARAMETERS
+*
++VSAT     = 1.0000000E+05       UA       = 2.8500000E-10       LUA      = 5.5000000E-18       
++PUA      = -2.0000000E-24      UB       = 1.0000000E-18       UC       = -4.7700000E-11      
++WUC      = 3.1668000E-17       PUC      = -2.5000000E-24      RDSW     = 4.5500000E+02       
++PRWB     = -0.4000000          PRWG     = 0.00                WR       = 1.0000000           
++U0       = 8.6610000E-03       LU0      = -2.0000000E-11      WU0      = 1.3815350E-10       
++A0       = 1.0000000           KETA     = 2.0000000E-02       LKETA    = -8.5000000E-09      
++PKETA    = 5.0000000E-16       A1       = 0.00                A2       = 0.9900000           
++AGS      = 0.2000000           B0       = 6.3000000E-08       B1       = 0.00                
+*
+* SUBTHRESHOLD CURRENT PARAMETERS
+*
++VOFF     = -9.5000000E-02      LVOFF    = -1.7000000E-09      WVOFF    = -1.9999999E-09      
++PVOFF    = -1.0000000E-16      NFACTOR  = 0.9000000           LNFACTOR = 1.0000000E-07       
++PNFACTOR = -5.0000000E-15      CIT      = 0.00                CDSC     = 0.00                
++CDSCB    = 0.00                CDSCD    = 0.00                ETA0     = 4.0000000E-02       
++ETAB     = -2.5000000E-02      DSUB     = 0.5600000           
+*
+* ROUT PARAMETERS
+*
++PCLM     = 0.7000000           PDIBLC1  = 0.00                PDIBLC2  = 7.0000000E-03       
++PDIBLCB  = 0.00                DROUT    = 0.5600000           PSCBE1   = 4.0000000E+08       
++PSCBE2   = 1.0000000E-07       PVAG     = 0.00                DELTA    = 1.0000000E-02       
++ALPHA0   = 7.0000000E-08       ALPHA1   = 7.0491700           BETA0    = 22.8424000          
++LBETA0   = -7.5000000E-08         
+*
+* TEMPERATURE EFFECTS PARAMETERS
+*
++KT1      = -0.2577007          KT2      = -3.0979900E-02      LKT2     = -3.0000000E-09      
++PKT2     = -6.5331750E-16      AT       = 1.0000000E+04       PAT      = -1.0000000E-09      
++UTE      = -1.2703574          UA1      = 5.3866300E-10       WUA1     = 1.1000000E-16       
++PUA1     = -2.3700001E-24      UB1      = -2.0709999E-18      UC1      = 2.0609721E-11       
++KT1L     = -8.0000000E-09      PRT      = 90.0000000          
+*
+* NOISE PARAMETERS
+*
++NOIMOD   = 2                   NOIA     = 3.3617E+18            NOIB     = 1.9536E+05    
++NOIC     = 5.2658E-12          EM       = 6.2548E+07            EF       = 1.1307E+00 
+*
+* CAPACITANCE PARAMETERS
+*
++CJ       = '0.00107+DCJ_P18E2R'       MJ       = 0.415                 PB       = 0.817                   
++CJSW     = '9.89E-11+DCJSW_P18E2R'    MJSW     = 0.489                 PBSW     = 1               
++CJSWG    = '5.07E-10+DCJSWG_P18E2R'   MJSWG    = 0.489                 PBSWG    = 1       
++TPB      = 0.00153                 TPBSW    = 0.00117               TPBSWG   = 0.00117
++TCJ      = 0.000876                TCJSW    = 0.000745              TCJSWG   = 0.000745
++JS       = 1.66E-07                JSW      = 1.2E-13               NJ       = 1.0384   
++XTI      = 4.5                     NQSMOD   = 0                     ELM      = 5 
++CGDO     = '4.20E-10+DCGDO_P18E2R'    CGSO     = '4.20E-10+DCGSO_P18E2R'  TLEVC    = 1            
++CAPMOD   = 3                       XPART    = 1                     CF       = 0.00                                    
++ACDE     = 0.8505076               MOIN     = 14.95341              NOFF     = 1.431824              
++DLC      = -1.5E-09
+*  
+***********************************************************************************
+*                              1.8V Native NMOS MODEL                               *
+***********************************************************************************
+.MODEL NZ18E2R NMOS
++ LEVEL           = 53             LMIN            = 5.E-07         LMAX            = 1.E-05         
++ WMIN            = 2.2E-07        WMAX            = 1.E-04         VERSION         = 3.2            
++ MOBMOD          = 1              CAPMOD          = 3              NQSMOD          = 0              
++ BINUNIT         = 2              TNOM            = 25             XL              = '2.5E-08+DXL_NZ18E2R' 
++ XW              = '0+DXW_NZ18E2R' TOX             = '4.3E-09+DTOX_NZ18E2R' TOXM            = 4.3E-09        
++ WINT            = 1.1213E-08     LINT            = 4.754E-08      HDIF            = 2.E-07         
++ LDIF            = 7.E-08         LL              = 0              WL              = 0              
++ LLN             = 1              WLN             = 1.0436         LW              = 0              
++ WW              = 0              LWN             = 1.01           WWN             = 1              
++ LWL             = 2.68E-22       WWL             = 1.1674E-21     CGSO            = '2.66E-10+DCGSO_NZ18E2R' 
++ CGDO            = '2.66E-10+DCGDO_NZ18E2R' XPART           = 1              VTH0            = '-0.014963+DVTH0_NZ18E2R' 
++ K1              = 0.037605       K2              = -5.E-03        K3              = 45.06          
++ K3B             = -14.24         NLX             = 9.1336E-06     DVT0            = 1.5378         
++ DVT1            = 0.60438        DVT2            = 0.046115       DVT0W           = 1.2039         
++ DVT1W           = 6.948500E+06   DVT2W           = -0.1           NCH             = 4.444E+16      
++ VOFF            = -0.10606       NFACTOR         = 1.2634         CDSC            = 0.030155       
++ CDSCB           = -8.8E-04       CDSCD           = 0              CIT             = -4.9E-04       
++ U0              = 0.056135       UA              = 1.0668E-09     UB              = 2.1704E-18     
++ UC              = 1.24E-13       XJ              = 1.6E-07        W0              = 2.5E-06        
++ PRWG            = -4.E-04        PRWB            = 0              WR              = 1.1074         
++ RDSW            = 222.97         PRDSW           = -2.1343E-11    A0              = 5.8515         
++ PA0             = -2.06E-12      AGS             = 1.467          A1              = 0.18053        
++ A2              = 0.45264        B0              = 2.5655E-06     B1              = 6.4902E-07     
++ VSAT            = '1.16530E+05+DVSAT_NZ18E2R'    KETA            = -7.6704E-03    DWG             = 4.8328E-10     
++ DWB             = 2.1336E-09     ALPHA0          = 9.38E-09       BETA0           = 5.891517       
++ PCLM            = 0.754          PDIBLC1         = 0.2223         PDIBLC2         = 0.17516        
++ PDIBLCB         = 0.056643       DROUT           = 0.56           PVAG            = 2.0513         
++ PSCBE1          = 5.9189E+08     PSCBE2          = 6.E-06         DELTA           = 0.01           
++ ETA0            = 0.1144         ETAB            = -8.004E-03     DSUB            = 0.3495         
++ ELM             = 5              ALPHA1          = 0.010386       CF              = 0              
++ ACDE            = 0.64           MOIN            = 24             NOFF            = 2.5            
++ KT1             = -0.18004       KT1L            = -7.4E-15       KT2             = 1.13E-03       
++ UTE             = -1.4067        WUTE            = -1.1E-09       UA1             = 4.013E-09      
++ WUA1            = -2.07364E-16   PUA1            = 6.E-23         UB1             = -7.4902E-18    
++ WUB1            = -1.77082E-26   UC1             = -6.6E-11       PRT             = 21.4           
++ AT              = 2.4052E+04     RSH             = 7.08           JS              = 5.2E-06        
++ JSW             = 1.E-13         CJ              = '1.45E-04+DCJ_NZ18E2R' MJ              = 0.334          
++ CJSW            = '1.63E-10+DCJSW_NZ18E2R' MJSW            = 0.0689         PB              = 0.538          
++ RD              = 0              RDC             = 1              RS              = 0              
++ RSC             = 1              XTI             = 3              ACM             = 12             
++ CALCACM         = 1              N               = 1.0651         PBSW            = 0.563          
++ CJSWG           = '6.6E-11+DCJSWG_NZ18E2R' PBSWG           = 0.563          MJSWG           = 0.0689         
++ CTA             = 2.46E-03       CTP             = 1.22E-03       TCJSWG          = 1.22E-03       
++ PTA             = 2.77E-03       PTP             = 2.04E-03       TPBSWG          = 2.04E-03          
++ OPTACM   = 1
+*
+************************************************************************************
+*                        3.3V MV NMOS MODEL                                        * 
+************************************************************************************
+*
+.model  n33e2r nmos  
++level = 53                  OPTACM   = 1
+**************************************************************
+*               MODEL FLAG PARAMETERS 
+**************************************************************
++lmin    = 6e-007          lmax    = 1e-005          wmin    = 6e-007        
++wmax    = 0.0001          version = 3.2             mobmod  = 1             
++capmod  = 3               nqsmod  = 0               binunit = 2             
++binflag = 0             
+**************************************************************
+*               GENERAL MODEL PARAMETERS 
+**************************************************************
++tref    = 25              xl      = '0+dxl_n33e2r'               xw      = '0+dxw_n33e2r'             
++lmlt    = 1               wmlt    = 1                            
++tox     = '8.35e-009+dtox_n33e2r'       toxm    = 8.35e-009       wint    = 9.5e-008      
++lint    = 0                           
++hdif    = 4.1e-007        ldif    = 9e-008          ll      = 6.2215e-014   
++wl      = 0               lln     = 0.95            wln     = 1.05          
++lw      = 0               ww      = -3.2701e-015    lwn     = 1             
++wwn     = 1.1             lwl     = 0               wwl     = -1.025e-021   
++cgbo    = 0               cgso    = '2.55e-10+dcgso_n33e2r'        cgdo    = '2.55e-10+dcgdo_n33e2r'            
++xpart   = 1             
+**************************************************************
+*               EXPERT PARAMETERS 
+**************************************************************
++vth0    = '0.838+dvth_n33e2r'           pvth0   = 4.19e-015       k1      = 0.93          
++lk1     = -5.3658e-008    pk1     = -1.5e-014       k2      = -0.02         
++k3      = -2.8099         k3b     = 0.5             nlx     = 0             
++dvt0    = 1.8             dvt1    = 0.49            dvt2    = 0.077         
++dvt0w   = 0               dvt1w   = 0               dvt2w   = 0             
++nch     = 1e+017          voff    = -0.18           nfactor = 1.8           
++cdsc    = 0               cdscb   = 0               cdscd   = 0             
++cit     = 0               u0      = 0.03            lu0     = 7.2953e-009   
++pu0     = 1.0052e-014     ua      = -1.1762e-009    lua     = 3.8e-017      
++wua     = 1.5632e-017     pua     = 1.07e-021       ub      = 2.1721e-018   
++wub     = -1.5264e-025    pub     = -1.2922e-030    uc      = 6.557e-011    
++wuc     = -1.82e-017      puc     = -3.5401e-023    ngate   = 1e+022        
++xj      = 2.000001e-007   w0      = 0               prwg    = 0.00049208    
++prwb    = 0.023437        wr      = 1               rdsw    = 860           
++a0      = 0.6484          wa0     = 3.73e-008       ags     = 0.054918      
++a1      = 0               a2      = 0.99            b0      = 0             
++b1      = 0               vsat    = '94000+DVSAT_N33E2R'           wvsat   = 0.014252      
++pvsat   = -1.9392e-010    keta    = 0.022134        lketa   = -2.5233e-008  
++pketa   = 6.0424e-015     dwg     = 1.59e-009       dwb     = 0             
++alpha0  = 1.2787287e-006  lalpha0 = -5.8102566e-015  beta0   = 26.773083     
++pclm    = 0.7             pdiblc1 = 0.05            pdiblc2 = 0.00014       
++pdiblcb = -0.1513672      drout   = 0.56            pvag    = 0             
++pscbe1  = 5e+008          pscbe2  = 1e-006          delta   = 0.01          
++eta0    = 1.2334e-005     etab    = 0               dsub    = 0.56          
++elm     = 5               alpha1  = 3.0535065     
+**************************************************************
+*               CAPACITANCE PARAMETERS 
+**************************************************************
++clc     = 1e-007          cle     = 0.6             cf      = 0             
++ckappa  = 0.6             cgdl    = 0               cgsl    = 0             
++vfbcv   = 0               acde    = 0.4             moin    = 10            
++noff    = 1.5             voffcv  = -0.1          
+**************************************************************
+*               TEMPERATURE PARAMETERS 
+**************************************************************
++kt1     = -0.38           wkt1    = -4.0297e-009    pkt1    = 1.0221e-014   
++kt1l    = -2.5504e-009    kt2     = -0.0337249      lkt2    = 3.5293e-009   
++ute     = -1.1147124      ua1     = 1.58076e-009    lua1    = 7.957e-017    
++wua1    = -1.815e-016     pua1    = 1.4136e-022     ub1     = -1.1798384e-018
++lub1    = -2.677e-027     uc1     = 2.5784633e-011  luc1    = 8.08e-018     
++wuc1    = -4.0118e-017    prt     = 0               at      = 38000         
++wat     = 0.04            pat     = -1.9609e-008  
+**************************************************************
+*               NOISE PARAMETERS 
+**************************************************************
+**************************************************************
+*               DIODE PARAMETERS 
+**************************************************************
++rsh     = 7.08           js      = 1.6626E-07      jsw     = 5.19e-13     
++cj      = '9.94E-04+dcj_n33e2r'       mj      = 0.324           cjsw    = '5.25E-11+dcjsw_n33e2r'  
++mjsw    = 0.113          pb      = 0.724           rd      = 0             
++rdc     = 1.7            rs      = 0               rsc     = 1.7             
++xti     = 3              acm     = 12              calcacm = 1             
++nj      = 0.982          pbsw    = 0.892           cjswg   = '3.23E-10+dcjswg_n33e2r' 
++pbswg   = 0.784          mjswg   = 0.404           tcj     = 8.75E-04       
++tcjsw   = 6.47E-04       tcjswg  = 1.13E-03        tpb     = 1.52E-03        
++tpbsw   = 1.01E-03       tpbswg  = 1.86E-03
+*              
+************************************************************************************
+*                        3.3V MV PMOS MODEL                                        * 
+************************************************************************************
+*
+.model  p33e2r  pmos  
++level = 53                  OPTACM   = 1
+**************************************************************
+*               MODEL FLAG PARAMETERS 
+**************************************************************
++lmin    = 8e-007          lmax    = 1e-005          wmin    = 6e-007        
++wmax    = 0.0001          version = 3.2             mobmod  = 1             
++capmod  = 3               nqsmod  = 0               binunit = 2             
++binflag = 0             
+**************************************************************
+*               GENERAL MODEL PARAMETERS 
+**************************************************************
++tref    = 25              xl      = '0+dxl_p33e2r'               xw      = '0+dxw_p33e2r'             
++lmlt    = 1               wmlt    = 1                          
++tox     = '8.6e-009+dtox_p33e2r'      
++toxm    = 8.6e-009        wint    = 1.001e-007      lint    = 1.2540499e-007
++hdif    = 4.1e-007      
++ldif    = 9e-008          ll      = -4.47e-014      wl      = 0             
++lln     = 0.99843         wln     = 0.95524         lw      = 0             
++ww      = -2.873e-014     lwn     = 1               wwn     = 1.0326        
++lwl     = 0               wwl     = -2.8607e-021    cgbo    = 0       
++cgso    = '1.35e-010+dcgso_p33e2r'       cgdo    = '1.35e-010+dcgdo_p33e2r'       xpart   = 1             
+**************************************************************
+*               EXPERT PARAMETERS 
+**************************************************************
++vth0    = '-1.0021+dvth_p33e2r'         lvth0   = 3.3775e-008     pvth0   = -3.8906e-015  
++k1      = 0.2913          k2      = -0.0045265      pk2     = 4.1e-016      
++k3      = 0.385           k3b     = -0.9699         nlx     = 0             
++dvt0    = 10              dvt1    = 0.74378         dvt2    = 0.022         
++dvt0w   = 0.131           dvt1w   = 0               dvt2w   = 0             
++nch     = 1e+017          voff    = -0.10196        nfactor = 0.5           
++pnfactor= -1.745e-013     cdsc    = 0               cdscb   = 0             
++cdscd   = 0               cit     = 0               lcit    = 6e-010        
++u0      = 0.025702        wu0     = -5.4842e-009    ua      = 2.4043e-009   
++wua     = -9.7015e-016    pua     = 2.1474e-022     ub      = 1.485e-018    
++pub     = -1.8768e-031    uc      = -2.1216e-011    puc     = -3.06e-024    
++ngate   = 9e+021          xj      = 2e-007          w0      = 0             
++prwg    = -0.10032        prwb    = 0.05557         wr      = 1             
++rdsw    = 2245            a0      = 0.6             pa0     = -2.25e-014    
++ags     = 0.525           a1      = 0               a2      = 0.99          
++b0      = 1.1e-006        b1      = 2.1000001e-006  vsat    = '135000+DVSAT_P33E2R'        
++pvsat   = 5.6e-008        keta    = -0.016000001    lketa   = 5.5e-009      
++wketa   = 3e-009          pketa   = -5e-016         dwg     = -1e-009       
++dwb     = 1.746924e-009   alpha0  = 1e-010          lalpha0 = 1.6e-017      
++beta0   = 15              pclm    = 1.318157        pdiblc1 = 0             
++pdiblc2 = 0.0005          wpdiblc2= 2e-010          pdiblcb = -0.0008       
++drout   = 0.56            pvag    = 0               pscbe1  = 8e+008        
++pscbe2  = 1.4e-006        delta   = 0.01            eta0    = 0.75          
++peta0   = -5e-014         etab    = 0               dsub    = 0.56          
++elm     = 5               alpha1  = 0             
+**************************************************************
+*               CAPACITANCE PARAMETERS 
+**************************************************************
++clc     = 1e-007          cle     = 0.6             cf      = 0             
++ckappa  = 0.6             cgdl    = 0               cgsl    = 0             
++vfbcv   = -0.0708         acde    = 0.41            moin    = 5             
++noff    = 2.8295          voffcv  = 0.010078      
+**************************************************************
+*               TEMPERATURE PARAMETERS 
+**************************************************************
++kt1     = -0.4334855      kt1l    = -3.4191e-008    kt2     = -0.019677751  
++ute     = -1.2428         ua1     = 2.9431719e-009  lua1    = 1.8722e-015   
++wua1    = -5.12e-016      pua1    = -1.16e-021      ub1     = -6.1147e-018  
++lub1    = -3.5457e-024    wub1    = 1.125e-024      pub1    = 2.246e-030    
++uc1     = -6.393686e-011  prt     = 0               at      = 10000         
+**************************************************************
+*               NOISE PARAMETERS 
+**************************************************************
+**************************************************************
+*               DIODE PARAMETERS 
+**************************************************************
++rsh     = 7.83           js      = 1.566E-07       jsw     = 3.32e-13     
++cj      = '5.38E-04+dcj_p33e2r'       mj      = 0.352           cjsw    = '7.25E-11+dcjsw_p33e2r' 
++mjsw    = 0.142          pb      = 0.727           rd      = 0             
++rdc     = 4              rs      = 0               rsc     = 4             
++xti     = 3              acm     = 12              calcacm = 1             
++nj      = 0.986          pbsw    = 0.412           cjswg   = '1.52E-10+dcjswg_p33e2r' 
++pbswg   = 0.336          mjswg   = 0.288           tcj     = 1.15E-03       
++tcjsw   = 1.02E-03       tcjswg  = 1.42E-03        tpb     = 1.72E-03        
++tpbsw   = 1.61E-03       tpbswg  = 1.15E-03
+*
+**************************************************************************
+*                                 5v HV NMOS model                       *
+**************************************************************************
+*
+.model N50E2R nmos
++LEVEL    = 53                  OPTACM   = 1                  
+*
+*MODEL FLAG PARAMETERS
+*
++lmin    = 1.4e-006        lmax    = 1e-005          wmin    = 6e-007
++wmax    = 0.0001          version = 3.2             mobmod  = 1
++capmod  = 3               nqsmod  = 0               binunit = 2
++binflag = 0
+*
+*GENERAL MODEL PARAMETERS
+*
++tref    = 25              xl      = '0+dxl_n50e2r'               xw      = '0+dxw_n50e2r'
++lmlt    = 1               wmlt    = 1               
++tox     = '2.75e-008+dtox_n50e2r'
++toxm    = 2.75e-008       wint    = 1.15e-007       lint    = 1.85e-007
++hdif    = 5e-007
++ldif    = 9e-008          ll      = 0               wl      = 0
++lln     = 1               wln     = 1               lw      = 0
++ww      = -5e-015         lwn     = 1               wwn     = 1.1391187
++lwl     = 0               wwl     = 0               cgbo    = 0
++cgso    = '4.21e-010+dcgso_n50e2r'       cgdo    = '4.21e-010+dcgdo_n50e2r'       xpart   = 1
+*
+*EXPERT PARAMETERS
+*
++vth0    = '0.713+dvth_n50e2r'           wvth0   = -5.3e-008       pvth0   = -1.8000001e-014
++k1      = 0.9465          k2      = -0.0986         lk2     = -6.5e-008
++wk2     = 4.7625e-008     pk2     = 1e-014          k3      = 4.3
++k3b     = 0.25            nlx     = 5.7e-008        dvt0    = 0
++dvt1    = 0               dvt2    = 0               dvt0w   = 0
++dvt1w   = 0               dvt2w   = 0               nch     = 5.97e+016
++voff    = -0.11           nfactor = 1.11            cdsc    = 0
++cdscb   = 1e-005          cdscd   = 0               cit     = 0
++u0      = 0.055           pu0     = 6e-015          ua      = 9e-010
++lua     = -3.3505e-016    pua     = 1e-021          ub      = 6.5024e-019
++lub     = 9.0597e-025     pub     = -2.1156e-030    uc      = 1.02e-012
++wuc     = 1e-017          puc     = -7.999999e-024  ngate   = 4.5e+021
++xj      = 3.0000001e-007  w0      = 2.45e-007       prwg    = 0
++prwb    = 0               wr      = 1               rdsw    = 720
++a0      = 0.57            wa0     = 7.5e-008        pa0     = -3.5e-013
++ags     = 0.08            lags    = 1e-007          wags    = 1.2e-008
++pags    = 4.628299e-014   a1      = 0               a2      = 1
++b0      = 2e-008          b1      = 0               vsat    = '98000+DVSAT_N50E2R'
++lvsat   = -0.0156         pvsat   = 6.396302e-009   keta    = -0.0085
++lketa   = 5.8e-009        wketa   = 6.535e-009      pketa   = -1.8e-014
++dwg     = 7.1741e-010     dwb     = 5.06e-009       alpha0  = 3.315e-007
++beta0   = 29.821          pclm    = 1.95            pdiblc1 = 0.192279
++pdiblc2 = 0.0046          pdiblcb = -0.029999999    drout   = 0.56
++pvag    = 0               pscbe1  = 1.6343656e+008  pscbe2  = 1.123695e-006
++delta   = 0.007           eta0    = 0.11            etab    = 0
++dsub    = 0.56            elm     = 5               alpha1  = 0.64984
+*
+*CAPACITANCE PARAMETERS
+*
++clc     = 1e-007          cle     = 0.6             cf      = 0
++ckappa  = 0.6             cgdl    = 0               cgsl    = 0
++vfbcv   = -1              acde    = 0.42            moin    = 19
++noff    = 1.6             voffcv  = -0.075
+*
+*TEMPERATURE PARAMETERS
+*
++kt1     = -0.448223       lkt1    = 1.8599999e-007  wkt1    = -1e-008
++pkt1    = 1.5366973e-014  kt1l    = -2.15e-007      kt2     = -0.04015683
++lkt2    = 1.0000002e-008  wkt2    = 3.38642e-008    pkt2    = -3.791951e-014
++ute     = -1.255          ua1     = 4.31e-009       lua1    = 6.799997e-016
++wua1    = -1.0559e-015    ub1     = -9.49695e-018   wub1    = 1.4e-024
++uc1     = 1.38999e-011    luc1    = 2.5999997e-017  wuc1    = -2.0695e-017
++puc1    = 2.2999999e-023  prt     = 0               at      = 17000
++wat     = 0.04            pat     = -3.4e-008
+*
+*NOISE PARAMETERS
+*
+*
+*DIODE PARAMETERS
+*
++rsh     = 7.08            js      = 1.7535e-06      jsw     = 1.55e-12
++cj      = '2.09e-04+dcj_n50e2r'        mj      = 0.583           cjsw    = '1.18e-10+dcjsw_n50e2r'
++mjsw    = 0.101           pb      = 0.619           rd      = 0
++rdc     = 0               rs      = 0               rsc     = 0
++xti     = 3               acm     = 12              calcacm = 1
++nj      = 1.013           pbsw    = 0.998           cjswg   = '1.94e-10+dcjswg_n50e2r'
++pbswg   = 0.791           mjswg   = 0.471           tcj     = 2.32e-03
++tcjsw   = 4.25e-04        tcjswg  = 1.61e-03        tpb     = 1.75e-03
++tpbsw   = 1.61e-03        tpbswg  = 2.61e-03
+*
+************************************************************************************               
+*                                5V HV ZMOS MODEL                                  * 
+************************************************************************************
+*
+.model nz50e2r nmos
++LEVEL    = 53                  OPTACM   = 1                  
+**************************************************************
+*               MODEL FLAG PARAMETERS 
+**************************************************************
++lmin    = 1.8e-006        lmax    = 1e-005          wmin    = 6e-007        
++wmax    = 1e-004          version = 3.2             mobmod  = 1             
++capmod  = 3               nqsmod  = 0               binunit = 2             
++binflag = 0             
+**************************************************************
+*               GENERAL MODEL PARAMETERS 
+**************************************************************
++tref    = 25              xl      = '0+dxl_nz50e2r'               xw      = '0+dxw_nz50e2r'             
++lmlt    = 1               wmlt    = 1                         
++tox     = '2.73e-008+dtox_nz50e2r'     
++toxm    = 2.73e-008       wint    = 1.032e-007      lint    = 2.2125e-007   
++hdif    = 5e-007        
++ldif    = 9e-008          ll      = 3.813e-014      wl      = 0             
++lln     = 1.0362          wln     = 1               lw      = 0             
++ww      = -5.3733e-016    lwn     = 1               wwn     = 1.3004        
++lwl     = 0               wwl     = 0               cgbo    = 0             
++cgso    = '5.53e-010+dcgso_nz50e2r'       cgdo    = '5.53e-010+dcgdo_nz50e2r'       xpart   = 1             
+**************************************************************
+*               EXPERT PARAMETERS 
+**************************************************************
++vth0    = '0.31147+dvth_nz50e2r'         lvth0   = -3.9726e-008    pvth0   = 3.07e-014     
++k1      = 0.34882         k2      = -0.051019       k3      = 1.946         
++k3b     = -9.9981         nlx     = 0               dvt0    = 0.83143       
++dvt1    = 0.41235         dvt2    = -0.0305         dvt0w   = 0             
++dvt1w   = 0               dvt2w   = 0               nch     = 4.7142e+016   
++voff    = -0.073261       nfactor = 0.64            cdsc    = 0             
++cdscb   = 0               cdscd   = 0               cit     = 0             
++u0      = 0.062265        ua      = 1.7247e-009     lua     = 3.9218e-016   
++wua     = 1.1032e-016     pua     = 1.461e-022      ub      = 1.5865e-019   
++lub     = -4.3905e-024    uc      = -1.953e-011     puc     = -2.18e-023    
++ngate   = 8.1579e+022     xj      = 3.0000001e-007  w0      = 1e-006        
++prwg    = -0.0003405154   prwb    = 0               wr      = 1             
++rdsw    = 1200            a0      = 0.65998         la0     = -2.522e-006   
++pa0     = 1.6026e-012     ags     = 0.28147         wags    = -1.5095e-007  
++a1      = 0               a2      = 1               b0      = 0             
++b1      = 0               vsat    = '113260+DVSAT_NZ50E2R'          lvsat   = -0.046604     
++pvsat   = 1.3943e-008     keta    = -0.0117         lketa   = 1.1826e-008   
++wketa   = 7.381e-009      pketa   = -4.8766e-015    dwg     = 0             
++dwb     = 4.8846e-009     alpha0  = 3.3539e-007     beta0   = 28.264        
++pclm    = 1.6928          pdiblc1 = 0.29888         pdiblc2 = 0.0028728     
++pdiblcb = 1.4e-011        drout   = 0.56            pvag    = 0             
++pscbe1  = 2.7059e+008     pscbe2  = 3.972e-008      delta   = 0.01          
++eta0    = 0.61122         etab    = -0.012563       dsub    = 0.56          
++elm     = 5               alpha1  = 0.1           
+**************************************************************
+*               CAPACITANCE PARAMETERS 
+**************************************************************
++clc     = 1e-007          cle     = 0.6             cf      = 0             
++ckappa  = 0.6             cgdl    = 0               cgsl    = 0             
++vfbcv   = -1              acde    = 0.4176          moin    = 7.5           
++noff    = 2.3287          voffcv  = -0.10163      
+**************************************************************
+*               TEMPERATURE PARAMETERS 
+**************************************************************
++kt1     = -0.39675        pkt1    = -5.6e-014       kt1l    = 6.321e-008    
++kt2     = -0.0121         ute     = -1.6372         ua1     = 1.1034e-009   
++wua1    = -1.482e-015     pua1    = 6.372e-022      ub1     = 2.5275e-018   
++uc1     = 8.3194e-013     prt     = 0               at      = 10899         
+**************************************************************
+*               NOISE PARAMETERS 
+**************************************************************
+**************************************************************
+*               DIODE PARAMETERS 
+**************************************************************
++rsh     = 7.08            js      = 1.9321E-06      jsw     = 1.32E-12        
++cj      = '1.29E-04+dcj_nz50e2r'        mj      = 0.37            cjsw    = '1.31E-10+dcjsw_nz50e2r'             
++mjsw    = 0.154           pb      = 0.553           rd      = 0             
++rdc     = 2.4             rs      = 0               rsc     = 2.4           
++xti     = 3               acm     = 12              calcacm = 1             
++nj      = 1.006           pbsw    = 0.597           cjswg   = '1.15E-10+dcjswg_nz50e2r'             
++pbswg   = 0.268           mjswg   = 0.396           tcj     = 2.11E-03       
++tcjsw   = 9.80E-04        tcjswg  = 3.72E-03        tpb     = 2.07E-03      
++tpbsw   = 2.12E-03        tpbswg  = 1.42E-03          
+*
+************************************************************************************
+*                              5V HV PMOS MODEL                                 * 
+************************************************************************************
+.model p50e2r pmos
++LEVEL    = 53                  OPTACM   = 1                 
+**************************************************************
+*               MODEL FLAG PARAMETERS 
+**************************************************************
++lmin    = 1e-006          lmax    = 1e-005          wmin    = 6e-007        
++wmax    = 1e-004          version = 3.2             mobmod  = 1             
++capmod  = 3               nqsmod  = 0               binunit = 2             
++binflag = 0             
+**************************************************************
+*               GENERAL MODEL PARAMETERS 
+**************************************************************
++tref    = 25              xl      = '0+dxl_p50e2r'               xw      = '0+dxw_p50e2r'             
++lmlt    = 1               wmlt    = 1               tox     = '2.76e-008+dtox_p50e2r'     
++toxm    = 2.76e-008       wint    = 1.4748e-007     lint    = 8.7e-008      
++hdif    = 5e-007        
++ldif    = 9e-008          ll      = -6.7639e-015    wl      = 0             
++lln     = 0.8945          wln     = 0.90128         lw      = 0             
++ww      = 1.1603e-015     lwn     = 1               wwn     = 1.008         
++lwl     = 0               wwl     = -1.3903e-019    cgbo    = 0             
++cgso    = '2.62e-010+dcgso_p50e2r'          cgdo    = '2.62e-010+dcgdo_p50e2r'          xpart   = 1             
+**************************************************************
+*               EXPERT PARAMETERS 
+**************************************************************
++vth0    = '-0.948+dvth_p50e2r'          lvth0   = 4.5336e-008     wvth0   = 3.8784e-008   
++pvth0   = 1.9759e-015     k1      = 0.54            pk1     = 6.5656e-015   
++k2      = 0.0707          k3      = 1.955           k3b     = -0.50391      
++nlx     = 0               dvt0    = 1.2             dvt1    = 0.66          
++dvt2    = -0.057          dvt0w   = 0.02516         dvt1w   = 1e-010        
++dvt2w   = 0               nch     = 4.2069e+016     voff    = -0.17         
++nfactor = 1               cdsc    = 0.0004          cdscb   = 8e-005        
++cdscd   = 0               cit     = 0.00019999999   u0      = 0.0263        
++wu0     = 6.722e-010      pu0     = -3.0732e-015    ua      = 4.4395e-009   
++wua     = -1.0327e-015    pua     = -3.1473e-022    ub      = 2.0794e-019   
++wub     = 6.0361e-025     uc      = -5.0558e-011    wuc     = -1.778e-017   
++puc     = -1.356e-023     ngate   = 9.1695e+021     xj      = 3.0000001e-007
++w0      = 0               prwg    = 0.003948819     prwb    = 0             
++wr      = 1               rdsw    = 1800            a0      = 1.0767        
++la0     = -7e-007         ags     = 0.097389        wags    = 1.6638e-008   
++a1      = 0               a2      = 0.99            b0      = 1.55e-007     
++b1      = 9.5e-010        vsat    = '98000+DVSAT_P50E2R'           lvsat   = -0.020413     
++pvsat   = 9.0041e-009     keta    = 0               lketa   = -6.75e-009    
++wketa   = 2.4445e-009     pketa   = 2.0314e-015     dwg     = 0             
++dwb     = 0               alpha0  = 4.4778e-008     beta0   = 32.636       
++pclm    = 1.6512          pdiblc1 = 0.00099718      pdiblc2 = 0.00065491    
++pdiblcb = -0.0958         drout   = 0.56            pvag    = 0             
++pscbe1  = 4.24e+008       pscbe2  = 1e-008          delta   = 0.01          
++eta0    = 0.1152          etab    = -0.0078         dsub    = 0.56          
++elm     = 5               alpha1  = 0.00624       
+**************************************************************
+*               CAPACITANCE PARAMETERS 
+**************************************************************
++clc     = 1e-007          cle     = 0.6             cf      = 0             
++ckappa  = 0.6             cgdl    = 0               cgsl    = 0             
++vfbcv   = -1              acde    = 0.73            moin    = 5.7           
++noff    = 1.3             voffcv  = 0             
+**************************************************************
+*               TEMPERATURE PARAMETERS 
+**************************************************************
++kt1     = -0.62           kt1l    = -1e-008         kt2     = -0.02         
++lkt2    = -5e-009         ute     = -1.7545201      lute    = 3.53941e-007  
++wute    = 1.072e-007      ua1     = -3.7e-009       lua1    = 3.298307e-015 
++wua1    = 8.025e-016      pua1    = -4.914e-022     ub1     = -2.3999999e-019
++uc1     = 1.0500001e-012  prt     = 0               at      = 184440        
++lat     = -0.176          wat     = -0.0015         pat     = -8.8e-009     
+**************************************************************
+*               NOISE PARAMETERS 
+**************************************************************
+**************************************************************
+*               DIODE PARAMETERS 
+**************************************************************
++rsh     = 7.83             js      = 2.0315E-07       jsw     = 3.14E-13        
++cj      = '5.06E-04+dcj_p50e2r'   cjsw    = '6.09E-11+dcjsw_p50e2r'  cjswg = '1.35E-10+dcjswg_p50e2r'              
++mj      = 0.325           mjsw    = 0.135           mjswg = 0.308             
++pb      = 0.689           pbsw    = 0.407           pbswg   = 0.62 
++rd      = 0               rdc     = 2.4             rs      = 0                              
++rsc     = 2.4             xti     = 3               acm     = 12                           
++calcacm = 1               nj      = 0.9934          tcj     = 1.15E-03   
++tcjsw   = 1.02E-03        tcjswg  = 1.55E-03        tpb     = 1.72E-03        
++tpbsw   = 1.76E-03        tpbswg  = 2.28E-03      
+**************************************************************************
+*                              15.5v HV NMOS model                       *
+**************************************************************************
+*
+.model N155E2R nmos
++LEVEL    = 53                  OPTACM   = 1                  
+*
+*MODEL FLAG PARAMETERS
+*
++lmin    = 1.4e-006        lmax    = 1e-005          wmin    = 6e-007
++wmax    = 0.0001          version = 3.2             mobmod  = 1
++capmod  = 3               nqsmod  = 0               binunit = 2
++binflag = 0
+*
+*GENERAL MODEL PARAMETERS
+*
++tref    = 25              xl      = '0+dxl_n155e2r'               xw      = '0+dxw_n155e2r'
++lmlt    = 1               wmlt    = 1               
++tox     = '2.75e-008+dtox_n155e2r'
++toxm    = 2.75e-008       wint    = 1.15e-007       lint    = 1.85e-007
++hdif    = 5e-007
++ldif    = 9e-008          ll      = 0               wl      = 0
++lln     = 1               wln     = 1               lw      = 0
++ww      = -5e-015         lwn     = 1               wwn     = 1.1391187
++lwl     = 0               wwl     = 0               cgbo    = 0
++cgso    = '4.21e-010+dcgso_n155e2r'       cgdo    = '4.21e-010+dcgdo_n155e2r'       xpart   = 1
+*
+*EXPERT PARAMETERS
+*
++vth0    = '0.713+dvth_n155e2r'           wvth0   = -5.3e-008       pvth0   = -1.8000001e-014
++k1      = 0.9465          k2      = -0.0986         lk2     = -6.5e-008
++wk2     = 4.7625e-008     pk2     = 1e-014          k3      = 4.3
++k3b     = 0.25            nlx     = 5.7e-008        dvt0    = 0
++dvt1    = 0               dvt2    = 0               dvt0w   = 0
++dvt1w   = 0               dvt2w   = 0               nch     = 5.97e+016
++voff    = -0.11           nfactor = 1.11            cdsc    = 0
++cdscb   = 1e-005          cdscd   = 0               cit     = 0
++u0      = 0.055           pu0     = 6e-015          ua      = 9e-010
++lua     = -3.3505e-016    pua     = 1e-021          ub      = 6.5024e-019
++lub     = 9.0597e-025     pub     = -2.1156e-030    uc      = 1.02e-012
++wuc     = 1e-017          puc     = -7.999999e-024  ngate   = 4.5e+021
++xj      = 3.0000001e-007  w0      = 2.45e-007       prwg    = 0
++prwb    = 0               wr      = 1               rdsw    = 720
++a0      = 0.57            wa0     = 7.5e-008        pa0     = -3.5e-013
++ags     = 0.08            lags    = 1e-007          wags    = 1.2e-008
++pags    = 4.628299e-014   a1      = 0               a2      = 1
++b0      = 2e-008          b1      = 0               vsat    = '98000+DVSAT_N155E2R'
++lvsat   = -0.0156         pvsat   = 6.396302e-009   keta    = -0.0085
++lketa   = 5.8e-009        wketa   = 6.535e-009      pketa   = -1.8e-014
++dwg     = 7.1741e-010     dwb     = 5.06e-009       alpha0  = 3.315e-007
++beta0   = 29.821          pclm    = 1.95            pdiblc1 = 0.192279
++pdiblc2 = 0.0046          pdiblcb = -0.029999999    drout   = 0.56
++pvag    = 0               pscbe1  = 1.6343656e+008  pscbe2  = 1.123695e-006
++delta   = 0.007           eta0    = 0.11            etab    = 0
++dsub    = 0.56            elm     = 5               alpha1  = 0.64984
+*
+*CAPACITANCE PARAMETERS
+*
++clc     = 1e-007          cle     = 0.6             cf      = 0
++ckappa  = 0.6             cgdl    = 0               cgsl    = 0
++vfbcv   = -1              acde    = 0.42            moin    = 19
++noff    = 1.6             voffcv  = -0.075
+*
+*TEMPERATURE PARAMETERS
+*
++kt1     = -0.448223       lkt1    = 1.8599999e-007  wkt1    = -1e-008
++pkt1    = 1.5366973e-014  kt1l    = -2.15e-007      kt2     = -0.04015683
++lkt2    = 1.0000002e-008  wkt2    = 3.38642e-008    pkt2    = -3.791951e-014
++ute     = -1.255          ua1     = 4.31e-009       lua1    = 6.799997e-016
++wua1    = -1.0559e-015    ub1     = -9.49695e-018   wub1    = 1.4e-024
++uc1     = 1.38999e-011    luc1    = 2.5999997e-017  wuc1    = -2.0695e-017
++puc1    = 2.2999999e-023  prt     = 0               at      = 17000
++wat     = 0.04            pat     = -3.4e-008
+*
+*NOISE PARAMETERS
+*
+*
+*DIODE PARAMETERS
+*
++rsh     = 7.08            js      = 1.7535e-06      jsw     = 1.55e-12
++cj      = '2.09e-04+dcj_n155e2r'        mj      = 0.583           cjsw    = '1.18e-10+dcjsw_n155e2r'
++mjsw    = 0.101           pb      = 0.619           rd      = 0
++rdc     = 0               rs      = 0               rsc     = 0
++xti     = 3               acm     = 12              calcacm = 1
++nj      = 1.013           pbsw    = 0.998           cjswg   = '1.94e-10+dcjswg_n155e2r'
++pbswg   = 0.791           mjswg   = 0.471           tcj     = 2.32e-03
++tcjsw   = 4.25e-04        tcjswg  = 1.61e-03        tpb     = 1.75e-03
++tpbsw   = 1.61e-03        tpbswg  = 2.61e-03
+*
+************************************************************************************               
+*                                15.5V HV ZMOS MODEL                               * 
+************************************************************************************
+*
+.model nz155e2r nmos
++LEVEL    = 53                  OPTACM   = 1                  
+**************************************************************
+*               MODEL FLAG PARAMETERS 
+**************************************************************
++lmin    = 1.8e-006        lmax    = 1e-005          wmin    = 6e-007        
++wmax    = 1e-004          version = 3.2             mobmod  = 1             
++capmod  = 3               nqsmod  = 0               binunit = 2             
++binflag = 0             
+**************************************************************
+*               GENERAL MODEL PARAMETERS 
+**************************************************************
++tref    = 25              xl      = '0+dxl_nz155e2r'               xw      = '0+dxw_nz155e2r'             
++lmlt    = 1               wmlt    = 1                         
++tox     = '2.73e-008+dtox_nz155e2r'     
++toxm    = 2.73e-008       wint    = 1.032e-007      lint    = 2.2125e-007   
++hdif    = 5e-007        
++ldif    = 9e-008          ll      = 3.813e-014      wl      = 0             
++lln     = 1.0362          wln     = 1               lw      = 0             
++ww      = -5.3733e-016    lwn     = 1               wwn     = 1.3004        
++lwl     = 0               wwl     = 0               cgbo    = 0             
++cgso    = '5.53e-010+dcgso_nz155e2r'       cgdo    = '5.53e-010+dcgdo_nz155e2r'       xpart   = 1             
+**************************************************************
+*               EXPERT PARAMETERS 
+**************************************************************
++vth0    = '0.31147+dvth_nz155e2r'         lvth0   = -3.9726e-008    pvth0   = 3.07e-014     
++k1      = 0.34882         k2      = -0.051019       k3      = 1.946         
++k3b     = -9.9981         nlx     = 0               dvt0    = 0.83143       
++dvt1    = 0.41235         dvt2    = -0.0305         dvt0w   = 0             
++dvt1w   = 0               dvt2w   = 0               nch     = 4.7142e+016   
++voff    = -0.073261       nfactor = 0.64            cdsc    = 0             
++cdscb   = 0               cdscd   = 0               cit     = 0             
++u0      = 0.062265        ua      = 1.7247e-009     lua     = 3.9218e-016   
++wua     = 1.1032e-016     pua     = 1.461e-022      ub      = 1.5865e-019   
++lub     = -4.3905e-024    uc      = -1.953e-011     puc     = -2.18e-023    
++ngate   = 8.1579e+022     xj      = 3.0000001e-007  w0      = 1e-006        
++prwg    = -0.0003405154   prwb    = 0               wr      = 1             
++rdsw    = 1200            a0      = 0.65998         la0     = -2.522e-006   
++pa0     = 1.6026e-012     ags     = 0.28147         wags    = -1.5095e-007  
++a1      = 0               a2      = 1               b0      = 0             
++b1      = 0               vsat    = '113260+DVSAT_NZ155E2R'          lvsat   = -0.046604     
++pvsat   = 1.3943e-008     keta    = -0.0117         lketa   = 1.1826e-008   
++wketa   = 7.381e-009      pketa   = -4.8766e-015    dwg     = 0             
++dwb     = 4.8846e-009     alpha0  = 3.3539e-007     beta0   = 28.264        
++pclm    = 1.6928          pdiblc1 = 0.29888         pdiblc2 = 0.0028728     
++pdiblcb = 1.4e-011        drout   = 0.56            pvag    = 0             
++pscbe1  = 2.7059e+008     pscbe2  = 3.972e-008      delta   = 0.01          
++eta0    = 0.61122         etab    = -0.012563       dsub    = 0.56          
++elm     = 5               alpha1  = 0.1           
+**************************************************************
+*               CAPACITANCE PARAMETERS 
+**************************************************************
++clc     = 1e-007          cle     = 0.6             cf      = 0             
++ckappa  = 0.6             cgdl    = 0               cgsl    = 0             
++vfbcv   = -1              acde    = 0.4176          moin    = 7.5           
++noff    = 2.3287          voffcv  = -0.10163      
+**************************************************************
+*               TEMPERATURE PARAMETERS 
+**************************************************************
++kt1     = -0.39675        pkt1    = -5.6e-014       kt1l    = 6.321e-008    
++kt2     = -0.0121         ute     = -1.6372         ua1     = 1.1034e-009   
++wua1    = -1.482e-015     pua1    = 6.372e-022      ub1     = 2.5275e-018   
++uc1     = 8.3194e-013     prt     = 0               at      = 10899         
+**************************************************************
+*               NOISE PARAMETERS 
+**************************************************************
+**************************************************************
+*               DIODE PARAMETERS 
+**************************************************************
++rsh     = 7.08            js      = 1.9321E-06      jsw     = 1.32E-12        
++cj      = '1.29E-04+dcj_nz155e2r'        mj      = 0.37            cjsw    = '1.31E-10+dcjsw_nz155e2r'             
++mjsw    = 0.154           pb      = 0.553           rd      = 0             
++rdc     = 2.4             rs      = 0               rsc     = 2.4           
++xti     = 3               acm     = 12              calcacm = 1             
++nj      = 1.006           pbsw    = 0.597           cjswg   = '1.15E-10+dcjswg_nz155e2r'             
++pbswg   = 0.268           mjswg   = 0.396           tcj     = 2.11E-03       
++tcjsw   = 9.80E-04        tcjswg  = 3.72E-03        tpb     = 2.07E-03      
++tpbsw   = 2.12E-03        tpbswg  = 1.42E-03          
+*
+*******************************************************************************************************               
+*                                         15.5V HV PMOS MODEL                                         * 
+*******************************************************************************************************
+.model  p155e2r  pmos  level = 53
++OPTACM   = 1
+*
+* MODEL FLAG PARAMETERS 
+*
++lmin    = 1e-006          lmax    = 1e-005          wmin    = 1.62e-006     
++wmax    = 0.0001          version = 3.2             mobmod  = 1             
++capmod  = 3               nqsmod  = 0               binunit = 2             
++paramchk= 1
+*
+* GENERAL MODEL PARAMETERS 
+*
++tref    = 25              xl      = '0+dxl_p155e2r'                 xw      = '0+dxw_p155e2r'             
++tox     = '2.73e-008+dtox_p155e2r'      toxm    = 2.73e-008         wint    = 0             
++lint    = 7.1e-008                     
++hdif    = 8.7e-007        ldif    = 9e-008          ll      = 0             
++wl      = 6.9e-014        lln     = 1               wln     = 1             
++lw      = 0               ww      = -2.24e-014      lwn     = 1             
++wwn     = 1.1             lwl     = 0               wwl     = 0             
++cgbo    = 0               cgso    = '1.98e-010+dcgso_p155e2r'       cgdo    = '1.98e-010+dcgdo_p155e2r'     
++xpart   = 1             
+*
+* EXPERT PARAMETERS 
+*
++vth0    = '-0.923++dvth_p155e2r' pvth0   = 2.4e-014 k1      = 0.42          
++lk1     = -2.78e-008      wk1     = 6.2e-008        pk1     = -2.2e-014     
++k2      = 0.098           k3      = -11             k3b     = -1.2          
++nlx     = 0               dvt0    = 0.382           dvt1    = 0.1           
++dvt2    = -0.01           dvt0w   = 0               dvt1w   = 5300000       
++dvt2w   = -0.032          nch     = 8.5e+016        voff    = -0.08         
++nfactor = 0.7             cdsc    = 0.00024         cdscb   = 0             
++cdscd   = 0               cit     = 0               u0      = 0.0244        
++lu0     = -7.7e-010       ua      = 3.493e-009      wua     = 7.4e-015      
++ub      = 1e-019          lub     = -2.57e-024      wub     = -1.5e-023     
++pub     = 8e-030          uc      = -6e-011         luc     = -1.7e-016     
++wuc     = -1.4e-016       puc     = -1e-022         xj      = 3e-007        
++w0      = 2.5e-006        prwg    = 0               prwb    = 0             
++wr      = 1               rdsw    = 8820            a0      = 1.61          
++wa0     = 1.5e-007        pa0     = -1.1e-012       ags     = 0.11          
++a1      = 0               a2      = 1               b0      = 0             
++b1      = 0               vsat    = '114500+DVSAT_P155E2R'          keta    = 0             
++dwg     = 0               dwb     = 0               alpha0  = 6e-009        
++beta0   = 14.7            pclm    = 1.8             lpclm   = -2e-007       
++ppclm   = -5e-013         pdiblc1 = 0.1             pdiblc2 = 0.0004        
++pdiblcb = 0               drout   = 0.56            pvag    = 0             
++pscbe1  = 7.24e+008       pscbe2  = 1e-005          delta   = 0.01          
++eta0    = 0.08            etab    = -0.02           dsub    = 0.56          
++elm     = 5               alpha1  = 0.009           lalpha1 = -1.11e-008
+*
+* CAPACITANCE PARAMETERS 
+*
++cf      = 0               acde    = 0.6             moin    = 5.5           
++noff    = 3               voffcv  = -0.085        
+*
+* TEMPERATURE PARAMETERS 
+*
++kt1     = -0.62           kt1l    = -4e-008         kt2     = -0.028        
++lkt2    = 2e-009          ute     = -1.1            wute    = -8e-007       
++ua1     = 4.31e-009       wua1    = -9e-015         ub1     = -1.3e-017     
++lub1    = 1e-023          uc1     = -5.6e-011       luc1    = 2.7e-016      
++puc1    = -3e-022         prt     = 0               at      = 13000         
+*
+* NOISE PARAMETERS 
+*
+*
+* DIODE PARAMETERS 
+*
++rsh     = 7.83             js      = 2.13e-007       jsw     = 3.41e-013             
++cj      = '5.06e-004+dcj_p155e2r' mj      = 0.324   cjsw    = '5.82e-011+dcjsw_p155e2r'        
++mjsw    = 0.158           pb      = 0.682           rd      = 0             
++rdc     = 0               rs      = 0               rsc     = 0             
++xti     = 3               acm     = 12              calcacm = 1             
++nj      = 0.995           pbsw    = 0.705           cjswg   = '1.01e-010+dcjswg_p155e2r'             
++pbswg   = 0.778           mjswg   = 0.392           tcj     = 1.18e-003             
++tcjsw   = 8.08e-004       tcjswg  = 1.11e-003       tpb     = 1.84e-003             
++tpbsw   = 1.06e-003       tpbswg  = 1.86e-003
+*
+***********************************************************************************
+*                            1.8V N+/PWELL DIODE MODEL                            *
+***********************************************************************************
+*
+.model NDIO18E2R d
++OPTACM=1
++LEVEL = 1  SCALEV=3                   JS       = 3.52E-07            JSW      = 1E-15            
++N        = 1.0233              RS       = 8.89E-09            IK       = 1.52E+05            
++IKR      = 2.78E+05            BV       = 11.0                IBV      = 277.78              
++TRS      = 1.51E-03            EG       = 1.16                TREF     = 25.0                
++XTI      = 3.0                 CJ       = 0.000968            MJ       = 0.346               
++PB       = 0.7                 CJSW     = 7.95E-11            MJSW     = 0.538               
++PHP      = 1                   CTA      = 0.000842            CTP      = 0.000669            
++TPB      = 0.00147             TPHP     = 0.000868            TLEV     = 1
++TLEVC    = 1                   AREA     = 3.60E-09            PJ       = 2.4E-04
++FC       = 0                   FCS      = 0 
+*                           
+***********************************************************************************
+*                            1.8V P+/NWELL DIODE MODEL                            *
+***********************************************************************************
+*                      
+.model PDIO18E2R d
++OPTACM=1
++LEVEL = 1  SCALEV=3                  JS       = 1.66E-07            JSW      = 1E-15             
++N        = 1.0135              RS       = 8.77E-09            IK       = 4.03E+05            
++IKR      = 2.78E+05            BV       = 11.0                IBV      = 277.78              
++TRS      = 1.78E-03            EG       = 1.16                TREF     = 25.0                
++XTI      = 3.0                 CJ       = 0.00107             MJ       = 0.415               
++PB       = 0.817               CJSW     = 9.89E-11            MJSW     = 0.489               
++PHP      = 0.95                CTA      = 0.000876            CTP      = 0.000745            
++TPB      = 0.00153             TPHP     = 0.00117             TLEV     = 1
++TLEVC    = 1                   AREA     = 3.60E-09            PJ       = 2.4E-04
++FC       = 0                   FCS      = 0   
+*
+***********************************************************************************
+*                            3.3V N+/TPWELL DIODE MODEL                           *
+***********************************************************************************
+*
+.model ndio33e2r d 
++OPTACM=1
++LEVEL = 1  SCALEV=3                  JS       = 1.6626E-07                 
++JSW      = 4.22E-14                                                 
++N        = 0.982                                                      
++RS       = 1.09E-08            IK       = 7.2824E+04                              
++IKR      = 2.78E+05            BV       = 10.57               IBV      = 277.78   
++TRS      = 5.59E-04            EG       = 1.16                TREF     = 25.0     
++XTI      = 3.0                 TLEV     = 1                   TLEVC    = 1        
++CJ       = 9.94E-04                                                  
++CJSW     = 5.25E-11                                                
++MJ       = 0.324               PB       = 0.724                                   
++MJSW     = 0.113               PHP      = 0.892                                   
++CTA      = 8.75E-04            CTP      = 6.47E-04            TPB      = 1.52E-03 
++TPHP     = 1.01E-03            FC       = 0                   FCS      = 0        
++AREA     = 3.6e-9              PJ       = 2.4e-4                                  
+* 
+***********************************************************************************
+*                            3.3V P+/DNWELL DIODE MODEL                           *
+***********************************************************************************
+*
+.model pdio33e2r d 
++OPTACM=1
++LEVEL = 1  SCALEV=3                   JS       = 1.566E-07                  
++JSW      = 5.16E-14                                                 
++N        = 0.986                                                      
++RS       = 1.0245E-08          IK       = 1.161E+05                               
++IKR      = 2.78E+05            BV       = 15.82               IBV      = 277.78   
++TRS      = 7.582E-04           EG       = 1.16                TREF     = 25.0     
++XTI      = 3.0                 TLEV     = 1                   TLEVC    = 1        
++CJ       = 5.38E-04                                                  
++CJSW     = 7.25E-11                                                
++MJ       = 0.352               PB       = 0.727                                    
++MJSW     = 0.142               PHP      = 0.412                                    
++CTA      = 1.15E-03            CTP      = 1.02E-03            TPB      = 1.72E-03   
++TPHP     = 1.61E-03            FC       = 0                   FCS      = 0         
++AREA     = 3.6e-9              PJ       = 2.4e-4                                    
+*
+***********************************************************************************
+*                            5.0V N+/PSUB DIODE MODEL                             *
+***********************************************************************************
+*
+.model ndio50e2r d 
++OPTACM=1
++LEVEL = 1  SCALEV=3                   JS       = 1.7535E-06                 
++JSW      = 1.6809E-13                                               
++N        = 1.013                                                      
++RS       = 1.1846E-08          IK       = 2.7046E+04                              
++IKR      = 2.78E+05            BV       = 18.37               IBV      = 277.78   
++TRS      = 5.95E-04            EG       = 1.16                TREF     = 25.0     
++XTI      = 3.0                 TLEV     = 1                   TLEVC    = 1        
++CJ       = 2.09E-04                                                  
++CJSW     = 1.18E-10                                               
++MJ       = 0.583               PB       = 0.619                                   
++MJSW     = 0.101               PHP      = 0.998                                   
++CTA      = 2.32E-03            CTP      = 4.25E-04            TPB      = 1.75E-03  
++TPHP     = 1.61E-03            FC       = 0                   FCS      = 0        
++AREA     = 3.6e-9              PJ       = 2.4e-4                                  
+*
+***********************************************************************************
+*                            5.0V NZ+/PSUB DIODE MODEL                            *
+***********************************************************************************
+*
+.model nzdio50e2r d  
++OPTACM=1
++LEVEL = 1  SCALEV=3                   JS       = 1.9321E-06                
++JSW      = 2.04E-13                                                
++N        = 1.006                                                     
++RS       = 1.1405E-08          IK       = 1.137E+04                               
++IKR      = 2.78E+05            BV       = 19.65               IBV      = 277.78  
++TRS      = 1.002E-03           EG       = 1.16                TREF     = 25.0     
++XTI      = 3.0                 TLEV     = 1                   TLEVC    = 1        
++CJ       = 1.29E-04                                                 
++CJSW     = 1.31E-10                                                
++MJ       = 0.37                PB       = 0.553                                    
++MJSW     = 0.154               PHP      = 0.597                                   
++CTA      = 2.11E-03            CTP      = 9.80E-04            TPB      = 2.07E-03   
++TPHP     = 2.12E-03            FC       = 0                   FCS      = 0         
++AREA     = 3.6e-9              PJ       = 2.4e-4                                   
+*    
+***********************************************************************************
+*                            5.0V P+/DNWELL DIODE MODEL                           *
+***********************************************************************************
+*
+.model pdio50e2r d 
++OPTACM=1
++LEVEL = 1  SCALEV=3                JS       = 2.0315E-07                  
++JSW      = 8.11E-14                                                 
++N        = 0.9934                                                     
++RS       = 1.0625E-08          IK       = 1.49E+05                                
++IKR      = 2.78E+05            BV       = 16.625              IBV      = 277.78   
++TRS      = 1.115E-03           EG       = 1.16                TREF     = 25.0      
++XTI      = 3.0                 TLEV     = 1                   TLEVC    = 1         
++CJ       = 5.06E-04                                                  
++CJSW     = 6.09E-11                                                
++MJ       = 0.325               PB       = 0.689                                      
++MJSW     = 0.135               PHP      = 0.407                                   
++CTA      = 1.15E-03            CTP      = 1.02E-03            TPB      = 1.72E-03  
++TPHP     = 1.76E-03            FC       = 0                   FCS      = 0        
++AREA     = 3.6e-9              PJ       = 2.4e-4                                  
+*
+***********************************************************************************
+*                            15.5V N+/PSUB DIODE MODEL                            *
+***********************************************************************************
+*
+.model ndio155e2r d 
++OPTACM=1
++LEVEL = 1  SCALEV=3                  JS       = 1.7535E-06                 
++JSW      = 1.6809E-13                                               
++N        = 1.013                                                      
++RS       = 1.1846E-08          IK       = 2.7046E+04                              
++IKR      = 2.78E+05            BV       = 18.37               IBV      = 277.78   
++TRS      = 5.95E-04            EG       = 1.16                TREF     = 25.0     
++XTI      = 3.0                 TLEV     = 1                   TLEVC    = 1        
++CJ       = 2.09E-04                                                  
++CJSW     = 1.18E-10                                               
++MJ       = 0.583               PB       = 0.619                                   
++MJSW     = 0.101               PHP      = 0.998                                   
++CTA      = 2.32E-03            CTP      = 4.25E-04            TPB      = 1.75E-03  
++TPHP     = 1.61E-03            FC       = 0                   FCS      = 0        
++AREA     = 3.6e-9              PJ       = 2.4e-4                                  
+*
+***********************************************************************************
+*                            15.5V NZ+/PSUB DIODE MODEL                           *
+***********************************************************************************
+*
+.model nzdio155e2r d  
++OPTACM=1
++LEVEL = 1  SCALEV=3                 JS       = 1.9321E-06                
++JSW      = 2.04E-13                                                
++N        = 1.006                                                     
++RS       = 1.1405E-08          IK       = 1.137E+04                               
++IKR      = 2.78E+05            BV       = 19.65               IBV      = 277.78  
++TRS      = 1.002E-03           EG       = 1.16                TREF     = 25.0     
++XTI      = 3.0                 TLEV     = 1                   TLEVC    = 1        
++CJ       = 1.29E-04                                                 
++CJSW     = 1.31E-10                                                
++MJ       = 0.37                PB       = 0.553                                    
++MJSW     = 0.154               PHP      = 0.597                                   
++CTA      = 2.11E-03            CTP      = 9.80E-04            TPB      = 2.07E-03   
++TPHP     = 2.12E-03            FC       = 0                   FCS      = 0         
++AREA     = 3.6e-9              PJ       = 2.4e-4                                   
+*    
+***********************************************************************************
+*                            15.5V P+/DNWELL DIODE MODEL                           *
+***********************************************************************************
+*
+.model pdio155e2r d  
++OPTACM=1
++LEVEL = 1  SCALEV=3                  JS       = 2.13E-07                  
++JSW      = 1.15E-13                                                
++N        = 0.995                                                     
++RS       = 2.6754E-08          IK       = 3.37E+04                                
++IKR      = 2.78E+05            BV       = 17.86               IBV      = 277.78   
++TRS      = 8.94E-04            EG       = 1.16                TREF     = 25.0     
++XTI      = 3.0                 TLEV     = 1                   TLEVC    = 1        
++CJ       = 5.06E-04                                                 
++CJSW     = 5.82E-11                                               
++MJ       = 0.324               PB       = 0.682                                   
++MJSW     = 0.158               PHP      = 0.705                                   
++CTA      = 1.18E-03            CTP      = 8.08E-04            TPB      = 1.84E-03     
++TPHP     = 1.06E-03            FC       = 0                   FCS      = 0         
++AREA     = 3.6e-9              PJ       = 2.4e-4                                   
+*
+***********************************************************************************
+*                              NWELL/PSUB DIODE MODEL                             *
+***********************************************************************************           
+*
+.model nwdioe2r d 
++OPTACM=1
++LEVEL = 1  SCALEV=3                 JS       = 1.42E-06                       
++JSW      = 1.00E-15                                                           
++N        = 1.0128                                                        
++RS       = 2.44E-08            IK       = 1.1E+04                                
++IKR      = 1.04E+05            BV       = 15.0                IBV      = 104.2        
++TRS      = 9.47E-04            EG       = 1.16                TREF     = 25.0      
++XTI      = 3.0                 TLEV     = 1                   TLEVC    = 1         
++CJ       = 0.000145                                                    
++CJSW     = 5E-10                                                     
++MJ       = 0.317               PB       = 0.494                                   
++MJSW     = 0.383               PHP      = 0.9                                      
++CTA      = 0.002               CTP      = 0.00121             TPB      = 0.00187    
++TPHP     = 0.00192             FC       = 0                   FCS      = 0         
++AREA     = 9.60E-09            PJ       = 4.0E-04                                
+*
+
+***********************************************************************************
+*                              DNWELL/PSUB DIODE MODEL                             *
+***********************************************************************************           
+*
+.model dnwdioe2r d 
++OPTACM=1
++LEVEL = 1  SCALEV=3                 JS       = 1.83E-06                       
++JSW      = 1.00E-15                                                           
++N        = 0.993                                                        
++RS       = 1.38E-08            IK       = 6.93E+03                                
++IKR      = 2.78E+05            BV       = 19.035              IBV      = 277.78        
++TRS      = 4.30E-3             EG       = 1.16                TREF     = 25.0      
++XTI      = 3.0                 TLEV     = 1                   TLEVC    = 1         
++CJ       = 0.000147                                                    
++CJSW     = 6.53E-10                                                     
++MJ       = 0.236               PB       = 0.453                                   
++MJSW     = 0.366               PHP      = 0.669                                      
++CTA      = 1.38E-3             CTP      = 0.00155             TPB      = 0.00174    
++TPHP     = 0.00186             FC       = 0                   FCS      = 0         
++AREA     = 3.6E-09             PJ       = 2.4E-04                                
+*

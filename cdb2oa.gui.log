@@ -1,0 +1,26 @@
+********************************************************************************
+Program:	@(#)$CDS: cdb2oa version 6.1.7-64b 03/02/2016 18:55 (sjfnl119) $
+		sub-version  IC6.1.7-64b.500.2 
+Started at:	Mar 23 14:06:26 2021
+Hierarchy:	/opt/Cadence/IC617
+User Name:	lyjslay
+Host Name:	lyjslay
+Options:	-cdslibpath /home/lyjslay/ClassDemo/smic18ee_2P6M_20100810/ -lib 
+          smic18ee -log cdb2oa.gui.log -appendlog -mapundefinedpingroups 
+          strong 
+Directory:	/home/lyjslay/ClassDemo
+Log File:	/home/lyjslay/ClassDemo/cdb2oa.gui.log
+
+	Copyright (C) 2001-2005 Cadence Design Systems, Inc. All rights reserved  worldwide
+********************************************************************************
+
+
+
+********************************************************************************
+Finished at:   Mar 23 14:06:36 2021
+
+86 cells and 611 cellviews were translated from library 'smic18ee' in 9.9s.
+
+********************************************************************************
+
+

@@ -1,0 +1,3873 @@
+;;#####################################################################
+;;
+;; (@)# SMIC ASSURA( Version ASSURA410 ) LVS COMMAND FILE
+;;
+;; (@)# FOR SMIC 0.18UM EEPROM 2P6M(2P5M,2P4M,2P3M,2P2M) 1.8V/3.3V/5.0V/15.5V PROCESS
+;;
+;;#######################################################################
+
+;DISCLAIMER
+
+;SMIC hereby provides the quality information to you but makes no claims,
+;promises or guarantees about the accuracy, completeness, or adequacy of
+;the information herein. The information contained herein is provided on
+;an "AS IS" basis without any warranty, and SMIC assumes no obligation to
+;provide support of any kind or otherwise maintain the information.
+;SMIC disclaims any representation that the information does not infringe
+;any intellectual property rights or proprietary rights of any third parties.
+;SMIC makes no other warranty, whether express, implied or statutory as to
+;any matter whatsoever, including but not limited to the accuracy or sufficiency
+;of any information or the merchantability and fitness for a particular purpose.
+;Neither SMIC nor any of its representatives shall be liable for any cause of
+;action incurred to connect to this service.
+
+;STATEMENT OF USE AND CONFIDENTIALITY
+
+;The following/attached material contains confidential and proprietary information
+;of SMIC. This material is based upon information which SMIC considers reliable,
+;but SMIC neither represents nor warrants that such information is accurate or
+;complete, and it must not be relied upon as such.  This information was prepared
+;for informational purposes and is for the use by SMIC's customer only.  SMIC
+;reserves the right to make changes in the information at any time without notice.
+;No part of this information may be reproduced, transmitted, transcribed, stored
+;in a retrieval system, or translated into any human or computer language, in any
+;form or by any means, electronic, mechanical, magnetic, optical, chemical, manual,
+;or otherwise, without the prior written consent of SMIC.  Any unauthorized use or
+;disclosure of this material is strictly prohibited and may be unlawful. By accepting
+;this material, the receiving party shall be deemed to have acknowledged, accepted,
+;and agreed to be bound by the foregoing limitations and restrictions. Thank you.
+
+; *********************************************************************************
+
+; 1.  layer defines  
+
+drcExtractRules( 
+
+
+; Input Layers
+
+  layerDefs( "df2"
+
+; process layers
+
+
+;  L0    	= layer( "L0" type("drawing") )
+   AA     	= layer( "AA" type("drawing") )
+   NPAA     	= layer( "NPAA" type("drawing") )
+   PPAA     	= layer( "PPAA" type("drawing") )
+   NW      	= layer( "NW" type("drawing") )
+   TPW          = layer( "TPW" type("drawing") )
+   DNW      	= layer( "DNW" type("drawing") )
+   TIM      	= layer( "TIM" type("drawing") )
+   GT      	= layer( "GT" "GTDUM" type("drawing") )
+   NLL     	= layer( "NLL" type("drawing") )
+   PLL     	= layer( "PLL" type("drawing") )
+   HRP          = layer( "HRP" type("drawing") )
+   SN      	= layer( "SN" type("drawing") )
+   SP      	= layer( "SP" type("drawing") )
+   ESD1      	= layer( "ESD1" type("drawing") )
+   SAB     	= layer( "SAB" type("drawing") )
+   VTNH      	= layer( "VTNH" type("drawing") )
+   CT           = layer( "CT" type("drawing") )
+   TOW          = layer( "TOW" type("drawing") )
+   ONO          = layer( "ONO" type("drawing") )
+   CG           = layer( "CG" type("drawing") )
+   MIM          = layer( "MIM" type("drawing") )
+   M1      	= layer( "M1" "M1DUM" type("drawing") )
+   M1R      	= layer( "M1R" type("drawing") )
+   V1      	= layer( "V1" type("drawing") )
+   M2      	= layer( "M2" "M2DUM" type("drawing") )
+   M2R      	= layer( "M2R" type("drawing") )
+   V2      	= layer( "V2" type("drawing") )
+   M3      	= layer( "M3" "M3DUM" type("drawing") )
+   M3R      	= layer( "M3R" type("drawing") )
+   V3      	= layer( "V3" type("drawing") )
+   M4      	= layer( "M4" "M4DUM" type("drawing") )
+   M4R      	= layer( "M4R" type("drawing") )
+   V4           = layer( "V4" type("drawing") )
+   M5           = layer( "M5" "M5DUM" type("drawing") )
+   M5R          = layer( "M5R" type("drawing") )
+   V5           = layer( "V5" type("drawing") )
+   M6           = layer( "M6" "M6DUM" type("drawing") )
+   M6R          = layer( "M6R" type("drawing") )
+   PA           = layer( "PA" type("drawing") )
+   GP           = layer( "GP" type("drawing") )
+   DDD  	= layer( "DDD" type("drawing") )
+   PSUB 	= layer( "PSUB" type("drawing") )
+   RESDMY	= layer( "RESDMY" type("drawing") )
+   RLHVP        = layer( "RLHVP" type("drawing") )
+   MVHVNZ       = layer( "5VHVNZ" type("drawing") )
+   BITCEL       = layer( "BITCEL" type("drawing") )
+   VARMOS       = layer( "VARMOS" type("drawing") )
+   RESNW     	= layer( "RESNW" type("drawing") )
+   RESP1     	= layer( "RESP1" type("drawing") )
+   RESP3T       = layer( "RESP3T" type("drawing") )
+   RESAA     	= layer( "RESAA" type("drawing") )
+   PWI     	= layer( "PWI" type("drawing") )
+  
+   HVPF         = layer( "HVPF" type("drawing") )
+
+   SUBD      	= layer( "SUBD" type("drawing") )
+   DMPNP	= layer( "DMPNP" type("drawing") )
+   CAPBP	= layer( "CAPBP" type("drawing") )
+   DSTR		= layer( "DSTR" type("drawing") )
+   DCTY		= layer( "DCTY" type("drawing") )
+   HRPDMY       = layer( "HRPDMY" type("drawing") )
+
+   ; text and pin layers
+
+   text   	= layer( "text" type("drawing") )
+
+   GT_text	= textToPin( "GT" )
+   M1_text	= textToPin( "M1" )
+   M2_text	= textToPin( "M2" )
+   M3_text	= textToPin( "M3" )
+   M4_text	= textToPin( "M4" )
+   M5_text      = textToPin( "M5" )
+   M6_text      = textToPin( "M6" )
+
+   M1TXT  	= textToPin( "M1TXT" ) 	
+   M2TXT  	= textToPin( "M2TXT" ) 	
+   M3TXT  	= textToPin( "M3TXT" ) 	
+   M4TXT  	= textToPin( "M4TXT" ) 	
+   M5TXT        = textToPin( "M5TXT" )
+   M6TXT        = textToPin( "M6TXT" )
+
+;  PA	   	= layer( "PA" type("drawing") )
+
+); layerDefs complete
+
+
+layerDefs( "gds2"
+ 
+;  L0    	= layer( 0  type( 0 ) )
+   AA     	= layer( 10 type( 0 ) )
+   NPAA		= layer( 12 type( 0 ) )
+   PPAA		= layer( 13 type( 0 ) )
+   NW      	= layer( 14 type( 0 ) )
+   TPW          = layer( 16 type( 0 ) )
+   DNW      	= layer( 19 type( 0 ) )
+   TIM         	= layer( 27 type( 0 ) )
+   GT      	= layer( 30 )
+   NLL     	= layer( 35 type( 0 ) )
+   PLL     	= layer( 38 type( 0 ) )
+   HRP          = layer( 39 type( 0 ) )
+   SN      	= layer( 40 type( 0 ) )
+   ESD1         = layer( 41 type( 0 ) )
+   SP      	= layer( 43 type( 0 ) )
+   SAB      	= layer( 48 type( 0 ) )
+   VTNH         = layer( 49 type( 0 ) )
+   CT      	= layer( 50 type( 0 ) )
+   TOW    	= layer( 55 type( 0 ) )
+   ONO          = layer( 56 type( 0 ) )
+   CG           = layer( 57 type( 0 ) )
+   MIM          = layer( 58 type( 0 ) )
+   M1      	= layer( 61 )
+   V1      	= layer( 70 type( 0 ) )
+   M2      	= layer( 62 )
+   V2      	= layer( 71 type( 0 ) )
+   M3      	= layer( 63 )
+   V3      	= layer( 72 type( 0 ) )
+   M4      	= layer( 64 )
+   V4           = layer( 73 type( 0 ) )
+   M5           = layer( 65 )
+   V5           = layer( 74 type( 0 ) )
+   M6           = layer( 66 )
+
+   PA         	= layer( 80 type( 0 ) )
+   GP         	= layer( 83 type( 0 ) )
+   DDD        	= layer( 84 type( 0 ) )
+   PSUB         = layer( 85 type( 0 ) )
+   RESDMY       = layer( 90 type( 0 ) )
+   RLHVP        = layer( 91 type( 0 ) )
+   MVHVNZ       = layer( 92 type( 0 ) )
+   BITCEL       = layer( 93 type( 0 ) )
+   VARMOS       = layer( 191 type( 0 ) )
+   PWI          = layer( 81 type( 0 ) )
+
+   RESNW     	= layer( 95 type( 0 ) )
+   RESP1     	= layer( 96 type( 0 ) )
+   RESP3T       = layer( 96 type( 1 ) )
+   RESAA     	= layer( 97 type( 0 ) )
+
+   HVPF         = layer( 98 type( 0 ) )
+
+   SUBD      	= layer( 131 type( 1 ) )
+   EXCLU      	= layer( 132 type( 0 ) )
+   DMPNP	= layer( 134 type( 0 ) )
+   CAPBP	= layer( 137 type( 0 ) )
+   DSTR		= layer( 138 type( 0 ) )
+   DCTY		= layer( 139 type( 0 ) )
+   
+   M1R		= layer( 171 type( 0 ) )
+   M2R		= layer( 172 type( 0 ) )
+   M3R		= layer( 173 type( 0 ) )
+   M4R		= layer( 174 type( 0 ) )
+   M5R          = layer( 175 type( 0 ) )
+   M6R          = layer( 176 type( 0 ) )
+
+   HRPDMY       = layer( 210 type( 0 ) )
+
+   GT_text	= textToPin( 30 type( 0 ) )
+   M1_text	= textToPin( 61 type( 0 ) )
+   M2_text	= textToPin( 62 type( 0 ) )
+   M3_text	= textToPin( 63 type( 0 ) )
+   M4_text	= textToPin( 64 type( 0 ) )
+   M5_text      = textToPin( 65 type( 0 ) )
+   M6_text      = textToPin( 66 type( 0 ) )
+
+   ; 
+   M1TXT	= textToPin( 141 type( 0 ) )
+   M2TXT 	= textToPin( 142 type( 0 ) )
+   M3TXT	= textToPin( 143 type( 0 ) )
+   M4TXT    	= textToPin( 144 type( 0 ) )
+   M5TXT        = textToPin( 145 type( 0 ) )
+   M6TXT        = textToPin( 146 type( 0 ) )
+
+;  PA	   	= layer(  )
+
+   )
+
+
+; ****************************************************
+; 2.  Layer Derivations
+
+
+; 2.01 Derive Substrate 
+
+        bulk	  = geomBkgnd()
+
+	pwell1	  = geomAndNot( bulk NW )
+        pwell2    = geomAndNot( pwell1 PSUB )
+        pwell3    = geomAndNot( pwell2 DNW )
+        ppwel     = geomAndNot( pwell3 TPW )
+	psub2s	  = geomSize( SUBD 0.03 )
+	pwel1	  = geomAndNot( ppwel psub2s )
+	pwel2a	  = geomAnd( ppwel SUBD )
+	pwell	  = geomOr( pwel1 pwel2a )
+
+; 2.02 NWELL derivations 
+
+	rnwell	  = geomAnd( NW RESNW )
+	nwell	  = geomAndNot( NW rnwell )
+
+; 2.03 N/P Diff derivations 
+
+	ndiff0 	  = geomOr( AA NPAA )
+	ndiff1	  = geomAnd( ndiff0 SN )
+        pdiff00   = geomOr( AA PPAA )
+	pdiff0 	  = geomButtOrOver( pdiff00 SP )
+	pdiff1    = geomAndNot(pdiff0 SN )
+
+; 2.04 N/P Source/Drain derivations
+
+	tiod1	  = geomAndNot( AA GT )
+        tiod2     = geomAndNot( tiod1 GP )
+        tiod3     = geomAndNot( tiod2 CG )
+	tiod4 	  = geomAndNot( tiod3 SAB )
+	tiod5	  = geomAndNot( tiod4 RESAA )
+	tiod6 	  = geomAndNot( tiod5 RESNW )
+
+	nodcon	  = geomAnd( tiod6 SN )
+	podcon	  = geomAnd( tiod6 SP )
+        tiod      = geomOr( nodcon podcon )
+
+;*****************************************************
+
+; 3.  Device Derivations
+
+; -----  nwell resistor derivations -----
+
+	drpo		= geomAnd( AA SAB )
+	rwaa		= geomAnd( rnwell drpo )
+	rwsti		= geomAndNot( rnwell drpo )
+
+;-----   Define  TIM resistor  --------
+
+        rtim1     = geomAnd( GT TIM )
+        rtim0     = geomAnd( rtim1 RESDMY )
+        rtim2     = geomAnd( rtim0 ndiff1 )
+        rtim3     = geomAnd( rtim2 PSUB )
+        rtim4     = geomAnd( rtim3 ONO )
+        rtim      = geomAnd( rtim4 HVPF )
+
+;------  GP resistor  -------
+
+        rpoly     = geomAnd( GP RESP1 )
+        rpsab     = geomAnd( rpoly SAB )
+        rpws      = geomButtOrOver( rpoly SAB )
+        rpnos     = geomAndNot( rpoly rpws )
+
+        rnpsab1   = geomAnd( rpsab SN )
+        rnpsab    = geomAndNot( rnpsab1 RESP3T )
+        rppsab1   = geomAnd( rpsab SP )
+        rppsab    = geomAndNot( rppsab1 RESP3T )
+        rnpnos1   = geomAnd( rpnos SN )
+        rnpnos    = geomAndNot( rnpnos1 RESP3T )
+        rppnos1   = geomAnd( rpnos SP )
+        rppnos    = geomAndNot( rppnos1 RESP3T )
+
+	rnpsab_3t  = geomAnd( rnpsab1 RESP3T )
+        rnpsab_3t_pwell  = geomAndNot( rnpsab_3t nwell )
+        rnpsab_3t_nwell  = geomAndNot( rnpsab_3t rnpsab_3t_pwell )
+
+        rppsab_3t  = geomAnd( rppsab1 RESP3T )
+        rppsab_3t_pwell  = geomAndNot( rppsab_3t nwell )
+        rppsab_3t_nwell  = geomAndNot( rppsab_3t rppsab_3t_pwell )
+        
+        rnpnos_3t  = geomAnd( rnpnos1 RESP3T )
+        rnpnos_3t_pwell  = geomAndNot( rnpnos_3t nwell )
+        rnpnos_3t_nwell  = geomAndNot( rnpnos_3t rnpnos_3t_pwell )
+
+        rppnos_3t  = geomAnd( rppnos1 RESP3T )
+        rppnos_3t_pwell  = geomAndNot( rppnos_3t nwell )
+        rppnos_3t_nwell = geomAndNot( rppnos_3t rppnos_3t_pwell )   ; generate 3T resistors
+
+	hrpp1	   = geomAnd( GP SAB )
+	hrpp2	   = geomAnd( hrpp1 HRPDMY )
+	hrpp3 	   = geomAnd( hrpp2 HRP )
+        rpshrp     = geomAndNot( hrpp3 RESP3T )
+
+        rpshrp_3t  = geomAnd( hrpp3 RESP3T )
+        rpshrp_3t_pwell  = geomAndNot( rpshrp_3t nwell )
+        rpshrp_3t_nwell = geomAndNot( rpshrp_3t rpshrp_3t_pwell )
+
+        gpoly1    = geomAndNot( GP rpsab )
+        gpoly2    = geomAndNot( gpoly1 rpnos )
+	gpoly3    = geomAndNot( gpoly2 rpshrp )
+	GPOLY     = geomAndNot( gpoly3 rpshrp_3t)
+
+;------   resistor -------
+
+        rgt       = geomAnd( GT RESP1 )
+        rgtsab    = geomAnd( rgt SAB )
+	rngtsabres   = geomAnd( rgtsab SN )
+	rpgtsabres   = geomAnd( rgtsab SP )
+
+	gtnor     = geomAndNot( GT rgtsab )
+        gtpoly    = geomAndNot( gtnor rtim )
+
+;------  CGPOLY derivations  -------
+
+        rcg       = geomAnd( RESP1 CG )
+	rcgsab	  = geomAnd( rcg SAB )
+	rncgsabres  = geomAnd( rcgsab SN )
+        CGPOLY    = geomAndNot( CG rcg )
+
+; -----  ndiff/pdiff resistor derivations  -----
+
+	RNPLUS	  = geomAnd( RESAA ndiff1 )
+	rndsab 	  = geomAnd( RNPLUS SAB )
+	NTT	  = geomButtOrOver( RNPLUS SAB )
+	rndnos	  = geomAndNot( RNPLUS NTT )
+
+        r_aanw    = geomAnd( RESAA NW )
+
+        RPPLUS	  = geomAnd( r_aanw pdiff1 )
+	rpdsab    = geomAnd( RPPLUS SAB )
+	PTT	  = geomButtOrOver( RPPLUS SAB )
+	rpdnos	  = geomAndNot( RPPLUS PTT )
+
+; -----  Define the gate  -----
+
+	ngath     = geomAnd( ndiff1 gtpoly )
+	ngate	  = geomAnd( ndiff1 GPOLY )
+	pgath 	  = geomAnd( pdiff1 gtpoly )
+        pgate     = geomAnd( pdiff1 GPOLY )
+
+; -----  Define the gate  -----
+
+	ngate33    = geomAnd( geomAnd( geomAnd( geomAnd( ngath TPW ) ONO ) TOW ) DDD ) 
+	pgate33    = geomAnd( geomAnd( geomAnd( pgath DNW ) ONO ) TOW )
+
+	hngt1      = geomAnd( geomAnd( geomAnd( ngath PSUB ) HVPF ) ONO )
+	hngt3      = geomAnd( geomAndNot( geomAnd( ngath PSUB ) HVPF ) ONO )
+	hngt2      = geomAnd( hngt1 VTNH )
+
+	hzngate    = geomAnd( geomAndNot( hngt1 hngt2 ) DDD )
+	hngate     = geomAnd( geomAndNot( hngt2 BITCEL ) DDD )
+	
+	cellgt     = geomAnd( geomAnd( hngt3 BITCEL ) SAB )
+	ncgate1    = geomButtOrOver( geomButtOrOver( geomAnd( cellgt CGPOLY ) TIM ) TOW )
+	ncgate     = geomAndNot( ncgate1 TIM )
+
+	nsgate     = geomButtOrOver( geomAndNot( cellgt ncgate1 ) DDD )
+
+	hpgate     = geomAndNot( geomAnd( geomAnd( pgath DNW ) ONO ) TOW )
+
+; -----  MOS derivations  -----
+
+        ndifk     = geomAndNot( ndiff1 rndsab )
+        ndiff2    = geomAndNot( ndifk rndnos )
+        ndiff3    = geomAndNot( ndiff2 rtim )
+	ndiff4	  = geomAndNot( ndiff3 ngate )
+        ndiff     = geomAndNot( ndiff4 geomOr( hzngate hngate ncgate nsgate ngate33 ) )
+
+        pdifk     = geomAndNot( pdiff1 rpdsab )
+        pdiff2    = geomAndNot( pdifk rpdnos )
+	pdiff3 	  = geomAndNot( pdiff2 pgate )
+	pdiff 	  = geomAndNot( pdiff3 geomOr( pgate33 hpgate) )
+
+;       nwtie     = geomAnd( NW ndiff )
+;       dntie     = geomAnd( DNW ndiff )
+;       nsd1      = geomAndNot( ndiff dntie )
+;       nsd       = geomAndNot( nsd1 nwtie )
+;       ntie      = geomOr( nwtie dntie )
+
+        nsd       = geomAndNot( geomAndNot( ndiff DNW ) NW )
+        ntie      = geomAndNot( ndiff nsd )
+        nwtie     = geomAnd( ntie NW )
+        dntie     = geomAnd( ntie DNW )
+
+;       pwtie     = geomAnd( pdiff pwell )
+;       tptie     = geomAnd( pdiff TPW )
+;       pstie     = geomAnd( pdiff PSUB )
+;       psd1      = geomAndNot( pdiff pwtie )
+;       psd2      = geomAndNot( psd1 tptie )
+;       psd       = geomAndNot( psd2 pstie )
+;       ptie      = geomOr( pwtie tptie pstie )
+
+        ptie      = geomAndNot( geomAndNot( pdiff DNW ) NW )
+        psd1      = geomAndNot( pdiff ptie )
+        pwtie     = geomAnd( ptie pwell )
+        tptie     = geomAnd( ptie TPW )
+        pstie     = geomAnd( ptie PSUB )
+
+; -----  MOS[n33e2r] derivations  -----
+
+	ngate33_rec	= geomGetRectangle( ngate33 )
+	ngate33_bend	= geomAndNot( ngate33 ngate33_rec )   ;3.3V NMOS
+
+; -----  MOS[n50e2r] and MOS[n155e2r] derivations  -----
+      
+        hngate50        = geomAnd( hngate MVHVNZ )
+        hngate50_rec    = geomGetRectangle( hngate50 )
+        hngate50_bend   = geomAndNot( hngate50 hngate50_rec )   ;5V NMOS
+
+        hngate155       = geomAndNot( hngate MVHVNZ )
+        hngate155_rec   = geomGetRectangle( hngate155 )
+        hngate155_bend  = geomAndNot( hngate155 hngate155_rec )     ;15.5V NMOS
+
+; -----  MOS[n18e2r] and MOS[nz18e2r] and MOS[C1] derivations  -----
+
+	ngate18     	= geomAndNot( geomAnd( ngate pwell ) PWI )
+	ngate18_rec	= geomGetRectangle( ngate18 )
+	ngate18_bend	= geomAndNot( ngate18 ngate18_rec )      ;1.8V NMOS
+
+        nzgate18         = geomAnd( geomAnd( ngate pwell ) PWI )
+        nzgate18_rec     = geomGetRectangle( nzgate18 )
+        nzgate18_bend    = geomAndNot( nzgate18 nzgate18_rec )      ;1.8V Native NMOS
+ 
+	cngat   	= geomAnd( ngate nwell )
+	cngat_rec	= geomGetRectangle( cngat )
+	cngat_bend	= geomAndNot( cngat cngat_rec )      ;1.8V C1 NMOS
+
+; -----  MOS[nz50e2r] and MOS[nz155e2r] derivations -----
+
+    	hzngate50	= geomAnd( hzngate MVHVNZ )
+	hzngate50_rec	= geomGetRectangle( hzngate50 )
+	hzngate50_bend	= geomAndNot( hzngate50 hzngate50_rec )    ;5V ZMOS
+
+	hzngate155	= geomAndNot( hzngate MVHVNZ )
+	hzngate155_rec	= geomGetRectangle( hzngate155 )
+	hzngate155_bend	= geomAndNot( hzngate155 hzngate155_rec )      ;15.5V ZMOS
+
+; -----  NSG and NCG derivations  -----
+
+        nsgate_rec      = geomGetRectangle( nsgate )
+        nsgate_bend     = geomAndNot( nsgate nsgate_rec )        ;Memory cell NSG
+
+        ncgate_rec      = geomGetRectangle( ncgate )
+        ncgate_bend     = geomAndNot( ncgate ncgate_rec )        ;Memory cell NCG
+
+
+; -----  MOS[p33e2r] derivations   --------
+
+        pgate33_rec     = geomGetRectangle( pgate33 )
+        pgate33_bend    = geomAndNot( pgate33 pgate33_rec )
+
+; -----  MOS[p50e2r] and MOS[p155e2r] derivations  -----
+
+        hpgate50        = geomAndNot( hpgate RLHVP )
+        hpgate50_rec    = geomGetRectangle( hpgate50 )
+        hpgate50_bend   = geomAndNot( hpgate50 hpgate50_rec )     ;5V PMOS
+
+        hpgate155       = geomAnd( geomAndNot( hpgate hpgate50 ) SAB )
+        hpgate155_rec   = geomGetRectangle( hpgate155 )
+        hpgate155_bend  = geomAndNot( hpgate155 hpgate155_rec )       ;15.5V PMOS
+
+; -----  MOS[p18e2r]  derivations  -----
+
+	pgate18 	= geomAnd( pgate nwell )
+	pgate18_rec 	= geomGetRectangle( pgate18 )
+	pgate18_bend	= geomAndNot( pgate18 pgate18_rec )
+
+; -----   Metal Resistor derivations  ------
+	m1res		= geomAnd( M1 M1R )
+	MT1		= geomAndNot( M1 m1res )
+  
+ if(  avSwitch( "top_m2" ) then
+	m2res		= geomAnd( M2 M2R )
+	MT2		= geomAndNot( M2 m2res )
+
+ ) ; end if
+
+ if(  avSwitch( "top_m3" ) then
+	m2res           = geomAnd( M2 M2R )
+        MT2             = geomAndNot( M2 m2res )
+
+	m3res		= geomAnd( M3 M3R )
+	MT3		= geomAndNot( M3 m3res )
+
+ ) ; end if
+
+ if(  avSwitch( "top_m4" ) then
+
+  	m2res           = geomAnd( M2 M2R )
+        MT2             = geomAndNot( M2 m2res )
+        
+        m3res           = geomAnd( M3 M3R )
+        MT3             = geomAndNot( M3 m3res )
+
+        m4res           = geomAnd( M4 M4R )
+        MT4             = geomAndNot( M4 m4res )
+
+)  ; end if
+
+ if( avSwitch("top_m5") then
+
+        m2res           = geomAnd( M2 M2R )
+        MT2             = geomAndNot( M2 m2res )
+
+        m3res           = geomAnd( M3 M3R )
+        MT3             = geomAndNot( M3 m3res )
+
+        m4res           = geomAnd( M4 M4R )
+        MT4             = geomAndNot( M4 m4res )
+
+        m5res           = geomAnd( M5 M5R )
+        MT5             = geomAndNot( M5 m5res )
+
+)  ; end if
+
+ if( !avSwitch("top_m2") && !avSwitch("top_m3") && !avSwitch("top_m4") && !avSwitch("top_m5") then
+
+        m2res           = geomAnd( M2 M2R )
+        MT2             = geomAndNot( M2 m2res )
+
+        m3res           = geomAnd( M3 M3R )
+        MT3             = geomAndNot( M3 m3res )
+
+        m4res           = geomAnd( M4 M4R )
+        MT4             = geomAndNot( M4 m4res )
+
+        m5res           = geomAnd( M5 M5R )
+        MT5             = geomAndNot( M5 m5res )
+
+        m6res           = geomAnd( M6 M6R )
+        MT6             = geomAndNot( M6 m6res )
+)  ; end if
+
+
+; -----  BJT VPNP derivations  -----
+
+        ttdiff          = geomAnd( psd1 DMPNP )
+        base18          = geomAnd( nwell DMPNP )
+        emit18          = geomAnd( ttdiff base18 )
+        collsur         = geomButtOrOver( pwell base18 )
+        coll            = geomOr( collsur base18 )
+
+        base33          = geomAnd( DNW DMPNP )
+        emit33          = geomAnd( ttdiff base33 )
+        cur33           = geomButtOrOver( TPW base33 )
+        coll33          = geomOr( cur33 base33 )
+
+        emit18a4        = drc( emit18 area == 4 )
+        emit18a25       = drc( emit18 area == 25 )
+        emit18a100      = drc( emit18 area == 100 )
+
+        emit33a4        = drc( emit33 area == 4 )
+        emit33a25       = drc( emit33 area == 25 )
+        emit33a100      = drc( emit33 area == 100 )
+
+        psd     = geomAndNot( geomAndNot( psd1 emit18 ) emit33 )
+
+;------- PiP Capacitor  --------
+     
+        cgaa            = geomButtOrOver( CGPOLY AA )
+        cgc             = geomAndNot( CGPOLY cgaa )
+        cgt1            = geomAnd( gtpoly cgc )
+        ccgt            = geomAnd( cgt1 ONO )
+
+;-------  Buried N+GT/TOW Capacitor(NW)---------
+        ndifnw          = geomAnd( ndiff1 nwell )
+        cgttow1         = geomAnd( ndifnw TIM )
+        cgttow2         = geomAnd( cgttow1 TOW )
+        cgttow3         = geomAnd( cgttow2 ONO )
+        cgttow          = geomAnd( cgttow3 GT )
+        cgttowb         = geomAndNot( ndifnw cgttow )
+
+; ----- Mi+1/Mi/MIM Capacitor derivations -----
+
+if( avSwitch( "top_m2" ) then
+	mcap1		= geomAnd( MIM MT1 )
+	m1cap		= geomButtOrOver( mcap1 V1)
+	m1caps		= geomSize( m1cap 0.41)
+        MT1             = geomAndNot( MT1 m1cap )
+) ; end if
+
+if( avSwitch( "top_m3" ) then
+	mcap2		= geomAnd( MIM MT2 )
+	m2cap		= geomButtOrOver( mcap2 V2)
+	m2caps		= geomSize( m2cap 0.41)
+        MT2             = geomAndNot( MT2 m2cap )
+) ; end if
+
+if( avSwitch( "top_m4" ) then
+	mcap3		= geomAnd( MIM MT3 )
+	m3cap		= geomButtOrOver( mcap3 V3)
+	m3caps		= geomSize( m3cap 0.41)
+        MT3             = geomAndNot( MT3 m3cap )
+) ; end if
+
+if( avSwitch( "top_m5" ) then
+        mcap4           = geomAnd( MIM MT4 )
+        m4cap           = geomButtOrOver( mcap4 V4)
+	m4caps		= geomSize( m4cap 0.41)
+        MT4             = geomAndNot( MT4 m4cap )
+) ; end if
+
+if( !avSwitch( "top_m2" ) && !avSwitch( "top_m3" ) && !avSwitch( "top_m4" ) && !avSwitch( "top_m5" ) then
+        mcap5           = geomAnd( MIM MT5 )
+        m5cap           = geomButtOrOver( mcap5 V5)
+	m5caps		= geomSize( m5cap 0.41)
+        MT5             = geomAndNot( MT5 m5cap )
+) ; end if
+
+; -----  DIODE derivations -----
+
+	   	; diode 1.8V P+/NWELL
+	pdio_a		= geomAnd( psd DSTR )
+	pdio18 		= geomAnd( pdio_a nwell )
+
+    	   	; diode 3.3V P+/DNWELL
+	pdio_b		= geomAnd( pdio_a DNW )
+        pdio_c          = geomAnd( pdio_b ONO )
+        pdio_d          = geomAnd( pdio_c SP )
+        pdio33          = geomAnd( pdio_d TOW )
+
+                ; diode 5.0V P+/DNWELL
+        pdio_e          = geomAndNot( pdio_d RLHVP )
+        pdio50          = geomAvoiding( geomAndNot( pdio_e TOW ) SAB )
+
+                ; diode 15.5V P+/DNWELL
+        pdio155         = geomButtOrOver( pdio_c SAB )
+
+	 	; diode 1.8V N+/PWELL
+	ndio_a 		= geomAnd( nsd DSTR )
+	ndio18 		= geomAnd( ndio_a pwell )
+
+                ; diode 3.3V N+/TPWELL
+        ndio_b          = geomAnd( ndio_a ONO )
+        ndio_c          = geomAnd( ndio_b DDD )
+        ndio_d          = geomAnd( ndio_c TPW )
+        ndio33          = geomAnd( ndio_d TOW )
+
+                ; diode 5.0V N+/PSUB
+        ndio_e          = geomAnd( ndio_c PSUB )
+        ndio_f          = geomAnd( ndio_e HVPF )
+        ndio_g          = geomAnd( ndio_f VTNH )
+        ndio50          = geomAnd( ndio_g MVHVNZ )
+
+                ; diode 15.5V N+/PSUB
+        ndio155         = geomAndNot( ndio_g MVHVNZ )
+
+		; diode 5.0V NZ+/PSUB	
+	zndio		= geomAndNot( ndio_f VTNH )
+        zndio50         = geomAnd( zndio MVHVNZ )
+
+                ; diode 15.5V NZ+/PSUB
+        zndio155        = geomAndNot( zndio MVHVNZ )
+
+		; diode nwell/PWELL
+	dionw	        = geomOutside( DSTR psd )
+	nwdio		= geomAnd( dionw nwell )
+
+                ; diode dnwell/PWELL
+        dnwdio          = geomButtOrOver( DNW dionw )
+
+        PSUBDSTR        = geomButtOrOver( geomButtOrOver( DSTR PSUB) DNW )
+
+; -----------------------------------------------
+;|
+;| contact definitions
+;|
+;| To allow accurate contact resistance extraction:
+;|
+;| contacts are split up into poly contacts,
+;| ndiff contacts, and pdiff contacts
+;|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+        dcont  = geomAnd( CT AA )
+        pacont = geomAndNot( CT dcont )
+        gpcont = geomAnd( pacont GPOLY )
+        cpcont = geomAnd( pacont CGPOLY )
+        pcont1 = geomAndNot( pacont gpcont )
+        pcont  = geomAndNot( pcont1 cpcont ) 
+
+; split up dcont into P and N type contacts
+
+  	ndcont = geomAndNot( dcont SP )
+	pdcont = geomAndNot( dcont SN )
+
+
+; ****************************************************
+; 4.  Connectivity
+
+; -----  Establish connectivity 
+
+; Create special connectors for butting pdiff, ndiff regions
+
+  ptie_2 = geomSize( ptie 0.05 edges )
+  ptie_3 = geomAnd( ptie_2 nsd )
+  bptie  = geomSize( ptie_3 0.05 )
+
+  ntie_2 = geomSize( ntie 0.05 edges )
+  ntie_3 = geomAnd( ntie_2 psd )
+  bntie  = geomSize( ntie_3 0.05 )
+
+ if( avSwitch( "top_m2" ) then
+     MV1  = geomAnd( V1 MIM )
+     VI1  = geomAndNot( V1 MV1 )
+) ; end if
+ if( avSwitch( "top_m3" ) then
+     MV2  = geomAnd( V2 MIM )
+     VI2  = geomAndNot( V2 MV2 )
+) ;end if
+
+ if( avSwitch( "top_m4" ) then
+     MV3  = geomAnd( V3 MIM )
+     VI3  = geomAndNot( V3 MV3 )
+) ;end if
+
+ if( avSwitch( "top_m5" ) then
+     MV4  = geomAnd( V4 MIM )
+     VI4  = geomAndNot( V4 MV4 )
+) ;end if
+
+ if( !avSwitch( "top_m2") && !avSwitch( "top_m3" ) && !avSwitch( "top_m4" ) && !avSwitch( "top_m5" ) then
+     MV5  = geomAnd( V5 MIM )
+     VI5  = geomAndNot( V5 MV5 )
+) ;end if
+
+;;;------------------------------------------------------------
+
+ if( avSwitch( "top_m2" ) then
+
+  geomConnect(
+
+  via( ndcont nsd nwtie dntie ntie MT1 )
+  via( pdcont psd pwtie tptie pstie ptie MT1 emit18 emit33 )
+
+  via( pcont MT1 gtpoly )
+  via( gpcont MT1 GPOLY )
+  via( cpcont MT1 CGPOLY )
+
+  via( VI1 MT1 MT2 )
+  via( MV1 MT2 MIM )
+
+  via( bptie nsd ptie )
+  via( bntie psd ntie )
+
+  label( GT_text gtpoly )
+  label( M1_text MT1 )
+  label( M2_text MT2 )
+
+  label( M1TXT MT1 )
+  label( M2TXT MT2 )
+
+  )
+) ; end if
+
+if( avSwitch( "top_m3" ) then
+
+  geomConnect(
+
+  via( ndcont nsd nwtie dntie ntie MT1 )
+  via( pdcont psd pwtie tptie pstie ptie MT1 emit18 emit33 )
+
+  via( pcont MT1 gtpoly )
+  via( gpcont MT1 GPOLY )
+  via( cpcont MT1 CGPOLY )
+
+  via( V1 MT1 MT2 )
+  via( VI2 MT2 MT3 )
+  via( MV2 MT3 MIM )
+
+  via( bptie nsd ptie )
+  via( bntie psd ntie )
+
+  label( GT_text gtpoly )
+  label( M1_text MT1 )
+  label( M2_text MT2 )
+  label( M3_text MT3 )
+
+  label( M1TXT MT1 )
+  label( M2TXT MT2 )
+  label( M3TXT MT3 )
+
+  )
+) ; end if
+
+if(  avSwitch( "top_m4" )  then
+
+  geomConnect(
+
+  via( ndcont nsd nwtie dntie ntie MT1 )
+  via( pdcont psd pwtie tptie pstie ptie MT1 emit18 emit33 )
+
+  via( pcont MT1 gtpoly )
+  via( gpcont MT1 GPOLY )
+  via( cpcont MT1 CGPOLY )
+
+  via( V1 MT1 MT2 )
+  via( V2 MT2 MT3 )
+  via( VI3 MT3 MT4 )
+
+  via( MV3 MT4 MIM )
+
+  via( bptie nsd ptie )
+  via( bntie psd ntie )
+
+  label( GT_text gtpoly )
+  label( M1_text MT1 )
+  label( M2_text MT2 )
+  label( M3_text MT3 )
+  label( M4_text MT4 )
+
+  label( M1TXT MT1 )
+  label( M2TXT MT2 )
+  label( M3TXT MT3 )
+  label( M4TXT MT4 )
+
+  )
+) ; end if
+
+if( avSwitch( "top_m5" ) then
+  geomConnect(
+  via( ndcont nsd nwtie dntie ntie MT1 )
+  via( pdcont psd pwtie tptie pstie ptie MT1 emit18 emit33 )
+  via( pcont MT1 gtpoly )
+  via( gpcont MT1 GPOLY )
+  via( cpcont MT1 CGPOLY )
+  via( V1 MT1 MT2 )
+  via( V2 MT2 MT3 )
+  via( V3 MT3 MT4 )
+  via( VI4 MT4 MT5 )
+  via( MV4 MT5 MIM )
+  via( bptie nsd ptie )
+  via( bntie psd ntie )
+  label( GT_text gtpoly )
+  label( M1_text MT1 )
+  label( M2_text MT2 )
+  label( M3_text MT3 )
+  label( M4_text MT4 )
+  label( M5_text MT5 )
+  label( M1TXT MT1 )
+  label( M2TXT MT2 )
+  label( M3TXT MT3 )
+  label( M4TXT MT4 )
+  label( M5TXT MT5 )
+  )
+) ; end if
+
+if( !avSwitch( "top_m2" ) && !avSwitch( "top_m3" ) && !avSwitch( "top_m4" )  && !avSwitch( "top_m5" ) then
+  geomConnect(
+  via( ndcont nsd nwtie dntie ntie MT1 )
+  via( pdcont psd pwtie tptie pstie ptie MT1 emit18 emit33 )
+  via( pcont MT1 gtpoly )
+  via( gpcont MT1 GPOLY )
+  via( cpcont MT1 CGPOLY )
+  via( V1 MT1 MT2 )
+  via( V2 MT2 MT3 )
+  via( V3 MT3 MT4 )
+  via( V4 MT4 MT5 )
+  via( VI5 MT5 MT6 )
+  via( MV5 MT6 MIM )
+  via( bptie nsd ptie )
+  via( bntie psd ntie )
+  label( GT_text gtpoly )
+  label( M1_text MT1 )
+  label( M2_text MT2 )
+  label( M3_text MT3 )
+  label( M4_text MT4 )
+  label( M5_text MT5 )
+  label( M6_text MT6 )
+  label( M1TXT MT1 )
+  label( M2TXT MT2 )
+  label( M3TXT MT3 )
+  label( M4TXT MT4 )
+  label( M5TXT MT5 )
+  label( M6TXT MT6 )
+  )
+) ; end if
+
+  if( avSwitch( "Skip_Soft-Connect_Checks") then
+	geomStamp( pwell pwtie )
+        geomStamp( DNW   dntie )
+	geomStamp( nwell nwtie )
+        geomStamp( TPW   tptie )
+        geomStamp( PSUB  pstie )
+        geomStamp( PSUBDSTR pstie )
+        geomStamp( coll33 TPW )
+        geomStamp( coll  pwell )
+  else
+        geomStamp( pwell pwtie error)
+        geomStamp( DNW   dntie error)
+	geomStamp( nwell nwtie error)
+        geomStamp( TPW   tptie error)
+        geomStamp( PSUB  pstie error)
+        geomStamp( PSUBDSTR pstie error)
+        geomStamp( coll33  TPW error)
+        geomStamp( coll  pwell error)
+   ) ;end if
+
+;_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+;|  saveInterconnect
+;|
+;|  These commands are included for the av_extracted view
+;|  when running RCX.  The "net" layers must be defined for
+;|  these layers to see the output.  Please note, the PDK
+;|  does NOT have "net" layers for Nwell, Nimp and Pimp so
+;|  these are left commented out.
+;| _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+  saveInterconnect( (nwell ("NW" "drawing")) )
+  saveInterconnect( (MT1 ("M1" "drawing")) )
+  saveInterconnect( (ndiff1 ("NPAA" "drawing")) )
+  saveInterconnect( (pdiff1 ("PPAA" "drawing")) )
+  saveInterconnect( (gtpoly ("GT" "drawing")) )
+  saveInterconnect( (CGPOLY ("CG" "drawing")) )
+  saveInterconnect( (GPOLY ("GP" "drawing")) )
+  copyGraphics(("DNW" "drawing") all)
+  copyGraphics(("TPW" "drawing") all)
+  copyGraphics(("PSUB" "drawing") all)
+  copyGraphics(("CT" "drawing") all)
+  copyGraphics(("RESDMY" "drawing") all)
+  copyGraphics(("RESAA" "drawing") all)
+  copyGraphics(("RESP1" "drawing") all)
+  copyGraphics(("RESNW" "drawing") all)
+  copyGraphics(("HRP" "drawing") all)
+  copyGraphics(("HRPDMY" "drawing") all)
+; copyGraphics(("RESP3T" "drawing") all)
+  copyGraphics(("MIM" "drawing") all)
+  copyGraphics(("TTXT" "drawing") all)
+  copyGraphics(("M1TXT" "drawing") all)
+if( avSwitch( "top_m2") then
+  saveInterconnect( (MT2 ("M2" "drawing")) )
+  saveInterconnect( (V1  ("V1" "drawing")) )
+  copyGraphics(("M2TXT" "drawing") all)
+) ; end if
+
+if( avSwitch( "top_m3") then
+  saveInterconnect( (MT2 ("M2" "drawing")) )
+  saveInterconnect( (MT3 ("M3" "drawing")) )
+  saveInterconnect( (V1  ("V1" "drawing")) )
+  saveInterconnect( (VI2 ("V2" "drawing")) )
+  copyGraphics(("M2TXT" "drawing") all)
+  copyGraphics(("M3TXT" "drawing") all)
+) ; end if
+
+if( avSwitch( "top_m4") then
+  saveInterconnect( (MT2 ("M2" "drawing")) )
+  saveInterconnect( (MT3 ("M3" "drawing")) )
+  saveInterconnect( (MT4 ("M4" "drawing")) )
+  saveInterconnect( (V1  ("V1" "drawing")) )
+  saveInterconnect( (V2  ("V2" "drawing")) )
+  saveInterconnect( (VI3 ("V3" "drawing")) )
+  copyGraphics(("M2TXT" "drawing") all)
+  copyGraphics(("M3TXT" "drawing") all)
+  copyGraphics(("M4TXT" "drawing") all)
+) ; end if
+
+if( avSwitch( "top_m5") then
+  saveInterconnect( (MT2 ("M2" "drawing")) )
+  saveInterconnect( (MT3 ("M3" "drawing")) )
+  saveInterconnect( (MT4 ("M4" "drawing")) )
+  saveInterconnect( (MT5 ("M5" "drawing")) )
+  saveInterconnect( (V1  ("V1" "drawing")) )
+  saveInterconnect( (V2  ("V2" "drawing")) )
+  saveInterconnect( (V3  ("V3" "drawing")) )
+  saveInterconnect( (VI4 ("V4" "drawing")) )
+  copyGraphics(("M2TXT" "drawing") all)
+  copyGraphics(("M3TXT" "drawing") all)
+  copyGraphics(("M4TXT" "drawing") all)
+  copyGraphics(("M5TXT" "drawing") all)
+) ; end if
+
+if( !avSwitch( "top_m2") && !avSwitch( "top_m3") && !avSwitch( "top_m4") && !avSwitch( "top_m5") then
+  saveInterconnect( (MT2 ("M2" "drawing")) )
+  saveInterconnect( (MT3 ("M3" "drawing")) )
+  saveInterconnect( (MT4 ("M4" "drawing")) )
+  saveInterconnect( (MT5 ("M5" "drawing")) )
+  saveInterconnect( (MT6 ("M6" "drawing")) )
+  saveInterconnect( (V1  ("V1" "drawing")) )
+  saveInterconnect( (V2  ("V2" "drawing")) )
+  saveInterconnect( (V3  ("V3" "drawing")) )
+  saveInterconnect( (V4  ("V4" "drawing")) )
+  saveInterconnect( (VI5 ("V5" "drawing")) )
+  copyGraphics(("M2TXT" "drawing") all)
+  copyGraphics(("M3TXT" "drawing") all)
+  copyGraphics(("M4TXT" "drawing") all)
+  copyGraphics(("M5TXT" "drawing") all)
+  copyGraphics(("M6TXT" "drawing") all)
+) ; end if
+
+; ****************************************************
+; 5.  Device Recognition & Parameter Extraction
+
+; ******************************************
+; 5.1  MOS Extraction
+procedure( get_sti( gate_rec AAlay L W )
+      measureSTI( gate_rec AAlay 4.0
+        output(invSA invSB)
+        calculateExp(
+               (sw*1e-6/W)/(sa*1e-6 + L*0.5)
+               (sw*1e-6/W)/(sb*1e-6 + L*0.5)
+              ) ;end Exp
+         ) ;end measure
+        SA=calculateParameter( 1/invSA - L/2)
+        nameParameter(SA "SA")
+        SB=calculateParameter( 1/invSB - L/2)
+        nameParameter(SB "SB")
+) ;end procedure get_sti
+
+;  -----  5.1.01  MOS[n18e2r]  ----------
+   extractMOS(
+     "n18e2r" ngate18_rec
+     GPOLY("G") nsd("S" "D") pwell("B") 
+     spiceModel("n18e2r")
+     flagMalformed 
+     cellView( "n18e2r ivpcell" )
+   )
+
+;;   l_NMOS = measureParameter( length ( ngate18_rec inside GPOLY ) 0.5e-6 ) 
+     w_NMOS = measureParameter( length ( ngate18_rec coincident GPOLY ) 0.5e-6 ) 
+     a_NMOS = measureParameter( area ( ngate18_rec ) 1.0e-12 )
+     l_NMOS = calculateParameter( a_NMOS / w_NMOS )
+     
+     attachParameter( l_NMOS "l" ngate18_rec )
+     attachParameter( w_NMOS "w" ngate18_rec )
+     nameParameter( w_NMOS "fw" )
+     get_sti( ngate18_rec AA l_NMOS w_NMOS )
+
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_NMOS "effW" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_NMOS "effL" ) )
+     saveProperty( ngate18_rec "model" "n18e2r" )
+
+
+   extractMOS(
+     "n18e2r" ngate18_bend
+     GPOLY("G") nsd("S" "D") pwell("B") 
+     spiceModel("n18e2r")
+     flagMalformed 
+     cellView( "n18e2r ivpcell" )
+   )
+
+;;   l_NMOS = measureParameter( length ( ngate18_bend inside GPOLY) 0.5e-6 )
+     w_NMOS = measureParameter( length ( ngate18_bend coincident GPOLY ) 0.5e-6 )
+     a_NMOS = measureParameter( area ( ngate18_bend ) 1.0e-12 )
+     l_NMOS = calculateParameter( a_NMOS / w_NMOS )
+
+     attachParameter( l_NMOS "l" ngate18_bend )
+     attachParameter( w_NMOS "w" ngate18_bend )
+     nameParameter( w_NMOS "fw" )
+     get_sti( ngate18_bend AA l_NMOS w_NMOS )
+
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_NMOS "effW" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_NMOS "effL" ) )
+     saveProperty( ngate18_bend "model" "n18e2r" )
+
+;  -----    MOS[nz18e2r]  ----------
+
+   extractMOS(
+     "nz18e2r" nzgate18_rec
+     GPOLY("G") nsd("S" "D") pwell("B")
+     spiceModel("nz18e2r")
+     flagMalformed
+     cellView( "nz18e2r ivpcell" )
+   )
+
+;;   l_NMOS = measureParameter( length ( nzgate18_rec inside GPOLY ) 0.5e-6 )
+     w_NMOS = measureParameter( length ( nzgate18_rec coincident GPOLY ) 0.5e-6 )
+     a_NMOS = measureParameter( area ( nzgate18_rec ) 1.0e-12 )
+     l_NMOS = calculateParameter( a_NMOS / w_NMOS )
+
+     attachParameter( l_NMOS "l" nzgate18_rec )
+     attachParameter( w_NMOS "w" nzgate18_rec )
+     nameParameter( w_NMOS "fw" )
+     get_sti( nzgate18_rec AA l_NMOS w_NMOS )
+
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_NMOS "effW" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_NMOS "effL" ) )
+     saveProperty( nzgate18_rec "model" "nz18e2r" )
+
+extractMOS(
+     "nz18e2r" nzgate18_bend
+     GPOLY("G") nsd("S" "D") pwell("B")
+     spiceModel("nz18e2r")
+     flagMalformed
+     cellView( "nz18e2r ivpcell" )
+   )
+
+;;   l_NMOS = measureParameter( length ( nzgate18_bend inside GPOLY) 0.5e-6 )
+     w_NMOS = measureParameter( length ( nzgate18_bend coincident GPOLY ) 0.5e-6 )
+     a_NMOS = measureParameter( area ( nzgate18_bend ) 1.0e-12 )
+     l_NMOS = calculateParameter( a_NMOS / w_NMOS )
+
+     attachParameter( l_NMOS "l" nzgate18_bend )
+     attachParameter( w_NMOS "w" nzgate18_bend )
+     nameParameter( w_NMOS "fw" )
+     get_sti( nzgate18_bend AA l_NMOS w_NMOS )
+
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_NMOS "effW" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_NMOS "effL" ) )
+     saveProperty( nzgate18_bend "model" "nz18e2r" )
+
+;  -----  5.1.02  MOS[n33e2r]  -----------
+
+   extractMOS(
+     "n33e2r" ngate33_rec
+     gtpoly("G") nsd("S" "D") TPW("B") 
+     spiceModel("n33e2r")
+     flagMalformed 
+     cellView( "n33e2r ivpcell" )
+   )
+
+;;   l_NMOS = measureParameter( length ( ngate33_rec inside gtpoly ) 0.5e-6 )
+     w_NMOS = measureParameter( length ( ngate33_rec coincident gtpoly ) 0.5e-6 )
+     a_NMOS = measureParameter( area ( ngate33_rec ) 1.0e-12 )
+     l_NMOS = calculateParameter( a_NMOS / w_NMOS )
+     nameParameter( l_NMOS "l" )
+     nameParameter( w_NMOS "w" )
+     nameParameter( w_NMOS "fw" )
+     get_sti( ngate33_rec AA l_NMOS w_NMOS )
+
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_NMOS "effW" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_NMOS "effL" ) )
+     saveProperty( ngate33_rec "model" "n33e2r" )
+
+   extractMOS(
+     "n33e2r" ngate33_bend
+     gtpoly("G") nsd("S" "D") TPW("B") 
+     spiceModel("n33e2r")
+     flagMalformed 
+     cellView( "n33e2r ivpcell" )
+   )
+
+;;   l_NMOS = measureParameter( length ( ngate33_bend inside gtpoly) 0.5e-6 )
+     w_NMOS = measureParameter( length ( ngate33_bend coincident gtpoly ) 0.5e-6 )
+     a_NMOS = measureParameter( area ( ngate33_bend ) 1.0e-12 )
+     l_NMOS = calculateParameter( a_NMOS / w_NMOS )
+     nameParameter( l_NMOS "l" )
+     nameParameter( w_NMOS "w" )
+     nameParameter( w_NMOS "fw" )
+     get_sti( ngate33_bend AA l_NMOS w_NMOS )
+
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_NMOS "effW" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_NMOS "effL" ) )
+     saveProperty( ngate33_bend "model" "n33e2r" )
+
+
+;  -----  5.1.03  MOS[n50e2r]  ----------
+
+   extractMOS(
+     "n50e2r" hngate50_rec
+     gtpoly("G") nsd("S" "D") PSUB("B") 
+     spiceModel("n50e2r")
+     flagMalformed 
+     cellView( "n50e2r ivpcell" )
+   )
+
+;;   l_NMOS = measureParameter( length ( hngate50_rec inside gtpoly ) 0.5e-6 ) 
+     w_NMOS = measureParameter( length ( hngate50_rec butting nsd ) 0.5e-6 ) 
+     a_NMOS = measureParameter( area ( hngate50_rec ) 1.0e-12 )
+     l_NMOS = calculateParameter( a_NMOS / w_NMOS )
+     nameParameter( l_NMOS "l" )
+     nameParameter( w_NMOS "w" )
+     nameParameter( w_NMOS "fw" )
+     get_sti( hngate50_rec AA l_NMOS w_NMOS )
+
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_NMOS "effW" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_NMOS "effL" ) )
+     saveProperty( hngate50_rec "model" "n50e2r" )
+
+
+   extractMOS(
+     "n50e2r" hngate50_bend
+     gtpoly("G") nsd("S" "D") PSUB("B") 
+     spiceModel("n50e2r")
+     flagMalformed 
+     cellView( "n50e2r ivpcell" )
+   )
+
+;;   l_NMOS = measureParameter( length ( hngate50_bend inside gtpoly) 0.5e-6 )
+     w_NMOS = measureParameter( length ( hngate50_bend coincident gtpoly ) 0.5e-6 )
+     a_NMOS = measureParameter( area ( hngate50_bend ) 1.0e-12 )
+     l_NMOS = calculateParameter( a_NMOS / w_NMOS )
+     nameParameter( l_NMOS "l" )
+     nameParameter( w_NMOS "w" )
+     nameParameter( w_NMOS "fw" )
+     get_sti( hngate50_bend AA l_NMOS w_NMOS )
+
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_NMOS "effW" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_NMOS "effL" ) )
+     saveProperty( hngate50_bend "model" "n50e2r" )
+
+
+;  -----  5.1.04  MOS[n155e2r]  ----------
+
+   extractMOS(
+     "n155e2r" hngate155_rec
+     gtpoly("G") nsd("S" "D") PSUB("B") 
+     spiceModel("n155e2r")
+     flagMalformed 
+     cellView( "n155e2r ivpcell" )
+   )
+
+;;   l_NMOS = measureParameter( length ( hngate155_rec inside gtpoly ) 0.5e-6 ) 
+     w_NMOS = measureParameter( length ( hngate155_rec butting nsd ) 0.5e-6 ) 
+     a_NMOS = measureParameter( area ( hngate155_rec ) 1.0e-12 )
+     l_NMOS = calculateParameter( a_NMOS / w_NMOS )
+     nameParameter( l_NMOS "l" )
+     nameParameter( w_NMOS "w" )
+     nameParameter( w_NMOS "fw" )
+     get_sti( hngate155_rec AA l_NMOS w_NMOS )
+
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_NMOS "effW" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_NMOS "effL" ) )
+     saveProperty( hngate155_rec "model" "n155e2r" )
+
+
+   extractMOS(
+     "n155e2r" hngate155_bend
+     gtpoly("G") nsd("S" "D") PSUB("B") 
+     spiceModel("n155e2r")
+     flagMalformed 
+     cellView( "n155e2r ivpcell" )
+   )
+
+;;   l_NMOS = measureParameter( length ( hngate155_bend inside gtpoly ) 0.5e-6 )
+     w_NMOS = measureParameter( length ( hngate155_bend coincident gtpoly ) 0.5e-6 )
+     a_NMOS = measureParameter( area ( hngate155_bend ) 1.0e-12 )
+     l_NMOS = calculateParameter( a_NMOS / w_NMOS )
+     nameParameter( l_NMOS "l" )
+     nameParameter( w_NMOS "w" )
+     nameParameter( w_NMOS "fw" )
+     get_sti( hngate155_bend AA l_NMOS w_NMOS )
+
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_NMOS "effW" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_NMOS "effL" ) )
+     saveProperty( hngate155_bend "model" "n155e2r" )
+
+
+;  -----  5.1.05  MOS[p33e2r]  ----------
+
+   extractMOS(
+     "p33e2r" pgate33_rec
+     gtpoly("G") psd("S" "D") DNW("B") 
+     spiceModel("p33e2r")
+     flagMalformed 
+     cellView( "p33e2r ivpcell" )
+   )
+
+;;   l_PMOS = measureParameter( length ( pgate33_rec inside gtpoly ) 0.5e-6 )  
+     w_PMOS = measureParameter( length ( pgate33_rec butting psd ) 0.5e-6 ) 
+     a_PMOS = measureParameter( area ( pgate33_rec ) 1.0e-12 )
+     l_PMOS = calculateParameter( a_PMOS / w_PMOS )
+     nameParameter( l_PMOS "l" )
+     nameParameter( w_PMOS "w" )
+     get_sti( pgate33_rec AA l_PMOS w_PMOS )
+
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_PMOS "effW" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_PMOS "effL" ) )
+     saveProperty( pgate33_rec "model" "p33e2r" )
+
+
+   extractMOS(
+     "p33e2r" pgate33_bend
+     gtpoly("G") psd("S" "D") DNW("B") 
+     spiceModel("p33e2r")
+     flagMalformed 
+     cellView( "p33e2r ivpcell" )
+   )
+
+;;   l_PMOS = measureParameter( length ( pgate33_bend inside gtpoly ) 0.5e-6 )
+     w_PMOS = measureParameter( length ( pgate33_bend coincident gtpoly ) 0.5e-6 )
+     a_PMOS = measureParameter( area ( pgate33_bend ) 1.0e-12 )
+     l_PMOS = calculateParameter( a_PMOS / w_PMOS )
+     nameParameter( l_PMOS "l" )
+     nameParameter( w_PMOS "w" )
+     nameParameter( w_PMOS "fw" )
+     get_sti( pgate33_bend AA l_PMOS w_PMOS )
+
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_PMOS "effW" ) )
+     saveProperty( pgate33_bend "model" "p33e2r" )
+
+
+;  -----  5.1.06  MOS[p18e2r]  ----------
+
+   extractMOS(
+     "p18e2r" pgate18_rec
+     GPOLY("G") psd("S" "D") nwell("B") 
+     spiceModel("p18e2r")
+     flagMalformed 
+     cellView( "p18e2r ivpcell" )
+   )
+
+;;   l_PMOS = measureParameter( length ( pgate18_rec inside GPOLY ) 0.5e-6 ) 
+     w_PMOS = measureParameter( length ( pgate18_rec butting psd ) 0.5e-6 ) 
+     a_PMOS = measureParameter( area ( pgate18_rec ) 1.0e-12 )
+     l_PMOS = calculateParameter( a_PMOS / w_PMOS )
+     nameParameter( l_PMOS "l" )
+     nameParameter( w_PMOS "w" )
+     nameParameter( w_PMOS "fw" )
+     get_sti( pgate18_rec AA l_PMOS w_PMOS )
+
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_PMOS "effW" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_PMOS "effL" ) )
+     saveProperty( pgate18_rec "model" "p18e2r" )
+
+
+   extractMOS(
+     "p18e2r" pgate18_bend
+     GPOLY("G") psd("S" "D") nwell("B") 
+     spiceModel("p18e2r")
+     flagMalformed 
+     cellView( "p18e2r ivpcell" )
+   )
+
+;;   l_PMOS = measureParameter( length ( pgate18_bend inside GPOLY ) 0.5e-6 )
+     w_PMOS = measureParameter( length ( pgate18_bend coincident GPOLY ) 0.5e-6 )
+     a_PMOS = measureParameter( area ( pgate18_bend ) 1.0e-12 )
+     l_PMOS = calculateParameter( a_PMOS / w_PMOS )
+     nameParameter( l_PMOS "l" )
+     nameParameter( w_PMOS "w" )
+     nameParameter( w_PMOS "fw" )
+     get_sti( pgate18_bend AA l_PMOS w_PMOS )
+
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_PMOS "effW" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_PMOS "effL" ) )
+     saveProperty( pgate18_bend "model" "p18e2r" )
+
+;; -----  5.1.07  MOS[C1]  ----------------
+;
+;   extractMOS(
+;     "C1" cngat_rec
+;     GPOLY("G") nsd("S" "D") nwell("B") 
+;     spiceModel("C1")
+;     flagMalformed 
+;     cellView( "C1 ivpcell" )
+;   )
+;
+;     area_nmoscap = measureParameter( area ( cngat_rec ) 1e-12 )
+;     w_nmoscap = measureParameter( length ( cngat_rec coincident GPOLY ) 0.5e-6 )
+;     l_nmoscap = calculateParameter( ( area_nmoscap / w_nmoscap ) )
+;     nameParameter( l_nmoscap "l" )
+;     nameParameter( w_nmoscap "w" )
+;;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_nmoscap "effW" ) )
+;;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_nmoscap "effL" ) )
+;     saveProperty( cngat_rec "model" "C1" )
+;
+;   extractMOS(
+;     "C1" cngat_bend
+;     GPOLY("G") nsd("S" "D") nwell("B") 
+;     spiceModel("C1")
+;     flagMalformed 
+;     cellView( "C1 ivpcell" )
+;   )
+;
+;     area_nmoscap = measureParameter( area ( cngat_bend ) 1e-12 )
+;     w_nmoscap = measureParameter( length ( cngat_bend coincident GPOLY ) 0.5e-6 )
+;     l_nmoscap = calculateParameter( ( area_nmoscap / w_nmoscap ) )
+;     nameParameter( l_nmoscap "l" )
+;     nameParameter( w_nmoscap "w" )
+;;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_nmoscap "effW" ) )
+;;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_nmoscap "effL" ) )
+;     saveProperty( cngat_bend "model" "C1" )
+
+
+; -----  5.1.08 MOS[p50e2r]  ----------------------
+
+   extractMOS(
+     "p50e2r" hpgate50_rec
+     gtpoly("G") psd("S" "D") DNW("B") 
+     spiceModel("p50e2r")
+     flagMalformed 
+     cellView( "p50e2r ivpcell" )
+   )
+
+;;   l_PMOS = measureParameter( length ( hpgate50_rec inside gtpoly ) 0.5e-6 )
+     w_PMOS = measureParameter( length ( hpgate50_rec coincident gtpoly ) 0.5e-6 )
+     a_PMOS = measureParameter( area ( hpgate50_rec ) 1.0e-12 )
+     l_PMOS = calculateParameter( a_PMOS / w_PMOS )
+     nameParameter( l_PMOS "l" )
+     nameParameter( w_PMOS "w" )
+     nameParameter( w_PMOS "fw" )
+     get_sti( hpgate50_rec AA l_PMOS w_PMOS )
+
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_PMOS "effW" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_PMOS "effL" ) )
+     saveProperty( hpgate50_rec "model" "p50e2r" )
+
+   extractMOS(
+     "p50e2r" hpgate50_bend
+     gtpoly("G") psd("S" "D") DNW("B") 
+     spiceModel("p50e2r")
+     flagMalformed 
+     cellView( "p50e2r ivpcell" )
+   )
+
+;;   l_PMOS = measureParameter( length ( hpgate50_bend inside gtpoly) 0.5e-6 )
+     w_PMOS = measureParameter( length ( hpgate50_bend coincident gtpoly ) 0.5e-6 )
+     a_PMOS = measureParameter( area ( hpgate50_bend ) 1.0e-12 )
+     l_PMOS = calculateParameter( a_PMOS / w_PMOS )
+     nameParameter( l_PMOS "l" )
+     nameParameter( w_PMOS "w" )
+     nameParameter( w_PMOS "fw" )
+     get_sti( hpgate50_bend AA l_PMOS w_PMOS )
+
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_PMOS "effW" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_PMOS "effL" ) )
+     saveProperty( hpgate50_bend "model" "p50e2r" )
+
+; -----  5.1.09 MOS[p155e2r]  ----------------------
+
+   phsd = geomAnd( SP AA )
+   extractMOS(
+     "p155e2r" hpgate155_rec
+     gtpoly("G") psd("S" "D") DNW("B") 
+     spiceModel("p155e2r")
+     flagMalformed 
+     cellView( "p155e2r ivpcell" )
+   )
+
+;;   l_PMOS = measureParameter( length ( hpgate155_rec inside gtpoly ) 0.5e-6 )
+     w_PMOS = measureParameter( length ( hpgate155_rec coincident gtpoly ) 0.5e-6 )
+     a_PMOS = measureParameter( area ( hpgate155_rec ) 1.0e-12 )
+     l_PMOS = calculateParameter( a_PMOS / w_PMOS )
+     nameParameter( l_PMOS "l" )
+     nameParameter( w_PMOS "w" )
+     nameParameter( w_PMOS "fw" )
+     get_sti( hpgate155_rec AA l_PMOS w_PMOS )
+
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_PMOS "effW" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_PMOS "effL" ) )
+     saveProperty( hpgate155_rec "model" "p155e2r" )
+
+   extractMOS(
+     "p155e2r" hpgate155_bend
+     gtpoly("G") psd("S" "D") DNW("B") 
+     spiceModel("p155e2r")
+     flagMalformed 
+     cellView( "p155e2r ivpcell" )
+   )
+
+;;   l_PMOS = measureParameter( length ( hpgate155_bend inside gtpoly) 0.5e-6 )
+     w_PMOS = measureParameter( length ( hpgate155_bend coincident gtpoly ) 0.5e-6 )
+     a_PMOS = measureParameter( area ( hpgate155_bend ) 1.0e-12 )
+     l_PMOS = calculateParameter( a_PMOS / w_PMOS )
+     nameParameter( l_PMOS "l" )
+     nameParameter( w_PMOS "w" )
+     nameParameter( w_PMOS "fw" )
+     get_sti( hpgate155_bend AA l_PMOS w_PMOS )
+
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_PMOS "effW" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_PMOS "effL" ) )
+     saveProperty( hpgate155_bend "model" "p155e2r" )
+
+; -----  5.1.10 MOS[nz50e2r]  ----------------------
+
+   extractMOS(
+     "nz50e2r" hzngate50_rec
+     gtpoly("G") nsd("S" "D") PSUB("B") 
+     spiceModel("nz50e2r")
+     flagMalformed 
+     cellView( "nz50e2r ivpcell" )
+   )
+
+;;   l_NMOS = measureParameter( length ( hzngate50_rec inside gtpoly ) 0.5e-6 )
+     w_NMOS = measureParameter( length ( hzngate50_rec coincident gtpoly ) 0.5e-6 )
+     a_NMOS = measureParameter( area ( hzngate50_rec ) 1.0e-12 )
+     l_NMOS = calculateParameter( a_NMOS / w_NMOS )
+     nameParameter( l_NMOS "l" )
+     nameParameter( w_NMOS "w" )
+     nameParameter( w_NMOS "fw" )
+     get_sti( hzngate50_rec AA l_NMOS w_NMOS )
+
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_NMOS "effW" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_NMOS "effL" ) )
+     saveProperty( hzngate50_rec "model" "nz50e2r" )
+
+   extractMOS(
+     "nz50e2r" hzngate50_bend
+     gtpoly("G") nsd("S" "D") PSUB("B") 
+     spiceModel("nz50e2r")
+     flagMalformed 
+     cellView( "nz50e2r ivpcell" )
+   )
+
+;;   l_NMOS = measureParameter( length ( hzngate50_bend inside gtpoly) 0.5e-6 )
+     w_NMOS = measureParameter( length ( hzngate50_bend coincident gtpoly ) 0.5e-6 )
+     a_NMOS = measureParameter( area ( hzngate50_bend ) 1.0e-12 )
+     l_NMOS = calculateParameter( a_NMOS / w_NMOS )
+     nameParameter( l_NMOS "l" )
+     nameParameter( w_NMOS "w" )
+     nameParameter( w_NMOS "fw" )
+     get_sti( hzngate50_bend AA l_NMOS w_NMOS )
+
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_NMOS "effW" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_NMOS "effL" ) )
+     saveProperty( hzngate50_bend "model" "nz50e2r" )
+
+
+; -----  5.1.11 MOS[nz155e2r]  ----------------------
+
+   extractMOS(
+     "nz155e2r" hzngate155_rec
+     gtpoly("G") nsd("S" "D") PSUB("B")
+     spiceModel("nz155e2r")
+     flagMalformed
+     cellView( "nz155e2r ivpcell" )
+   )
+
+;;   l_NMOS = measureParameter( length ( hzngate155_rec inside gtpoly ) 0.5e-6 )
+     w_NMOS = measureParameter( length ( hzngate155_rec coincident gtpoly ) 0.5e-6 )
+     a_NMOS = measureParameter( area ( hzngate155_rec ) 1.0e-12 )
+     l_NMOS = calculateParameter( a_NMOS / w_NMOS )
+     nameParameter( l_NMOS "l" )
+     nameParameter( w_NMOS "w" )
+     nameParameter( w_NMOS "fw" )
+     get_sti( hzngate155_rec AA l_NMOS w_NMOS )
+
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_NMOS "effW" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_NMOS "effL" ) )
+     saveProperty( hzngate155_rec "model" "nz155e2r" )
+
+   extractMOS(
+     "nz155e2r" hzngate155_bend
+     gtpoly("G") nsd("S" "D") PSUB("B")
+     spiceModel("nz155e2r")
+     flagMalformed
+     cellView( "nz155e2r ivpcell" )
+   )
+
+;;   l_NMOS = measureParameter( length ( hzngate155_bend inside gtpoly) 0.5e-6 )
+     w_NMOS = measureParameter( length ( hzngate155_bend coincident gtpoly ) 0.5e-6 )
+     a_NMOS = measureParameter( area ( hzngate155_bend ) 1.0e-12 )
+     l_NMOS = calculateParameter( a_NMOS / w_NMOS )
+     nameParameter( l_NMOS "l" )
+     nameParameter( w_NMOS "w" )
+     nameParameter( w_NMOS "fw" )
+     get_sti( hzngate155_bend AA l_NMOS w_NMOS )
+
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_NMOS "effW" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_NMOS "effL" ) )
+     saveProperty( hzngate155_bend "model" "nz155e2r" )
+
+; -----  5.1.12 MOS[NSG]  ----------------------
+
+   extractMOS(
+     "NSG" nsgate_rec
+     gtpoly("G") nsd("S" "D") PSUB("B")
+     spiceModel("NSG")
+     flagMalformed
+     cellView( "NSG ivpcell" )
+   )
+
+;;   l_NMOS = measureParameter( length ( nsgate_rec inside gtpoly ) 0.5e-6 )
+     w_NMOS = measureParameter( length ( nsgate_rec coincident gtpoly ) 0.5e-6 )
+     a_NMOS = measureParameter( area ( nsgate_rec ) 1.0e-12 )
+     l_NMOS = calculateParameter( a_NMOS / w_NMOS )
+     nameParameter( l_NMOS "l" )
+     nameParameter( w_NMOS "w" )
+     nameParameter( w_NMOS "fw" )
+     get_sti( nsgate_rec AA l_NMOS w_NMOS )
+
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_NMOS "effW" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_NMOS "effL" ) )
+     saveProperty( nsgate_rec "model" "NSG" )
+
+   extractMOS(
+     "NSG" nsgate_bend
+     gtpoly("G") nsd("S" "D") PSUB("B")
+     spiceModel("NSG")
+     flagMalformed
+     cellView( "NSG ivpcell" )
+   )
+
+;;   l_NMOS = measureParameter( length ( nsgate_bend inside gtpoly) 0.5e-6 )
+     w_NMOS = measureParameter( length ( nsgate_bend coincident gtpoly ) 0.5e-6 )
+     a_NMOS = measureParameter( area ( nsgate_bend ) 1.0e-12 )
+     l_NMOS = calculateParameter( a_NMOS / w_NMOS )
+     nameParameter( l_NMOS "l" )
+     nameParameter( w_NMOS "w" )
+     nameParameter( w_NMOS "fw" )
+     get_sti( nsgate_bend AA l_NMOS w_NMOS )
+
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_NMOS "effW" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_NMOS "effL" ) )
+     saveProperty( nsgate_bend "model" "NSG" )
+
+; -----  5.1.13 MOS[NCG]  ----------------------
+
+   extractMOS(
+     "NCG" ncgate_rec
+     CGPOLY("G") nsd("S" "D") PSUB("B")
+     spiceModel("NCG")
+     flagMalformed
+     cellView( "NCG ivpcell" )
+   )
+
+     area_NMOS = measureParameter( area ( ncgate_rec ) 1e-12 )
+     w_NMOS = measureParameter( length ( ncgate_rec butting nsd ) 0.5e-6 )
+     l_NMOS = calculateParameter( area_NMOS/w_NMOS )
+     nameParameter( l_NMOS "l" )
+     nameParameter( w_NMOS "w" )
+     nameParameter( w_NMOS "fw" )
+     get_sti( ncgate_rec AA l_NMOS w_NMOS )
+
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_NMOS "effW" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_NMOS "effL" ) )
+     saveProperty( ncgate_rec "model" "NCG" )
+
+   extractMOS(
+     "NCG" ncgate_bend
+     CGPOLY("G") nsd("S" "D") PSUB("B")
+     spiceModel("NCG")
+     flagMalformed
+     cellView( "NCG ivpcell" )
+   )
+     area_NMOS = measureParameter( area ( ncgate_bend ) 1e-12 )
+     w_NMOS = measureParameter( length ( ncgate_bend butting nsd ) 0.5e-6 )
+     l_NMOS = calculateParameter( area_NMOS/w_NMOS )
+     nameParameter( l_NMOS "l" )
+     nameParameter( w_NMOS "w" )
+     nameParameter( w_NMOS "fw" )
+     get_sti( ncgate_bend AA l_NMOS w_NMOS )
+
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( w_NMOS "effW" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( l_NMOS "effL" ) )
+     saveProperty( ncgate_bend "model" "NCG" )
+
+ngatw = geomAnd( ngate nwell)
+pwgat18 = geomAnd( ngatw VARMOS )
+; ------- Varactor mos[pvar18e2r_ckt] -------------------
+
+    extractDevice(
+        "pvar18e2r_ckt" pwgat18
+        GPOLY("PLUS") ntie("MINUS")
+        spiceModel("pvar18e2r_ckt" )
+        flagMalformed
+        cellView( "pvar18_ckte2r ivpcell" )
+        )
+
+        fingers   = measureParameter( figCount ( pwgat18 enclosing ngatw ) )
+        all_w     = measureParameter( length ( pwgat18 butting ntie ) 0.5e-6)
+        w_VMOS    = calculateParameter( all_w/fingers )
+        area_VMOS = measureParameter( area ( pwgat18 over ngatw ) 1e-12 )
+        l_VMOS    = calculateParameter( area_VMOS/all_w)
+        attachParameter( l_VMOS "LR" pwgat18 )
+        nameParameter( w_VMOS "WR" )
+        attachParameter( fingers "NF" pwgat18 )
+        nameParameter( l_VMOS "l" )
+        nameParameter( w_VMOS "w" )
+        nameParameter( fingers "nf" )
+
+; -----  5.2.1  BJT[pnp18a4e2r]  ------------------------
+
+   extractBJT(
+     "pnp18a4e2r" emit18a4 
+     coll("C") nwell("B") emit18("E")
+     spiceModel("pnp18a4e2r")
+     cellView( "pnp18a4e2r ivpcell" )
+     flagMalformed
+   )
+
+     emitArea	= measureParameter( area ( emit18a4 over emit18) )
+     normalizedEmitArea = calculateParameter( emitArea * 1e-12 )
+     l = calculateParameter( sqrt( normalizedEmitArea ) )
+     nameParameter( l "l" )
+     nameParameter( l "w" )
+     nameParameter( normalizedEmitArea "area" )
+     nameParameter( normalizedEmitArea "EmitterSize" )
+     saveProperty( emit18a4 "model" "pnp18a4e2r" )
+
+; -----  5.2.2  BJT[pnp18a25e2r]  ------------------------
+
+   extractBJT(
+     "pnp18a25e2r" emit18a25
+     coll("C") nwell("B") emit18("E")
+     spiceModel("pnp18a25e2r")
+     cellView( "pnp18a25e2r ivpcell" )
+     flagMalformed
+   )
+
+     emitArea   = measureParameter( area ( emit18a25 over emit18) )
+     normalizedEmitArea = calculateParameter( emitArea * 1e-12 )
+     l = calculateParameter( sqrt( normalizedEmitArea ) )
+     nameParameter( l "l" )
+     nameParameter( l "w" )
+     nameParameter( normalizedEmitArea "area" )
+     nameParameter( normalizedEmitArea "EmitterSize" )
+     saveProperty( emit18a25 "model" "pnp18a25e2r" )
+
+; -----  5.2.3  BJT[pnp18a100e2r]  ------------------------
+
+   extractBJT(
+     "pnp18a100e2r" emit18a100
+     coll("C") nwell("B") emit18("E")
+     spiceModel("pnp18a100e2r")
+     cellView( "pnp18a100e2r ivpcell" )
+     flagMalformed
+   )
+
+     emitArea	= measureParameter( area ( emit18a100 over emit18) )
+     normalizedEmitArea = calculateParameter( emitArea * 1e-12 )
+     l = calculateParameter( sqrt( normalizedEmitArea ) )
+     nameParameter( l "l" )
+     nameParameter( l "w" )
+     nameParameter( normalizedEmitArea "area" )
+     nameParameter( normalizedEmitArea "EmitterSize" )
+     saveProperty( emit18a100 "model" "pnp18a100e2r" )
+
+; -----  5.2.4  BJT[pnp33a4e2r]  ------------------------
+
+   extractBJT(
+     "pnp33a4e2r" emit33a4
+     coll33("C") DNW("B") emit33("E")
+     spiceModel("pnp33a4e2r")
+     cellView( "pnp33a4e2r ivpcell" )
+     flagMalformed
+   )
+
+     emitArea   = measureParameter( area (emit33a4 over emit33) )
+     normalizedEmitArea = calculateParameter( emitArea * 1e-12 )
+     l = calculateParameter( sqrt( normalizedEmitArea ) )
+     nameParameter( l "l" )
+     nameParameter( l "w" )
+     nameParameter( normalizedEmitArea "area" )
+     nameParameter( normalizedEmitArea "EmitterSize" )
+     saveProperty( emit33a4 "model" "pnp33a4e2r" )
+
+; -----  5.2.5  BJT[pnp33a25e2r]  ------------------------
+
+   extractBJT(
+     "pnp33a25e2r" emit33a25
+     coll33("C") DNW("B") emit33("E")
+     spiceModel("pnp33a25e2r")
+     cellView( "pnp33a25e2r ivpcell" )
+     flagMalformed
+   )
+
+     emitArea   = measureParameter( area (emit33a25 over emit33) )
+     normalizedEmitArea = calculateParameter( emitArea * 1e-12 )
+     l = calculateParameter( sqrt( normalizedEmitArea ) )
+     nameParameter( l "l" )
+     nameParameter( l "w" )
+     nameParameter( normalizedEmitArea "area" )
+     nameParameter( normalizedEmitArea "EmitterSize" )
+     saveProperty( emit33a25 "model" "pnp33a25e2r" )
+
+; -----  5.2.6  BJT[pnp33a100e2r]  ------------------------
+
+   extractBJT(
+     "pnp33a100e2r" emit33a100
+     coll33("C") DNW("B") emit33("E")
+     spiceModel("pnp33a100e2r")
+     cellView( "pnp33a100e2r ivpcell" )
+     flagMalformed
+   )
+
+     emitArea   = measureParameter( area (emit33a100 over emit33) )
+     normalizedEmitArea = calculateParameter( emitArea * 1e-12 )
+     l = calculateParameter( sqrt( normalizedEmitArea ) )
+     nameParameter( l "l" )
+     nameParameter( l "w" )
+     nameParameter( normalizedEmitArea "area" )
+     nameParameter( normalizedEmitArea "EmitterSize" )
+     saveProperty( emit33a100 "model" "pnp33a100e2r" )
+
+; -----  5.3.1  DIO[ndio18e2r]  ------------------------
+
+   extractDIODE(
+     "ndio18e2r" ndio18
+     pwell("PLUS") nsd("MINUS")
+     cellView("ndio18e2r ivpcell")
+     spiceModel("ndio18e2r")
+     flagMalformed
+   )
+
+     area       = measureParameter( area (ndio18 over nsd) 1e-12 )
+     perim      = measureParameter( perimeter ( ndio18 over nsd ) 1e-6 )
+     nameParameter( area "area" )
+     nameParameter( perim "pj" )
+     saveProperty( ndio18 "model" "ndio18e2r")
+
+; -----  5.3.2  DIO[ndio33e2r]  ------------------------
+
+   extractDIODE(
+     "ndio33e2r" ndio33
+     TPW("PLUS") nsd("MINUS")
+     cellView("ndio33e2r ivpcell")
+     spiceModel("ndio33e2r")
+     flagMalformed
+   )
+
+     area       = measureParameter( area (ndio33 over nsd) 1e-12 )
+     perim      = measureParameter( perimeter ( ndio33 over nsd ) 1e-6 )
+     nameParameter( area "area" )
+     nameParameter( perim "pj" )
+     saveProperty( ndio33 "model" "ndio33e2r")
+
+; -----  5.3.3  DIO[ndio50e2r]  ------------------------
+
+   extractDIODE(
+     "ndio50e2r" ndio50
+     PSUB("PLUS") nsd("MINUS")
+     cellView("ndio50e2r ivpcell")
+     spiceModel("ndio50e2r")
+     flagMalformed
+   )
+
+     area       = measureParameter( area (ndio50 over nsd) 1e-12 )
+     perim      = measureParameter( perimeter ( ndio50 over nsd ) 1e-6 )
+     nameParameter( area "area" )
+     nameParameter( perim "pj" )
+     saveProperty( ndio50 "model" "ndio50e2r")
+
+; -----  5.3.4  DIO[ndio155e2r]  ------------------------
+
+   extractDIODE(
+     "ndio155e2r" ndio155
+     PSUB("PLUS") nsd("MINUS")
+     cellView("ndio155e2r ivpcell")
+     spiceModel("ndio155e2r")
+     flagMalformed
+   )
+
+     area       = measureParameter( area (ndio155 over nsd) 1e-12 )
+     perim      = measureParameter( perimeter ( ndio155 over nsd ) 1e-6 )
+     nameParameter( area "area" )
+     nameParameter( perim "pj" )
+     saveProperty( ndio155 "model" "ndio155e2r")
+
+; -----  5.3.5  DIO[nwdioe2r]  ------------------------
+
+   extractDIODE(
+     "nwdioe2r" nwdio
+     pwell("PLUS") nwell("MINUS")
+     cellView("nwdioe2r ivpcell")
+     spiceModel("nwdioe2r")
+     flagMalformed
+   )
+
+     area       = measureParameter( area (nwdio over nwell) 1e-12 )
+     perim      = measureParameter( perimeter ( nwdio over nwell ) 1e-6 )
+     nameParameter( area "area" )
+     nameParameter( perim "pj" )
+     saveProperty( nwdio "model" "nwdioe2r")
+
+; -----  5.3.6  DIO[pdio18e2r]  ------------------------
+
+   extractDIODE(
+     "pdio18e2r" pdio18
+     psd("PLUS") nwell("MINUS")
+     cellView("pdio18e2r ivpcell")
+     spiceModel("pdio18e2r")
+     flagMalformed
+   )
+
+     area       = measureParameter( area ( pdio18 over psd) 1e-12 )
+     perim      = measureParameter( perimeter ( pdio18 over psd ) 1e-6 )
+     nameParameter( area "area" )
+     nameParameter( perim "pj" )
+     saveProperty( pdio18 "model" "pdio18e2r")
+
+; -----  5.3.7  DIO[pdio33e2r]  ------------------------
+
+   extractDIODE(
+     "pdio33e2r" pdio33
+     psd("PLUS") DNW("MINUS")
+     cellView("pdio33e2r ivpcell")
+     spiceModel("pdio33e2r")
+     flagMalformed
+   )
+
+     area       = measureParameter( area ( pdio33 over psd) 1e-12 )
+     perim      = measureParameter( perimeter ( pdio33 over psd ) 1e-6 )
+     nameParameter( area "area" )
+     nameParameter( perim "pj" )
+     saveProperty( pdio33 "model" "pdio33e2r")
+
+; -----  5.3.8  DIO[pdio50e2r]  ------------------------
+
+   extractDIODE(
+     "pdio50e2r" pdio50
+     psd("PLUS") DNW("MINUS")
+     cellView("pdio50e2r ivpcell")
+     spiceModel("pdio50e2r")
+     flagMalformed
+   )
+
+     area       = measureParameter( area ( pdio50 over psd) 1e-12 )
+     perim      = measureParameter( perimeter ( pdio50 over psd ) 1e-6 )
+     nameParameter( area "area" )
+     nameParameter( perim "pj" )
+     saveProperty( pdio50 "model" "pdio50e2r")
+
+; -----  5.3.9  DIO[pdio155e2r]  ------------------------
+
+   extractDIODE(
+     "pdio155e2r" pdio155
+     psd("PLUS") DNW("MINUS")
+     cellView("pdio155e2r ivpcell")
+     spiceModel("pdio155e2r")
+     flagMalformed
+   )
+
+     area       = measureParameter( area ( pdio155 over psd) 1e-12 )
+     perim      = measureParameter( perimeter ( pdio155 over psd ) 1e-6 )
+     nameParameter( area "area" )
+     nameParameter( perim "pj" )
+     saveProperty( pdio155 "model" "pdio155e2r")
+
+; -----  5.3.10 DIO[nzdio50e2r]  ------------------------
+
+   extractDIODE(
+     "nzdio50e2r" zndio50
+     PSUB("PLUS") nsd("MINUS")
+     cellView("nzdio50e2r ivpcell")
+     spiceModel("nzdio50e2r")
+     flagMalformed
+   )
+
+     area       = measureParameter( area ( zndio50 over nsd) 1e-12 )
+     perim      = measureParameter( perimeter ( zndio50 over nsd ) 1e-6 )
+     nameParameter( area "area" )
+     nameParameter( perim "pj" )
+     saveProperty( zndio50 "model" "nzdio50e2r")
+
+; -----  5.3.11 DIO[nzdio155e2r]  ------------------------
+
+   extractDIODE(
+     "nzdio155e2r" zndio155
+     PSUB("PLUS") nsd("MINUS")
+     cellView("nzdio155e2r ivpcell")
+     spiceModel("nzdio155e2r")
+     flagMalformed
+   )
+
+     area       = measureParameter( area ( zndio155 over nsd) 1e-12 )
+     perim      = measureParameter( perimeter ( zndio155 over nsd ) 1e-6 )
+     nameParameter( area "area" )
+     nameParameter( perim "pj" )
+     saveProperty( zndio155 "model" "nzdio155e2r")
+
+; -----  5.3.12  DIO[dnwdioe2r]  ------------------------
+
+   extractDIODE(
+     "dnwdioe2r" dnwdio
+     PSUBDSTR("PLUS") DNW("MINUS")
+     cellView("dnwdioe2r ivpcell")
+     spiceModel("dnwdioe2r")
+     flagMalformed
+   )
+
+     area       = measureParameter( area (dnwdio over DNW) 1e-12 )
+     perim      = measureParameter( perimeter (dnwdio over DNW ) 1e-6 )
+     nameParameter( area "area" )
+     nameParameter( perim "pj" )
+     saveProperty( nwdio "model" "dnwdioe2r")
+
+; -----  5.4.1  CAP[pipe2r]  ------------------------
+if( avSwitch( "pipe2r_c" ) then
+   extractCAP(
+     "pipe2r" ccgt
+     CGPOLY("PLUS") gtpoly("MINUS")
+     spiceModel("pipe2r")
+     flagMalformed
+     cellView( "pipe2r ivpcell" )
+   )
+     area       = measureParameter( area ( ccgt ) )
+     cap        = calculateParameter(  area * 20.55 )
+     normalizedCap = calculateParameter( cap * 1e-16 )
+     nameParameter( normalizedCap "c" )
+     saveProperty( ccgt "model" "pipe2r" )
+) ; end if
+
+; ------5.4.1.a CAP[pipe2r_ckt] -------------------------
+if( avSwitch( "pipe2r_ckt" ) then
+   extractDevice(
+     "pipe2r_ckt" ccgt
+     CGPOLY("PLUS") gtpoly("MINUS")
+     spiceModel("pipe2r_ckt")
+     flagMalformed
+     cellView( "pipe2r_ckt ivpcell" )
+   )
+     perim      = measureParameter( perimeter ( ccgt ) )
+     area       = measureParameter( area ( ccgt ) )
+     width      = calculateParameter( perim/4+sqrt(abs(perim*perim/16-area)) )
+     length     = calculateParameter( perim*0.5-width )
+
+/*
+        orthogonalEdges = geomSize( geomGetAngledEdge( ccgt keep == 0 ) 0.001 )
+        eastEdge = geomAnd( geomGrow( ccgt 0.001 0 0 0 ) orthogonalEdges )
+        northEdge = geomAnd( geomGrow( ccgt 0 0.001 0 0 ) orthogonalEdges )
+        westEdge = geomAnd( geomGrow( ccgt 0 0 0.001 0 ) orthogonalEdges )
+        southEdge = geomAnd( geomGrow( ccgt 0 0 0 0.001 ) orthogonalEdges )
+        errorLayer( eastEdge "eastEdge")
+        errorLayer( northEdge "northEdge")
+        errorLayer( westEdge "westEdge")
+        errorLayer( southEdge "southEdge")
+
+        eastEdgeLength  = measureParameter( length (eastEdge butting ccgt) )
+        northEdgeLength = measureParameter( length (northEdge butting ccgt) )
+        westEdgeLength  = measureParameter( length (westEdge butting ccgt) )
+        southEdgeLength = measureParameter( length (southEdge butting ccgt) )
+        errorLayer( eastEdgeLength "eastEdgeLength")
+        errorLayer( northEdgeLength "northEdgeLength")
+        errorLayer( westEdgeLength "westEdgeLength")
+        errorLayer( southEdgeLength "southEdgeLength")
+*/
+
+     cap        = calculateParameter(  area * 20.55 )
+     normalizedCap = calculateParameter( cap * 1e-16 )
+     normalizedWidth = calculateParameter( width * 1e-6 )
+     normalizedLength = calculateParameter( length * 1e-6 )
+     normalizedArea = calculateParameter( area * 1e-12 )
+     attachParameter( normalizedWidth "wr" ccgt )
+     attachParameter( normalizedLength "lr" ccgt )
+     attachParameter( normalizedArea "area" ccgt )
+     nameParameter( normalizedCap "c" )
+     saveProperty( ccgt "model" "pipe2r_ckt" )
+) ; end if
+;--------------------------------------------------------
+
+if( avSwitch( "top_m2" ) && avSwitch( "mime2r_c") then
+; -----  5.4.2 CAP[mim]
+   extractCAP(
+     "mime2r" m1cap
+     MIM("PLUS") MT1("MINUS")
+     spiceModel("mime2r")
+     flagMalformed
+     cellView( "mime2r ivpcell")
+   )
+     perim      = measureParameter( perimeter ( m1cap ) )
+     area        = measureParameter( area ( m1cap ) )
+     width      = calculateParameter( perim/4+sqrt(abs(perim*perim/16-area)) )
+     length     = calculateParameter( perim*0.5-width )
+     cap         = calculateParameter( area * 9.71 )
+     normalizedCap = calculateParameter( cap * 1e-16 )
+     normalizedWidth = calculateParameter( width * 1e-6 )
+     normalizedLength = calculateParameter( length * 1e-6 )
+     nameParameter( normalizedCap "c" )
+     saveProperty( m1cap "model" "mime2r" )
+) ;end if
+
+if( avSwitch( "top_m2" ) && avSwitch( "mime2r_ckt") then
+; -----  5.4.2 CAP[mime2r]
+   extractDevice(
+     "mime2r_ckt" m1cap
+     MIM("PLUS") MT1("MINUS")
+     spiceModel("mime2r_ckt")
+     flagMalformed
+     cellView( "mime2r_ckt ivpcell")
+   )
+     perim      = measureParameter( perimeter ( m1cap ) )
+     area        = measureParameter( area ( m1cap ) )
+;    width      = calculateParameter( perim/4+sqrt(abs(perim*perim/16-area)) )
+     width1     = measureParameter( length (m1caps butting MT2))
+     width	= calculateParameter( width1 - 0.41*2)
+     length     = calculateParameter( perim*0.5-width )
+     cap         = calculateParameter( area * 9.71 )
+     normalizedCap = calculateParameter( cap * 1e-16 )
+     normalizedWidth = calculateParameter( width * 1e-6 )
+     normalizedLength = calculateParameter( length * 1e-6 )
+     attachParameter( normalizedWidth "wr" m1cap )
+     attachParameter( normalizedLength "lr" m1cap )
+     saveProperty( m1cap "model" "mime2r_ckt" )
+) ;end if
+
+
+if( avSwitch( "top_m3" ) && avSwitch( "mime2r_c")  then
+; -----  5.4.2  CAP[mime2r]  ------------------------
+   extractCAP(
+     "mime2r" m2cap
+     MIM("PLUS") MT2("MINUS")
+     spiceModel("mime2r")
+     flagMalformed
+     cellView( "mime2r ivpcell" )
+   )
+     perim      = measureParameter( perimeter ( m2cap ) )
+     area       = measureParameter( area ( m2cap ) )
+     width      = calculateParameter( perim/4+sqrt(abs(perim*perim/16-area)) )
+     length     = calculateParameter( perim*0.5-width )
+     cap        = calculateParameter(  area * 9.71 )
+     normalizedCap = calculateParameter( cap * 1e-16 )
+     normalizedWidth = calculateParameter( width * 1e-6 )
+     normalizedLength = calculateParameter( length * 1e-6 )
+     nameParameter( normalizedCap "c" )
+     saveProperty( m2cap "model" "mime2r" )
+) ; end if
+
+if( avSwitch( "top_m3" ) && avSwitch( "mime2r_ckt")  then
+; -----  5.4.2  CAP[mime2r]  ------------------------
+   extractDevice(
+     "mime2r_ckt" m2cap
+     MIM("PLUS") MT2("MINUS")
+     spiceModel("mime2r_ckt")
+     flagMalformed
+     cellView( "mime2r_ckt ivpcell" )
+   )
+     perim      = measureParameter( perimeter ( m2cap ) )
+     area       = measureParameter( area ( m2cap ) )
+;    width      = calculateParameter( perim/4+sqrt(abs(perim*perim/16-area)) )
+     width1     = measureParameter( length (m2caps butting MT3))
+     width	= calculateParameter( width1 - 0.41*2)
+     length     = calculateParameter( perim*0.5-width )
+     cap        = calculateParameter(  area * 9.71 )
+     normalizedCap = calculateParameter( cap * 1e-16 )
+     normalizedWidth = calculateParameter( width * 1e-6 )
+     normalizedLength = calculateParameter( length * 1e-6 )
+     attachParameter( normalizedWidth "wr" m2cap )
+     attachParameter( normalizedLength "lr" m2cap )
+     saveProperty( m2cap "model" "mime2r_ckt" )
+) ; end if
+
+if( avSwitch( "top_m4" ) && avSwitch( "mime2r_c") then
+; -----  5.4.2  CAP[mime2r]  ------------------------
+   extractCAP(
+     "mime2r" m3cap
+     MIM("PLUS") MT3("MINUS")
+     spiceModel("mime2r")
+     flagMalformed
+     cellView( "mime2r ivpcell" )
+   )
+     perim      = measureParameter( perimeter ( m3cap ) )
+     area       = measureParameter( area ( m3cap ) )
+     width      = calculateParameter( perim/4+sqrt(abs(perim*perim/16-area)) )
+     length     = calculateParameter( perim*0.5-width )
+     cap        = calculateParameter(  area * 9.71 )
+     normalizedCap = calculateParameter( cap * 1e-16 )
+     normalizedWidth = calculateParameter( width * 1e-6 )
+     normalizedLength = calculateParameter( length * 1e-6 )
+     nameParameter( normalizedCap "c" )
+     saveProperty( m3cap "model" "mime2r" )
+
+) ; end if
+
+if( avSwitch( "top_m4" ) && avSwitch( "mime2r_ckt") then
+; -----  5.4.2  CAP[mime2r]  ------------------------
+   extractDevice(
+     "mime2r_ckt" m3cap
+     MIM("PLUS") MT3("MINUS")
+     spiceModel("mime2r_ckt")
+     flagMalformed
+     cellView( "mime2r_ckt ivpcell" )
+   )
+     perim      = measureParameter( perimeter ( m3cap ) )
+     area       = measureParameter( area ( m3cap ) )
+;    width      = calculateParameter( perim/4+sqrt(abs(perim*perim/16-area)) )
+     width1     = measureParameter( length (m3caps butting MT4))
+     width	= calculateParameter( width1 - 0.41*2)
+     length     = calculateParameter( perim*0.5-width )
+     cap        = calculateParameter(  area * 9.71 )
+     normalizedCap = calculateParameter( cap * 1e-16 )
+     normalizedWidth = calculateParameter( width * 1e-6 )
+     normalizedLength = calculateParameter( length * 1e-6 )
+     attachParameter( normalizedWidth "wr" m3cap )
+     attachParameter( normalizedLength "lr" m3cap )
+     saveProperty( m3cap "model" "mime2r_ckt" )
+) ; end if
+
+if( avSwitch( "top_m5" ) && avSwitch( "mime2r_c") then
+; -----  5.4.2  CAP[mime2r]  ------------------------
+   extractCAP(
+     "mime2r" m4cap
+     MIM("PLUS") MT4("MINUS")
+     spiceModel("mime2r")
+     flagMalformed
+     cellView( "mime2r ivpcell" )
+   )
+     perim      = measureParameter( perimeter ( m4cap ) )
+     area       = measureParameter( area ( m4cap ) )
+     width      = calculateParameter( perim/4+sqrt(abs(perim*perim/16-area)) )
+     length     = calculateParameter( perim*0.5-width )
+     cap        = calculateParameter(  area * 9.71 )
+     normalizedCap = calculateParameter( cap * 1e-16 )
+     normalizedWidth = calculateParameter( width * 1e-6 )
+     normalizedLength = calculateParameter( length * 1e-6 )
+     nameParameter( normalizedCap "c" )
+     saveProperty( m4cap "model" "mime2r" )
+) ; end if
+
+if( avSwitch( "top_m5" ) && avSwitch( "mime2r_ckt") then
+; -----  5.4.2  CAP[mime2r]  ------------------------
+   extractDevice(
+     "mime2r_ckt" m4cap
+     MIM("PLUS") MT4("MINUS")
+     spiceModel("mime2r_ckt")
+     flagMalformed
+     cellView( "mime2r_ckt ivpcell" )
+   )
+     perim      = measureParameter( perimeter ( m4cap ) )
+     area       = measureParameter( area ( m4cap ) )
+;    width      = calculateParameter( perim/4+sqrt(abs(perim*perim/16-area)) )
+     width1     = measureParameter( length (m4caps butting MT5))
+     width	= calculateParameter( width1 - 0.41*2)
+     length     = calculateParameter( perim*0.5-width )
+     cap        = calculateParameter(  area * 9.71 )
+     normalizedCap = calculateParameter( cap * 1e-16 )
+     normalizedWidth = calculateParameter( width * 1e-6 )
+     normalizedLength = calculateParameter( length * 1e-6 )
+     attachParameter( normalizedWidth "wr" m4cap )
+     attachParameter( normalizedLength "lr" m4cap )
+     saveProperty( m4cap "model" "mime2r_ckt" )
+) ; end if
+
+if( !avSwitch( "top_m2" ) && avSwitch( "mime2r_c" ) && !avSwitch( "top_m3" ) && !avSwitch( "top_m4" ) && !avSwitch( "top_m5" ) then
+; -----  5.4.2  CAP[mime2r]  ------------------------
+   extractCAP(
+     "mime2r" m5cap
+     MIM("PLUS") MT5("MINUS")
+     spiceModel("mime2r")
+     flagMalformed
+     cellView( "mime2r ivpcell" )
+   )
+     perim      = measureParameter( perimeter ( m5cap ) )
+     area       = measureParameter( area ( m5cap ) )
+     width      = calculateParameter( perim/4+sqrt(abs(perim*perim/16-area)) )
+     length     = calculateParameter( perim*0.5-width )
+     cap        = calculateParameter(  area * 9.71 )
+     normalizedCap = calculateParameter( cap * 1e-16 )
+     normalizedWidth = calculateParameter( width * 1e-6 )
+     normalizedLength = calculateParameter( length * 1e-6 )
+     nameParameter( normalizedCap "c" )
+     saveProperty( m5cap "model" "mime2r" )
+) ; end if
+
+if( !avSwitch( "top_m2" ) && avSwitch( "mime2r_ckt" ) && !avSwitch( "top_m3" ) && !avSwitch( "top_m4" ) && !avSwitch( "top_m5" ) then
+; -----  5.4.2  CAP[mime2r]  ------------------------
+   extractDevice(
+     "mime2r_ckt" m5cap
+     MIM("PLUS") MT5("MINUS")
+     spiceModel("mime2r_ckt")
+     flagMalformed
+     cellView( "mime2r_ckt ivpcell" )
+   )
+     perim      = measureParameter( perimeter ( m5cap ) )
+     area       = measureParameter( area ( m5cap ) )
+;    width      = calculateParameter( perim/4+sqrt(abs(perim*perim/16-area)) )
+     width1     = measureParameter( length (m5caps butting MT6))
+     width	= calculateParameter( width1 - 0.41*2)
+     length     = calculateParameter( perim*0.5-width )
+     cap        = calculateParameter(  area * 9.71 )
+     normalizedCap = calculateParameter( cap * 1e-16 )
+     normalizedWidth = calculateParameter( width * 1e-6 )
+     normalizedLength = calculateParameter( length * 1e-6 )
+     attachParameter( normalizedWidth "wr" m5cap )
+     attachParameter( normalizedLength "lr" m5cap )
+     saveProperty( m5cap "model" "mime2r_ckt" )
+) ; end if
+
+if( !avSwitch("RES_CKT_RNWSTI") then
+; -----  5.5.1 RES[rnwsti]  -----------------------
+   extractRES(
+     "rnwsti" rwsti
+     nwell("PLUS" "MINUS" )
+     spiceModel( "rnwsti" )
+     cellView( "rnwsti ivpcell" )
+     flagMalformed
+   )
+     width = measureParameter( length (rwsti butting nwell ) 0.5 )
+     normalizedWidth	= calculateParameter( width * 1e-6 )
+     length = measureParameter( length ( rwsti outside nwell ) 0.5 )
+     normalizedLength	= calculateParameter( length * 1e-6 )
+     res = calculateParameter( ( length * 890) / (width-2*0.183) )
+     nameParameter( normalizedWidth  "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "lSim" ) )
+     saveProperty( rwsti "model" "rnwsti")
+
+    ); end if
+
+if( avSwitch("RES_CKT_RNWSTI") then
+; -----  5.5.1 RES[rnwsti_ckt]  -----------------------
+   extractDevice(
+     "rnwsti_ckt" rwsti
+     nwell("PLUS" "MINUS" ) pwell("B")
+     spiceModel( "rnwsti_ckt" )
+     cellView( "rnwsti_ckt ivpcell" )
+     flagMalformed
+   )
+     width = measureParameter( length (rwsti butting nwell ) 0.5 )
+     normalizedWidth	= calculateParameter( width * 1e-6 )
+     length = measureParameter( length ( rwsti outside nwell ) 0.5 )
+     normalizedLength	= calculateParameter( length * 1e-6 )
+     res = calculateParameter( ( length * 890) / (width-2*0.183) )
+     nameParameter( normalizedWidth  "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "lSim" ) )
+     saveProperty( rwsti "model" "rnwsti_ckt")
+
+    ); end if
+
+ if( !avSwitch( "RES_CKT_RNWAA" )      then
+
+; -----  5.5.2 RES[rnwaa]  -----------------------
+
+   extractRES(
+     "rnwaa" rwaa
+     nwell("PLUS" "MINUS")
+     spiceModel( "rnwaa" )
+     cellView( "rnwaa ivpcell" )
+     flagMalformed
+   )
+
+     width  	= measureParameter( length (rwaa butting nwell ) 0.5 )
+     normalizedWidth	= calculateParameter( width * 1e-6 )
+     length	= measureParameter( length (rwaa outside nwell ) 0.5 )
+     normalizedLength	= calculateParameter( length * 1e-6 )
+     
+	 
+     res = calculateParameter( ( length * 441) / (width-2*0.0725) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width  "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rwaa "model" "rnwaa")
+
+    ); end if
+
+ if( avSwitch( "RES_CKT_RNWAA" )      then
+
+; -----  5.5.2 RES[rnwaa_ckt]  -----------------------
+
+   extractDevice(
+     "rnwaa_ckt" rwaa
+     nwell("PLUS" "MINUS") pwell("B")
+     spiceModel( "rnwaa_ckt" )
+     cellView( "rnwaa_ckt ivpcell" )
+     flagMalformed
+   )
+
+     width  	= measureParameter( length (rwaa butting nwell ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length	= measureParameter( length (rwaa outside nwell ) 0.5 )
+     normalizedLength   = calculateParameter( length * 1e-6 )
+     
+	 
+     res = calculateParameter( ( length * 441) / (width-2*0.0725) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width  "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rwaa "model" "rnwaa_ckt")
+
+    ); end if
+
+ if( !avSwitch( "RES_CKT_RNDIFSAB" )      then
+
+; -----  5.5.3 RES[rndifsab]  -----------------------
+
+   extractRES(
+     "rndifsab" rndsab
+     nsd("PLUS" "MINUS")
+     spiceModel( "rndifsab" )
+     cellView( "rndifsab ivpcell" )
+     flagMalformed
+   )
+
+     width 	= measureParameter( length (rndsab butting nsd ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length	= measureParameter( length (rndsab outside nsd ) 0.5 )  
+     normalizedLength   = calculateParameter( length * 1e-6 )
+     
+     res = calculateParameter( ( length * 57.5 ) / (width-2*(-0.0262)) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width  "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rndsab "model" "rndifsab")
+
+    );end if
+
+ if( avSwitch( "RES_CKT_RNDIFSAB" )      then
+
+; -----  5.5.3 RES[rndifsab_ckt]  -----------------------
+
+   extractDevice(
+     "rndifsab_ckt" rndsab
+     nsd("PLUS" "MINUS") pwell("B")
+     spiceModel( "rndifsab_ckt" )
+     cellView( "rndifsab_ckt ivpcell" )
+     flagMalformed
+   )
+
+     width 	= measureParameter( length (rndsab butting nsd ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length	= measureParameter( length (rndsab outside nsd ) 0.5 )  
+     normalizedLength   = calculateParameter( length * 1e-6 )
+
+     res = calculateParameter( ( length * 57.5 ) / (width-2*(-0.0262)) + 2*( 12.25 + 21.8/(width-2*(-0.0262))) ) 
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width  "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rndsab "model" "rndifsab_ckt")
+
+    ); end if
+
+ if( !avSwitch( "RES_CKT_RNDIF" )      then
+
+; -----  5.5.4 RES[rndif]  -----------------------
+
+   extractRES(
+     "rndif" rndnos
+     nsd("PLUS" "MINUS")
+     spiceModel( "rndif" )
+     cellView( "rndif ivpcell" )
+     flagMalformed
+   )
+
+     width = measureParameter( length (rndnos butting nsd ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length	= measureParameter( length (rndnos outside nsd ) 0.5 )  
+     normalizedLength   = calculateParameter( length * 1e-6 )
+     
+     res = calculateParameter( ( length * 7.57) / (width-2*(-0.0414)) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rndnos "model" "rndif")
+    ); end if
+
+
+ if( avSwitch( "RES_CKT_RNDIF" )     then
+
+; -----  5.5.4 RES[rndif_ckt]  -----------------------
+
+   extractDevice(
+     "rndif_ckt" rndnos
+     nsd("PLUS" "MINUS") pwell("B")
+     spiceModel( "rndif_ckt" )
+     cellView( "rndif_ckt ivpcell" )
+     flagMalformed
+   )
+
+     width = measureParameter( length (rndnos butting nsd ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length	= measureParameter( length (rndnos outside nsd ) 0.5 )  
+     normalizedLength   = calculateParameter( length * 1e-6 )
+  
+     res = calculateParameter( ( length * 7.57 ) / (width-2*(-0.0414)) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rndnos "model" "rndif_ckt")
+
+    ); end if
+
+ if( !avSwitch( "RES_CKT_RPDIFSAB" )     then
+
+; -----  5.5.5 RES[rpdifsab]  -----------------------
+
+   extractRES(
+     "rpdifsab" rpdsab
+     psd("PLUS" "MINUS")
+     spiceModel( "rpdifsab" )
+     cellView( "rpdifsab ivpcell" )
+     flagMalformed
+   )
+
+     width 	= measureParameter( length (rpdsab butting psd ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length	= measureParameter( length (rpdsab outside psd ) 0.5 )  
+     normalizedLength   = calculateParameter( length * 1e-6 )
+     
+     res = calculateParameter( ( length * 116.2) / (width-2*(-0.00137)) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rpdsab "model" "rpdifsab")
+    ); end if
+
+ if( avSwitch( "RES_CKT_RPDIFSAB" )     then
+
+; -----  5.5.5 RES[rpdifsab_ckt]  -----------------------
+
+   extractDevice(
+     "rpdifsab_ckt" rpdsab
+     psd("PLUS" "MINUS") nwell("B")
+     spiceModel( "rpdifsab_ckt" )
+     cellView( "rpdifsab_ckt ivpcell" )
+     flagMalformed
+   )
+
+     width 	= measureParameter( length (rpdsab butting psd ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length	= measureParameter( length (rpdsab outside psd ) 0.5 )  
+     normalizedLength   = calculateParameter( length * 1e-6 )
+
+     res = calculateParameter( ( length * 116.2) / (width-2*(-0.00137)) + 2*( 15.446 + 43.7/(width-2*(-0.00137))) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rpdsab "model" "rpdifsab_ckt")
+
+    ); end if
+
+
+ if( !avSwitch( "RES_CKT_RPDIF" )      then
+
+; -----  5.5.6 RES[rpdif]  -----------------------
+
+   extractRES(
+     "rpdif" rpdnos
+     psd("PLUS" "MINUS")
+     spiceModel( "rpdif" )
+     cellView( "rpdif ivpcell" )
+     flagMalformed
+   )
+
+     width 	= measureParameter( length ( rpdnos butting psd ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length	= measureParameter( length ( rpdnos outside psd ) 0.5 )  
+     normalizedLength   = calculateParameter( length * 1e-6 )
+     
+     res = calculateParameter( ( length * 6.75) / (width-2*(-0.028)) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rpdnos "model" "rpdif")
+
+    ); end if
+
+ if( avSwitch( "RES_CKT_RPDIF" )      then
+
+; -----  5.5.6 RES[rpdif_ckt]  -----------------------
+
+   extractDevice(
+     "rpdif_ckt" rpdnos
+     psd("PLUS" "MINUS") nwell("B")
+     spiceModel( "rpdif_ckt" )
+     cellView( "rpdif_ckt ivpcell" )
+     flagMalformed
+   )
+
+     width 	= measureParameter( length ( rpdnos butting psd ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length	= measureParameter( length ( rpdnos outside psd ) 0.5 )  
+     normalizedLength   = calculateParameter( length * 1e-6 )
+     
+     res = calculateParameter( ( length * 6.75) / (width-2*(-0.028)) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rpdnos "model" "rpdif_ckt")
+
+    ); end if
+
+ if( !avSwitch( "RES_CKT_RPPOSAB" )     then
+
+; -----  5.5.7 RES[rpposab]  -----------------------
+
+   extractRES(
+     "rpposab" rppsab
+     GPOLY("PLUS" "MINUS")
+     spiceModel( "rpposab" )
+     cellView( "rpposab ivpcell" )
+     flagMalformed
+   )
+
+     width 	= measureParameter( length (rppsab butting GPOLY ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length	= measureParameter( length (rppsab outside GPOLY ) 0.5 )  
+     normalizedLength   = calculateParameter( length * 1e-6 )
+     
+     res = calculateParameter( ( length * 311.3) / (width-2*0.0273) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rppsab "model" "rpposab")
+
+    ); end if
+
+ if( avSwitch( "RES_CKT_RPPOSAB" )     then
+
+; -----  5.5.7 RES[rpposab_ckt]  -----------------------
+
+   extractDevice(
+     "rpposab_ckt" rppsab
+     GPOLY("PLUS" "MINUS")
+     spiceModel( "rpposab_ckt" )
+     cellView( "rpposab_ckt ivpcell" )
+     flagMalformed
+   )
+
+     width      = measureParameter( length (rppsab butting GPOLY ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length     = measureParameter( length (rppsab outside GPOLY ) 0.5 )
+     normalizedLength   = calculateParameter( length * 1e-6 )
+    
+     res = calculateParameter( ( length * 311.3) / (width-2*0.0273) + 2*( 29.965 + 118/(width-2*0.0273)) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rppsab "model" "rpposab_ckt")
+
+    ); end if
+
+ if( !avSwitch( "RES_CKT_RPPOSAB_3T" )   then
+
+; -----  5.5.8 RES[rpposab_3t]  -----------------------
+
+   extractRES(
+     "rpposab_3t" rppsab_3t
+     GPOLY("PLUS" "MINUS")
+     spiceModel( "rpposab_3t" )
+     cellView( "rpposab_3t ivpcell" )
+     flagMalformed
+   )
+
+     width      = measureParameter( length (rppsab_3t butting GPOLY ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length     = measureParameter( length (rppsab_3t outside GPOLY ) 0.5 )
+     normalizedLength   = calculateParameter( length * 1e-6 )
+   
+     res = calculateParameter( ( length * 311.3) / (width-2*0.0273) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rppsab_3t "model" "rpposab_3t")
+
+;   extractDevice(
+;     "rpposab_3t" rppsab_3t_pwell
+;     GPOLY("PLUS" "MINUS") pwell("B")
+;     spiceModel( "rpposab_3t" )
+;     cellView( "rpposab_3t ivpcell" )
+;     flagMalformed
+;   )
+;
+;     width      = measureParameter( length (rppsab_3t_pwell butting GPOLY ) 0.5 )
+;     normalizedWidth    = calculateParameter( width * 1e-6 )
+;     length     = measureParameter( length (rppsab_3t_pwell outside GPOLY ) 0.5 )
+;     normalizedLength   = calculateParameter( length * 1e-6 )
+;  
+;     res = calculateParameter( ( length * 311.3) / (width-2*0.0273) + 2*( 29.965 + 118/(width-2*0.0273)) )
+;
+;     nameParameter( normalizedWidth "segW" )
+;     nameParameter( normalizedWidth "segL" )
+;     nameParameter( res "r" )
+;;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+;     saveProperty( rppsab_3t_pwell "model" "rpposab_3t")
+
+    ); end if
+
+ if( avSwitch( "RES_CKT_RPPOSAB_3T" )   then
+
+; -----  5.5.8 RES[rpposab_3t_ckt]  -----------------------
+
+   extractDevice(
+     "rpposab_3t_ckt" rppsab_3t_nwell
+     GPOLY("PLUS" "MINUS") nwell("B")
+     spiceModel( "rpposab_3t_ckt" )
+     cellView( "rpposab_3t_ckt ivpcell" )
+     flagMalformed
+   )
+
+     width      = measureParameter( length (rppsab_3t_nwell butting GPOLY ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length     = measureParameter( length (rppsab_3t_nwell outside GPOLY ) 0.5 )
+     normalizedLength   = calculateParameter( length * 1e-6 )
+    
+     res = calculateParameter( ( length * 311.3) / (width-2*0.0273) + 2*( 29.965 + 118/(width-2*0.0273)) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rppsab_3t_nwell "model" "rpposab_3t_ckt")
+
+   extractDevice(
+     "rpposab_3t_ckt" rppsab_3t_pwell
+     GPOLY("PLUS" "MINUS") pwell("B")
+     spiceModel( "rpposab_3t_ckt" )
+     cellView( "rpposab_3t_ckt ivpcell" )
+     flagMalformed
+   )
+
+     width      = measureParameter( length (rppsab_3t_pwell butting GPOLY ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length     = measureParameter( length (rppsab_3t_pwell outside GPOLY ) 0.5 )
+     normalizedLength   = calculateParameter( length * 1e-6 )
+   
+     res = calculateParameter( ( length * 311.3) / (width-2*0.0273) + 2*( 29.965 + 118/(width-2*0.0273)) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rppsab_3t_pwell "model" "rpposab_3t_ckt")
+
+    ); end if
+
+ if( !avSwitch( "RES_CKT_RPPO" )    then
+
+; -----  5.5.9 RES[rppo]  -----------------------
+
+   extractRES(
+     "rppo" rppnos
+     GPOLY("PLUS" "MINUS")
+     spiceModel( "rppo" )
+     cellView( "rppo ivpcell" )
+     flagMalformed
+   )
+
+     width 	= measureParameter( length (rppnos butting GPOLY ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length	= measureParameter( length (rppnos outside GPOLY ) 0.5 )  
+     normalizedLength   = calculateParameter( length * 1e-6 )
+     
+     res = calculateParameter( ( length * 9.78) / (width-2*(-0.0135)) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rppnos "model" "rppo")
+
+    ); end if
+
+ if( avSwitch( "RES_CKT_RPPO" )     then
+
+; -----  5.5.9 RES[rppo_ckt]  -----------------------
+
+   extractDevice(
+     "rppo_ckt" rppnos
+     GPOLY("PLUS" "MINUS")
+     spiceModel( "rppo_ckt" )
+     cellView( "rppo_ckt ivpcell" )
+     flagMalformed
+   )
+
+     width 	= measureParameter( length (rppnos butting GPOLY ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length	= measureParameter( length (rppnos outside GPOLY ) 0.5 )  
+     normalizedLength   = calculateParameter( length * 1e-6 )
+
+     res = calculateParameter( ( length * 9.78) / (width-2*(-0.0135)) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rppnos "model" "rppo_ckt")
+
+    ); end if
+
+ if( !avSwitch( "RES_CKT_RPPO_3T" )    then
+
+; -----  5.5.10 RES[rppo_3t]  -----------------------
+
+   extractRES(
+     "rppo_3t" rppnos_3t
+     GPOLY("PLUS" "MINUS")
+     spiceModel( "rppo_3t" )
+     cellView( "rppo_3t ivpcell" )
+     flagMalformed
+   )
+
+     width      = measureParameter( length (rppnos_3t butting GPOLY ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length     = measureParameter( length (rppnos_3t outside GPOLY ) 0.5 )
+     normalizedLength   = calculateParameter( length * 1e-6 )
+
+     res = calculateParameter( ( length * 9.78) / (width-2*(-0.0135)) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rppnos_3t "model" "rppo_3t")
+
+;   extractRES(
+;     "rppo_3t" rppnos_3t_pwell
+;     GPOLY("PLUS" "MINUS") pwell("B")
+;     spiceModel( "rppo_3t" )
+;     cellView( "rppo_3t ivpcell" )
+;     flagMalformed
+;   )
+;
+;     width      = measureParameter( length (rppnos_3t_pwell butting GPOLY ) 0.5 )
+;     normalizedWidth    = calculateParameter( width * 1e-6 )
+;     length     = measureParameter( length (rppnos_3t_pwell outside GPOLY ) 0.5 )
+;     normalizedLength   = calculateParameter( length * 1e-6 )
+;
+;     res = calculateParameter( ( length * 9.78) / (width-2*(-0.0135)) )
+;
+;     nameParameter( normalizedWidth "segW" )
+;     nameParameter( normalizedLength "segL" )
+;     nameParameter( res "r" )
+;;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+;     saveProperty( rppnos_3t_pwell "model" "rppo_3t")
+
+    ); end if
+
+ if( avSwitch( "RES_CKT_RPPO_3T" )    then
+
+; -----  5.5.10 RES[rppo_3t_ckt]  -----------------------
+
+   extractDevice(
+     "rppo_3t_ckt" rppnos_3t_nwell
+     GPOLY("PLUS" "MINUS") nwell("B")
+     spiceModel( "rppo_3t_ckt" )
+     cellView( "rppo_3t_ckt ivpcell" )
+     flagMalformed
+   )
+
+     width      = measureParameter( length (rppnos_3t_nwell butting GPOLY ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length     = measureParameter( length (rppnos_3t_nwell outside GPOLY ) 0.5 )
+     normalizedLength   = calculateParameter( length * 1e-6 )
+
+     res = calculateParameter( ( length * 9.78) / (width-2*(-0.0135)) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rppnos_3t_nwell "model" "rppo_3t_ckt")
+
+   extractDevice(
+     "rppo_3t_ckt" rppnos_3t_pwell
+     GPOLY("PLUS" "MINUS") pwell("B")
+     spiceModel( "rppo_3t_ckt" )
+     cellView( "rppo_3t_ckt ivpcell" )
+     flagMalformed
+   )
+
+     width      = measureParameter( length (rppnos_3t_pwell butting GPOLY ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length     = measureParameter( length (rppnos_3t_pwell outside GPOLY ) 0.5 )
+     normalizedLength   = calculateParameter( length * 1e-6 )
+
+     res = calculateParameter( ( length * 9.78) / (width-2*(-0.0135)) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rppnos_3t_pwell "model" "rppo_3t_ckt")
+
+    ); end if
+
+ if( !avSwitch( "RES_CKT_RNPOSAB" )     then
+
+; -----  5.5.11 RES[rnposab]  -----------------------
+
+   extractRES(
+     "rnposab" rnpsab
+     GPOLY("PLUS" "MINUS")
+     spiceModel( "rnposab" )
+     cellView( "rnposab ivpcell" )
+     flagMalformed
+   )
+
+     width 	= measureParameter( length (rnpsab butting GPOLY ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length	= measureParameter( length (rnpsab outside GPOLY ) 0.5 )  
+     normalizedLength   = calculateParameter( length * 1e-6 )
+     
+     res = calculateParameter( ( length * 271.6) / (width-2*0.0471) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rnpsab "model" "rnposab")
+
+    ); end if
+
+ if( avSwitch( "RES_CKT_RNPOSAB" )    then
+
+; -----  5.5.11 RES[rnposab_ckt]  -----------------------
+
+   extractDevice(
+     "rnposab_ckt" rnpsab
+     GPOLY("PLUS" "MINUS")
+     spiceModel( "rnposab_ckt" )
+     cellView( "rnposab_ckt ivpcell" )
+     flagMalformed
+   )
+
+     width 	= measureParameter( length (rnpsab butting GPOLY ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length	= measureParameter( length (rnpsab outside GPOLY ) 0.5 )  
+     normalizedLength   = calculateParameter( length * 1e-6 )
+     
+     res = calculateParameter( ( length * 271.6) / (width-2*0.0471) + 2*( 23.415 + 95/(width-2*0.0471)) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rnpsab "model" "rnposab_ckt")
+
+    ); end if
+
+ if( !avSwitch( "RES_CKT_RNPOSAB_3T" )     then
+
+; -----  5.5.12 RES[rnposab_3t]  -----------------------
+
+   extractRES(
+     "rnposab_3t" rnpsab_3t
+     GPOLY("PLUS" "MINUS")
+     spiceModel( "rnposab_3t" )
+     cellView( "rnposab_3t ivpcell" )
+     flagMalformed
+   )
+
+     width      = measureParameter( length (rnpsab_3t butting GPOLY ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length     = measureParameter( length (rnpsab_3t outside GPOLY ) 0.5 )
+     normalizedLength   = calculateParameter( length * 1e-6 )
+
+     res = calculateParameter( ( length * 271.6) / (width-2*0.0471) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rnpsab_3t "model" "rnposab_3t")
+
+;   extractRES(
+;     "rnposab_3t" rnpsab_3t_nwell
+;     GPOLY("PLUS" "MINUS") nwell("B")
+;     spiceModel( "rnposab_3t" )
+;     cellView( "rnposab_3t ivpcell" )
+;     flagMalformed
+;   )
+;
+;     width      = measureParameter( length (rnpsab_3t_nwell butting GPOLY ) 0.5 )
+;     normalizedWidth    = calculateParameter( width * 1e-6 )
+;     length     = measureParameter( length (rnpsab_3t_nwell outside GPOLY ) 0.5 )
+;     normalizedLength   = calculateParameter( length * 1e-6 )
+;
+;     res = calculateParameter( ( length * 271.6) / (width-2*0.0471) + 2*( 23.415 + 95/(width-2*0.0471)) )
+;
+;     nameParameter( normalizedWidth "segW" )
+;     nameParameter( normalizedLength "segL" )
+;     nameParameter( res "r" )
+;;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+;     saveProperty( rnpsab_3t_nwell "model" "rnposab_3t")
+
+    ); end if
+
+ if( avSwitch( "RES_CKT_RNPOSAB_3T" )    then
+
+; -----  5.5.12 RES[rnposab_3t_ckt]  -----------------------
+
+   extractDevice(
+     "rnposab_3t_ckt" rnpsab_3t_pwell
+     GPOLY("PLUS" "MINUS") pwell("B")
+     spiceModel( "rnposab_3t_ckt" )
+     cellView( "rnposab_3t_ckt ivpcell" )
+     flagMalformed
+   )
+
+     width      = measureParameter( length (rnpsab_3t_pwell butting GPOLY ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length     = measureParameter( length (rnpsab_3t_pwell outside GPOLY ) 0.5 )
+     normalizedLength   = calculateParameter( length * 1e-6 )
+
+     res = calculateParameter( ( length * 271.6) / (width-2*0.0471) + 2*( 23.415 + 95/(width-2*0.0471)) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rnpsab_3t_pwell "model" "rnposab_3t_ckt")
+
+   extractDevice(
+     "rnposab_3t_ckt" rnpsab_3t_nwell
+     GPOLY("PLUS" "MINUS") nwell("B")
+     spiceModel( "rnposab_3t_ckt" )
+     cellView( "rnposab_3t_ckt ivpcell" )
+     flagMalformed
+   )
+
+     width      = measureParameter( length (rnpsab_3t_nwell butting GPOLY ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length     = measureParameter( length (rnpsab_3t_nwell outside GPOLY ) 0.5 )
+     normalizedLength   = calculateParameter( length * 1e-6 )
+
+     res = calculateParameter( ( length * 271.6) / (width-2*0.0471) + 2*( 23.415 + 95/(width-2*0.0471)) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rnpsab_3t_nwell "model" "rnposab_3t_ckt")
+
+    ); end if
+
+ if( !avSwitch( "RES_CKT_RNPO" )    then
+
+; -----  5.5.13 RES[rnpo]  -----------------------
+
+   extractRES(
+     "rnpo" rnpnos
+     GPOLY("PLUS" "MINUS")
+     spiceModel( "rnpo" )
+     cellView( "rnpo ivpcell" )
+     flagMalformed
+   )
+
+     width 	= measureParameter( length (rnpnos butting GPOLY ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length	= measureParameter( length (rnpnos outside GPOLY ) 0.5 )  
+     normalizedLength   = calculateParameter( length * 1e-6 )
+     
+     res = calculateParameter( ( length *7.87 ) / (width-2*(-0.0189)) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rnpnos "model" "rnpo")
+
+    ); end if
+
+ if( avSwitch( "RES_CKT_RNPO" )    then
+
+; -----  5.5.13 RES[rnpo_ckt]  -----------------------
+
+   extractDevice(
+     "rnpo_ckt" rnpnos
+     GPOLY("PLUS" "MINUS")
+     spiceModel( "rnpo_ckt" )
+     cellView( "rnpo_ckt ivpcell" )
+     flagMalformed
+   )
+
+     width 	= measureParameter( length (rnpnos butting GPOLY ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length	= measureParameter( length (rnpnos outside GPOLY ) 0.5 )  
+     normalizedLength   = calculateParameter( length * 1e-6 )
+     
+     res = calculateParameter( ( length *7.87) / (width-2*(-0.0189)) )
+     
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rnpnos "model" "rnpo_ckt")
+
+    ); end if
+
+ if( !avSwitch( "RES_CKT_RNPO_3T" )   then
+
+; -----  5.5.14 RES[rnpo_3t]  -----------------------
+
+   extractRES(
+     "rnpo_3t" rnpnos_3t
+     GPOLY("PLUS" "MINUS")
+     spiceModel( "rnpo_3t" )
+     cellView( "rnpo_3t ivpcell" )
+     flagMalformed
+   )
+
+     width      = measureParameter( length (rnpnos_3t butting GPOLY ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length     = measureParameter( length (rnpnos_3t outside GPOLY ) 0.5 )
+     normalizedLength   = calculateParameter( length * 1e-6 )
+
+     res = calculateParameter( ( length * 7.87) / (width-2*(-0.0189)) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rnpnos_3t "model" "rnpo_3t")
+
+;   extractRES(
+;     "rnpo_3t" rnpnos_3t_nwell
+;     GPOLY("PLUS" "MINUS") nwell("B")
+;     spiceModel( "rnpo_3t" )
+;     cellView( "rnpo_3t ivpcell" )
+;     flagMalformed
+;   )
+;
+;     width      = measureParameter( length (rnpnos_3t_nwell butting GPOLY ) 0.5 )
+;     normalizedWidth    = calculateParameter( width * 1e-6 )
+;     length     = measureParameter( length (rnpnos_3t_nwell outside GPOLY ) 0.5 )
+;     normalizedLength   = calculateParameter( length * 1e-6 )
+;
+;     res = calculateParameter( ( length * 7.87) / (width-2*(-0.0189)) )
+;
+;     nameParameter( normalizedWidth "segW" )
+;     nameParameter( normalizedLength "segL" )
+;     nameParameter( res "r" )
+;;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+;     saveProperty( rnpnos_3t_nwell "model" "rnpo_3t")
+
+    ); end if
+
+ if( avSwitch( "RES_CKT_RNPO_3T" )    then
+
+; -----  5.5.14 RES[rnpo_3t_ckt]  -----------------------
+
+   extractDevice(
+     "rnpo_3t_ckt" rnpnos_3t_pwell
+     GPOLY("PLUS" "MINUS") pwell("B")
+     spiceModel( "rnpo_3t_ckt" )
+     cellView( "rnpo_3t_ckt ivpcell" )
+     flagMalformed
+   )
+
+     width      = measureParameter( length (rnpnos_3t_pwell butting GPOLY ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length     = measureParameter( length (rnpnos_3t_pwell outside GPOLY ) 0.5 )
+     normalizedLength   = calculateParameter( length * 1e-6 )
+
+     res = calculateParameter( ( length * 7.87) / (width-2*(-0.0189)) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rnpnos_3t_pwell "model" "rnpo_3t_ckt")
+
+   extractDevice(
+     "rnpo_3t_ckt" rnpnos_3t_nwell
+     GPOLY("PLUS" "MINUS") nwell("B")
+     spiceModel( "rnpo_3t_ckt" )
+     cellView( "rnpo_3t_ckt ivpcell" )
+     flagMalformed
+   )
+
+     width      = measureParameter( length (rnpnos_3t_nwell butting GPOLY ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length     = measureParameter( length (rnpnos_3t_nwell outside GPOLY ) 0.5 )
+     normalizedLength   = calculateParameter( length * 1e-6 )
+
+     res = calculateParameter( ( length * 7.87) / (width-2*(-0.0189)) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rnpnos_3t_nwell "model" "rnpo_3t_ckt")
+
+    ); end if
+
+ if( !avSwitch( "RES_CKT_RHRPO" )     then
+
+; -----  5.5.15 RES[rhrpo] -----------------------
+
+   extractRES(
+     "rhrpo" rpshrp
+     GPOLY("PLUS" "MINUS")
+     spiceModel( "rhrpo" )
+     cellView( "rhrpo ivpcell" )
+     flagMalformed
+   )
+
+     width 	= measureParameter( length (rpshrp butting GPOLY ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length	= measureParameter( length (rpshrp outside GPOLY ) 0.5 )  
+     normalizedLength   = calculateParameter( length * 1e-6 )
+
+     res = calculateParameter( (length * 1001 ) / (width-2*(-0.006)) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rpshrp "model" "rhrpo")
+
+  ); end if
+
+ if( avSwitch( "RES_CKT_RHRPO" )    then
+
+; -----  5.5.15 RES[rhrpo_ckt] -----------------------
+
+   extractDevice(
+     "rhrpo_ckt" rpshrp
+     GPOLY("PLUS" "MINUS")
+     spiceModel( "rhrpo_ckt" )
+     cellView( "rhrpo_ckt ivpcell" )
+     flagMalformed
+   )
+
+     width      = measureParameter( length (rpshrp butting GPOLY ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length     = measureParameter( length (rpshrp outside GPOLY ) 0.5 )
+     normalizedLength   = calculateParameter( length * 1e-6 )
+     
+     res = calculateParameter( (length * 1001 ) / (width-2*(-0.006)) + 2*( 7.88 + 39.6/(width-2*(-0.006))) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rpshrp "model" "rhrpo_ckt")
+
+  ); end if
+
+ if( !avSwitch( "RES_CKT_RHRPO_3T" )     then
+
+; -----  5.5.16 RES[rhrpo_3t] -----------------------
+
+   extractRES(
+     "rhrpo_3t" rpshrp_3t
+     GPOLY("PLUS" "MINUS")
+     spiceModel( "rhrpo_3t" )
+     cellView( "rhrpo_3t ivpcell" )
+     flagMalformed
+   )
+
+     width      = measureParameter( length (rpshrp_3t butting GPOLY ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length     = measureParameter( length (rpshrp_3t outside GPOLY ) 0.5 )
+     normalizedLength   = calculateParameter( length * 1e-6 )
+
+     res = calculateParameter( (length * 1001 ) / (width-2*(-0.006)) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rpshrp_3t "model" "rhrpo_3t")
+
+;   extractRES(
+;     "rhrpo_3t" rpshrp_3t_pwell
+;     GPOLY("PLUS" "MINUS") pwell("B")
+;     spiceModel( "rhrpo_3t" )
+;     cellView( "rhrpo_3t ivpcell" )
+;     flagMalformed
+;   )
+;
+;     width      = measureParameter( length (rpshrp_3t_pwell butting GPOLY ) 0.5 )
+;     normalizedWidth    = calculateParameter( width * 1e-6 )
+;     length     = measureParameter( length (rpshrp_3t_pwell outside GPOLY ) 0.5 )
+;     normalizedLength   = calculateParameter( length * 1e-6 )
+;
+;     res = calculateParameter( (length * 1001 ) / (width-2*(-0.006)) + 2*( 7.88 + 39.6/(width-2*(-0.006))) )
+;
+;     nameParameter( normalizedWidth "segW" )
+;     nameParameter( normalizedLength "segL" )
+;     nameParameter( res "r" )
+;;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+;     saveProperty( rpshrp_3t_pwell "model" "rhrpo_3t")
+
+  ); end if
+
+ if( avSwitch( "RES_CKT_RHRPO_3T" )    then
+
+; -----  5.5.16 RES[rhrpo_3t_ckt] -----------------------
+
+   extractDevice(
+     "rhrpo_3t_ckt" rpshrp_3t_nwell
+     GPOLY("PLUS" "MINUS") nwell("B")
+     spiceModel( "rhrpo_3t_ckt" )
+     cellView( "rhrpo_3t_ckt ivpcell" )
+     flagMalformed
+   )
+
+     width      = measureParameter( length (rpshrp_3t_nwell butting GPOLY ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length     = measureParameter( length (rpshrp_3t_nwell outside GPOLY ) 0.5 )
+     normalizedLength   = calculateParameter( length * 1e-6 )
+
+     res = calculateParameter( ( length * 1001 ) / (width-2*(-0.006)) + 2*( 7.88 + 39.6/(width-2*(-0.006))) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rpshrp_3t_nwell "model" "rhrpo_3t_ckt")
+
+   extractDevice(
+     "rhrpo_3t_ckt" rpshrp_3t_pwell
+     GPOLY("PLUS" "MINUS") pwell("B")
+     spiceModel( "rhrpo_3t_ckt" )
+     cellView( "rhrpo_3t_ckt ivpcell" )
+     flagMalformed
+   )
+
+     width      = measureParameter( length (rpshrp_3t_pwell butting GPOLY ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length     = measureParameter( length (rpshrp_3t_pwell outside GPOLY ) 0.5 )
+     normalizedLength   = calculateParameter( length * 1e-6 )
+
+     res = calculateParameter( ( length * 1001 ) / (width-2*(-0.006)) + 2*( 7.88 + 39.6/(width-2*(-0.006))) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rpshrp_3t_pwell "model" "rhrpo_3t_ckt")
+
+    ); end if
+
+if( !avSwitch( "RES_CKT_RTIMSABE2R" ) then
+
+; ----  5.5.17 RES[rtimsabe2r] ----------------------
+
+   extractRES(
+     "rtimsabe2r" rtim
+     nsd("PLUS" "MINUS")
+     spiceModel( "rtimsabe2r" )
+     cellView( "rtimsabe2r ivpcell" )
+     flagMalformed
+   )
+     width      = measureParameter( length (rtim butting nsd ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length     = measureParameter( length (rtim outside nsd ) 0.5 )
+     normalizedLength   = calculateParameter( length * 1e-6 )
+     res = calculateParameter( ( length * 695 ) / (width-2*0.04821) )
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rtim "model" "rtimsabe2r")
+
+    ) ;end if
+
+if( avSwitch( "RES_CKT_RTIMSABE2R" ) then
+; ----  5.5.17 RES[rtimsabe2r_ckt] ----------------------
+   extractDevice(
+     "rtimsabe2r_ckt" rtim
+     nsd("PLUS" "MINUS") PSUB("B")
+     spiceModel( "rtimsabe2r_ckt" )
+     cellView( "rtimsabe2r_ckt ivpcell" )
+     flagMalformed
+   )
+     width      = measureParameter( length (rtim butting nsd ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length     = measureParameter( length (rtim outside nsd ) 0.5 )
+     normalizedLength   = calculateParameter( length * 1e-6 )
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rtim "model" "rtimsabe2r_ckt")
+
+    ) ;end if
+
+; -----  5.5.18 RES[rm1]  -----------------------
+   extractRES(
+     "rm1" m1res
+     MT1("PLUS" "MINUS" )
+     spiceModel( "rm1" )
+     cellView( "rm1 ivpcell" )
+     flagMalformed
+   )
+
+     width = measureParameter( length (m1res butting MT1 ) 0.5 )
+     normalizedWidth   = calculateParameter( width * 1e-6 )
+     length = measureParameter( length ( m1res outside MT1 ) 0.5 )
+     normalizedLength  = calculateParameter( length * 1e-6 )
+
+     res = calculateParameter( ( length * 0.078) / (width-2*(-0.00493)) )
+
+     nameParameter( normalizedWidth  "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "lSim" ) )
+     saveProperty( m1res "model" "rm1")
+
+if( avSwitch( "top_m2" ) then
+
+; -----  5.5.19 RES[rm2]  -----------------------
+
+   extractRES(
+     "rm2" m2res
+     MT2("PLUS" "MINUS" )
+     spiceModel( "rm2" )
+     cellView( "rm2 ivpcell" )
+     flagMalformed
+   )
+
+     width = measureParameter( length (m2res butting MT2 ) 0.5 )
+     normalizedWidth   = calculateParameter( width * 1e-6 )
+     length = measureParameter( length ( m2res outside MT2 ) 0.5 )
+     normalizedLength  = calculateParameter( length * 1e-6 )
+
+     res = calculateParameter( ( length * 0.036) / (width-2*(-0.0441)) )
+
+     nameParameter( normalizedWidth  "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "lSim" ) )
+     saveProperty( m2res "model" "rm2")
+
+) ; end if
+
+if( avSwitch( "top_m3" ) then
+
+; -----  5.5.19 RES[rm2]  -----------------------
+
+   extractRES(
+     "rm2" m2res
+     MT2("PLUS" "MINUS" )
+     spiceModel( "rm2" )
+     cellView( "rm2 ivpcell" )
+     flagMalformed
+   )
+
+     width = measureParameter( length (m2res butting MT2 ) 0.5 )
+     normalizedWidth   = calculateParameter( width * 1e-6 )
+     length = measureParameter( length ( m2res outside MT2 ) 0.5 )
+     normalizedLength  = calculateParameter( length * 1e-6 )
+
+     res = calculateParameter( ( length * 0.078) / (width-2*0.006) )
+
+     nameParameter( normalizedWidth  "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "lSim" ) )
+     saveProperty( m2res "model" "rm2")
+
+; -----  5.5.20 RES[rm3]  -----------------------
+
+   extractRES(
+     "rm3" m3res
+     MT3("PLUS" "MINUS" )
+     spiceModel( "rm3" )
+     cellView( "rm3 ivpcell" )
+     flagMalformed
+   )
+
+     width = measureParameter( length (m3res butting MT3 ) 0.5 )
+     normalizedWidth   = calculateParameter( width * 1e-6 )
+     length = measureParameter( length ( m3res outside MT3 ) 0.5 )
+     normalizedLength  = calculateParameter( length * 1e-6 )
+
+     res = calculateParameter( ( length * 0.036) / (width-2*(-0.0441)) )
+
+     nameParameter( normalizedWidth  "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "lSim" ) )
+     saveProperty( m3res "model" "rm3")
+ ) ; end if
+
+if( avSwitch( "top_m4" )  then
+
+; -----  5.5.19 RES[rm2]  -----------------------
+
+   extractRES(
+     "rm2" m2res
+     MT2("PLUS" "MINUS" )
+     spiceModel( "rm2" )
+     cellView( "rm2 ivpcell" )
+     flagMalformed
+   )
+
+     width = measureParameter( length (m2res butting MT2 ) 0.5 )
+     normalizedWidth   = calculateParameter( width * 1e-6 )
+     length = measureParameter( length ( m2res outside MT2 ) 0.5 )
+     normalizedLength  = calculateParameter( length * 1e-6 )
+
+     res = calculateParameter( ( length * 0.078) / (width-2*0.006) )
+
+     nameParameter( normalizedWidth  "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "lSim" ) )
+     saveProperty( m2res "model" "rm2")
+
+; -----  5.5.20 RES[rm3]  -----------------------
+
+   extractRES(
+     "rm3" m3res
+     MT3("PLUS" "MINUS" )
+     spiceModel( "rm3" )
+     cellView( "rm3 ivpcell" )
+     flagMalformed
+   )
+
+     width = measureParameter( length (m3res butting MT3 ) 0.5 )
+     normalizedWidth   = calculateParameter( width * 1e-6 )
+     length = measureParameter( length ( m3res outside MT3 ) 0.5 )
+     normalizedLength  = calculateParameter( length * 1e-6 )
+
+     res = calculateParameter( ( length * 0.078) / (width-2*0.006) )
+
+     nameParameter( normalizedWidth  "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "lSim" ) )
+     saveProperty( m3res "model" "rm3")
+
+; -----  5.5.21 RES[rm4]  -----------------------
+
+   extractRES(
+     "rm4" m4res
+     MT4("PLUS" "MINUS" )
+     spiceModel( "rm4" )
+     cellView( "rm4 ivpcell" )
+     flagMalformed
+   )
+
+     width = measureParameter( length (m4res butting MT4 ) 0.5 )
+     normalizedWidth   = calculateParameter( width * 1e-6 )
+     length = measureParameter( length ( m4res outside MT4 ) 0.5 )
+     normalizedLength  = calculateParameter( length * 1e-6 )
+
+     res = calculateParameter( ( length * 0.036) / (width-2*(-0.0441)) )
+
+     nameParameter( normalizedWidth  "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "lSim" ) )
+     saveProperty( m4res "model" "rm4")
+
+) ; end if
+
+if( avSwitch( "top_m5" ) then
+; -----  5.5.19 RES[rm2]  -----------------------
+   extractRES(
+     "rm2" m2res
+     MT2("PLUS" "MINUS" )
+     spiceModel( "rm2" )
+     cellView( "rm2 ivpcell" )
+     flagMalformed
+   )
+     width = measureParameter( length (m2res butting MT2 ) 0.5 )
+     normalizedWidth   = calculateParameter( width * 1e-6 )
+     length = measureParameter( length ( m2res outside MT2 ) 0.5 )
+     normalizedLength  = calculateParameter( length * 1e-6 )
+     res = calculateParameter( ( length * 0.078) / (width-2*0.006) )
+     nameParameter( normalizedWidth  "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "lSim" ) )
+     saveProperty( m2res "model" "rm2")
+
+; -----  5.5.20 RES[rm3]  -----------------------
+   extractRES(
+     "rm3" m3res
+     MT3("PLUS" "MINUS" )
+     spiceModel( "rm3" )
+     cellView( "rm3 ivpcell" )
+     flagMalformed
+   )
+     width = measureParameter( length (m3res butting MT3 ) 0.5 )
+     normalizedWidth   = calculateParameter( width * 1e-6 )
+     length = measureParameter( length ( m3res outside MT3 ) 0.5 )
+     normalizedLength  = calculateParameter( length * 1e-6 )
+     res = calculateParameter( ( length * 0.078) / (width-2*0.006) )
+     nameParameter( normalizedWidth  "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "lSim" ) )
+     saveProperty( m3res "model" "rm3")
+
+; -----  5.5.21 RES[rm4]  -----------------------
+   extractRES(
+     "rm4" m4res
+     MT4("PLUS" "MINUS" )
+     spiceModel( "rm4" )
+     cellView( "rm4 ivpcell" )
+     flagMalformed
+   )
+     width = measureParameter( length (m4res butting MT4 ) 0.5 )
+     normalizedWidth   = calculateParameter( width * 1e-6 )
+     length = measureParameter( length ( m4res outside MT4 ) 0.5 )
+     normalizedLength  = calculateParameter( length * 1e-6 )
+     res = calculateParameter( ( length * 0.078) / (width-2*0.006) )
+     nameParameter( normalizedWidth  "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "lSim" ) )
+     saveProperty( m4res "model" "rm4")
+
+; -----  5.5.21 RES[rm5]  -----------------------
+   extractRES(
+     "rm5" m5res
+     MT5("PLUS" "MINUS" )
+     spiceModel( "rm5" )
+     cellView( "rm5 ivpcell" )
+     flagMalformed
+   )
+     width = measureParameter( length (m5res butting MT5 ) 0.5 )
+     normalizedWidth   = calculateParameter( width * 1e-6 )
+     length = measureParameter( length ( m5res outside MT5 ) 0.5 )
+     normalizedLength  = calculateParameter( length * 1e-6 )
+     res = calculateParameter( ( length * 0.036) / (width-2*(-0.0441)) )
+     nameParameter( normalizedWidth  "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "lSim" ) )
+     saveProperty( m5res "model" "rm5")
+) ; end if
+
+if( !avSwitch( "top_m2" ) && !avSwitch( "top_m3" ) && !avSwitch( "top_m4" ) && !avSwitch( "top_m5" ) then
+; -----  5.5.19 RES[rm2]  -----------------------
+   extractRES(
+     "rm2" m2res
+     MT2("PLUS" "MINUS" )
+     spiceModel( "rm2" )
+     cellView( "rm2 ivpcell" )
+     flagMalformed
+   )
+     width = measureParameter( length (m2res butting MT2 ) 0.5 )
+     normalizedWidth   = calculateParameter( width * 1e-6 )
+     length = measureParameter( length ( m2res outside MT2 ) 0.5 )
+     normalizedLength  = calculateParameter( length * 1e-6 )
+     res = calculateParameter( ( length * 0.078) / (width-2*0.006) )
+     nameParameter( normalizedWidth  "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "lSim" ) )
+     saveProperty( m2res "model" "rm2")
+
+; -----  5.5.20 RES[rm3]  -----------------------
+   extractRES(
+     "rm3" m3res
+     MT3("PLUS" "MINUS" )
+     spiceModel( "rm3" )
+     cellView( "rm3 ivpcell" )
+     flagMalformed
+   )
+     width = measureParameter( length (m3res butting MT3 ) 0.5 )
+     normalizedWidth   = calculateParameter( width * 1e-6 )
+     length = measureParameter( length ( m3res outside MT3 ) 0.5 )
+     normalizedLength  = calculateParameter( length * 1e-6 )
+     res = calculateParameter( ( length * 0.078) / (width-2*0.006) )
+     nameParameter( normalizedWidth  "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "lSim" ) )
+     saveProperty( m3res "model" "rm3")
+
+; -----  5.5.21 RES[rm4]  -----------------------
+   extractRES(
+     "rm4" m4res
+     MT4("PLUS" "MINUS" )
+     spiceModel( "rm4" )
+     cellView( "rm4 ivpcell" )
+     flagMalformed
+   )
+     width = measureParameter( length (m4res butting MT4 ) 0.5 )
+     normalizedWidth   = calculateParameter( width * 1e-6 )
+     length = measureParameter( length ( m4res outside MT4 ) 0.5 )
+     normalizedLength  = calculateParameter( length * 1e-6 )
+     res = calculateParameter( ( length * 0.078) / (width-2*0.006) )
+     nameParameter( normalizedWidth  "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "lSim" ) )
+     saveProperty( m4res "model" "rm4")
+
+; -----  5.5.21 RES[rm5]  -----------------------
+   extractRES(
+     "rm5" m5res
+     MT5("PLUS" "MINUS" )
+     spiceModel( "rm5" )
+     cellView( "rm5 ivpcell" )
+     flagMalformed
+   )
+     width = measureParameter( length (m5res butting MT5 ) 0.5 )
+     normalizedWidth   = calculateParameter( width * 1e-6 )
+     length = measureParameter( length ( m5res outside MT5 ) 0.5 )
+     normalizedLength  = calculateParameter( length * 1e-6 )
+     res = calculateParameter( ( length * 0.078) / (width-2*0.006) )
+     nameParameter( normalizedWidth  "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "lSim" ) )
+     saveProperty( m5res "model" "rm5")
+
+; -----  5.5.21 RES[rm6]  -----------------------
+   extractRES(
+     "rm6" m6res
+     MT6("PLUS" "MINUS" )
+     spiceModel( "rm6" )
+     cellView( "rm6 ivpcell" )
+     flagMalformed
+   )
+     width = measureParameter( length (m6res butting MT6 ) 0.5 )
+     normalizedWidth   = calculateParameter( width * 1e-6 )
+     length = measureParameter( length ( m6res outside MT6 ) 0.5 )
+     normalizedLength  = calculateParameter( length * 1e-6 )
+     res = calculateParameter( ( length * 0.036) / (width-2*(-0.0441)) )
+     nameParameter( normalizedWidth  "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( normalizedWidth "lSim" ) )
+     saveProperty( m6res "model" "rm6")
+
+) ; end if
+
+; -----  5.5.22 RES[rngtsab]  -----------------------
+
+   extractRES(
+     "rngtsab" rngtsabres
+     gtpoly("PLUS" "MINUS")
+     spiceModel( "rngtsab" )
+     cellView( "rngtsab ivpcell" )
+     flagMalformed
+   )
+
+     width      = measureParameter( length (rngtsabres butting gtpoly ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length     = measureParameter( length (rngtsabres outside gtpoly ) 0.5 )
+     normalizedLength   = calculateParameter( length * 1e-6 )
+    
+     res = calculateParameter( ( length * 38) / (width) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rngtsabres "model" "rngtsab")
+
+; -----  5.5.23 RES[rpgtsab]  -----------------------
+
+   extractRES(
+     "rpgtsab" rpgtsabres
+     gtpoly("PLUS" "MINUS")
+     spiceModel( "rpgtsab" )
+     cellView( "rpgtsab ivpcell" )
+     flagMalformed
+   )
+
+     width      = measureParameter( length (rpgtsabres butting gtpoly ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length     = measureParameter( length (rpgtsabres outside gtpoly ) 0.5 )
+     normalizedLength   = calculateParameter( length * 1e-6 )
+
+     res = calculateParameter( ( length * 70) / (width) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rpgtsabres "model" "rpgtsab")
+
+; -----  5.5.24 RES[rncgsab]  -----------------------
+
+   extractRES(
+     "rncgsab" rncgsabres
+     CGPOLY("PLUS" "MINUS")
+     spiceModel( "rncgsab" )
+     cellView( "rncgsab ivpcell" )
+     flagMalformed
+   )
+
+     width      = measureParameter( length (rncgsabres butting CGPOLY ) 0.5 )
+     normalizedWidth    = calculateParameter( width * 1e-6 )
+     length     = measureParameter( length (rncgsabres outside CGPOLY ) 0.5 )
+     normalizedLength   = calculateParameter( length * 1e-6 )
+
+     res = calculateParameter( ( length * 320) / (width) )
+
+     nameParameter( normalizedWidth "segW" )
+     nameParameter( normalizedLength "segL" )
+     nameParameter( res "r" )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( width "wSim" ) )
+;    unless( avSwitch( "HspiceNetlist" ) nameParameter( length "lSim" ) )
+     saveProperty( rncgsabres "model" "rncgsab")
+
+) ;end drcExtractRules

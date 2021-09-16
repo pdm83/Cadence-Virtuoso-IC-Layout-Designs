@@ -1,0 +1,30 @@
+//*Spectre Model Format
+simulator lang=spectre  insensitive=yes
+
+// *
+// * no part of this file can be released without the consent of smic.
+// *
+// ******************************************************************************************
+// *         smic 0.18um eeprom 2p6m 1.8v/3.3v/5v/15.5v spice model(for spectre only)       *
+// ******************************************************************************************
+// *
+// * release version    : 1.7
+// *
+// * release date       : 1/13/2010
+// *
+// * simulation tool    : Cadence spectre V6.0
+// *
+// *
+// *   PIP capacitor    : pip
+// *
+// *   valid temperature range is from -40c to 125c
+// *
+// *
+// ******************************************************************
+// *                      pip capacitor                             *
+// ******************************************************************
+model pipe2r capacitor
++coeffs = [3.267e-4 -9.928e-5]
++tc1 = 3.772e-5  tnom = 25
++cj = 2.055e-3+dpipe2r
+// *

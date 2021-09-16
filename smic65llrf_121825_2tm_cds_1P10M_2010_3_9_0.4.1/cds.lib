@@ -1,0 +1,5 @@
+DEFINE cdsDefTechLib $CDSHOME/tools/dfII/etc/cdsDefTechLib 
+DEFINE basic         $CDSHOME/tools/dfII/etc/cdslib/basic 
+DEFINE analogLib     $CDSHOME/tools/dfII/etc/cdslib/artist/analogLib 
+DEFINE smic65llrf_121825_2tm      ./smic65llrf_121825_2tm
+

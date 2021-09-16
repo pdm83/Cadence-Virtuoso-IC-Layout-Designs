@@ -1,0 +1,128 @@
+// Created by shdl2vloga from source file res_rf.va
+`include "discipline.h"
+`include "constants.h"
+
+module polyres_hdl (n2, n1, ctrl2, ctrl1);
+inout n2, n1;
+input ctrl2, ctrl1; 
+electrical n2, n1, ctrl2, ctrl1; 
+parameter real ldraw=0.0;
+parameter real lr=0.0;
+parameter real wr=0.0;
+parameter real rtemp=$temperature - 273.15;
+parameter real jc1a = 0;
+parameter real jc1b = 0;
+parameter real jc2a = 0;
+parameter real jc2b= 0;
+parameter real tc1 = 0;
+parameter real tc2 = 0;
+parameter real etch = 0;
+parameter real tnom = 25.0;
+parameter real rsh0 = 1;
+parameter real rmaxvcoef = 3;
+parameter real rminvcoef = 0.33;
+parameter real (* integer inherited_mfactor; *) m = 1;
+
+// Module Body begins
+
+real dt, absv, vc1, vc2, tcoef, vcoef, r0, weff;
+    analog
+     begin    dt = (rtemp - tnom);
+	vc1 = jc1a + jc1b / ldraw;
+	vc2 = (jc2a + jc2b / ldraw) / ldraw;
+	absv = abs(V(ctrl2, ctrl1));
+	tcoef = 1.0 + dt * (tc1 + dt * tc2);
+	vcoef = 1.0 + absv * (vc1 + absv * vc2);
+	vcoef = min(vcoef, rmaxvcoef);
+	vcoef = max(vcoef, rminvcoef);
+        weff  = (wr - 2.0 * etch);
+	r0 = rsh0 * lr / weff * tcoef * vcoef / m ;
+	V(n2, n1) <+ I(n2, n1) * r0;
+     end 
+
+
+endmodule
+
+
+module diffres_hdl (n2, n1, ctrl2, ctrl1);
+inout n2, n1;
+input ctrl2, ctrl1; 
+electrical n2, n1, ctrl2, ctrl1; 
+parameter real ldraw=0.0;
+parameter real lr=0.0;
+parameter real wr=0.0;
+parameter real rtemp=$temperature - 273.15;
+parameter real jc1a = 0;
+parameter real jc1b = 0;
+parameter real jc2a = 0;
+parameter real jc2b= 0;
+parameter real tc1 = 0;
+parameter real tc2 = 0;
+parameter real etch = 0;
+parameter real tnom = 25.0;
+parameter real rsh0 = 1;
+parameter real rmaxvcoef = 3;
+parameter real rminvcoef = 0.33;
+parameter real (* integer inherited_mfactor; *) m = 1;
+
+// Module Body begins
+
+real dt, vc1, vc2, tcoef, vcoef, r0, weff;
+
+    analog
+     begin    dt = (rtemp - tnom);
+	vc1 = jc1a + jc1b / ldraw;
+	vc2 = (jc2a + jc2b / ldraw) / ldraw;
+	tcoef = 1.0 + dt * (tc1 + dt * tc2);
+	vcoef = 1.0 + V(ctrl2, ctrl1) * (vc1 + V(ctrl2, ctrl1) * vc2);
+	vcoef = min(vcoef, rmaxvcoef);
+	vcoef = max(vcoef, rminvcoef);
+       weff  = (wr - 2.0 * etch);
+	r0 = rsh0 * lr / weff * tcoef * vcoef / m ;
+	V(n2, n1) <+ I(n2, n1) * r0;
+     end 
+
+
+endmodule
+
+module metalres_hdl (n2, n1, ctrl2, ctrl1);
+inout n2, n1;
+input ctrl2, ctrl1; 
+electrical n2, n1, ctrl2, ctrl1; 
+parameter real ldraw=0.0;
+parameter real lr=0.0;
+parameter real wr=0.0;
+parameter real rtemp=$temperature - 273.15;
+parameter real jc1a = 0;
+parameter real jc1b = 0;
+parameter real jc2a = 0;
+parameter real jc2b= 0;
+parameter real tc1 = 0;
+parameter real tc2 = 0;
+parameter real etch = 0;
+parameter real tnom = 25.0;
+parameter real rsh0 = 1;
+parameter real rmaxvcoef = 3;
+parameter real rminvcoef = 0.33;
+parameter real (* integer inherited_mfactor; *) m = 1;
+
+// Module Body begins
+
+real dt, absv, vc1, vc2, tcoef, vcoef, r0, weff;
+    analog
+     begin    dt = (rtemp - tnom);
+	vc1 = jc1a + jc1b / ldraw;
+	vc2 = (jc2a + jc2b / ldraw) / ldraw;
+	absv = abs(V(ctrl2, ctrl1));
+	tcoef = 1.0 + dt * (tc1 + dt * tc2);
+	vcoef = 1.0 + absv * (vc1 + absv * vc2);
+	vcoef = min(vcoef, rmaxvcoef);
+	vcoef = max(vcoef, rminvcoef);
+        weff  = (wr - 2.0 * etch);
+	r0 = rsh0 * lr / weff * tcoef * vcoef / m ;
+	V(n2, n1) <+ I(n2, n1) * r0;
+     end 
+
+
+endmodule
+

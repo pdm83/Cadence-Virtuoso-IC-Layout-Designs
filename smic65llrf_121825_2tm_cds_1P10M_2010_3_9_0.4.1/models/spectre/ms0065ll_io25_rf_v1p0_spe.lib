@@ -1,0 +1,605 @@
+// * Spectre Lib Format
+// * This file contains 1.2V, 1.8V and 2.5V corner model parameters.
+// * Five corners are supported: TT, FF, SS, FNSP and SNFP.
+// * This file should be used with the model parameter files 'ms0065ll_io25_rf_v1p0_spe.ckt', 'ms0065ll_io25_rf_res_v1p0_spe.kct',
+// * 'ms0065ll_io25_rf_mom_v1p0_spe.ckt', 'ms0065ll_io25_rf_var_v1p0_spe.ckt', 'ms0065ll_io25_rf_TM2_res_v1p0_spe.ckt', 
+// * No part of this file can be released without the consent of SMIC.
+
+simulator lang=spectre  insensitive=yes
+
+library ms0065ll_io25_rf_v1p0
+// ********************
+// * MOS Corner model *
+// ********************
+
+section tt
+SetOption1 options  gmin=1e-14
+
+// *1.2V core NMOS
+parameters dtoxe_n12ll_rf = 0
+parameters dtoxp_n12ll_rf = 0
+parameters dxl_n12ll_rf = 0
+parameters dxw_n12ll_rf = 0
+parameters dvth_n12ll_rf = 0
+parameters dcjs_n12ll_rf = 0
+parameters dcjsws_n12ll_rf = 0
+parameters dcjswgs_n12ll_rf = 0
+parameters dlvth0_n12ll_rf = 0
+parameters dpvth0_n12ll_rf = 0
+parameters dlu0_n12ll_rf = 0
+parameters dpu0_n12ll_rf = 0
+// *1.2V core PMOS
+parameters dtoxe_p12ll_rf = 0
+parameters dtoxp_p12ll_rf = 0
+parameters dxl_p12ll_rf = 0
+parameters dxw_p12ll_rf = 0
+parameters dvth_p12ll_rf = 0
+parameters dcjs_p12ll_rf = 0
+parameters dcjsws_p12ll_rf = 0
+parameters dcjswgs_p12ll_rf = 0
+parameters dlvth0_p12ll_rf = 0
+parameters dpvth0_p12ll_rf = 0
+parameters dlu0_p12ll_rf = 0
+parameters dpu0_p12ll_rf = 0
+
+// *1.8V IO NMOS
+parameters dtoxe_n18ll_rf = 0
+parameters dtoxp_n18ll_rf = 0
+parameters dxl_n18ll_rf = 0
+parameters dxw_n18ll_rf = 0
+parameters dvth_n18ll_rf = 0
+parameters dcjs_n18ll_rf = 0
+parameters dcjsws_n18ll_rf = 0
+parameters dcjswgs_n18ll_rf = 0
+parameters dlvth0_n18ll_rf = 0
+parameters dpvth0_n18ll_rf = 0
+parameters dlu0_n18ll_rf = 0
+parameters dpu0_n18ll_rf = 0
+// *1.8V IO PMOS
+parameters dtoxe_p18ll_rf = 0
+parameters dtoxp_p18ll_rf = 0
+parameters dxl_p18ll_rf = 0
+parameters dxw_p18ll_rf = 0
+parameters dvth_p18ll_rf = 0
+parameters dcjs_p18ll_rf = 0
+parameters dcjsws_p18ll_rf = 0
+parameters dcjswgs_p18ll_rf = 0
+parameters dlvth0_p18ll_rf = 0
+parameters dpvth0_p18ll_rf = 0
+parameters dlu0_p18ll_rf = 0
+parameters dpu0_p18ll_rf = 0
+
+// *2.5V IO NMOS
+parameters dtoxe_n25ll_rf = 0
+parameters dtoxp_n25ll_rf = 0
+parameters dxl_n25ll_rf = 0
+parameters dxw_n25ll_rf = 0
+parameters dvth_n25ll_rf = 0
+parameters dcjs_n25ll_rf = 0
+parameters dcjsws_n25ll_rf = 0
+parameters dcjswgs_n25ll_rf = 0
+parameters dlvth0_n25ll_rf = 0
+parameters dpvth0_n25ll_rf = 0
+parameters dlu0_n25ll_rf = 0
+parameters dpu0_n25ll_rf = 0
+// *2.5V IO PMOS
+parameters dtoxe_p25ll_rf = 0
+parameters dtoxp_p25ll_rf = 0
+parameters dxl_p25ll_rf = 0
+parameters dxw_p25ll_rf = 0
+parameters dvth_p25ll_rf = 0
+parameters dcjs_p25ll_rf = 0
+parameters dcjsws_p25ll_rf = 0
+parameters dcjswgs_p25ll_rf = 0
+parameters dlvth0_p25ll_rf = 0
+parameters dpvth0_p25ll_rf = 0
+parameters dlu0_p25ll_rf = 0
+parameters dpu0_p25ll_rf = 0
+include "ms0065ll_io25_rf_v1p0_spe.ckt"
+endsection tt
+
+section ff
+SetOption1 options  gmin=1e-14
+
+// *1.2V core NMOS
+parameters dtoxe_n12ll_rf = -4.8e-11
+parameters dtoxp_n12ll_rf = -4.8e-11
+parameters dxl_n12ll_rf = -1e-9
+parameters dxw_n12ll_rf = 2e-9
+parameters dvth_n12ll_rf = -0.02
+parameters dcjs_n12ll_rf = -7.7e-5
+parameters dcjsws_n12ll_rf = -1.45e-12
+parameters dcjswgs_n12ll_rf = -1.33e-11
+parameters dlvth0_n12ll_rf = -8.5e-10
+parameters dpvth0_n12ll_rf = -5.3e-16
+parameters dlu0_n12ll_rf = 1.3e-10
+parameters dpu0_n12ll_rf = 6.5e-17
+// *1.2V core PMOS
+parameters dtoxe_p12ll_rf = -4.8e-11
+parameters dtoxp_p12ll_rf = -4.8e-11
+parameters dxl_p12ll_rf = -1e-9
+parameters dxw_p12ll_rf = 2e-9
+parameters dvth_p12ll_rf = 0.018
+parameters dcjs_p12ll_rf = -5.46e-5
+parameters dcjsws_p12ll_rf = -1.2e-12
+parameters dcjswgs_p12ll_rf = -1.42e-11
+parameters dlvth0_p12ll_rf = 1.13e-9
+parameters dpvth0_p12ll_rf = 6.2e-16
+parameters dlu0_p12ll_rf = 7e-11
+parameters dpu0_p12ll_rf = 1.5e-17
+
+// *1.8V IO NMOS
+parameters dtoxe_n18ll_rf = -7.5e-11
+parameters dtoxp_n18ll_rf = -7.5e-11
+parameters dxl_n18ll_rf = -3.0e-9
+parameters dxw_n18ll_rf = 4.5e-9
+parameters dvth_n18ll_rf = -0.038
+parameters dcjs_n18ll_rf = -5.91e-5
+parameters dcjsws_n18ll_rf = -1.625e-12
+parameters dcjswgs_n18ll_rf = -8.635e-12
+parameters dlvth0_n18ll_rf = -1.0e-09
+parameters dpvth0_n18ll_rf = -1.05e-15
+parameters dlu0_n18ll_rf = 3.6e-10
+parameters dpu0_n18ll_rf = 7e-17
+// *1.8V IO PMOS
+parameters dtoxe_p18ll_rf = -7.5e-11
+parameters dtoxp_p18ll_rf = -7.5e-11
+parameters dxl_p18ll_rf = -3.0e-9
+parameters dxw_p18ll_rf = 4.5e-9
+parameters dvth_p18ll_rf = 0.035
+parameters dcjs_p18ll_rf = -9.29e-05
+parameters dcjsws_p18ll_rf = -7.88e-14
+parameters dcjswgs_p18ll_rf = -1.321e-11
+parameters dlvth0_p18ll_rf = 1.4e-09
+parameters dpvth0_p18ll_rf = 1e-15
+parameters dlu0_p18ll_rf = 9e-11
+parameters dpu0_p18ll_rf = 5e-17
+
+// *2.5V IO NMOS
+parameters dtoxe_n25ll_rf = -1.0e-10
+parameters dtoxp_n25ll_rf = -1.0e-10
+parameters dxl_n25ll_rf = -4.5e-9
+parameters dxw_n25ll_rf = 4.5e-9
+parameters dvth_n25ll_rf = -0.034
+parameters dcjs_n25ll_rf = -5.69e-5
+parameters dcjsws_n25ll_rf = -2.48e-12
+parameters dcjswgs_n25ll_rf = -1.05e-11
+parameters dlvth0_n25ll_rf = -2.3e-09
+parameters dpvth0_n25ll_rf = -3.5e-15
+parameters dlu0_n25ll_rf = 2.05e-9
+parameters dpu0_n25ll_rf = 7.5e-16
+// *2.5V IO PMOS
+parameters dtoxe_p25ll_rf = -1.0e-10
+parameters dtoxp_p25ll_rf = -1.0e-10
+parameters dxl_p25ll_rf = -4.5e-9
+parameters dxw_p25ll_rf = 4.5e-9
+parameters dvth_p25ll_rf = 0.024
+parameters dcjs_p25ll_rf = -6.03e-5
+parameters dcjsws_p25ll_rf = -1.40e-12
+parameters dcjswgs_p25ll_rf = -1.10e-11
+parameters dlvth0_p25ll_rf = 3.1e-09
+parameters dpvth0_p25ll_rf = 1.70e-15
+parameters dlu0_p25ll_rf = 2.9e-10
+parameters dpu0_p25ll_rf = 5.5e-17
+include "ms0065ll_io25_rf_v1p0_spe.ckt"
+endsection ff
+
+section ss
+SetOption1 options  gmin=1e-14
+
+// *1.2V core NMOS
+parameters dtoxe_n12ll_rf = 4.8e-11
+parameters dtoxp_n12ll_rf = 4.8e-11
+parameters dxl_n12ll_rf = 1e-9
+parameters dxw_n12ll_rf = -2e-9
+parameters dvth_n12ll_rf = 0.02
+parameters dcjs_n12ll_rf = 7.7e-5
+parameters dcjsws_n12ll_rf = 1.45e-12
+parameters dcjswgs_n12ll_rf = 1.33e-11
+parameters dlvth0_n12ll_rf = 8.5e-10
+parameters dpvth0_n12ll_rf = 5.3e-16
+parameters dlu0_n12ll_rf = -1.3e-10
+parameters dpu0_n12ll_rf = -6.5e-17
+// *1.2V core PMOS
+parameters dtoxe_p12ll_rf = 4.8e-11
+parameters dtoxp_p12ll_rf = 4.8e-11
+parameters dxl_p12ll_rf = 1e-9
+parameters dxw_p12ll_rf = -2e-9
+parameters dvth_p12ll_rf = -0.018
+parameters dcjs_p12ll_rf = 5.46e-5
+parameters dcjsws_p12ll_rf = 1.2e-12
+parameters dcjswgs_p12ll_rf = 1.42e-11
+parameters dlvth0_p12ll_rf = -1.13e-9
+parameters dpvth0_p12ll_rf = -6.2e-16
+parameters dlu0_p12ll_rf = -7e-11
+parameters dpu0_p12ll_rf = -1.5e-17
+
+// *1.8V IO NMOS
+parameters dtoxe_n18ll_rf = 7.5e-11
+parameters dtoxp_n18ll_rf = 7.5e-11
+parameters dxl_n18ll_rf = 3.0e-9
+parameters dxw_n18ll_rf = -4.5e-9
+parameters dvth_n18ll_rf = 0.038
+parameters dcjs_n18ll_rf = 5.91e-5
+parameters dcjsws_n18ll_rf = 1.625e-12
+parameters dcjswgs_n18ll_rf = 8.635e-12
+parameters dlvth0_n18ll_rf = 6e-10
+parameters dpvth0_n18ll_rf = 1.05e-15
+parameters dlu0_n18ll_rf = -3.5e-10
+parameters dpu0_n18ll_rf = -5e-17
+// *1.8V IO PMOS
+parameters dtoxe_p18ll_rf = 7.5e-11
+parameters dtoxp_p18ll_rf = 7.5e-11
+parameters dxl_p18ll_rf = 3.0e-9
+parameters dxw_p18ll_rf = -4.5e-9
+parameters dvth_p18ll_rf = -0.035
+parameters dcjs_p18ll_rf = 9.29e-05
+parameters dcjsws_p18ll_rf = 7.88e-14
+parameters dcjswgs_p18ll_rf = 1.321e-11
+parameters dlvth0_p18ll_rf = -1.1e-09
+parameters dpvth0_p18ll_rf = -1.00e-15
+parameters dlu0_p18ll_rf = -8e-11
+parameters dpu0_p18ll_rf = -4.2e-17
+
+// *2.5V IO NMOS
+parameters dtoxe_n25ll_rf = 1.0e-10
+parameters dtoxp_n25ll_rf = 1.0e-10
+parameters dxl_n25ll_rf = 4.5e-9
+parameters dxw_n25ll_rf = -4.5e-9
+parameters dvth_n25ll_rf = 0.034
+parameters dcjs_n25ll_rf = 5.69e-5
+parameters dcjsws_n25ll_rf = 2.48e-12
+parameters dcjswgs_n25ll_rf = 1.05e-11
+parameters dlvth0_n25ll_rf = 2.0e-09
+parameters dpvth0_n25ll_rf = 3.4e-15
+parameters dlu0_n25ll_rf = -1.85e-9
+parameters dpu0_n25ll_rf = -5.0e-16
+// *2.5V IO PMOS
+parameters dtoxe_p25ll_rf = 1.0e-10
+parameters dtoxp_p25ll_rf = 1.0e-10
+parameters dxl_p25ll_rf = 4.5e-9
+parameters dxw_p25ll_rf = -4.5e-9
+parameters dvth_p25ll_rf = -0.024
+parameters dcjs_p25ll_rf = 6.03e-5
+parameters dcjsws_p25ll_rf = 1.40e-12
+parameters dcjswgs_p25ll_rf = 1.10e-11
+parameters dlvth0_p25ll_rf = -2.55e-9
+parameters dpvth0_p25ll_rf = -1.55e-15
+parameters dlu0_p25ll_rf = -2.5e-10
+parameters dpu0_p25ll_rf = -4.0e-17
+include "ms0065ll_io25_rf_v1p0_spe.ckt"
+endsection ss
+
+section fnsp
+SetOption1 options  gmin=1e-14
+
+// *1.2V core NMOS
+parameters dtoxe_n12ll_rf = 0
+parameters dtoxp_n12ll_rf = 0
+parameters dxl_n12ll_rf = 0
+parameters dxw_n12ll_rf = 0
+parameters dvth_n12ll_rf = -0.02
+parameters dcjs_n12ll_rf = -7.7e-5
+parameters dcjsws_n12ll_rf = -1.45e-12
+parameters dcjswgs_n12ll_rf = -1.33e-11
+parameters dlvth0_n12ll_rf = -8.5e-10
+parameters dpvth0_n12ll_rf = -5.3e-16
+parameters dlu0_n12ll_rf = 1.3e-10
+parameters dpu0_n12ll_rf = 6.5e-17
+// *1.2V core PMOS
+parameters dtoxe_p12ll_rf = 0
+parameters dtoxp_p12ll_rf = 0
+parameters dxl_p12ll_rf = 0
+parameters dxw_p12ll_rf = 0
+parameters dvth_p12ll_rf = -0.018
+parameters dcjs_p12ll_rf = 5.46e-5
+parameters dcjsws_p12ll_rf = 1.2e-12
+parameters dcjswgs_p12ll_rf = 1.42e-11
+parameters dlvth0_p12ll_rf = -1.13e-9
+parameters dpvth0_p12ll_rf = -6.2e-16
+parameters dlu0_p12ll_rf = -7e-11
+parameters dpu0_p12ll_rf = -1.5e-17
+
+// *1.8V IO NMOS
+parameters dtoxe_n18ll_rf = 0
+parameters dtoxp_n18ll_rf = 0
+parameters dxl_n18ll_rf = 0
+parameters dxw_n18ll_rf = 0
+parameters dvth_n18ll_rf = -0.038
+parameters dcjs_n18ll_rf = -5.91e-5
+parameters dcjsws_n18ll_rf = -1.625e-12
+parameters dcjswgs_n18ll_rf = -8.635e-12
+parameters dlvth0_n18ll_rf = -1.0e-09
+parameters dpvth0_n18ll_rf = -1.05e-15
+parameters dlu0_n18ll_rf = 3.6e-10
+parameters dpu0_n18ll_rf = 7e-17
+// *1.8V IO PMOS
+parameters dtoxe_p18ll_rf = 0
+parameters dtoxp_p18ll_rf = 0
+parameters dxl_p18ll_rf = 0
+parameters dxw_p18ll_rf = 0
+parameters dvth_p18ll_rf = -0.035
+parameters dcjs_p18ll_rf = 9.29e-05
+parameters dcjsws_p18ll_rf = 7.88e-14
+parameters dcjswgs_p18ll_rf = 1.321e-11
+parameters dlvth0_p18ll_rf = -1.1e-09
+parameters dpvth0_p18ll_rf = -1.00e-15
+parameters dlu0_p18ll_rf = -8e-11
+parameters dpu0_p18ll_rf = -4.2e-17
+
+// *2.5V IO NMOS
+parameters dtoxe_n25ll_rf = 0
+parameters dtoxp_n25ll_rf = 0
+parameters dxl_n25ll_rf = 0
+parameters dxw_n25ll_rf = 0
+parameters dvth_n25ll_rf = -0.034
+parameters dcjs_n25ll_rf = -5.69e-5
+parameters dcjsws_n25ll_rf = -2.48e-12
+parameters dcjswgs_n25ll_rf = -1.05e-11
+parameters dlvth0_n25ll_rf = -2.3e-09
+parameters dpvth0_n25ll_rf = -3.5e-15
+parameters dlu0_n25ll_rf = 2.05e-9
+parameters dpu0_n25ll_rf = 7.5e-16
+// *2.5V IO PMOS
+parameters dtoxe_p25ll_rf = 0
+parameters dtoxp_p25ll_rf = 0
+parameters dxl_p25ll_rf = 0
+parameters dxw_p25ll_rf = 0
+parameters dvth_p25ll_rf = -0.024
+parameters dcjs_p25ll_rf = 6.03e-5
+parameters dcjsws_p25ll_rf = 1.40e-12
+parameters dcjswgs_p25ll_rf = 1.10e-11
+parameters dlvth0_p25ll_rf = -2.55e-9
+parameters dpvth0_p25ll_rf = -1.55e-15
+parameters dlu0_p25ll_rf = -2.5e-10
+parameters dpu0_p25ll_rf = -4.0e-17
+include "ms0065ll_io25_rf_v1p0_spe.ckt"
+endsection fnsp
+
+section snfp
+SetOption1 options  gmin=1e-14
+
+// *1.2V core NMOS
+parameters dtoxe_n12ll_rf = 0
+parameters dtoxp_n12ll_rf = 0
+parameters dxl_n12ll_rf = 0
+parameters dxw_n12ll_rf = 0
+parameters dvth_n12ll_rf = 0.02
+parameters dcjs_n12ll_rf = 7.7e-5
+parameters dcjsws_n12ll_rf = 1.45e-12
+parameters dcjswgs_n12ll_rf = 1.33e-11
+parameters dlvth0_n12ll_rf = 8.5e-10
+parameters dpvth0_n12ll_rf = 5.3e-16
+parameters dlu0_n12ll_rf = -1.3e-10
+parameters dpu0_n12ll_rf = -6.5e-17
+// *1.2V core PMOS
+parameters dtoxe_p12ll_rf = 0
+parameters dtoxp_p12ll_rf = 0
+parameters dxl_p12ll_rf = 0
+parameters dxw_p12ll_rf = 0
+parameters dvth_p12ll_rf = 0.018
+parameters dcjs_p12ll_rf = -5.46e-5
+parameters dcjsws_p12ll_rf = -1.2e-12
+parameters dcjswgs_p12ll_rf = -1.42e-11
+parameters dlvth0_p12ll_rf = 1.13e-9
+parameters dpvth0_p12ll_rf = 6.2e-16
+parameters dlu0_p12ll_rf = 7e-11
+parameters dpu0_p12ll_rf = 1.5e-17
+
+// *1.8V IO NMOS
+parameters dtoxe_n18ll_rf = 0
+parameters dtoxp_n18ll_rf = 0
+parameters dxl_n18ll_rf = 0
+parameters dxw_n18ll_rf = 0
+parameters dvth_n18ll_rf = 0.038
+parameters dcjs_n18ll_rf = 5.91e-5
+parameters dcjsws_n18ll_rf = 1.625e-12
+parameters dcjswgs_n18ll_rf = 8.635e-12
+parameters dlvth0_n18ll_rf = 6e-10
+parameters dpvth0_n18ll_rf = 1.05e-15
+parameters dlu0_n18ll_rf = -3.5e-10
+parameters dpu0_n18ll_rf = -5e-17
+// *1.8V IO PMOS
+parameters dtoxe_p18ll_rf = 0
+parameters dtoxp_p18ll_rf = 0
+parameters dxl_p18ll_rf = 0
+parameters dxw_p18ll_rf = 0
+parameters dvth_p18ll_rf = 0.035
+parameters dcjs_p18ll_rf = -9.29e-05
+parameters dcjsws_p18ll_rf = -7.88e-14
+parameters dcjswgs_p18ll_rf = -1.321e-11
+parameters dlvth0_p18ll_rf = 1.4e-09
+parameters dpvth0_p18ll_rf = 1e-15
+parameters dlu0_p18ll_rf = 9e-11
+parameters dpu0_p18ll_rf = 5e-17
+
+// *2.5V IO NMOS
+parameters dtoxe_n25ll_rf = 0
+parameters dtoxp_n25ll_rf = 0
+parameters dxl_n25ll_rf = 0
+parameters dxw_n25ll_rf = 0
+parameters dvth_n25ll_rf = 0.034
+parameters dcjs_n25ll_rf = 5.69e-5
+parameters dcjsws_n25ll_rf = 2.48e-12
+parameters dcjswgs_n25ll_rf = 1.05e-11
+parameters dlvth0_n25ll_rf = 2.0e-09
+parameters dpvth0_n25ll_rf = 3.4e-15
+parameters dlu0_n25ll_rf = -1.85e-9
+parameters dpu0_n25ll_rf = -5.0e-16
+// *2.5V IO PMOS
+parameters dtoxe_p25ll_rf = 0
+parameters dtoxp_p25ll_rf = 0
+parameters dxl_p25ll_rf = 0
+parameters dxw_p25ll_rf = 0
+parameters dvth_p25ll_rf = 0.024
+parameters dcjs_p25ll_rf = -6.03e-5
+parameters dcjsws_p25ll_rf = -1.40e-12
+parameters dcjswgs_p25ll_rf = -1.10e-11
+parameters dlvth0_p25ll_rf = 3.1e-09
+parameters dpvth0_p25ll_rf = 1.70e-15
+parameters dlu0_p25ll_rf = 2.9e-10
+parameters dpu0_p25ll_rf = 5.5e-17
+include "ms0065ll_io25_rf_v1p0_spe.ckt"
+endsection snfp
+
+// *************************
+// * Resistor Corner model *
+// *************************
+
+section res_tt
+// *Resistor
+parameters drsh_rndifsab_rf = 0
+parameters drsh_rpdifsab_rf = 0
+parameters drsh_rnposab_rf = 0
+parameters drsh_rpposab_rf = 0
+parameters ddw_rndifsab_rf = 0
+parameters ddw_rpdifsab_rf = 0
+parameters ddw_rnposab_rf = 0
+parameters ddw_rpposab_rf = 0
+include "ms0065ll_io25_rf_res_v1p0_spe.ckt"
+endsection res_tt
+
+section res_ff
+// *Resistor
+parameters drsh_rndifsab_rf = -28.448
+parameters drsh_rpdifsab_rf = -59.219
+parameters drsh_rnposab_rf = -47.860
+parameters drsh_rpposab_rf = -96.030
+parameters ddw_rndifsab_rf = -5e-09
+parameters ddw_rpdifsab_rf = -3e-09
+parameters ddw_rnposab_rf = -4e-09
+parameters ddw_rpposab_rf = -4e-09
+include "ms0065ll_io25_rf_res_v1p0_spe.ckt"
+endsection res_ff
+
+section res_ss
+// *Resistor
+parameters drsh_rndifsab_rf = 28.448
+parameters drsh_rpdifsab_rf = 59.219
+parameters drsh_rnposab_rf = 47.860
+parameters drsh_rpposab_rf = 96.030
+parameters ddw_rndifsab_rf = 5e-09
+parameters ddw_rpdifsab_rf = 3e-09
+parameters ddw_rnposab_rf = 4e-09
+parameters ddw_rpposab_rf = 4e-09
+include "ms0065ll_io25_rf_res_v1p0_spe.ckt"
+endsection res_ss
+
+// *****************************
+// * TM2 Resistor Corner model *
+// *****************************
+
+section tm2_res_tt
+// *Resistor
+parameters drsh_rtm2_rf = 0
+include "ms0065ll_io25_rf_TM2_res_v1p0_spe.ckt"
+endsection tm2_res_tt
+
+section tm2_res_ff
+// *Resistor
+parameters drsh_rtm2_rf = -0.00107
+include "ms0065ll_io25_rf_TM2_res_v1p0_spe.ckt"
+endsection tm2_res_ff
+
+section tm2_res_ss
+// *Resistor
+parameters drsh_rtm2_rf = 0.00107
+include "ms0065ll_io25_rf_TM2_res_v1p0_spe.ckt"
+endsection tm2_res_ss
+
+//***************************************************
+//* Mos varactor and Junction varactor Corner model * 
+//***************************************************
+
+section var_tt
+// *Mos Varactor
+parameters dtoxe_pvar12ll_rf = 0
+parameters dtoxp_pvar12ll_rf = 0
+parameters dvth_pvar12ll_rf  = 0
+parameters dtoxe_pvar18ll_rf = 0
+parameters dtoxp_pvar18ll_rf = 0
+parameters dvth_pvar18ll_rf  = 0
+parameters dtoxe_pvar25ll_rf = 0
+parameters dtoxp_pvar25ll_rf = 0
+parameters dvth_pvar25ll_rf  = 0
+
+// *Junction Diode Varactor
+parameters dcj_pdio12ll_rf = 0.00
+parameters dcj_pdio18ll_rf = 0.00
+parameters dcj_pdio25ll_rf = 0.00
+
+include "ms0065ll_io25_rf_var_v1p0_spe.ckt"
+endsection var_tt
+
+section var_ff
+// *Mos Varactor
+parameters dtoxe_pvar12ll_rf = 4.8e-11
+parameters dtoxp_pvar12ll_rf = 4.8e-11
+parameters dvth_pvar12ll_rf  = 0.018
+parameters dtoxe_pvar18ll_rf = 7.5e-11
+parameters dtoxp_pvar18ll_rf = 7.5e-11
+parameters dvth_pvar18ll_rf  = 0.035
+parameters dtoxe_pvar25ll_rf = 1e-10
+parameters dtoxp_pvar25ll_rf = 1e-10
+parameters dvth_pvar25ll_rf  = 0.024
+
+// *Junction Diode Varactor
+parameters dcj_pdio12ll_rf = -5.46e-05
+parameters dcj_pdio18ll_rf = -7.33e-05
+parameters dcj_pdio25ll_rf = -6.03e-05
+
+include "ms0065ll_io25_rf_var_v1p0_spe.ckt"
+endsection var_ff
+
+section var_ss
+// *Mos Varactor
+parameters dtoxe_pvar12ll_rf = -4.8e-11
+parameters dtoxp_pvar12ll_rf = -4.8e-11
+parameters dvth_pvar12ll_rf  = -0.018
+parameters dtoxe_pvar18ll_rf = -7.5e-11
+parameters dtoxp_pvar18ll_rf = -7.5e-11
+parameters dvth_pvar18ll_rf  = -0.035
+parameters dtoxe_pvar25ll_rf = -1e-10
+parameters dtoxp_pvar25ll_rf = -1e-10
+parameters dvth_pvar25ll_rf  = -0.024
+
+// *Junction Diode Varactor
+parameters dcj_pdio12ll_rf = 5.46e-05
+parameters dcj_pdio18ll_rf = 7.33e-05
+parameters dcj_pdio25ll_rf = 6.03e-05
+
+include "ms0065ll_io25_rf_var_v1p0_spe.ckt"
+endsection var_ss
+
+// ********************
+// * MOM Corner model *
+// ********************
+
+section mom_tt
+// *MOM
+parameters dmom_rf_m1x = 0
+parameters dmom_rf_mnx = 0
+parameters dmom_rf_m1x_3t = 0
+parameters dmom_rf_mnx_3t = 0
+include "ms0065ll_io25_rf_mom_v1p0_spe.ckt"
+endsection mom_tt
+
+section mom_ff
+// *MOM
+parameters dmom_rf_m1x = -9.52e-6
+parameters dmom_rf_mnx = -1.015e-5
+parameters dmom_rf_m1x_3t = -9.52e-6
+parameters dmom_rf_mnx_3t = -1.015e-5
+include "ms0065ll_io25_rf_mom_v1p0_spe.ckt"
+endsection mom_ff
+
+section mom_ss
+// *MOM
+parameters dmom_rf_m1x = 9.52e-6
+parameters dmom_rf_mnx = 1.015e-5
+parameters dmom_rf_m1x_3t = 9.52e-6
+parameters dmom_rf_mnx_3t = 1.015e-5
+include "ms0065ll_io25_rf_mom_v1p0_spe.ckt"
+endsection mom_ss
+
+endlibrary ms0065ll_io25_rf_v1p0

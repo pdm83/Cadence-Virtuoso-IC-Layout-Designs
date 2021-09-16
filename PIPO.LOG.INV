@@ -1,0 +1,62 @@
+********************************************************************************
+Product   : Virtuoso(R) XStream Out
+Program   : @(#)$CDS: strmout version 6.1.7-64b 03/02/2016 18:56 (sjfnl117) $
+          : sub-version  IC6.1.7-64b.500.2 
+Started at: 07-Apr-2021  10:18:44
+User Name : lyjslay
+Host Name : lyjslay
+Directory : /home/lyjslay/ClassDemo
+CADENCE Design Systems, Inc.
+********************************************************************************
+Info: Cellview Rev Num:99,  Tech Rev Num:59
+
+WARNING (XSTRM-20): Output Stream file '/home/lyjslay/ClassDemo/INV.calibre.db' already exists. It will be overwritten.
+INFO (XSTRM-217): Reading the layer map file, /home/lyjslay/ClassDemo/smic18ee/smic18ee.layermap
+INFO (XSTRM-162): You have not used the viaMap option. If the OpenAccess design has native oaVia instances, use the -viaMap option for preserving oaVia instances in a Stream Out - Stream In round trip. Using the -viaMap option improves performance and VM usage of applications using the Streamed-In design.  For details on the viaMap option, refer to the "Design Data Translator's Reference" guide for XStream.
+
+Summary of Options :
+library                                 lyjlib
+strmFile                                /home/lyjslay/ClassDemo/INV.calibre.db
+topCell                                 INV
+view                                    layout
+runDir                                  /home/lyjslay/ClassDemo/
+logFile                                 PIPO.LOG.INV
+summaryFile                             PIPO.SUM.INV
+layerMap                                /home/lyjslay/ClassDemo/smic18ee/smic18ee.layermap
+case                                    Preserve
+convertDot                              node
+
+INFO (XSTRM-223): 1. Translating cellView smic18ee/M1_GT/layout as STRUCTURE M1_GT_CDNS_617761924550.
+INFO (XSTRM-223): 2. Translating cellView smic18ee/M2_M1/layout as STRUCTURE M2_M1_CDNS_617761924551.
+INFO (XSTRM-223): 3. Translating cellView smic18ee/p33e2r/layout as STRUCTURE p33e2r_CDNS_617761924550.
+WARNING (XSTRM-35): The objects in the layer-purpose pair 'instance:drawing' are ignored. This is because the layer-purpose pair used in the design is not specified in the layer map file. Specify the layer-purpose pair in the layer map file and try again.
+INFO (XSTRM-223): 4. Translating cellView smic18ee/n33e2r/layout as STRUCTURE n33e2r_CDNS_617761924551.
+INFO (XSTRM-223): 5. Translating cellView lyjlib/INV/layout as STRUCTURE INV.
+
+Summary of Objects Translated:
+	Scalar Instances:                       2
+	Array Instances:                        0
+	Polygons:                               0
+	Paths:                                  0
+	Rectangles:                             62
+	Lines:                                  0
+	Arcs:                                   0
+	Donuts:                                 0
+	Dots:                                   0
+	Ellipses:                               0
+	Boundaries:                             0
+	Area Blockages:                         0
+	Layer Blockages:                        0
+	Area Halos:                             0
+	Markers:                                0
+	Rows:                                   0
+	Standard Vias                           3
+	Custom Vias:                            0
+	CdsGen Vias:                            0
+	Pathsegs:                               12
+	Text:                                   18
+	TextDisplay:                            0
+	Cells:                                  5
+
+Elapsed Time: 0.3s   User Time: 0.2s   CPU Time: 0.1s   Peak VM: 5780KB
+INFO (XSTRM-234): Translation completed. '0' error(s) and '2' warning(s) found.

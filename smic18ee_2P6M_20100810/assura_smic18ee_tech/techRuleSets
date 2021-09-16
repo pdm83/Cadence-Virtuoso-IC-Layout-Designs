@@ -1,0 +1,25 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Rule Set File
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+ruleSet( "TopLevel_M6"
+	 (LvsExtractRules      "./lvs/extract.rul" )
+	 (LvsCompareRules      "./lvs/compare.rul" )
+	 (LvsInclude           "./lvs/smic18_lvs_include.rsf" )
+	 (LvsBindingFile       "./lvs/binding.rul" )
+	 (LvsSwitchesFile      "./switches/LVS_2P6M_EE" )
+	 (DrcRules             "./drc/SmicDR10T_asr018_epm_sali_p2mtx_183350155.drc")
+	 (DrcSwitchesFile      "./switches/DRC_2P6M_EE" )
+         (RcxSetupDir          "" )
+)
+
+ruleSet( "TopLevel_M6_No_Bind"
+	 (LvsExtractRules      "./lvs/extract.rul" )
+	 (LvsCompareRules      "./lvs/compare.rul" )
+	 (LvsInclude           "./lvs/smic18_lvs_include.rsf" )
+	 (LvsSwitchesFile      "./switches/LVS_2P6M_EE" )
+	 (DrcRules             "./drc/SmicDR10T_asr018_epm_sali_p2mtx_183350155.drc")
+	 (DrcSwitchesFile      "./switches/DRC_2P6M_EE" )
+         (RcxSetupDir          "" )
+)
+

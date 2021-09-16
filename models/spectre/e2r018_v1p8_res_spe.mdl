@@ -1,0 +1,408 @@
+//*Spectre Model Format
+simulator lang=spectre  insensitive=yes
+// *
+// * no part of this file can be released without the consent of smic.
+// * Besides TIM and metal resistors, all the others apply to low voltage application. (same as 0.18LG's) 
+// *********************************************************************************************
+// *         smic 0.18um eeprom 2p6m 1.8v/3.3v/5v/15.5v spice model (for spectre only)         *
+// *********************************************************************************************
+// *
+// * release version    : 1.8
+// * release date       : 7/6/2010
+// *
+// * simulation tool    : Cadence spectre V6.0
+// *
+// *   resistor         :
+// *        *----------------------------------------------------------------------*
+// *        |             resistor type                            |     1.8v      |
+// *        |======================================================|===============|
+// *        |        Silicide N+ Diffusion                         |    rndif      |
+// *        |------------------------------------------------------|---------------| 
+// *        |        Silicide P+ Diffusion                         |    rpdif      |
+// *        |------------------------------------------------------|---------------| 
+// *        |           Silicide N+ Poly                           |     rnpo      |
+// *        |----------------------------------------------------  |---------------| 
+// *        |           Silicide N+ Poly(three terminal)           |    rnpo_3t    |
+// *        |------------------------------------------------------|---------------| 
+// *        |           Silicide P+ Poly                           |     rppo      |
+// *        |------------------------------------------------------|---------------| 
+// *        |           Silicide P+ Poly(three terminal)           |    rppo_3t    |
+// *        |------------------------------------------------------|---------------|
+// *        |        Silicide Nwell under AA                       |    rnwaa      |
+// *        |------------------------------------------------------|---------------| 
+// *        |        Silicide Nwell under STI                      |    rnwsti     |
+// *        |------------------------------------------------------|---------------|
+// *        |        Non-Silicide N+ Diffusion                     |   rndifsab    |
+// *        |------------------------------------------------------|---------------| 
+// *        | Non-Silicide N+ Diffusion (non-standard)             | rndifsab_nstd | 
+// *        |------------------------------------------------------|---------------| 
+// *        |        Non-Silicide P+ Diffusion                     |   rpdifsab    |
+// *        |------------------------------------------------------|---------------|
+// *        | Non-Silicide P+ Diffusion (non-standard)             | rpdifsab_nstd | 
+// *        |------------------------------------------------------|---------------| 
+// *        |          Non-Silicide N+ Poly                        |   rnposab     |
+// *        |------------------------------------------------------|---------------| 
+// *        |          Non-Silicide N+ Poly(three terminal)        |   rnposab_3t  |
+// *        |------------------------------------------------------|---------------|
+// *        |   Non-Silicide N+ Poly (non-standard)                | rnposab_nstd  |
+// *        |------------------------------------------------------|---------------|
+// *        |   Non-Silicide N+ Poly (non-standard)(three terminal)|rnposab_nstd_3t|
+// *        |------------------------------------------------------|---------------| 
+// *        |          Non-Silicide P+ Poly                        |   rpposab     |
+// *        |------------------------------------------------------|---------------| 
+// *        |          Non-Silicide P+ Poly(three terminal)        |  rpposab_3t   |
+// *        |------------------------------------------------------|---------------|
+// *        |   Non-Silicide P+ Poly (non-standard)                | rpposab_nstd  |
+// *        |------------------------------------------------------|---------------|
+// *        |   Non-Silicide P+ Poly (non-standard)(three terminal)|rpposab_nstd_3t|
+// *        |------------------------------------------------------|---------------|
+// *        |        High Resistance Poly                          |    rhrpo      |
+// *        |------------------------------------------------------|---------------|
+// *        |        High Resistance Poly(three terminal)          |    rhrpo_3t   |
+// *        |------------------------------------------------------|---------------|
+// *        |                  metal 1                             |      rm1      |
+// *        |------------------------------------------------------|---------------|
+// *        |                  metal 2                             |      rm2      |
+// *        |------------------------------------------------------|---------------|
+// *        |                  metal 3                             |      rm3      |
+// *        |------------------------------------------------------|---------------|
+// *        |                  metal 4                             |      rm4      |
+// *        |------------------------------------------------------|---------------|
+// *        |                  metal 5                             |      rm5      |
+// *        |------------------------------------------------------|---------------|
+// *        |                  metal 6                             |      rm6      |
+// *        |------------------------------------------------------|---------------|
+// *        |                    tim                               |  rtimsabe2r   |
+// *        *----------------------------------------------------------------------*
+// *
+// *
+// *
+// *    valid temperature range is from -40c to 125c
+// *
+// ******************************************************************
+// *                         resistor model                         *
+// ******************************************************************
+// *
+// ******************************************************************
+// *                       silicide resistors                       *
+// ******************************************************************
+// *
+// ******************************************************************
+// *                silicide n+ diffusion resistance                *
+// ******************************************************************
+// *silicided n-type diffusion resistor dio_mod=ndio18
+model rndif resistor
++nonlinform=r          coeffs = [2.16E-05  1.06E-04]
+//+JC1A = 9.10E-06     JC1B = 6.25E-09
+//+JC2A = 4.72E-08     JC2B = 2.79E-12
++tc1 = 3.12E-03        tc2 = 3.022E-08     etch = -4.14E-08+ddw_rndif
++tnom = 25.0           rsh = 7.57+drsh_rndif
+// ******************************************************************
+// *                silicide p+ diffusion resistance                *
+// ******************************************************************
+// *silicided p-type diffusion resistor dio_mod=pdio18
+model rpdif resistor
++nonlinform=r          coeffs = [4.94E-05  9.67E-05]
+//+JC1A = 6.40E-05     JC1B = -7.34E-09
+//+JC2A = 4.40E-08     JC2B = 2.16E-12
++tc1 = 3.08E-03        tc2 = 7.034E-07     etch = -2.80E-08+ddw_rpdif
++tnom = 25.0           rsh = 6.75+drsh_rpdif 
+// ******************************************************************
+// *                  silicide n+ poly resistance                   *
+// ******************************************************************
+// *silicided n-type poly resistor
+model rnpo resistor
++nonlinform=r          coeffs = [1.39E-04  2.72E-04]
+//+JC1A = -1.16E-04    JC1B = 1.28E-07
+//+JC2A = 9.63E-08     JC2B = 1.98E-11
++tc1 = 3.07E-03        tc2 = -5.36E-08      etch = -1.89E-08+ddw_rnpo
++tnom = 25.0           rsh = 7.87+drsh_rnpo
+// ******************************************************************
+// *         silicide n+ poly resistance (three terminal)           *
+// ******************************************************************
+// *silicided n-type poly resistor
+model rnpo_3t resistor
++nonlinform=r          coeffs = [1.39E-04  2.72E-04]
+//+JC1A = -1.16E-04    JC1B = 1.28E-07
+//+JC2A = 9.63E-08     JC2B = 1.98E-11
++tc1 = 3.07E-03        tc2 = -5.36E-08      etch = -1.89E-08+ddw_rnpo_3t
++tnom = 25.0           rsh = 7.87+drsh_rnpo_3t
++cj = 1.01E-04         cjsw = 8.92E-11 
+// ******************************************************************
+// *                  silicide p+ poly resistance                   *
+// ******************************************************************
+// *silicided p-type poly resistor
+model rppo resistor
++nonlinform=r          coeffs = [8.48E-05  2.27E-04]
+//+JC1A = -4.67E-05    JC1B = 6.58E-08
+//+JC2A = 8.88E-08     JC2B = 1.23E-11
++tc1 = 2.92E-03        tc2 = -2.30E-08      etch = -1.35E-08+ddw_rppo
++tnom = 25.0           rsh = 9.78+drsh_rppo 
+// ******************************************************************
+// *          silicide p+ poly resistance (three terminal)          *
+// ******************************************************************
+// *silicided p-type poly resistor
+model rppo_3t resistor
++nonlinform=r          coeffs = [8.48E-05  2.27E-04]
+//+JC1A = -4.67E-05    JC1B = 6.58E-08
+//+JC2A = 8.88E-08     JC2B = 1.23E-11
++tc1 = 2.92E-03        tc2 = -2.30E-08      etch = -1.35E-08+ddw_rppo_3t
++tnom = 25.0           rsh = 9.78+drsh_rppo_3t
++cj = 1.01E-04         cjsw = 8.92E-11 
+//*
+//******************************************************************
+//*                     non-silicide resistors                     *
+//******************************************************************
+//*
+// ******************************************************************
+// *               nwell under aa resistance                        *
+// ******************************************************************
+// *silicided nwell under aa resistor dio_mod=nwdio
+model rnwaa resistor
++nonlinform=r          coeffs = [2.39E-02  1.87E-04]
+//+JC1A = -3.89E-03    JC1B = 3.34E-07
+//+JC2A = -1.85E-08    JC2B = 2.49E-13
++tc1 = 3.02E-03        tc2 = 8.06E-06       etch = 7.25E-08+ddw_rnwaa
++tnom = 25.0           rsh = 441+drsh_rnwaa 
+// ******************************************************************
+// *              nwell under sti resistance                        *
+// ******************************************************************
+// *silicided nwell under sti resistor dio_mod=nwdio
+model rnwsti resistor
++nonlinform=r          coeffs = [2.20E-02  1.06E-03]
+//+JC1A = 1.10E-03     JC1B = 3.01E-07
+//+JC2A = -6.61E-09    JC2B = 3.16E-13
++tc1 = 2.73E-03        tc2 = 1.65E-06      etch = 1.83E-07+ddw_rnwsti
++tnom = 25.0           rsh = 890+drsh_rnwsti
+//******************************************************************
+//*              non-silicide n+ diffusion resistance              *
+//******************************************************************
+// *non-silicided n-type diffusion resistor dio_mod=ndio18
+model rndifsab resistor
+//+VC1 = 1.86E-04 VC2 = 2.05E-04
++nonlinform=r coeffs = [1.86E-04  2.05E-04]
+//+JC1A = 2.13E-04 JC1B = -2.64E-09
+//+JC2A = 1.75E-08 JC2B = 2.04E-13
++tc1 = 1.51E-03 tc2 = 4.22E-07 etch = -2.62E-08+ddw_rndifsab
++tnom = 25.0 rsh = 57.5+drsh_rndifsab
+//+RINTC = 12.25 RINT0 = 2.18E-05 RINT1 = 0.00E+00
+//******************************************************************
+//*       non-silicide n+ diffusion resistance (non-standard)      *
+//******************************************************************
+// *non-silicided n-type diffusion resistor dio_mod=ndio18
+model rndifsab_nstd resistor
+//+VC1 = 1.86E-04 VC2 = 2.05E-04
++nonlinform=r coeffs = [1.86E-04  2.05E-04]
+//+JC1A = 2.13E-04 JC1B = -2.64E-09
+//+JC2A = 1.75E-08 JC2B = 2.04E-13
++tc1 = 1.51E-03 tc2 = 4.22E-07 etch = -2.62E-08+ddw_rndifsab_nstd
++tnom = 25.0 rsh = 57.5+drsh_rndifsab_nstd
+//+RINTC = 12.25 RINT0 = 2.18E-05 RINT1 = 0.00E+00
+//******************************************************************
+//*              non-silicide p+ diffusion resistance              *
+//******************************************************************
+// *non-silicided p-type diffusion resistor dio_mod=pdio18
+model rpdifsab resistor
+//+VC1 = -6.92E-06 VC2 = 1.08E-04
++nonlinform=r coeffs = [-6.92E-06  1.08E-04]
+//+JC1A = -6.82E-06 JC1B = -8.98E-12
+//+JC2A = 9.85E-09 JC2B = 5.20E-14
++tc1 = 1.41E-03 tc2 = 6.87E-07 etch = -1.37E-09+ddw_rpdifsab
++tnom = 25.0 rsh = 116.2+drsh_rpdifsab
+//+RINTC = 15.446 RINT0 = 4.37E-05 RINT1 = 0.00E+00
+//******************************************************************
+//*      non-silicide p+ diffusion resistance (non-standard)        *
+//******************************************************************
+// *non-silicided p-type diffusion resistor dio_mod=pdio18
+model rpdifsab_nstd resistor
+//+VC1 = -6.92E-06 VC2 = 1.08E-04
++nonlinform=r coeffs = [-6.92E-06  1.08E-04]
+//+JC1A = -6.82E-06 JC1B = -8.98E-12
+//+JC2A = 9.85E-09 JC2B = 5.20E-14
++tc1 = 1.41E-03 tc2 = 6.87E-07 etch = -4.90E-08+ddw_rpdifsab_nstd
++tnom = 25.0 rsh = 129+drsh_rpdifsab_nstd
+//+RINTC = 15.446 RINT0 = 4.37E-05 RINT1 = 0.00E+00
+//******************************************************************
+//*                non-silicide n+ poly resistance                 *
+//******************************************************************
+// *non-silicided n-type poly resistor
+model rnposab resistor
+//+VC1 = 3.70E-04 VC2 = -1.74E-04
++nonlinform=r coeffs = [3.70E-04  -1.74E-04]
+//+JC1A = 8.23E-04 JC1B = -4.36E-08
+//+JC2A = -1.45E-08 JC2B = -2.17E-13
++tc1 = -1.35E-03 tc2 = 2.29E-06 etch = 4.71E-08+ddw_rnposab
++tnom = 25.0 rsh = 271.6+drsh_rnposab
+//+RINTC = 23.415 RINT0 = 9.5E-05 RINT1 = 0.00E+00
+//******************************************************************
+//*        non-silicide n+ poly resistance (three terminal)        *
+//******************************************************************
+// *non-silicided n-type poly resistor
+model rnposab_3t resistor
+//+VC1 = 3.70E-04 VC2 = -1.74E-04
++nonlinform=r coeffs = [3.70E-04  -1.74E-04]
+//+JC1A = 8.23E-04 JC1B = -4.36E-08
+//+JC2A = -1.45E-08 JC2B = -2.17E-13
++tc1 = -1.35E-03 tc2 = 2.29E-06 etch = 4.71E-08+ddw_rnposab_3t
++tnom = 25.0 rsh = 271.6+drsh_rnposab_3t
++cj = 1.01E-04         cjsw = 8.92E-11
+//+RINTC = 23.415 RINT0 = 9.5E-05 RINT1 = 0.00E+00
+//******************************************************************
+//*          non-silicide n+ poly resistance (non-standard)        *
+//******************************************************************
+// *non-silicided n-type poly resistor
+model rnposab_nstd resistor
+//+VC1 = 3.70E-04 VC2 = -1.74E-04
++nonlinform=r coeffs = [3.70E-04  -1.74E-04]
+//+JC1A = 8.23E-04 JC1B = -4.36E-08
+//+JC2A = -1.45E-08 JC2B = -2.17E-13
++tc1 = -1.35E-03 tc2 = 2.29E-06 etch = 9.86E-09+ddw_rnposab_nstd
++tnom = 25.0 rsh = 273+drsh_rnposab_nstd
+//+RINTC = 23.415 RINT0 = 9.5E-05 RINT1 = 0.00E+00
+//******************************************************************
+//* non-silicide n+ poly resistance (non-standard)(three terminal) *
+//******************************************************************
+// *non-silicided n-type poly resistor
+model rnposab_nstd_3t resistor
+//+VC1 = 3.70E-04 VC2 = -1.74E-04
++nonlinform=r coeffs = [3.70E-04  -1.74E-04]
+//+JC1A = 8.23E-04 JC1B = -4.36E-08
+//+JC2A = -1.45E-08 JC2B = -2.17E-13
++tc1 = -1.35E-03 tc2 = 2.29E-06 etch = 9.86E-09+ddw_rnposab_nstd_3t
++tnom = 25.0 rsh = 273+drsh_rnposab_nstd_3t
++cj = 1.01E-04         cjsw = 8.92E-11
+//+RINTC = 23.415 RINT0 = 9.5E-05 RINT1 = 0.00E+00
+//******************************************************************
+//*                non-silicide p+ poly resistance                 *
+//******************************************************************
+// *non-ilicided p-type poly resistor
+model rpposab resistor
+//+VC1 = 2.52E-05 VC2 = -1.62E-05
++nonlinform=r coeffs = [2.52E-05  -1.62E-05]
+//+JC1A = 1.09E-04 JC1B = -8.08E-09
+//+JC2A = -1.27E-09 JC2B = -2.73E-14
++tc1 = -1.63E-04 tc2 = 7.46E-07 etch = 2.73E-08+ddw_rpposab
++tnom = 25.0 rsh = 311.3+drsh_rpposab
+//+RINTC = 29.965 RINT0 = 1.1786E-04 RINT1 = 0.00E+00
+//******************************************************************
+//*      non-silicide p+ poly resistance (three terminal)          *
+//******************************************************************
+// *non-ilicided p-type poly resistor
+model rpposab_3t resistor
+//+VC1 = 2.52E-05 VC2 = -1.62E-05
++nonlinform=r coeffs = [2.52E-05  -1.62E-05]
+//+JC1A = 1.09E-04 JC1B = -8.08E-09
+//+JC2A = -1.27E-09 JC2B = -2.73E-14
++tc1 = -1.63E-04 tc2 = 7.46E-07 etch = 2.73E-08+ddw_rpposab_3t
++tnom = 25.0 rsh = 311.3+drsh_rpposab_3t
++cj = 1.01E-04         cjsw = 8.92E-11
+//+RINTC = 29.965 RINT0 = 1.1786E-04 RINT1 = 0.00E+00
+//******************************************************************
+//*        non-silicide p+ poly resistance (non-standard)          *
+//******************************************************************
+// *non-ilicided p-type poly resistor
+model rpposab_nstd resistor
+//+VC1 = 2.52E-05 VC2 = -1.62E-05
++nonlinform=r coeffs = [2.52E-05  -1.62E-05]
+//+JC1A = 1.09E-04 JC1B = -8.08E-09
+//+JC2A = -1.27E-09 JC2B = -2.73E-14
++tc1 = -1.63E-04 tc2 = 7.46E-07 etch = 2.73E-08+ddw_rpposab_nstd
++tnom = 25.0 rsh = 311.3+drsh_rpposab_nstd
+//+RINTC = 29.965 RINT0 = 1.1786E-04 RINT1 = 0.00E+00
+//******************************************************************
+//* non-silicide p+ poly resistance (non-standard) (three terminal)*
+//******************************************************************
+// *non-ilicided p-type poly resistor
+model rpposab_nstd_3t resistor
+//+VC1 = 2.52E-05 VC2 = -1.62E-05
++nonlinform=r coeffs = [2.52E-05  -1.62E-05]
+//+JC1A = 1.09E-04 JC1B = -8.08E-09
+//+JC2A = -1.27E-09 JC2B = -2.73E-14
++tc1 = -1.63E-04 tc2 = 7.46E-07 etch = 2.73E-08+ddw_rpposab_nstd_3t
++tnom = 25.0 rsh = 311.3+drsh_rpposab_nstd_3t
++cj = 1.01E-04         cjsw = 8.92E-11
+//+RINTC = 29.965 RINT0 = 1.1786E-04 RINT1 = 0.00E+00
+// *
+// ******************************************************************
+// *                        tim resistance                          *
+// ******************************************************************
+model rtimsabe2r resistor
+// *tim resistor
++nonlinform = r               coeffs = [1.14E-02 -4.29E-04]
+// *jc1a     = 8.96E-03       jc1b = 3.93E-08
+// *jc2a     = -1.66E-08      jc2b = 2.06E-13
++tc1   = 2.94E-05     tc2  = 1.36E-05     etch = 4.821E-8+ddw_rtimsabe2r 
++tnom  = 25            rsh  = 695+drsh_rtimsabe2r 
+// *
+//******************************************************************
+//*                non-silicide HR poly resistance                 *
+//******************************************************************
+model rhrpo resistor
+//+VC1 = 5.41E-05 VC2 = -5.33E-05
++nonlinform=r coeffs = [5.41E-05  -5.33E-05]
+//+JC1A = 9.43E-05 JC1B = -2.90E-09
+//+JC2A = -2.82E-09 JC2B = -7.32E-14
++tc1 = -8.52E-04 tc2 = 1.98E-06 etch = -6E-09+ddw_rhrpo
++tnom = 25.0 rsh = 1001+drsh_rhrpo
+//+RINTC = 7.88 RINT0 = 3.96E-5 RINT1 = 0.00E+00
+// * 
+//******************************************************************
+//*        non-silicide HR poly resistance(three terminal)         *
+//******************************************************************
+model rhrpo_3t resistor
+//+VC1 = 5.41E-05 VC2 = -5.33E-05
++nonlinform=r coeffs = [5.41E-05  -5.33E-05]
+//+JC1A = 9.43E-05 JC1B = -2.90E-09
+//+JC2A = -2.82E-09 JC2B = -7.32E-14
++tc1 = -8.52E-04 tc2 = 1.98E-06 etch = -6E-09+ddw_rhrpo_3t
++tnom = 25.0 rsh = 1001+drsh_rhrpo
++cj = 1.01E-04         cjsw = 8.92E-11
+//+RINTC = 7.88 RINT0 = 3.96E-5 RINT1 = 0.00E+00
+// * 
+// ******************************************************************
+// *                        metal resistors                         *
+// ******************************************************************
+// *
+// ******************************************************************
+// *                      metal 1 resistance                        *
+// ******************************************************************
+model rm1 resistor
+// *metal resistor
++tc1   = 3.49E-03     tc2 = 6.93E-07      etch = -4.93E-09+ddw_rm1 
++tnom  = 25           rsh = 0.078+drsh_rm1 
+// ******************************************************************
+// *                      metal 2 resistance                        *
+// ******************************************************************
+model rm2 resistor
+// *metal resistor
++tc1 = 3.60E-03       tc2 = 7.60E-07      etch = 6.0E-09+ddw_rm2 
++tnom  = 25           rsh = 0.078+drsh_rm2
+// ******************************************************************
+// *                      metal 3 resistance                        *
+// ******************************************************************
+model rm3 resistor
+// *metal resistor
++tc1 = 3.60E-03       tc2 = 7.60E-07      etch = 6.0E-09+ddw_rm3 
++tnom  = 25           rsh = 0.078+drsh_rm3
+// ******************************************************************
+// *                      metal 4 resistance                        *
+// ******************************************************************
+model rm4 resistor
+// *metal resistor
++tc1 = 3.60E-03       tc2 = 7.60E-07      etch = 6.0E-09+ddw_rm4 
++tnom  = 25           rsh = 0.078+drsh_rm4
+// ******************************************************************
+// *                      metal 5 resistance                        *
+// ******************************************************************
+model rm5 resistor
+// *metal resistor
++tc1 = 3.60E-03       tc2 = 7.60E-07      etch = 6.0E-09+ddw_rm5 
++tnom  = 25           rsh = 0.078+drsh_rm5
+// ******************************************************************
+// *                      metal 6 resistance                        *
+// ******************************************************************
+model rm6 resistor
+// *metal resistor
++tc1 = 3.89E-03      tc2 = 1.01E-06       etch = -4.41E-08+ddw_rm6 
++tnom  = 25          rsh = 0.036+drsh_rm6
+// *

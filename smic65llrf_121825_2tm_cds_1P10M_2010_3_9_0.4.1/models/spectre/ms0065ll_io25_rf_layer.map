@@ -1,0 +1,49 @@
+# Layer Definition for 65nm Low Leakage			
+AA	drawing	10	0
+NW	drawing	14	0
+DNW	drawing	19	0
+DG	drawing	29	0
+GT      drawing	30	0
+NLL	drawing	35	0
+NLH	drawing	36	0
+PLH	drawing	37	0
+PLL	drawing	38	0
+SN	drawing	40	0
+SP	drawing	43	0
+SAB     drawing	48	0
+CT	drawing	50	0
+M1	drawing	61	0
+V1      drawing	70      0
+M2      drawing	62      0
+V2      drawing	71      0
+M3      drawing	63      0
+V3      drawing	72      0
+M4      drawing	64      0
+V4      drawing	73      0
+M5      drawing	65      0
+V5      drawing	74      0
+M6      drawing	66      0
+VARMOS	drawing	93      0
+VARJUN	drawing	94      0
+RESP1   drawing 96      0
+RESAA   drawing 97      0
+TV1     drawing	121     0
+TM1     drawing	120     0
+TV2     drawing	123     0
+TM2     drawing	122     0
+NLHT    drawing	114	0
+PLHT    drawing	115	0
+TG      drawing	125	0
+RFDEV	drawing	181	0
+RFMOSD	drawing	182	0
+#RF3T is defined as block layer for 3 terminal RF passive device
+RF3T	drawing2 183	2
+#MOMDMY is defined as dummy block layer for MOM
+MOMDMY 	drawing1 211	1 
+# DUMBM is defined for dummy metal protection layer
+DUMBM   drawing	90      0
+# DUMBA is defined for dummy AA protection layer
+DUMBA   drawing	91      0
+# DUMBP is defined for dummy poly protection layer
+DUMBP   drawing	92      0
+

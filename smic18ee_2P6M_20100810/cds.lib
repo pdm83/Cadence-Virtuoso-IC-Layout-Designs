@@ -1,0 +1,8 @@
+-- File Created by XiuRong Chen at Fri Aug 20 09:02:02 2010
+-- assisted by CdsLibEditor
+DEFINE analogLib $CDSHOME/tools/dfII/etc/cdslib/artist/analogLib
+DEFINE basic $CDSHOME/tools/dfII/etc/cdslib/basic
+DEFINE pas_std $PASHOME/tools/templates/libs/pas_std
+DEFINE smic18ee_ref ../reflib/libs.cdba/smic18ee_ref
+DEFINE smic18ee ./smic18ee
+DEFINE avTech /home/eda/cadence/ASSURA410_IC5141/tools/assura/etc/avtech/avTech

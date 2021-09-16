@@ -1,0 +1,65 @@
+***************************************
+* SPICE NETLIST
+***************************************
+
+***************************************
+.SUBCKT rndif_ckt PLUS MINUS SUB
+.ENDS
+***************************************
+.SUBCKT rpdif_ckt PLUS MINUS SUB
+.ENDS
+***************************************
+.SUBCKT rnpo_ckt PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT rnpo_3t_ckt PLUS MINUS SUB
+.ENDS
+***************************************
+.SUBCKT rppo_ckt PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT rppo_3t_ckt PLUS MINUS SUB
+.ENDS
+***************************************
+.SUBCKT rnwaa_ckt PLUS MINUS SUB
+.ENDS
+***************************************
+.SUBCKT rnwsti_ckt PLUS MINUS SUB
+.ENDS
+***************************************
+.SUBCKT rndifsab_ckt PLUS MINUS SUB
+.ENDS
+***************************************
+.SUBCKT rpdifsab_ckt PLUS MINUS SUB
+.ENDS
+***************************************
+.SUBCKT rnposab_ckt PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT rnposab_3t_ckt PLUS MINUS SUB
+.ENDS
+***************************************
+.SUBCKT rpposab_ckt PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT rpposab_3t_ckt PLUS MINUS SUB
+.ENDS
+***************************************
+.SUBCKT rtimsabe2r_ckt PLUS MINUS SUB
+.ENDS
+***************************************
+.SUBCKT rhrpo_ckt PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT rhrpo_3t_ckt PLUS MINUS SUB
+.ENDS
+***************************************
+.SUBCKT mime2r_ckt n2 n1
+.ENDS
+***************************************
+.SUBCKT pipe2r_ckt n2 n1
+.ENDS
+***************************************
+.SUBCKT pvar18e2r_ckt PLUS MINUS
+.ENDS
+***************************************

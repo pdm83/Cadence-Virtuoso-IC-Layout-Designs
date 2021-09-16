@@ -1,0 +1,239 @@
+;#########################################################################
+;#               Virtuoso Layer Mapping File                             #
+;#########################################################################
+;#
+;#========================================================================
+;#      @Process  SMIC 0.18um EEPROM/OTP/FLASH/MD/CIS Process
+;#========================================================================
+;# @File Comment
+;# @(#)$CDS: icfb.exe version 5.0.0 09/26/2003 18:23 (cds12107) $
+;#
+;#$RCSfile: SmicVTMP_EPM_OTP_FLASH_MD_CIS_018.map,v $
+;#$Date: 2010/07/12 08:25:22 $
+;#
+;# Author: Smic DSD
+;#
+;#$Revision History:  
+;#$  Rev      Date         Who                   What
+;#$ ------ ------------ ----------   -----------------------------------
+;#$  1.0   09-AUG-2004  Shelly Liu    Initial version.
+;#$  1.1   18-NOV-2004  shelly Liu   Add dummy layer for AA and GT and job view
+;#$  1.2   20-DEC-2004  shelly Liu   Modify some layer names.
+;#$  1.3   17-APR-2006  longle Shi   Add layer PC (119:0 ),and update OM to 0M,RP94 to PIXCEL   
+;#$  1.4   25-JUL-2006  longle Shi   Add layer HRPDMY( 210:0 )
+;#$  1.5   09-AUG-2006  longle Shi   Change layer DUMGT(30:1) to GTDUM(30:1),add layers CGDUM(57:1),GPDUM(83:1).
+;#$  1.6   19-JAN-2007  longle Shi   Add layer RESP3T( 96:0 ).
+;#$  1.7   16-JUL-2007  Drincy Wei   Add layers PWH(123:0),NWH(124:0),PWI(81:0).
+;#$  1.8   20-JUL-2007  Drincy Wei   Add layers VARJUN(190:0),VARMOS(191:0),FUSE(209:0),
+;#		    		     ARDUM(11:1),P2DUM(31:1),P1DUM(32:1),ONODUM(56:1).
+;#   1.9   21-Jan-2008  Drincy Wei   Add layer CW(59:0);
+;#   2.0   20-May-2008  Drincy Wei   Add layer DUMBP(6:0), VSIA(63:63);
+;#   2.1   12-Jul-2010  Shirley Chen Add layer ESD3(51:0), MIMDMY(88:1)
+;#
+;#***********************************************************************
+;
+#	Layer	Layer		Stream	Datatype
+#	Name	Purpose
+#--------------------------------------------------------------------
+	L0	drawing		  0	0
+	0M	drawing		  1	0
+	RGM	drawing		  2	0
+	HT	drawing		  3	0
+	DUMBP	drawing		  6	0
+	KV	drawing		  9	0
+	AA	drawing		 10	0
+        AADUM   drawing          10     1
+	AR	drawing		 11	0
+	AR	dummy		 11	1
+	NPAA	drawing		 12	0
+	PPAA	drawing		 13	0
+	NW	drawing		 14	0
+	TP	drawing		 15	0
+	TPW	drawing		 16	0
+	DNW	drawing		 19	0
+	PW	drawing		 20	0
+	PDW	drawing		 21	0
+	CPT	drawing		 22	0
+	BNP	drawing		 23	0
+	TN	drawing		 24	0
+	CODE	drawing		 25	0
+	LOGO	drawing		 26	0
+	TIM	drawing		 27	0
+        DG      drawing          29     0
+	GT	drawing		 30	0
+        GTDUM   drawing          30     1
+	P2	drawing		 31	0
+	P2	dummy		 31	1
+	P1	drawing		 32	0
+	P1	dummy		 32	1
+	HR	drawing		 34	0
+	NLL	drawing		 35	0
+        NLH     drawing          36     0
+        PLH     drawing          37     0
+	PLL	drawing		 38	0
+	HRP	drawing		 39	0
+	SN	drawing		 40	0
+	ESD1	drawing		 41	0
+	ESD2	drawing		 42	0
+	SP	drawing		 43	0
+	PIN	drawing		 44	0
+        MVN     drawing          45     0 
+	PFLD	drawing		 46	0
+	VTPH	drawing		 47	0
+	SAB	drawing		 48	0
+	VTNH	drawing		 49	0
+	CT	drawing		 50	0
+	ESD3	drawing		 51	0
+	DDP	drawing		 52	0
+	DDN	drawing		 53	0
+	HVBN	drawing		 54	0
+	TOW	drawing		 55	0
+	ONO	drawing		 56	0
+	ONO	dummy		 56	1
+	CG	drawing		 57	0
+        CGDUM   drawing          57     1
+	MIM	drawing		 58	0
+        CW      drawing          59     0
+        INST    drawing          60     0
+	M1	drawing		 61	0
+	M1DUM	drawing		 61	1
+	M1SLOT	drawing		 61	2
+	M2	drawing		 62	0
+	M2DUM	drawing		 62	1
+	M2SLOT	drawing		 62	2
+	M3	drawing		 63	0
+	M3DUM	drawing		 63	1
+	M3SLOT	drawing		 63	2
+	VSIA	drawing		 63	63
+	M4	drawing		 64	0
+	M4DUM	drawing		 64	1
+	M4SLOT	drawing		 64	2
+	M5	drawing		 65	0
+	M5DUM	drawing		 65	1
+	M5SLOT	drawing		 65	2
+	M6	drawing		 66	0
+	M6DUM	drawing		 66	1
+	M6SLOT	drawing		 66	2
+	M7	drawing		 67	0
+	M7DUM	drawing		 67	1
+	M7SLOT	drawing		 67	2
+	M8	drawing		 68	0
+	M8DUM	drawing		 68	1
+	M8SLOT	drawing		 68	2
+	V1	drawing		 70	0
+	V2	drawing		 71	0
+	V3	drawing		 72	0
+	V4	drawing		 73	0
+	V5	drawing		 74	0
+	V6	drawing		 75	0
+	V7	drawing		 76	0
+	PIPR	drawing		 79	0
+	PA	drawing		 80	0
+	PWI	drawing		 81	0
+	PI	drawing		 82	0
+	GP	drawing		 83	0
+        GPDUM   drawing          83     1
+	DDD	drawing		 84	0
+	PSUB	drawing		 85	0
+	TTXT	drawing		 87	0
+	BTXT	drawing		 88	0
+	MIMDMY	drawing		 88	1
+	CTXT	drawing		 89	0
+	RESDMY	drawing		 90	0
+	RLHVP	drawing		 91	0
+	5VHVNZ	drawing		 92	0
+	BITCEL	drawing		 93	0
+	PIXCEL	drawing		 94	0
+	RESNW	drawing		 95	0
+	RESP1	drawing		 96	0
+        RESP3T  drawing          96     1
+	RESAA	drawing		 97	0
+	HVPF	drawing		 98	0
+	P2BK	drawing		 99	0
+	OPCBA	drawing		100	0
+	OPCBP	drawing		101	0
+	OPCBM	drawing		102	0
+	CVT	drawing		103     0
+	SELVT	drawing		104     0
+	CSD	drawing		105     0
+	ODR	drawing		106     0
+	SAE	drawing		107     0
+        ONODMY  drawing         108     0
+	BLK	drawing		109     0
+        CAP     drawing         110     0
+        HVO     drawing         111     0
+        HVNFS   drawing         112     0
+        HVCL    drawing         113     0
+	SAS	drawing		114	0
+	CELLS	drawing		115	0
+	PLUGI	drawing		116	0
+	CCT	drawing		117	0
+	LICT	drawing		118	0
+        PC      drawing         119     0
+        DUMBA   drawing         120     0
+        DUMBM   drawing         121     0
+        PWH     drawing         123     0
+        NWH     drawing         124     0
+	LM1	drawing		125	0
+	BORDER	drawing		127	0
+	HTNWL	drawing		131	0
+	SUBD	drawing		131	1
+	EXCLU	drawing		132	0
+	ESDIO	drawing		133	0
+	DMPNP	drawing		134	0
+	PDC  	drawing		135	0
+	PWL	drawing		136	0
+	CAPBP	drawing		137	0
+	DSTR	drawing		138	0
+	DCTY	drawing		139	0
+	SBT	drawing		140	0
+	M1TXT	drawing		141	0
+	M2TXT	drawing		142	0
+	M3TXT	drawing		143	0
+	M4TXT	drawing		144	0
+	M5TXT	drawing		145	0
+	M6TXT	drawing		146	0
+	M7TXT	drawing		147	0
+	M8TXT	drawing		148	0
+	M1B	drawing		151	0
+	M1DUB	drawing		151	1
+	M2B	drawing		152	0
+	M2DUB	drawing		152	1
+	M3B	drawing		153	0
+	M3DUB	drawing		153	1
+	M4B	drawing		154	0
+	M4DUB	drawing		154	1
+	M5B	drawing		155	0
+	M5DUB	drawing		155	1
+	M6B	drawing		156	0
+	M6DUB	drawing		156	1
+	M7B	drawing		157	0
+	M7DUB	drawing		157	1
+	M8B	drawing		158	0
+	M8DUB	drawing		158	1
+        SUBTXT  drawing         161     0
+        WELTXT  drawing         162     0
+        DIFTXT  drawing         163     0
+        POLYTXT drawing         164     0
+	M1R	drawing		171	0
+	M1SLOTB	drawing		171	1
+	M2R	drawing		172	0
+	M2SLOTB	drawing		172	1
+	M3R	drawing		173	0
+	M3SLOTB	drawing		173	1
+	M4R	drawing		174	0
+	M4SLOTB	drawing		174	1
+	M5R	drawing		175	0
+	M5SLOTB	drawing		175	1
+	M6R	drawing		176	0
+	M6SLOTB	drawing		176	1
+	M7R	drawing		177	0
+	M7SLOTB	drawing		177	1
+	M8R	drawing		178	0
+	M8SLOTB	drawing		178	1
+	NODMF	drawing		180	0
+        JVDUM   drawing         188     0
+	VARJUN	drawing		190	0
+	VARMOS	drawing		191	0
+	FUSE	drawing		209	0
+        HRPDMY  drawing         210     0
